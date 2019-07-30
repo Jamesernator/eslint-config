@@ -1,10 +1,11 @@
-/* eslint-disable max-lines */
 "use strict";
 
-// versions compatible with:
-//   - eslint 6.1.0
-//   - @typescript-eslint/eslint-plugin version: 1.13.0
-//   - eslint-plugin-import version:  2.18.2
+/*
+ * versions compatible with:
+ *   - eslint 6.1.0
+ *   - @typescript-eslint/eslint-plugin version: 1.13.0
+ *   - eslint-plugin-import version:  2.18.2
+ */
 
 module.exports = {
     root: true,
@@ -35,7 +36,7 @@ module.exports = {
                     },
                     env: {
                         node: true,
-                    }
+                    },
                 },
             ],
         },
@@ -470,7 +471,7 @@ module.exports = {
             { classes: false, functions: false },
         ],
         "@typescript-eslint/no-var-requires": "error",
-        '@typescript-eslint/prefer-readonly': 'error',
+        "@typescript-eslint/prefer-readonly": "error",
         "@typescript-eslint/require-array-sort-compare": "error",
         "@typescript-eslint/restrict-plus-operands": "error",
 
