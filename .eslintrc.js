@@ -1,6 +1,6 @@
 "use strict";
 
-module.exports = {
+module.exports = function createEslintConfig() {
     root: true,
     plugins: [
         "import",
