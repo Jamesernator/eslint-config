@@ -1,0 +1,21 @@
+{
+  "name": "@jx/eslint-config",
+  "version": "1.0.1",
+  "description": "A very strict and heavily configured eslint config",
+  "main": ".eslintrc.js",
+  "author": "James \"The Jamesernator\" Browning",
+  "license": "ISC",
+  "peerDependencies": {
+    "eslint": ">=6.1.0",
+    "eslint-plugin-import": "2.18.2",
+    "@typescript-eslint/eslint-plugin": "1.13.0",
+    "typescript": ">=3.6.0-dev.20190730"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "eslint": "^6.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "typescript": "^3.6.0-dev.20190730"
+  }
+}
