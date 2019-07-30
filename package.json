@@ -2,7 +2,7 @@
   "name": "@jx/create-eslint-config",
   "version": "1.0.0",
   "description": "A very strict and heavily configured eslint config",
-  "main": ".eslintrc.js",
+  "main": "createEslintConfig.cjs",
   "author": "James \"The Jamesernator\" Browning",
   "license": "ISC",
   "peerDependencies": {
