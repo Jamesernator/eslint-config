@@ -15,6 +15,16 @@ module.exports = {
 
     overrides: [
         {
+            files: "**/*.cjs",
+            parserOptions: {
+                sourceType: "script",
+            },
+            rules: {
+                "@typescript-eslint/no-var-requires": "off",
+                "@typescript-eslint/no-require-imports": "off",
+            },
+        },
+        {
             files: ["**/*.mjs", "**/*.js"],
             rules: {
                 "no-undef": "error",
@@ -29,6 +39,10 @@ module.exports = {
                     },
                     env: {
                         node: true,
+                    },
+                    rules: {
+                        "@typescript-eslint/no-var-requires": "off",
+                        "@typescript-eslint/no-require-imports": "off",
                     },
                 },
             ],
