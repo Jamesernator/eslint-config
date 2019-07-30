@@ -1,12 +1,5 @@
 "use strict";
 
-/*
- * versions compatible with:
- *   - eslint 6.1.0
- *   - @typescript-eslint/eslint-plugin version: 1.13.0
- *   - eslint-plugin-import version:  2.18.2
- */
-
 module.exports = {
     root: true,
     plugins: [
