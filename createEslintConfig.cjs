@@ -48,6 +48,13 @@ module.exports = function createEslintConfig() {
                     },
                 ],
             },
+            {
+                files: "**/*.d.ts",
+                rules: {
+                    "import/unambiguous": "off",
+                    "import/prefer-default": "off",
+                },
+            },
         ],
 
         env: {
