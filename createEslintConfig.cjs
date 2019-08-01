@@ -436,10 +436,6 @@ module.exports = function createEslintConfig() {
                 "always",
                 { exceptAfterSingleLine: true },
             ],
-            "multiline-comment-style": [
-                "error",
-                "starred-block",
-            ],
             "no-multiple-empty-lines": [
                 "error",
                 { max: 3, maxBOF: 1, maxEOF: 1 },
@@ -741,8 +737,9 @@ module.exports = function createEslintConfig() {
             "no-restricted-syntax": "off",
             "sort-vars": "off",
             "max-lines": "off",
+            "multiline-comment-style": "off",
             // Using eslint-plugin-import instead
-            "sort-imports": "off",
+            "sort-imports": "off"
             // Handled by @typescript-eslint/semi instead
             semi: [
                 "off",
