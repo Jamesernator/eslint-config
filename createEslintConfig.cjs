@@ -739,7 +739,7 @@ module.exports = function createEslintConfig() {
             "max-lines": "off",
             "multiline-comment-style": "off",
             // Using eslint-plugin-import instead
-            "sort-imports": "off"
+            "sort-imports": "off",
             // Handled by @typescript-eslint/semi instead
             semi: [
                 "off",
