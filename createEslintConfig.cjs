@@ -8,7 +8,7 @@ module.exports = function createEslintConfig({ typescript=true, project="./tscon
         "import",
     ];
 
-    const parserOptions = { sourceType = "module" };
+    const parserOptions = { ecmaVersion: 10, sourceType: "module" };
 
     if (typescript) {
         parserOptions.project = project;
@@ -36,9 +36,7 @@ module.exports = function createEslintConfig({ typescript=true, project="./tscon
             es6: true,
         },
 
-        rules: {
-
-        },
+        rules,
     };
 
     if (typescript) {
