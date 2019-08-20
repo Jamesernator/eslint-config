@@ -1,6 +1,6 @@
 {
   "name": "@jx/create-eslint-config",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A very strict and heavily configured eslint config",
   "main": "createEslintConfig.cjs",
   "author": "James \"The Jamesernator\" Browning",
