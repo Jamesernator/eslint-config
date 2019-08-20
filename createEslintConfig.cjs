@@ -8,7 +8,7 @@ module.exports = function createEslintConfig({ typescript=true, project="./tscon
         "import",
     ];
 
-    const parserOptions = { ecmaVersion: 10, sourceType: "module" };
+    const parserOptions = { ecmaVersion: 2020, sourceType: "module" };
 
     if (typescript) {
         parserOptions.project = project;

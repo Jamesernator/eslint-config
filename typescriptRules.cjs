@@ -42,10 +42,11 @@ module.exports = {
     "@typescript-eslint/restrict-plus-operands": "error",
 
     // ---- TypeScript Styles ----
+    "@typescript-eslint/no-unnecessary-type-arguments": "error",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": [
         "error",
-        "generic",
+        { default: "generic" },
     ],
     "@typescript-eslint/camelcase": "error",
     "@typescript-eslint/class-name-casing": "error",
@@ -127,6 +128,13 @@ module.exports = {
         },
     ],
     "@typescript-eslint/unified-signatures": "error",
+    "@typescript-eslint/consistent-type-assertions": [
+        "error",
+        {
+            assertionStyle: "as",
+            objectLiteralTypeAssertions: "allow",
+        },
+    ],
 
     // ---- TypeScript disabled ----
     "@typescript-eslint/ban-ts-ignore": "off",
@@ -147,6 +155,7 @@ module.exports = {
     "@typescript-eslint/triple-slash-reference": "off",
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/require-await": "off",
+    "@typescript-eslint/typedef": "off",
 
     // Disable other rules that will handled by typescript indent
 

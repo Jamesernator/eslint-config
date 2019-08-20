@@ -389,6 +389,10 @@ module.exports = {
         "error",
         "always",
     ],
+    "function-call-argument-newline": [
+        "error", 
+        "consistent",
+    ],
 
     // ---- Import errors ----
 
