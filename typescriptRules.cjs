@@ -106,7 +106,6 @@ module.exports = {
             ],
         },
     ],
-    "@typescript-eslint/no-angle-bracket-type-assertion": "error",
     "@typescript-eslint/no-for-in-array": "error",
     "@typescript-eslint/no-object-literal-type-assertion": "error",
     "@typescript-eslint/no-this-alias": "error",
