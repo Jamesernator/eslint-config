@@ -107,7 +107,6 @@ module.exports = {
         },
     ],
     "@typescript-eslint/no-for-in-array": "error",
-    "@typescript-eslint/no-object-literal-type-assertion": "error",
     "@typescript-eslint/no-this-alias": "error",
     "@typescript-eslint/no-useless-constructor": "error",
     "@typescript-eslint/prefer-for-of": "error",
