@@ -1,7 +1,11 @@
 "use strict";
+const parserOptions = require("./js/parserOptions.cjs");
 
 const cjsOverrides = {
-    sourceType: "script",
+    parserOptions: {
+        ...parserOptions,
+        sourceType: "script",
+    },
     env: {
         node: true,
     },
