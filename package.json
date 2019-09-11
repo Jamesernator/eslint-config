@@ -20,6 +20,7 @@
         "typescript": "^3.6.3"
     },
     "files": [
-        "*.cjs"
+        "*.cjs",
+        "js/*.cjs"
     ]
 }
