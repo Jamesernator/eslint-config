@@ -1,18 +1,20 @@
 "use strict";
 
+const cjsOverrides = {
+    sourceType: "script",
+    env: {
+        node: true,
+    },
+    rules: {
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/no-require-imports": "off",
+    },
+};
+
 module.exports = [
     {
         files: "**/*.cjs",
-        parserOptions: {
-            sourceType: "script",
-        },
-        env: {
-            node: true,
-        },
-        rules: {
-            "@typescript-eslint/no-var-requires": "off",
-            "@typescript-eslint/no-require-imports": "off",
-        },
+        ...cjsOverrides,
     },
     {
         files: ["**/*.mjs", "**/*.js"],
@@ -24,16 +26,7 @@ module.exports = [
         overrides: [
             {
                 files: "**/.eslintrc.js",
-                parserOptions: {
-                    sourceType: "script",
-                },
-                env: {
-                    node: true,
-                },
-                rules: {
-                    "@typescript-eslint/no-var-requires": "off",
-                    "@typescript-eslint/no-require-imports": "off",
-                },
+                ...cjsOverrides,
             },
         ],
     },

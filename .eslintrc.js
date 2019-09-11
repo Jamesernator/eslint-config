@@ -1,4 +1,4 @@
 "use strict";
-const createEslintConfig = require("./createEslintConfig.cjs");
+const createEslintConfig = require("./js/createEslintConfig.cjs");
 
-module.exports = createEslintConfig({ typescript: false });
+module.exports = createEslintConfig();

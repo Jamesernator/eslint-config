@@ -2,6 +2,7 @@
 
 module.exports = {
     // Error detection
+    "no-dupe-class-members": "error",
     "no-undef": "error",
     "for-direction": "error",
     "getter-return": "error",
@@ -390,7 +391,7 @@ module.exports = {
         "always",
     ],
     "function-call-argument-newline": [
-        "error", 
+        "error",
         "consistent",
     ],
 
@@ -543,5 +544,4 @@ module.exports = {
     "multiline-comment-style": "off",
     // Using eslint-plugin-import instead
     "sort-imports": "off",
-    "no-dupe-class-members": "off",
 };

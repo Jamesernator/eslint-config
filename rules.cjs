@@ -1,6 +1,9 @@
 "use strict";
+const rules = require("./js/rules.cjs");
 
 module.exports = {
+    ...rules,
+
     // ---- TypeScript Errors ----
     "@typescript-eslint/await-thenable": "error",
     "@typescript-eslint/ban-types": [

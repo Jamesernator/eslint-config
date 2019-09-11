@@ -1,19 +1,25 @@
 {
-  "name": "@jx/create-eslint-config",
-  "version": "2.0.2",
-  "description": "A very strict and heavily configured eslint config",
-  "main": "createEslintConfig.cjs",
-  "author": "James \"The Jamesernator\" Browning",
-  "license": "ISC",
-  "peerDependencies": {
-    "eslint": ">=6.2.0",
-    "eslint-plugin-import": ">=2.18.2"
-  },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "2.0.0",
-    "@typescript-eslint/parser": "^2.0.0",
-    "eslint": "^6.3.0",
-    "eslint-plugin-import": "^2.18.2",
-    "typescript": "^3.6.3"
-  }
+    "name":"@jsxt/eslint-config-typescript",
+    "version": "3.0.0",
+    "description": "A very strict and heavily configured eslint config for typescript",
+    "main": "createEslintConfig.cjs",
+    "author": "James \"The Jamesernator\" Browning",
+    "license": "ISC",
+    "peerDependencies": {
+        "eslint": ">=6.2.0",
+        "eslint-plugin-import": ">=2.18.2",
+        "@typescript-eslint/eslint-plugin": ">=2.2.0",
+        "@typescript-eslint/parser": ">=2.2.0",
+        "typescript": ">=3.6.0"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^2.2.0",
+        "@typescript-eslint/parser": "^2.2.0",
+        "eslint": "^6.3.0",
+        "eslint-plugin-import": "^2.18.2",
+        "typescript": "^3.6.3"
+    },
+    "files": [
+        "*.cjs"
+    ]
 }
