@@ -2,6 +2,7 @@
 
 module.exports = {
     // Error detection
+    "no-import-assign": "error",
     "no-dupe-class-members": "error",
     "no-undef": "error",
     "for-direction": "error",
@@ -106,6 +107,8 @@ module.exports = {
     "no-buffer-constructor": "error",
 
     // ---- Style rules ----
+    "prefer-regex-literals": "error",
+    "default-param-last": "error",
     "no-control-regex": "error",
     "no-debugger": "error",
     "no-extra-parens": [
