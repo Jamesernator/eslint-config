@@ -439,7 +439,6 @@ module.exports = {
         { "newlines-between": "never" },
     ],
     "import/newline-after-import": "error",
-    "import/prefer-default-export": "error",
     "import/no-named-default": "error",
     "import/no-anonymous-default-export": [
         "error",
@@ -547,4 +546,5 @@ module.exports = {
     "multiline-comment-style": "off",
     // Using eslint-plugin-import instead
     "sort-imports": "off",
+    "import/prefer-default-export": "off"
 };
