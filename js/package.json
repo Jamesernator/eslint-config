@@ -1,6 +1,6 @@
 {
     "name": "@jsxt/eslint-config",
-    "version": "3.0.2",
+    "version": "3.0.3",
     "description": "A very strict and heavily configured eslint config",
     "main": "createEslintConfig.cjs",
     "author": "James \"The Jamesernator\" Browning",
