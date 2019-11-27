@@ -30,8 +30,19 @@ module.exports = {
     "no-unexpected-multiline": "error",
     "no-unreachable": "error",
     "no-unsafe-finally": "error",
-    "no-unsafe-negation": "error",
-    "use-isnan": "error",
+    "no-unsafe-negation": [
+        "error",
+        {
+            enforceForOrderingRelations: true,
+        },
+    ],
+    "use-isnan": [
+        "error",
+        {
+            enforceForSwitchCase: true,
+            enforceForIndexOf: true,
+        },
+    ],
     "valid-typeof": "error",
     "accessor-pairs": "error",
     "array-callback-return": "error",
@@ -105,6 +116,9 @@ module.exports = {
     "prefer-named-capture-group": "error",
     "require-unicode-regexp": "error",
     "no-buffer-constructor": "error",
+    "no-constructor-return": "error",
+    "no-dupe-else-if": "error",
+    "no-setter-return": "error",
 
     // ---- Style rules ----
     "prefer-regex-literals": "error",
@@ -397,6 +411,11 @@ module.exports = {
         "error",
         "consistent",
     ],
+    "grouped-accessor-pairs": [
+        "error",
+        "getBeforeSet",
+    ],
+    "prefer-exponentiation-operator": "error",
 
     // ---- Import errors ----
 
@@ -546,5 +565,5 @@ module.exports = {
     "multiline-comment-style": "off",
     // Using eslint-plugin-import instead
     "sort-imports": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
 };

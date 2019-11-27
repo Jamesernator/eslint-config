@@ -13,7 +13,9 @@ module.exports = {
     "@typescript-eslint/no-array-constructor": "error",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
-    "@typescript-eslint/no-floating-promises": "error",
+    "@typescript-eslint/no-floating-promises": ["error", {
+        ignoreVoid: true,
+    }],
     "@typescript-eslint/no-misused-new": "error",
     "@typescript-eslint/no-misused-promises": ["error", {
         checksVoidReturn: false,
@@ -43,6 +45,25 @@ module.exports = {
     "@typescript-eslint/prefer-readonly": "error",
     "@typescript-eslint/require-array-sort-compare": "error",
     "@typescript-eslint/restrict-plus-operands": "error",
+    "@typescript-eslint/no-unnecessary-condition": ["error", {
+        ignoreRhs: false,
+        allowConstantLoopConditions: true,
+    }],
+    "@typescript-eslint/strict-boolean-expressions": ["error", {
+        allowNullable: true,
+        ignoreRhs: false,
+    }],
+    "@typescript-eslint/no-unused-expressions": "error",
+    "@typescript-eslint/restrict-template-expressions": ["error", {
+        allowNumber: true,
+        allowBoolean: false,
+        allowNullable: false,
+    }],
+    "@typescript-eslint/prefer-nullish-coalescing": ["error", {
+        ignoreConditionalTests: true,
+        ignoreMixedLogicalExpressions: true,
+    }],
+    "@typescript-eslint/return-await": ["error", "always"],
 
     // ---- TypeScript Styles ----
     "@typescript-eslint/no-unnecessary-type-arguments": "error",
@@ -51,7 +72,11 @@ module.exports = {
         "error",
         { default: "generic" },
     ],
-    "@typescript-eslint/camelcase": "error",
+    "@typescript-eslint/camelcase": ["error", {
+        properties: "always",
+        genericType: "always",
+        ignoreDestructuring: false,
+    }],
     "@typescript-eslint/class-name-casing": "error",
     "@typescript-eslint/func-call-spacing": "error",
     "@typescript-eslint/generic-type-naming": [
@@ -136,6 +161,22 @@ module.exports = {
             objectLiteralTypeAssertions: "allow",
         },
     ],
+    "@typescript-eslint/brace-style": [
+        "error",
+        "1tbs",
+        { allowSingleLine: true },
+    ],
+    "@typescript-eslint/space-before-function-paren": [
+        "error",
+        {
+            anonymous: "never",
+            named: "never",
+            asyncArrow: "always",
+        },
+    ],
+    "@typescript-eslint/no-untyped-public-signature": "error",
+    "@typescript-eslint/no-extra-non-null-assertion": "error",
+    "@typescript-eslint/prefer-optional-chain": "error",
 
     // ---- TypeScript disabled ----
     "@typescript-eslint/ban-ts-ignore": "off",
@@ -152,11 +193,11 @@ module.exports = {
     "@typescript-eslint/no-type-alias": "off",
     "@typescript-eslint/prefer-regexp-exec": "off",
     "@typescript-eslint/promise-function-async": "off",
-    "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/triple-slash-reference": "off",
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/require-await": "off",
     "@typescript-eslint/typedef": "off",
+    "@typescript-eslint/no-dynamic-delete": "off",
 
     // Disable other rules that will handled by typescript indent
 
@@ -168,4 +209,8 @@ module.exports = {
     semi: "off",
     indent: "off",
     "no-undef": "off",
+    "brace-style": "off",
+    "no-unused-expressions": "off",
+    "space-before-function-paren": "off",
+    camelcase: "off",
 };
