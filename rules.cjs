@@ -220,4 +220,5 @@ module.exports = {
     "space-before-function-paren": "off",
     camelcase: "off",
     "no-empty-functions": "off",
+    "no-extra-parens": "off",
 };
