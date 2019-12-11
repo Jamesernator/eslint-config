@@ -11,7 +11,12 @@ module.exports = {
         // TODO: Deal with Number/BigInt/etc
     ],
     "@typescript-eslint/no-array-constructor": "error",
-    "@typescript-eslint/no-empty-function": "error",
+    "@typescript-eslint/no-empty-function": ["error", {
+        allow: [
+            "arrowFunctions",
+            "private-constructors",
+        ],
+    }],
     "@typescript-eslint/no-empty-interface": "error",
     "@typescript-eslint/no-floating-promises": ["error", {
         ignoreVoid: true,
@@ -48,10 +53,6 @@ module.exports = {
     "@typescript-eslint/no-unnecessary-condition": ["error", {
         ignoreRhs: false,
         allowConstantLoopConditions: true,
-    }],
-    "@typescript-eslint/strict-boolean-expressions": ["error", {
-        allowNullable: true,
-        ignoreRhs: false,
     }],
     "@typescript-eslint/no-unused-expressions": "error",
     "@typescript-eslint/restrict-template-expressions": ["error", {
@@ -198,6 +199,11 @@ module.exports = {
     "@typescript-eslint/require-await": "off",
     "@typescript-eslint/typedef": "off",
     "@typescript-eslint/no-dynamic-delete": "off",
+    // TODO: Reenable when fixed
+    "@typescript-eslint/strict-boolean-expressions": ["off", {
+        allowNullable: true,
+        ignoreRhs: false,
+    }],
 
     // Disable other rules that will handled by typescript indent
 
@@ -213,4 +219,5 @@ module.exports = {
     "no-unused-expressions": "off",
     "space-before-function-paren": "off",
     camelcase: "off",
+    "no-empty-functions": "off',",
 };

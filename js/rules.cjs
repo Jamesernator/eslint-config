@@ -284,7 +284,9 @@ module.exports = {
     ],
     "no-class-assign": "error",
     "no-const-assign": "error",
-    "no-duplicate-imports": "error",
+    "no-duplicate-imports": ["error", {
+        considerQueryString: true,
+    }],
     "no-new-symbol": "error",
     "no-this-before-super": "error",
     "no-useless-computed-key": "error",
@@ -369,7 +371,9 @@ module.exports = {
         "error",
         { allowEmptyCatch: false },
     ],
-    "no-empty-function": "error",
+    "no-empty-function": ["error", {
+        allow: "arrowFunctions",
+    }],
     quotes: [
         "error",
         "double",
