@@ -3,6 +3,7 @@
 module.exports = {
     // Error detection
     "no-import-assign": "error",
+    "no-duplicate-imports": "error",
     "no-dupe-class-members": "error",
     "no-undef": "error",
     "for-direction": "error",
@@ -492,9 +493,6 @@ module.exports = {
     "import/dynamic-import-chunkname": "off",
 
     // Disabled
- 
-    // Handled by import/no-duplicate-imports
-    "no-duplicate-imports": "off",
     "no-nested-ternary": "off",
     "no-await-in-loop": "off",
     "valid-jsdoc": "off",
