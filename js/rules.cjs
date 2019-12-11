@@ -285,7 +285,6 @@ module.exports = {
     ],
     "no-class-assign": "error",
     "no-const-assign": "error",
-    }],
     "no-new-symbol": "error",
     "no-this-before-super": "error",
     "no-useless-computed-key": "error",
