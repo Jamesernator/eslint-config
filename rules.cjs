@@ -219,5 +219,5 @@ module.exports = {
     "no-unused-expressions": "off",
     "space-before-function-paren": "off",
     camelcase: "off",
-    "no-empty-functions": "off',",
+    "no-empty-functions": "off",
 };
