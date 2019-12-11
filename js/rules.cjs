@@ -284,8 +284,6 @@ module.exports = {
     ],
     "no-class-assign": "error",
     "no-const-assign": "error",
-    "no-duplicate-imports": ["error", {
-        considerQueryString: true,
     }],
     "no-new-symbol": "error",
     "no-this-before-super": "error",
@@ -451,7 +449,9 @@ module.exports = {
     // ---- Import styles ----
     "import/no-dynamic-require": "error",
     "import/first": "error",
-    "import/no-duplicates": "error",
+    "import/no-duplicates": ["error", {
+        considerQueryString: true,
+    }],
     "import/extensions": [
         "error",
         "always",
@@ -492,6 +492,9 @@ module.exports = {
     "import/dynamic-import-chunkname": "off",
 
     // Disabled
+ 
+    // Handled by import/no-duplicate-imports
+    "no-duplicate-imports": "off",
     "no-nested-ternary": "off",
     "no-await-in-loop": "off",
     "valid-jsdoc": "off",
