@@ -370,7 +370,7 @@ module.exports = {
         { allowEmptyCatch: false },
     ],
     "no-empty-function": ["error", {
-        allow: "arrowFunctions",
+        allow: ["arrowFunctions"],
     }],
     quotes: [
         "error",
