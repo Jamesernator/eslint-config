@@ -221,4 +221,5 @@ module.exports = {
     camelcase: "off",
     "no-empty-functions": "off",
     "no-extra-parens": "off",
+    "no-dupe-class-members": "off",
 };
