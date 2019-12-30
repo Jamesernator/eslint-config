@@ -178,6 +178,8 @@ module.exports = {
     "@typescript-eslint/no-untyped-public-signature": "error",
     "@typescript-eslint/no-extra-non-null-assertion": "error",
     "@typescript-eslint/prefer-optional-chain": "error",
+    "@typescript-eslint/no-extra-semi": "error",
+    "@typescript-eslint/no-throw-literal": "error",
 
     // ---- TypeScript disabled ----
     "@typescript-eslint/ban-ts-ignore": "off",
@@ -205,8 +207,7 @@ module.exports = {
         ignoreRhs: false,
     }],
 
-    // Disable other rules that will handled by typescript indent
-
+    // Disable other rules that will handled by typescript-eslint
     "import/named": "off",
     "import/default": "off",
     "import/namespace": "off",
@@ -222,4 +223,6 @@ module.exports = {
     "no-empty-functions": "off",
     "no-extra-parens": "off",
     "no-dupe-class-members": "off",
+    "no-extra-semi": "off",
+    "no-throw-literal": "off",
 };
