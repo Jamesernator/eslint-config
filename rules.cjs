@@ -50,10 +50,6 @@ module.exports = {
     "@typescript-eslint/prefer-readonly": "error",
     "@typescript-eslint/require-array-sort-compare": "error",
     "@typescript-eslint/restrict-plus-operands": "error",
-    "@typescript-eslint/no-unnecessary-condition": ["error", {
-        ignoreRhs: false,
-        allowConstantLoopConditions: true,
-    }],
     "@typescript-eslint/no-unused-expressions": "error",
     "@typescript-eslint/restrict-template-expressions": ["error", {
         allowNumber: true,
@@ -205,6 +201,11 @@ module.exports = {
     "@typescript-eslint/strict-boolean-expressions": ["off", {
         allowNullable: true,
         ignoreRhs: false,
+    }],
+    // TODO: Reconsider if can handle default values
+    "@typescript-eslint/no-unnecessary-condition": ["off", {
+        ignoreRhs: false,
+        allowConstantLoopConditions: true,
     }],
 
     // Disable other rules that will handled by typescript-eslint
