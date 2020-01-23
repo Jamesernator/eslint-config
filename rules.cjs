@@ -248,4 +248,5 @@ module.exports = {
     quotes: "off",
     "require-await": "off",
     "return-await": "off",
+    "no-empty-function": "off",
 };
