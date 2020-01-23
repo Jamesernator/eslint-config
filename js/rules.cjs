@@ -459,7 +459,9 @@ module.exports = {
     ],
     "import/order": ["error", {
         "newlines-between": "never",
-        alphabetize: true,
+        alphabetize: {
+            order: "asc",
+        },
     }],
     "import/newline-after-import": "error",
     "import/no-named-default": "error",
