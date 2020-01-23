@@ -61,6 +61,12 @@ module.exports = {
         ignoreMixedLogicalExpressions: true,
     }],
     "@typescript-eslint/return-await": ["error", "always"],
+    "@typescript-eslint/no-implied-eval": "error",
+    "@typescript-eslint/default-param-last": "error",
+    "@typescript-eslint/explicit-module-boundary-types": ["error", {
+        allowHigherOrderFunctions: true,
+        allowDirectConstAssertionInArrowFunctions: true,
+    }],
 
     // ---- TypeScript Styles ----
     "@typescript-eslint/no-unnecessary-type-arguments": "error",
@@ -171,11 +177,16 @@ module.exports = {
             asyncArrow: "always",
         },
     ],
-    "@typescript-eslint/no-untyped-public-signature": "error",
     "@typescript-eslint/no-extra-non-null-assertion": "error",
     "@typescript-eslint/prefer-optional-chain": "error",
     "@typescript-eslint/no-extra-semi": "error",
     "@typescript-eslint/no-throw-literal": "error",
+    "@typescript-eslint/no-extra-parens": "error",
+    "@typescript-eslint/quotes": ["error", "double", {
+        allowTemplateLiterals: true,
+    }],
+    "@typescript-eslint/no-extra-non-null-assertion": "error",
+    "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
 
     // ---- TypeScript disabled ----
     "@typescript-eslint/ban-ts-ignore": "off",
@@ -184,7 +195,6 @@ module.exports = {
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/interface-name-prefix": "off",
     "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/no-extra-parens": "off",
     "@typescript-eslint/no-extraneous-class": "off",
     "@typescript-eslint/no-inferrable-types": "off",
     "@typescript-eslint/no-magic-numbers": "off",
@@ -207,6 +217,9 @@ module.exports = {
         ignoreRhs: false,
         allowConstantLoopConditions: true,
     }],
+    // TODO: Consider
+    "@typescript-eslint/space-before-function-paren": "off",
+    "@typescript-eslint/no-untyped-public-signature": "off",
 
     // Disable other rules that will handled by typescript-eslint
     "import/named": "off",
@@ -226,4 +239,13 @@ module.exports = {
     "no-dupe-class-members": "off",
     "no-extra-semi": "off",
     "no-throw-literal": "off",
+    "default-param-last": "off",
+    "func-call-spacing": "off",
+    "no-array-constructor": "off",
+    "no-unused-vars": "off",
+    "no-use-before-define": "off",
+    "no-useless-constructor": "off",
+    quotes: "off",
+    "require-await": "off",
+    "return-await": "off",
 };

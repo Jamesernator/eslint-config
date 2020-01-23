@@ -457,10 +457,10 @@ module.exports = {
         "always",
         { ignorePackages: true },
     ],
-    "import/order": [
-        "error",
-        { "newlines-between": "never" },
-    ],
+    "import/order": ["error", {
+        "newlines-between": "never",
+        alphabetize: true,
+    }],
     "import/newline-after-import": "error",
     "import/no-named-default": "error",
     "import/no-anonymous-default-export": [
