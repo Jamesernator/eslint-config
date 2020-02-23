@@ -222,6 +222,7 @@ module.exports = {
     "@typescript-eslint/no-untyped-public-signature": "off",
 
     // Disable other rules that will handled by typescript-eslint
+    "no-duplicate-imports": "off",
     "import/no-duplicates": "off",
     "import/named": "off",
     "import/default": "off",
