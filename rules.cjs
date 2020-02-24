@@ -67,6 +67,7 @@ module.exports = {
         allowHigherOrderFunctions: true,
         allowDirectConstAssertionInArrowFunctions: true,
     }],
+    "@typescript-eslint/switch-exhaustiveness-check": "error",
 
     // ---- TypeScript Styles ----
     "@typescript-eslint/no-unnecessary-type-arguments": "error",
@@ -185,8 +186,15 @@ module.exports = {
     "@typescript-eslint/quotes": ["error", "double", {
         allowTemplateLiterals: true,
     }],
-    "@typescript-eslint/no-extra-non-null-assertion": "error",
     "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
+    "@typescript-eslint/comma-spacing": ["error", {
+        before: false,
+        after: true,
+    }],
+    "@typescript-eslint/prefer-as-const": "error",
+    "@typescript-eslint/ban-ts-comment": "error",
+    "@typescript-eslint/no-dupe-class-members": "error",
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
 
     // ---- TypeScript disabled ----
     "@typescript-eslint/ban-ts-ignore": "off",
@@ -218,11 +226,9 @@ module.exports = {
         allowConstantLoopConditions: true,
     }],
     // TODO: Consider
-    "@typescript-eslint/space-before-function-paren": "off",
     "@typescript-eslint/no-untyped-public-signature": "off",
 
     // Disable other rules that will handled by typescript-eslint
-    "no-duplicate-imports": "off",
     "import/no-duplicates": "off",
     "import/named": "off",
     "import/default": "off",
