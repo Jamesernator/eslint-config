@@ -192,7 +192,9 @@ module.exports = {
         after: true,
     }],
     "@typescript-eslint/prefer-as-const": "error",
-    "@typescript-eslint/ban-ts-comment": "error",
+    "@typescript-eslint/ban-ts-comment": ["error", {
+        "ts-ignore": false,
+    }],
     "@typescript-eslint/no-dupe-class-members": "error",
     "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
 
