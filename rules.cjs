@@ -68,6 +68,11 @@ module.exports = {
         allowDirectConstAssertionInArrowFunctions: true,
     }],
     "@typescript-eslint/switch-exhaustiveness-check": "error",
+    "@typescript-eslint/no-base-to-string": "error",
+    "@typescript-eslint/prefer-readonly-parameter-types": "error",
+    "@typescript-eslint/no-unsafe-call": "error",
+    "@typescript-eslint/no-unsafe-return": "error",
+    "@typescript-eslint/no-unsafe-member-access": "error",
 
     // ---- TypeScript Styles ----
     "@typescript-eslint/no-unnecessary-type-arguments": "error",
