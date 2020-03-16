@@ -69,7 +69,6 @@ module.exports = {
     }],
     "@typescript-eslint/switch-exhaustiveness-check": "error",
     "@typescript-eslint/no-base-to-string": "error",
-    "@typescript-eslint/prefer-readonly-parameter-types": "error",
     "@typescript-eslint/no-unsafe-call": "error",
     "@typescript-eslint/no-unsafe-return": "error",
     "@typescript-eslint/no-unsafe-member-access": "error",
@@ -222,6 +221,7 @@ module.exports = {
     "@typescript-eslint/require-await": "off",
     "@typescript-eslint/typedef": "off",
     "@typescript-eslint/no-dynamic-delete": "off",
+    "@typescript-eslint/prefer-readonly-parameter-types": "off",
     // TODO: Reenable when fixed
     "@typescript-eslint/strict-boolean-expressions": ["off", {
         allowNullable: true,
