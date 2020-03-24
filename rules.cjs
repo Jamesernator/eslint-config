@@ -264,4 +264,5 @@ module.exports = {
     "require-await": "off",
     "return-await": "off",
     "no-empty-function": "off",
+    "no-void": "off",
 };
