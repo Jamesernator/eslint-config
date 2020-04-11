@@ -94,7 +94,14 @@ module.exports = {
     "@typescript-eslint/indent": [
         "error",
         4,
-        { ignoredNodes: ["ConditionalExpression"], flatTernaryExpressions: true },
+        {
+            SwitchCase: 0,
+            FunctionExpression: {
+                parameters: 0,
+            },
+            ignoredNodes: ["ConditionalExpression"],
+            flatTernaryExpressions: true,
+        },
     ],
     "@typescript-eslint/member-delimiter-style": [
         "error",
