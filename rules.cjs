@@ -92,12 +92,7 @@ module.exports = {
         "error",
         { default: "generic" },
     ],
-    "@typescript-eslint/class-name-casing": "error",
     "@typescript-eslint/func-call-spacing": "error",
-    "@typescript-eslint/generic-type-naming": [
-        "error",
-        "^[A-Z]",
-    ],
     "@typescript-eslint/indent": [
         "error",
         4,
@@ -134,10 +129,6 @@ module.exports = {
                 },
             },
         },
-    ],
-    "@typescript-eslint/member-naming": [
-        "error",
-        { private: "^_" },
     ],
     "@typescript-eslint/member-ordering": [
         "error",
