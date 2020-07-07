@@ -77,8 +77,11 @@ module.exports = {
     "@typescript-eslint/prefer-ts-expect-error": "error",
     "@typescript-eslint/no-unsafe-assignment": "error",
     "@typescript-eslint/no-invalid-void-type": "error",
+    "@typescript-eslint/no-loss-of-precision": "error",
+    "@typescript-eslint/prefer-literal-enum-member": "error",
 
     // ---- TypeScript Styles ----
+    "@typescript-eslint/naming-convention": "error",
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
     "@typescript-eslint/ban-tslint-comment": "error",
     "@typescript-eslint/prefer-reduce-type-parameter": "error",
@@ -89,11 +92,6 @@ module.exports = {
         "error",
         { default: "generic" },
     ],
-    "@typescript-eslint/camelcase": ["error", {
-        properties: "always",
-        genericType: "always",
-        ignoreDestructuring: false,
-    }],
     "@typescript-eslint/class-name-casing": "error",
     "@typescript-eslint/func-call-spacing": "error",
     "@typescript-eslint/generic-type-naming": [
@@ -294,4 +292,5 @@ module.exports = {
     "keyword-spacing": "off",
     "dot-notation": "off",
     "lines-between-class-members": "off",
+    "no-loss-of-precision": "off",
 };

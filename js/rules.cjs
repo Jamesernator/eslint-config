@@ -2,6 +2,8 @@
 
 module.exports = {
     // Error detection
+    "no-promise-executor-return": "error",
+    "no-unreachable-loop": "error",
     "no-import-assign": "error",
     "no-duplicate-imports": "error",
     "no-dupe-class-members": "error",
@@ -121,7 +123,7 @@ module.exports = {
     "no-dupe-else-if": "error",
     "no-setter-return": "error",
     "no-restricted-exports": ["error", {
-        restrictedNamedExports: ['then'], 
+        restrictedNamedExports: ["then"],
     }],
     "default-case-last": "error",
     "no-useless-backreference": "error",
