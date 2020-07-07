@@ -1,13 +1,13 @@
 {
     "name": "@jsxt/eslint-config",
-    "version": "3.2.6",
+    "version": "3.2.7",
     "description": "A very strict and heavily configured eslint config",
     "main": "createEslintConfig.cjs",
     "author": "James \"The Jamesernator\" Browning",
     "license": "ISC",
     "peerDependencies": {
-        "eslint": ">=6.7.2",
-        "eslint-plugin-import": ">=2.20.0"
+        "eslint": ">=7.2.0",
+        "eslint-plugin-import": ">=2.21.0"
     },
     "files": [
         "*"

@@ -48,7 +48,9 @@ module.exports = {
     ],
     "@typescript-eslint/no-var-requires": "error",
     "@typescript-eslint/prefer-readonly": "error",
-    "@typescript-eslint/require-array-sort-compare": "error",
+    "@typescript-eslint/require-array-sort-compare": ["error", {
+        ignoreStringArrays: true,
+    }],
     "@typescript-eslint/restrict-plus-operands": "error",
     "@typescript-eslint/no-unused-expressions": "error",
     "@typescript-eslint/restrict-template-expressions": ["error", {
@@ -72,8 +74,15 @@ module.exports = {
     "@typescript-eslint/no-unsafe-call": "error",
     "@typescript-eslint/no-unsafe-return": "error",
     "@typescript-eslint/no-unsafe-member-access": "error",
+    "@typescript-eslint/prefer-ts-expect-error": "error",
+    "@typescript-eslint/no-unsafe-assignment": "error",
+    "@typescript-eslint/no-invalid-void-type": "error",
 
     // ---- TypeScript Styles ----
+    "@typescript-eslint/no-confusing-non-null-assertion": "error",
+    "@typescript-eslint/ban-tslint-comment": "error",
+    "@typescript-eslint/prefer-reduce-type-parameter": "error",
+    "@typescript-eslint/class-literal-property-style": ["error", "fields"],
     "@typescript-eslint/no-unnecessary-type-arguments": "error",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": [
@@ -208,8 +217,15 @@ module.exports = {
     }],
     "@typescript-eslint/no-dupe-class-members": "error",
     "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
+    "@typescript-eslint/keyword-spacing": "error",
+    "@typescript-eslint/dot-notation": "error",
+    "@typescript-eslint/lines-between-class-members": ["error",
+        "always",
+        { exceptAfterSingleLine: true },
+    ],
 
     // ---- TypeScript disabled ----
+    "@typescript-eslint/no-invalid-this": "off",
     "@typescript-eslint/ban-ts-ignore": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
@@ -241,6 +257,9 @@ module.exports = {
     }],
     // TODO: Consider
     "@typescript-eslint/no-untyped-public-signature": "off",
+    // TODO: Reconsider if allow customizing for type/interface seperately
+    "@typescript-eslint/method-signature-style": "off",
+    "@typescript-eslint/init-declarations": "off",
 
     // Disable other rules that will handled by typescript-eslint
     "import/no-duplicates": "off",
@@ -272,4 +291,7 @@ module.exports = {
     "return-await": "off",
     "no-empty-function": "off",
     "no-void": "off",
+    "keyword-spacing": "off",
+    "dot-notation": "off",
+    "lines-between-class-members": "off",
 };

@@ -120,6 +120,12 @@ module.exports = {
     "no-constructor-return": "error",
     "no-dupe-else-if": "error",
     "no-setter-return": "error",
+    "no-restricted-exports": ["error", {
+        restrictedNamedExports: ['then'], 
+    }],
+    "default-case-last": "error",
+    "no-useless-backreference": "error",
+    "no-loss-of-precision": "error",
 
     // ---- Style rules ----
     "prefer-regex-literals": "error",
@@ -142,7 +148,9 @@ module.exports = {
     "no-multi-spaces": "error",
     "no-multi-str": "error",
     "no-proto": "error",
-    "no-void": "error",
+    "no-void": ["error", {
+        allowAsStatement: true,
+    }],
     "no-label-var": "error",
     "array-bracket-spacing": "error",
     "brace-style": [
