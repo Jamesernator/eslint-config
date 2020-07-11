@@ -93,6 +93,18 @@ module.exports = {
         { default: "generic" },
     ],
     "@typescript-eslint/func-call-spacing": "error",
+    "@typescript-eslint/indent": [
+        "error",
+        4,
+        {
+            SwitchCase: 1,
+            FunctionExpression: {
+                parameters: 1,
+            },
+            ignoredNodes: ["ConditionalExpression"],
+            flatTernaryExpressions: true,
+        },
+    ],
     "@typescript-eslint/member-delimiter-style": [
         "error",
         {
@@ -237,8 +249,6 @@ module.exports = {
     // TODO: Reconsider if allow customizing for type/interface seperately
     "@typescript-eslint/method-signature-style": "off",
     "@typescript-eslint/init-declarations": "off",
-    // TODO: Re-enable if rule is fixed
-    "@typescript-eslint/indent": "off",
 
     // Disable other rules that will handled by typescript-eslint
     "import/no-duplicates": "off",
