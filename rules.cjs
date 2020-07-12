@@ -283,4 +283,5 @@ module.exports = {
     "dot-notation": "off",
     "lines-between-class-members": "off",
     "no-loss-of-precision": "off",
+    "indent": "off",
 };

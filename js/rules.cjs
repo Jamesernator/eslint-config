@@ -189,7 +189,10 @@ module.exports = {
     indent: [
         "error",
         4,
-        { ignoredNodes: ["ConditionalExpression"] },
+        {
+            ignoredNodes: ["ConditionalExpression"],
+            switchCase: 1,
+        },
     ],
     "key-spacing": [
         "error",
