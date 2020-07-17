@@ -284,4 +284,5 @@ module.exports = {
     "lines-between-class-members": "off",
     "no-loss-of-precision": "off",
     "indent": "off",
+    "no-duplicate-imports": "off",
 };
