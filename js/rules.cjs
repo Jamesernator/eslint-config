@@ -453,6 +453,7 @@ module.exports = {
     ],
     "import/export": "error",
     "import/no-unresolved": "error",
+    "import/no-named-as-default-member": "error",
 
     // TODO: Renable these ruels when they don't destroy performance
     "import/no-named-as-default": "off",
@@ -481,13 +482,7 @@ module.exports = {
     "import/no-anonymous-default-export": [
         "error",
         {
-            allowObject: true,
-            allowArray: false,
-            allowArrowFunction: false,
-            allowAnonymousClass: false,
-            allowAnonymousFunction: false,
             allowCallExpression: false,
-            allowLiteral: false,
         },
     ],
 
@@ -585,4 +580,6 @@ module.exports = {
     // Using eslint-plugin-import instead
     "sort-imports": "off",
     "import/prefer-default-export": "off",
+    // Handled by eslint-plugin-import
+    "no-duplicate-imports": "off",
 };
