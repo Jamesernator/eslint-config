@@ -8,7 +8,17 @@ module.exports = {
     "@typescript-eslint/await-thenable": "error",
     "@typescript-eslint/ban-types": [
         "error",
-        // TODO: Deal with Number/BigInt/etc
+        {
+            extendDefaults: false,
+            types: {
+                "BigInt": "Don't use boxed types, use bigint instead",
+                "Number": "Don't use boxed types, use number instead",
+                "Boolean": "Don't use boxed types, use boolean instead",
+                "String": "Don't use boxed types, use string instead",
+                "Symbol": "Don't use boxed types, use symbol instead",
+                "Function": "Don't use the plain Function type, use (...args: any[]) => any instead",
+            },
+        },
     ],
     "@typescript-eslint/no-array-constructor": "error",
     "@typescript-eslint/no-empty-function": ["error", {
