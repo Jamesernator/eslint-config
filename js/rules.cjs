@@ -5,17 +5,6 @@ module.exports = {
     "no-promise-executor-return": "error",
     "no-unreachable-loop": "error",
     "no-import-assign": "error",
-    "no-duplicate-imports": "error",
-    "no-dupe-class-members": "error",
-    "no-undef": "error",
-    "for-direction": "error",
-    "getter-return": "error",
-    "no-constant-condition": [
-        "error",
-        { checkLoops: false },
-    ],
-    "no-dupe-args": "error",
-    "no-dupe-keys": "error",
     "no-duplicate-case": "error",
     "no-empty-character-class": "error",
     "no-ex-assign": "error",
@@ -191,7 +180,6 @@ module.exports = {
         4,
         {
             ignoredNodes: ["ConditionalExpression"],
-            switchCase: 1,
         },
     ],
     "key-spacing": [

@@ -7,7 +7,7 @@
     "author": "James \"The Jamesernator\" Browning",
     "license": "ISC",
     "scripts": {
-        "lint": "eslint **/*.cjs"
+        "lint": "eslint **/*.cjs --fix"
     },
     "peerDependencies": {
         "@typescript-eslint/eslint-plugin": ">=3.6.0",
