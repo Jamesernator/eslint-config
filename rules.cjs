@@ -84,7 +84,6 @@ module.exports = {
     "@typescript-eslint/no-unsafe-call": "error",
     "@typescript-eslint/no-unsafe-return": "error",
     "@typescript-eslint/no-unsafe-member-access": "error",
-    "@typescript-eslint/prefer-ts-expect-error": "error",
     "@typescript-eslint/no-unsafe-assignment": "error",
     "@typescript-eslint/no-invalid-void-type": "error",
     "@typescript-eslint/no-loss-of-precision": "error",
@@ -274,6 +273,7 @@ module.exports = {
     // TODO: Reconsider if allow customizing for type/interface seperately
     "@typescript-eslint/method-signature-style": "off",
     "@typescript-eslint/init-declarations": "off",
+    "@typescript-eslint/prefer-ts-expect-error": "off",
 
     // Disable other rules that will handled by typescript-eslint
     "import/no-duplicates": "off",
