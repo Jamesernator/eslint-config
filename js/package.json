@@ -6,8 +6,8 @@
     "author": "James \"The Jamesernator\" Browning",
     "license": "ISC",
     "peerDependencies": {
-        "eslint": ">=7.4.0",
-        "eslint-plugin-import": ">=2.21.0"
+        "eslint": ">=7.6.0",
+        "eslint-plugin-import": ">=2.22.0"
     },
     "files": [
         "*"

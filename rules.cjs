@@ -81,10 +81,6 @@ module.exports = {
     }],
     "@typescript-eslint/switch-exhaustiveness-check": "error",
     "@typescript-eslint/no-base-to-string": "error",
-    "@typescript-eslint/no-unsafe-call": "error",
-    "@typescript-eslint/no-unsafe-return": "error",
-    "@typescript-eslint/no-unsafe-member-access": "error",
-    "@typescript-eslint/no-unsafe-assignment": "error",
     "@typescript-eslint/no-invalid-void-type": "error",
     "@typescript-eslint/no-loss-of-precision": "error",
     "@typescript-eslint/prefer-literal-enum-member": "error",
@@ -92,9 +88,23 @@ module.exports = {
     // ---- TypeScript Styles ----
     "@typescript-eslint/naming-convention": ["error",
         { selector: "variable", format: ["camelCase", "PascalCase"] },
+        {
+            selector: "variable",
+            modifiers: ["const"],
+            format: ["camelCase", "PascalCase", "UPPER_CASE"],
+        },
         { selector: "function", format: ["camelCase"] },
-        { selector: "parameter", format: ["camelCase", "PascalCase"] },
+        {
+            selector: "parameter",
+            format: ["camelCase", "PascalCase"],
+            leadingUnderscore: "allow",
+        },
         { selector: "property", format: ["camelCase", "PascalCase"] },
+        {
+            selector: "property",
+            modifiers: ["static", "readonly"],
+            format: ["camelCase", "PascalCase", "UPPER_CASE"],
+        },
         { selector: "parameterProperty", format: ["camelCase"] },
         { selector: "property", format: ["camelCase", "PascalCase"] },
         { selector: "method", format: ["camelCase"] },
@@ -274,6 +284,11 @@ module.exports = {
     "@typescript-eslint/method-signature-style": "off",
     "@typescript-eslint/init-declarations": "off",
     "@typescript-eslint/prefer-ts-expect-error": "off",
+    "@typescript-eslint/prefer-enum-initializers": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
+    "@typescript-eslint/no-unsafe-return": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
 
     // Disable other rules that will handled by typescript-eslint
     "import/no-duplicates": "off",
