@@ -84,6 +84,13 @@ module.exports = {
     "@typescript-eslint/no-invalid-void-type": "error",
     "@typescript-eslint/no-loss-of-precision": "error",
     "@typescript-eslint/prefer-literal-enum-member": "error",
+    "@typescript-eslint/no-implicit-any-catch": ["error", {
+        allowExplicitAny: true,
+    }],
+    "@typescript-eslint/consistent-type-imports": ["error", {
+        prefer: "type-imports",
+        disallowTypeAnnotations: true,
+    }],
 
     // ---- TypeScript Styles ----
     "@typescript-eslint/naming-convention": ["error",

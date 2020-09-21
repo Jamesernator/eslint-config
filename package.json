@@ -12,12 +12,12 @@
     "peerDependencies": {
         "@typescript-eslint/eslint-plugin": ">=3.9.0",
         "@typescript-eslint/parser": ">=3.9.0",
-        "eslint": ">=7.6.0",
+        "eslint": ">=7.9.0",
         "eslint-plugin-import": ">=2.22.0",
-        "typescript": ">=3.9.0"
+        "typescript": ">=4.0.0"
     },
     "devDependencies": {
-        "eslint": ">=7.6.0",
+        "eslint": ">=7.9.0",
         "eslint-plugin-import": ">=2.22.0"
     },
     "files": [
