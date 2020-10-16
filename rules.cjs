@@ -253,6 +253,21 @@ module.exports = {
         "always",
         { exceptAfterSingleLine: true },
     ],
+    "@typescript-eslint/comma-dangle": ["error", {
+        arrays: "always-multiline",
+        objects: "always-multiline",
+        imports: "always-multiline",
+        exports: "always-multiline",
+        functions: "always-multiline",
+        enums: "always-multiline",
+        generics: "always-multiline",
+        tuples: "always-multiline",
+    }],
+    "@typescript-eslint/consistent-indexed-object-style": [
+        "error", 
+        "record"
+    ],
+    "@typescript-eslint/no-duplicate-imports": ["error"],
 
     // ---- TypeScript disabled ----
     "@typescript-eslint/no-invalid-this": "off",
@@ -332,4 +347,6 @@ module.exports = {
     "no-loss-of-precision": "off",
     indent: "off",
     "no-duplicate-imports": "off",
+    "comma-dangle": "off",
+    "import/no-duplicates": "off",
 };
