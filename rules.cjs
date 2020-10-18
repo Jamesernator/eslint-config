@@ -81,7 +81,6 @@ module.exports = {
     }],
     "@typescript-eslint/switch-exhaustiveness-check": "error",
     "@typescript-eslint/no-base-to-string": "error",
-    "@typescript-eslint/no-invalid-void-type": "error",
     "@typescript-eslint/no-loss-of-precision": "error",
     "@typescript-eslint/prefer-literal-enum-member": "error",
     "@typescript-eslint/no-implicit-any-catch": ["error", {
@@ -311,6 +310,7 @@ module.exports = {
     "@typescript-eslint/no-unsafe-return": "off",
     "@typescript-eslint/no-unsafe-member-access": "off",
     "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-invalid-void-type": "off",
 
     // Disable other rules that will handled by typescript-eslint
     "import/no-duplicates": "off",
