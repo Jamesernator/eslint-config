@@ -1,7 +1,7 @@
 {
     "name": "@jsxt/eslint-config-typescript",
     "type": "commonjs",
-    "version": "4.4.0",
+    "version": "4.5.0",
     "description": "A very strict and heavily configured eslint config for typescript",
     "main": "createEslintConfig.cjs",
     "author": "James \"The Jamesernator\" Browning",
