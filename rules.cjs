@@ -76,6 +76,7 @@ module.exports = {
     "@typescript-eslint/no-implied-eval": "error",
     "@typescript-eslint/default-param-last": "error",
     "@typescript-eslint/explicit-module-boundary-types": ["error", {
+        allowArgumentsExplicitlyTypedAsAny: true,
         allowHigherOrderFunctions: true,
         allowDirectConstAssertionInArrowFunctions: true,
     }],
