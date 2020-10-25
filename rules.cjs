@@ -264,8 +264,8 @@ module.exports = {
         tuples: "always-multiline",
     }],
     "@typescript-eslint/consistent-indexed-object-style": [
-        "error", 
-        "record"
+        "error",
+        "record",
     ],
     "@typescript-eslint/no-duplicate-imports": ["error"],
 
@@ -314,12 +314,6 @@ module.exports = {
     "@typescript-eslint/no-invalid-void-type": "off",
 
     // Disable other rules that will handled by typescript-eslint
-    "import/no-duplicates": "off",
-    "import/named": "off",
-    "import/default": "off",
-    "import/namespace": "off",
-    "import/export": "off",
-    "import/no-unresolved": "off",
     semi: "off",
     "no-undef": "off",
     "brace-style": "off",
@@ -349,5 +343,13 @@ module.exports = {
     indent: "off",
     "no-duplicate-imports": "off",
     "comma-dangle": "off",
+
     "import/no-duplicates": "off",
+    "import/no-duplicates": "off",
+    "import/named": "off",
+    "import/default": "off",
+    "import/namespace": "off",
+    "import/export": "off",
+    "import/no-unresolved": "off",
+    "import/no-named-as-default-member": "off",
 };
