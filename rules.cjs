@@ -302,7 +302,7 @@ module.exports = {
     "@typescript-eslint/no-invalid-void-type": "off",
     // Not well supported
     "@typescript-eslint/indent": [
-        "off",
+        "error",
         4,
         {
             SwitchCase: 1,
