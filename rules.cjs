@@ -134,18 +134,6 @@ module.exports = {
         { default: "generic" },
     ],
     "@typescript-eslint/func-call-spacing": "error",
-    "@typescript-eslint/indent": [
-        "error",
-        4,
-        {
-            SwitchCase: 1,
-            FunctionExpression: {
-                parameters: 1,
-            },
-            ignoredNodes: ["ConditionalExpression"],
-            flatTernaryExpressions: true,
-        },
-    ],
     "@typescript-eslint/member-delimiter-style": [
         "error",
         {
@@ -312,6 +300,19 @@ module.exports = {
     "@typescript-eslint/no-unsafe-member-access": "off",
     "@typescript-eslint/no-unsafe-assignment": "off",
     "@typescript-eslint/no-invalid-void-type": "off",
+    // Not well supported
+    "@typescript-eslint/indent": [
+        "off",
+        4,
+        {
+            SwitchCase: 1,
+            FunctionExpression: {
+                parameters: 1,
+            },
+            ignoredNodes: ["ConditionalExpression"],
+            flatTernaryExpressions: true,
+        },
+    ],
 
     // Disable other rules that will handled by typescript-eslint
     semi: "off",
