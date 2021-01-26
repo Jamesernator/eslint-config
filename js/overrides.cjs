@@ -10,4 +10,10 @@ module.exports = [
             node: true,
         },
     },
+    {
+        files: ["**/*.js"],
+        parserOptions: {
+            sourceType: "module",
+        },
+    }
 ];

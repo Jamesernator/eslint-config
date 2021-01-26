@@ -1,6 +1,59 @@
 "use strict";
 const rules = require("./js/rules.cjs");
 
+const KEYWORDS = [
+    "break",
+    "case",
+    "catch",
+    "class",
+    "const",
+    "continue",
+    "debugger",
+    "default",
+    "delete",
+    "do",
+    "else",
+    "export",
+    "extends",
+    "finally",
+    "for",
+    "function",
+    "if",
+    "import",
+    "in",
+    "instanceof",
+    "new",
+    "return",
+    "super",
+    "switch",
+    "this",
+    "throw",
+    "try",
+    "typeof",
+    "var",
+    "void",
+    "while",
+    "with",
+    "yield",
+
+    "enum",
+    "implements",
+    "interface",
+    "let",
+    "package",
+    "private",
+    "protected",
+    "public",
+    "static",
+    "yield",
+
+    "await",
+];
+
+const KEYWORDS_WITH_UNDERSCORE = KEYWORDS
+    .map(keyword => keyword + "_")
+    .join("|");
+
 module.exports = {
     ...rules,
 
@@ -91,37 +144,59 @@ module.exports = {
         prefer: "type-imports",
         disallowTypeAnnotations: true,
     }],
+    "@typescript-eslint/no-confusing-void-expression": ["error", {
+        ignoreArrowShorthand: false,
+        ignoreVoidOperator: true,
+    }], 
 
     // ---- TypeScript Styles ----
     "@typescript-eslint/naming-convention": ["error",
-        { selector: "variable", format: ["camelCase", "PascalCase"] },
+        {
+            selector: "default",
+            format: ["camelCase"],
+        },
+        {
+            selector: ["variable", "parameter"],
+            types: ["function"],
+            format: ["camelCase", "PascalCase"],
+            custom: {
+                regex: KEYWORDS_WITH_UNDERSCORE,
+            },
+        },
+        {
+            selector: ["variable", "parameter"],
+            modifiers: ["unused"],
+            format: ["camelCase", "PascalCase"],
+            leadingUnderscore: "require",
+        },
+        {
+            selector: "variable",
+            modifiers: ["const", "unused"],
+            format: ["camelCase", "PascalCase", "UPPER_CASE"],
+            leadingUnderscore: "require",
+        },
         {
             selector: "variable",
             modifiers: ["const"],
             format: ["camelCase", "PascalCase", "UPPER_CASE"],
+            custom: {
+                regex: KEYWORDS_WITH_UNDERSCORE,
+            },
         },
-        { selector: "function", format: ["camelCase"] },
         {
-            selector: "parameter",
-            format: ["camelCase", "PascalCase"],
-            leadingUnderscore: "allow",
+            selector: "typeLike",
+            format: ["PascalCase"],
         },
-        { selector: "property", format: ["camelCase", "PascalCase"] },
         {
             selector: "property",
-            modifiers: ["static", "readonly"],
+            types: ["function"],
+            format: ["camelCase", "PascalCase"],
+        },
+        {
+            selector: "property",
+            modifiers: ["readonly", "static"],
             format: ["camelCase", "PascalCase", "UPPER_CASE"],
         },
-        { selector: "parameterProperty", format: ["camelCase"] },
-        { selector: "property", format: ["camelCase", "PascalCase"] },
-        { selector: "method", format: ["camelCase"] },
-        { selector: "accessor", format: ["camelCase"] },
-        { selector: "enumMember", format: ["camelCase"] },
-        { selector: "class", format: ["PascalCase"] },
-        { selector: "interface", format: ["PascalCase"] },
-        { selector: "typeAlias", format: ["PascalCase"] },
-        { selector: "enum", format: ["PascalCase"] },
-        { selector: "typeParameter", format: ["PascalCase"] },
     ],
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
     "@typescript-eslint/ban-tslint-comment": "error",
@@ -256,6 +331,12 @@ module.exports = {
         "record",
     ],
     "@typescript-eslint/no-duplicate-imports": ["error"],
+    "@typescript-eslint/no-unnecessary-type-constraint": "error",
+    "@typescript-eslint/non-nullable-type-assertion-style": "error",
+    "@typescript-eslint/object-curly-spacing": [
+        "error",
+        "always",
+    ],
 
     // ---- TypeScript disabled ----
     "@typescript-eslint/no-invalid-this": "off",
@@ -300,6 +381,7 @@ module.exports = {
     "@typescript-eslint/no-unsafe-member-access": "off",
     "@typescript-eslint/no-unsafe-assignment": "off",
     "@typescript-eslint/no-invalid-void-type": "off",
+    "@typescript-eslint/sort-type-union-intersection-members": "off",
     // Not well supported
     "@typescript-eslint/indent": [
         "error",
@@ -344,6 +426,7 @@ module.exports = {
     indent: "off",
     "no-duplicate-imports": "off",
     "comma-dangle": "off",
+    "object-curly-spacing": "off",
 
     "import/no-duplicates": "off",
     "import/no-duplicates": "off",

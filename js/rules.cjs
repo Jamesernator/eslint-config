@@ -117,6 +117,10 @@ module.exports = {
     "default-case-last": "error",
     "no-useless-backreference": "error",
     "no-loss-of-precision": "error",
+    "no-nonoctal-decimal-escape": "error",
+    "no-unsafe-optional-chaining": ["error", {
+        disallowArithmeticOperators: true,
+    }],
 
     // ---- Style rules ----
     "prefer-regex-literals": "error",
