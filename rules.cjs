@@ -1,59 +1,6 @@
 "use strict";
 const rules = require("./js/rules.cjs");
 
-const KEYWORDS = [
-    "break",
-    "case",
-    "catch",
-    "class",
-    "const",
-    "continue",
-    "debugger",
-    "default",
-    "delete",
-    "do",
-    "else",
-    "export",
-    "extends",
-    "finally",
-    "for",
-    "function",
-    "if",
-    "import",
-    "in",
-    "instanceof",
-    "new",
-    "return",
-    "super",
-    "switch",
-    "this",
-    "throw",
-    "try",
-    "typeof",
-    "var",
-    "void",
-    "while",
-    "with",
-    "yield",
-
-    "enum",
-    "implements",
-    "interface",
-    "let",
-    "package",
-    "private",
-    "protected",
-    "public",
-    "static",
-    "yield",
-
-    "await",
-];
-
-const KEYWORDS_WITH_UNDERSCORE = KEYWORDS
-    .map(keyword => keyword + "_")
-    .join("|");
-
 module.exports = {
     ...rules,
 
@@ -147,7 +94,7 @@ module.exports = {
     "@typescript-eslint/no-confusing-void-expression": ["error", {
         ignoreArrowShorthand: false,
         ignoreVoidOperator: true,
-    }], 
+    }],
 
     // ---- TypeScript Styles ----
     "@typescript-eslint/naming-convention": ["error",
@@ -159,9 +106,7 @@ module.exports = {
             selector: ["variable", "parameter"],
             types: ["function"],
             format: ["camelCase", "PascalCase"],
-            custom: {
-                regex: KEYWORDS_WITH_UNDERSCORE,
-            },
+            trailingUnderscore: "allow",
         },
         {
             selector: ["variable", "parameter"],
@@ -179,9 +124,6 @@ module.exports = {
             selector: "variable",
             modifiers: ["const"],
             format: ["camelCase", "PascalCase", "UPPER_CASE"],
-            custom: {
-                regex: KEYWORDS_WITH_UNDERSCORE,
-            },
         },
         {
             selector: "typeLike",

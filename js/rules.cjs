@@ -425,10 +425,10 @@ module.exports = {
     ],
     "prefer-exponentiation-operator": "error",
     "no-restricted-imports": ["error", ...mod.builtinModules
-        .map(modName => ({
-            name: modName,
-            message: `use node:${ modName } instead`,
-        })),
+        .map((modName) => {
+            const message = `Use node:${ modName } instead`;
+            return { name: modName, message };
+        }),
     ],
 
     // ---- Import errors ----
