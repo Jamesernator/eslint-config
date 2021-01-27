@@ -1,5 +1,5 @@
 "use strict";
-const module = require("module");
+const mod = require("module");
 
 module.exports = {
     // Error detection
@@ -424,12 +424,12 @@ module.exports = {
         "getBeforeSet",
     ],
     "prefer-exponentiation-operator": "error",
-    "no-restricted-imports": ["error", {
-        paths: module.builtinModules.map(modName => ({
+    "no-restricted-imports": ["error", ...mod.builtinModules
+        .map(modName => ({
             name: modName,
             message: `use node:${ modName } instead`,
         })),
-    }],
+    ],
 
     // ---- Import errors ----
 
