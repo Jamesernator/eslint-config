@@ -131,11 +131,6 @@ module.exports = {
         },
         {
             selector: "property",
-            modifiers: ["static", "readonly"],
-            format: ["camelCase", "UPPER_CASE"],
-        },
-        {
-            selector: "property",
             types: ["function"],
             format: ["camelCase", "PascalCase"],
         },
