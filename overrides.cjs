@@ -32,6 +32,16 @@ module.exports = [
                 files: "**/.eslintrc.js",
                 ...cjsOverrides,
             },
+            {
+                files: "**/*.script.js",
+                parserOptions: {
+                    ...parserOptions,
+                    sourceType: "script",
+                },
+                rules: {
+                    "import/unambiguous": "off",
+                },
+            },
         ],
     },
     {
