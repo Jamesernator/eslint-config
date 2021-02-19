@@ -143,7 +143,6 @@ module.exports = {
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
     "@typescript-eslint/ban-tslint-comment": "error",
     "@typescript-eslint/prefer-reduce-type-parameter": "error",
-    "@typescript-eslint/class-literal-property-style": ["error", "fields"],
     "@typescript-eslint/no-unnecessary-type-arguments": "error",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": [
@@ -324,6 +323,7 @@ module.exports = {
     "@typescript-eslint/no-unsafe-assignment": "off",
     "@typescript-eslint/no-invalid-void-type": "off",
     "@typescript-eslint/sort-type-union-intersection-members": "off",
+    "@typescript-eslint/class-literal-property-style": "off",
     // Not well supported
     "@typescript-eslint/indent": [
         "error",
