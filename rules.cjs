@@ -131,14 +131,13 @@ module.exports = {
         },
         {
             selector: "property",
-            types: ["function"],
-            format: ["camelCase", "PascalCase"],
-        },
-        {
-            selector: "property",
             modifiers: ["readonly", "static"],
             format: ["camelCase", "PascalCase", "UPPER_CASE"],
         },
+        {
+            selector: "objectLiteralProperty",
+            format: null,
+        }
     ],
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
     "@typescript-eslint/ban-tslint-comment": "error",
