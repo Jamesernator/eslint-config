@@ -11,7 +11,7 @@ module.exports = function createEslintConfig({ project="./tsconfig.json" }={}) {
         parserOptions: {
             ...parserOptions,
             project,
-            extraFileExtensions: [".cjs"],
+            extraFileExtensions: [".cjs", ".mjs"],
         },
         plugins,
         overrides,
