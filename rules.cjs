@@ -103,6 +103,10 @@ module.exports = {
             format: ["camelCase"],
         },
         {
+            selector: "enumMember",
+            format: ["UPPER_CASE"],
+        },
+        {
             selector: ["variable", "parameter"],
             types: ["function"],
             format: ["camelCase", "PascalCase"],
