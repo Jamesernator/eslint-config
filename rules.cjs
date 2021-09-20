@@ -95,6 +95,10 @@ module.exports = {
         ignoreArrowShorthand: false,
         ignoreVoidOperator: true,
     }],
+    "@typescript-eslint/prefer-readonly-parameter-types": ["error", {
+        ignoreInferredTypes: true,
+        treatMethodsAsReadonly: true,
+    }],
 
     // ---- TypeScript Styles ----
     "@typescript-eslint/naming-convention": ["error",
@@ -302,7 +306,6 @@ module.exports = {
     "@typescript-eslint/require-await": "off",
     "@typescript-eslint/typedef": "off",
     "@typescript-eslint/no-dynamic-delete": "off",
-    "@typescript-eslint/prefer-readonly-parameter-types": "off",
     // TODO: Reenable when fixed
     "@typescript-eslint/strict-boolean-expressions": ["off", {
         allowNullable: true,
