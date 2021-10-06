@@ -5,6 +5,7 @@
     "license": "ISC",
     "private": true,
     "exports": {
+        ".": "./createEslintConfig.cjs",
         "./*": "./*"
     },
     "devDependencies": {
