@@ -1,9 +1,12 @@
 {
     "name": "@jamesernator/eslint-config",
-    "type": "commonjs",
+    "type": "module",
     "version": "6.8.0",
     "description": "A very strict and heavily configured eslint config for typescript and javascript",
-    "main": "createEslintConfig.cjs",
+    "exports": {
+        "./package.json": "./package.json",
+        ".": "./createEslintConfig.cjs"
+    },
     "author": "James \"The Jamesernator\" Browning",
     "license": "ISC",
     "scripts": {
@@ -14,12 +17,13 @@
         "@typescript-eslint/parser": ">=4.29.0",
         "eslint": ">=7.32.0",
         "eslint-plugin-import": ">=2.23.4",
-        "typescript": ">=4.3.0"
+        "typescript": ">=4.4.0"
     },
     "devDependencies": {
         "eslint": ">=7.9.0",
         "eslint-plugin-import": ">=2.22.0",
-        "prettier": "^2.1.2"
+        "prettier": "^2.1.2",
+        "typescript": "^4.5.0-beta"
     },
     "files": [
         "*.cjs",

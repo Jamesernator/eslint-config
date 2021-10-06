@@ -375,6 +375,7 @@ module.exports = {
     "no-duplicate-imports": "off",
     "comma-dangle": "off",
     "object-curly-spacing": "off",
+    "new-cap": "off",
 
     "import/no-duplicates": "off",
     "import/no-duplicates": "off",

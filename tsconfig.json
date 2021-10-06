@@ -1,0 +1,32 @@
+{
+    "include": ["./**/*.cjs"],
+    "compilerOptions": {
+        "composite": true,
+                declaration: true,
+                declarationMap: true,
+                downlevelIteration: true,
+                isolatedModules: true,
+                module: "esnext",
+                rootDir: "./src/",
+                sourceMap: true,
+                target: "esnext",
+                newLine: "lf",
+                useDefineForClassFields: true,
+        
+                // Strict checks
+                strict: true,
+        
+                // Module resolution
+                allowSyntheticDefaultImports: true,
+                moduleResolution: "node",
+                types: [],
+        
+                // Error detection
+                noUncheckedIndexedAccess: true,
+                importsNotUsedAsValues: "error",
+                forceConsistentCasingInFileNames: true,
+        
+                // Output
+                outDir: "./dist/",
+    }
+}
