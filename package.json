@@ -8,8 +8,7 @@
         "./*": "./*"
     },
     "devDependencies": {
-        "@jamesernator/eslint-config": "latest",
-        "typescript": "latest"
+        "typescript": "^4.5.0-beta"
     },
     "scripts": {
         "build": "tsc --build",
