@@ -1,2 +1,10 @@
+*.cjs
+*.mjs
+*.js
+*.d.ts
+*.d.mts
+*.d.cts
+!.eslintrc.cjs
 /node_modules/
 /package-lock.json
+/tsconfig.tsbuildinfo
