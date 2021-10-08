@@ -4,6 +4,11 @@
         "./**/*.mts",
         "./**/*.cts"
     ],
+    "exclude": [
+        "./**/*.d.ts",
+        "./**/*.d.mts",
+        "./**/*.d.cts"
+    ],
     "compilerOptions": {
         "composite": true,
         "declaration": true,
