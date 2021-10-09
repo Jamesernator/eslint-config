@@ -323,13 +323,13 @@ export type EslintRules = {
         ignoreInlineComments?: boolean,
         ignoreConsecutiveComments?: boolean,
     ]>,
-    "comma-dangle": RuleOptions<[
+    "comma-dangle": RuleOptions<[{
         arrays?: "never" | "always" | "always-multiline" | "only-multiline",
         objects?: "never" | "always" | "always-multiline" | "only-multiline",
         imports?: "never" | "always" | "always-multiline" | "only-multiline",
         exports?: "never" | "always" | "always-multiline" | "only-multiline",
         functions?: "never" | "always" | "always-multiline" | "only-multiline",
-    ]>,
+    }]>,
     "comma-spacing": RuleOptions<[{
         before?: boolean,
         after?: boolean,
@@ -553,7 +553,10 @@ export type EslintRules = {
         allowAllPropertiesOnSameLine?: boolean,
     }]>,
     "one-var": RuleOptions<[
-        "always" | "never" | "consistent",
+        "always" | "never" | "consistent" | {
+            initialized?: "always" | "never" | "consecutive",
+            uninitialized?: "always" | "never" | "consecutive",
+        },
     ]>,
     "one-var-declaration-per-line": RuleOptions<[
         "initializations" | "always",
@@ -609,9 +612,9 @@ export type EslintRules = {
         ignoreCase?: boolean,
     }]>,
     "space-before-blocks": RuleOptions<[{
-        functions?: "always" | "never",
-        keywords?: "always" | "never",
-        classes?: "always" | "never",
+        functions?: "always" | "never" | "off",
+        keywords?: "always" | "never" | "off",
+        classes?: "always" | "never" | "off",
     }]>,
     "space-before-function-paren": RuleOptions<[{
         anonymous?: "always" | "never" | "ignore",
@@ -725,8 +728,13 @@ export type EslintRules = {
     "rest-spread-spacing": RuleOptions<[
         "never" | "always",
     ]>,
-    // TODO
-    "sort-imports": RuleOptions,
+    "sort-imports": RuleOptions<[{
+        ignoreCase?: boolean,
+        ignoreDeclarationSort?: boolean,
+        ignoreMemberSort?: boolean,
+        allowSeparatedGroups?: boolean,
+        // TODO: Member sort order
+    }]>,
     "symbol-description": RuleOptions,
     "template-curly-spacing": RuleOptions<[
         "never" | "always",
@@ -831,12 +839,18 @@ export type EslintRules = {
     "import/no-named-default": RuleOptions,
     "import/no-default-export": RuleOptions,
     "import/no-named-export": RuleOptions,
-    "import/no-anonymous-default-export": RuleOptions,
+    "import/no-anonymous-default-export": RuleOptions<[{
+        allowArray?: boolean,
+        allowArrowFunction?: boolean,
+        allowAnonymousClass?: boolean,
+        allowAnonymousFunction?: boolean,
+        allowCallExpression?: boolean,
+        allowLiteral?: boolean,
+        allowObject?: boolean,
+    }]>,
     "import/group-exports": RuleOptions,
     // TODO
-    "import/dynamic-import-chunkname": RuleOptions,
-    // TODO
-    "import/no-import-module-export": RuleOptions,
+    "import/no-import-module-exports": RuleOptions,
 
     "@typescript-eslint/adjacent-overload-signatures": RuleOptions,
     "@typescript-eslint/array-type": RuleOptions<[{
@@ -936,7 +950,7 @@ export type EslintRules = {
     "@typescript-eslint/method-signature-style": RuleOptions<[
         "method" | "property",
     ]>,
-    "@typescript-eslint/naming-convention": RuleOptions<[{
+    "@typescript-eslint/naming-convention": RuleOptions<Array<{
         // format options
         format:
         | (
@@ -981,7 +995,7 @@ export type EslintRules = {
         // the allowed values for these are dependent on the selector - see below
         modifiers?: string[];
         types?: string[];
-    }]>,
+    }>>,
     "@typescript-eslint/no-base-to-string": RuleOptions<[{
         ignoredTypeNames?: string[],
     }]>,
@@ -1159,6 +1173,16 @@ export type EslintRules = {
     "@typescript-eslint/type-annotation-spacing": RuleOptions<[{
         before?: boolean,
         after?: boolean,
+        overrides?: {
+            colon?: {
+                before?: boolean,
+                after?: boolean,
+            },
+            arrow?: {
+                before?: boolean,
+                after?: boolean,
+            },
+        }
     }]>,
     // Not Recommended
     "@typescript-eslint/typedef": RuleOptions,
@@ -1245,7 +1269,7 @@ export type EslintRules = {
     "@typescript-eslint/no-empty-function": RuleOptions<[{
         allow?: string[],
     }]>,
-    "@typescript-eslint/no-extra-parens": RuleOptions<[{
+    "@typescript-eslint/no-extra-parens": RuleOptions<["all" | "functions", {
         conditionalAssign?: boolean,
         returnAssign?: boolean,
         nestedBinaryExpressions?: boolean,
