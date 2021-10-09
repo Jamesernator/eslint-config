@@ -856,7 +856,7 @@ const rules: EslintRules = {
     "no-shadow-restricted-names": "off",
 
     // TODO Handle
-    // This should be enabled for non-cts files
+    // This should be enabled for non-node files
     "@typescript-eslint/no-require-imports": "off",
 };
 
