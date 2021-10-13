@@ -6,12 +6,14 @@ type CreateEslintConfigOptions = {
 };
 
 type EslintConfig = {
-    root: boolean,
-    parser: string,
-    parserOptions: {
-        project: string,
+    root?: boolean,
+    parser?: string,
+    parserOptions?: {
+        project?: string,
     },
-    rules: EslintRules,
+    rules?: Partial<EslintRules>,
+    plugins?: string[],
+    overrides?: Array<EslintConfig & { files: string[] }>,
 };
 
 export = function createEslintConfig({
@@ -24,5 +26,17 @@ export = function createEslintConfig({
             project,
         },
         rules,
+        plugins: [
+            "eslint-plugin-import",
+            "@typescript-eslint/eslint-plugin",
+        ],
+        overrides: [
+            {
+                files: ["**/*.cts"],
+                rules: {
+                    
+                },
+            },
+        ],
     };
 }
