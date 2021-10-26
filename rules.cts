@@ -280,7 +280,7 @@ const rules: EslintRules = {
     "@typescript-eslint/prefer-ts-expect-error": "error",
     "@typescript-eslint/triple-slash-reference": ["error", {
         lib: "never",
-        paths: "never",
+        path: "never",
         types: "never",
     }],
     "@typescript-eslint/unified-signatures": "error",
@@ -347,7 +347,6 @@ const rules: EslintRules = {
     "array-bracket-spacing": ["error", "never", {}],
     "array-element-newline": ["error", {
         multiline: true,
-        always: null,
     }],
     "block-spacing": ["error", "always"],
     "@typescript-eslint/brace-style": ["error", "1tbs", {

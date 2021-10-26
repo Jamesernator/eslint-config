@@ -9,11 +9,17 @@
         "./*": "./*"
     },
     "peerDependencies": {
+        "eslint": "^8.0.0",
         "typescript": "^4.5.0-beta"
     },
     "scripts": {
         "build": "tsc --build",
-        "lint": "eslint **/*.ts **/*.mts **/*.cts",
-        "lint:fix": "eslint --fix **/*.ts **/*.mts **/*.cts"
+        "lint": "eslint '**/*.cts'",
+        "lint:fix": "eslint --fix '**/*.cts'"
+    },
+    "dependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.0.0",
+        "@typescript-eslint/parser": "^5.0.0",
+        "eslint-plugin-import": "^2.25.2"
     }
 }

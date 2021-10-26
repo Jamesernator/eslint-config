@@ -301,7 +301,6 @@ export type EslintRules = {
         "always" | "never" | "consistent" | {
             multiline?: boolean,
             minItems?: null | number,
-            always?: null | boolean,
         },
     ]>,
     "block-spacing": RuleOptions<[
@@ -1166,7 +1165,7 @@ export type EslintRules = {
     }]>,
     "@typescript-eslint/switch-exhaustiveness-check": RuleOptions,
     "@typescript-eslint/triple-slash-reference": RuleOptions<[{
-        paths?: "always" | "never",
+        path?: "always" | "never",
         types?: "always" | "never" | "prefer-import",
         lib?: "always" | "never",
     }]>,

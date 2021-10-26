@@ -14,7 +14,7 @@ type EslintConfig = {
     rules?: Partial<EslintRules>,
     plugins?: string[],
     overrides?: Array<EslintConfig & { files: string[] }>,
-};
+}
 
 export = function createEslintConfig({
     project,
