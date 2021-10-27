@@ -1,16 +1,15 @@
 {
     "name": "@jamesernator/eslint-config",
-    "type": "module",
+    "type": "commonjs",
     "author": "James \"The Jamesernator\" Browning <contact@jamesernator.io>",
     "license": "ISC",
     "private": true,
     "exports": {
-        ".": "./createEslintConfig.cjs",
+        ".": "./createEslintConfig.js",
         "./*": "./*"
     },
     "peerDependencies": {
-        "eslint": "^8.0.0",
-        "typescript": "^4.5.0-beta"
+        "typescript": ">=4.4.0"
     },
     "scripts": {
         "build": "tsc --build",
@@ -18,8 +17,9 @@
         "lint:fix": "eslint --fix '**/*.cts'"
     },
     "dependencies": {
-        "@typescript-eslint/eslint-plugin": "^5.0.0",
-        "@typescript-eslint/parser": "^5.0.0",
+        "@typescript-eslint/eslint-plugin": "^5.2.0",
+        "@typescript-eslint/parser": "^5.2.0",
+        "eslint": "^8.1.0",
         "eslint-plugin-import": "^2.25.2"
     }
 }

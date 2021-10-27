@@ -1,14 +1,13 @@
-
-type ErrorLevel = "off" | "warn" | "error";
+type ErrorLevel = "error" | "off" | "warn";
 
 export type RuleOptions<
-    Options extends any[] | [any] = []
-    > = ErrorLevel | [ErrorLevel, ...Options];
+    Options extends Array<any> | [any] = [],
+> = ErrorLevel | [ErrorLevel, ...Options];
 
 type AccessibilityLevel =
-    | 'explicit'
-    | 'no-public'
-    | 'off';
+    | "explicit"
+    | "no-public"
+    | "off";
 
 export type EslintRules = {
     "for-direction": RuleOptions,
@@ -16,8 +15,8 @@ export type EslintRules = {
     "no-async-promise-executor": RuleOptions,
     "no-await-in-loop": RuleOptions,
     "no-compare-neg-zero": RuleOptions,
-    "no-cond-assign": RuleOptions<["except-parens" | "always"]>,
-    "no-console": RuleOptions<[{ allow?: string[] }]>,
+    "no-cond-assign": RuleOptions<["always" | "except-parens"]>,
+    "no-console": RuleOptions<[{ allow?: Array<string> }]>,
     "no-constant-condition": RuleOptions<[{ checkLoops?: boolean }]>,
     "no-control-regex": RuleOptions,
     "no-debugger": RuleOptions,
@@ -44,7 +43,7 @@ export type EslintRules = {
     "no-extra-semi": RuleOptions,
     "no-func-assign": RuleOptions,
     "no-import-assign": RuleOptions,
-    "no-inner-declarations": RuleOptions<["functions" | "both"]>,
+    "no-inner-declarations": RuleOptions<["both" | "functions"]>,
     "no-invalid-regexp": RuleOptions,
     "no-irregular-whitespace": RuleOptions<[{
         skipStrings?: boolean,
@@ -64,7 +63,7 @@ export type EslintRules = {
     "no-unexpected-multiline": RuleOptions,
     "no-unreachable": RuleOptions,
     "no-unreachable-loop": RuleOptions<[{
-        ignore?: ("WhileStatement" | "DoWhileStatement" | "ForStatement" | "ForInStatement" | "ForOfStatement")[],
+        ignore?: Array<"DoWhileStatement" | "ForInStatement" | "ForOfStatement" | "ForStatement" | "WhileStatement">,
     }]>,
     "no-unsafe-finally": RuleOptions,
     "no-unsafe-negation": RuleOptions<[{
@@ -89,14 +88,14 @@ export type EslintRules = {
     }]>,
     "block-scoped-var": RuleOptions,
     "class-methods-use-this": RuleOptions<[{
-        exceptMethods?: string[],
+        exceptMethods?: Array<string>,
     }]>,
     "complexity": RuleOptions<[{ max?: number }]>,
     "consistent-return": RuleOptions<[{
         treatUndefinedAsUnspecified?: boolean,
     }]>,
     "curly": RuleOptions<[
-        "all" | "multi" | "multi-line" | "multi-or-nest" | "consistent",
+        "all" | "consistent" | "multi-line" | "multi-or-nest" | "multi",
     ]>,
     "default-case": RuleOptions<[{
         commentPattern?: string,
@@ -112,7 +111,7 @@ export type EslintRules = {
     }]>,
     "eqeqeq": RuleOptions<[
         "always" | "smart",
-        { null?: "always" | "never" | "ignore" },
+        { null?: "always" | "ignore" | "never" },
     ]>,
     "grouped-accessor-pairs": RuleOptions<[
         "getBeforeSet" | "setBeforeGet",
@@ -128,7 +127,7 @@ export type EslintRules = {
         allowElseIf?: boolean,
     }]>,
     "no-empty-function": RuleOptions<[{
-        allow?: string[],
+        allow?: Array<string>,
     }]>,
     "no-empty-pattern": RuleOptions,
     "no-eq-null": RuleOptions,
@@ -143,14 +142,14 @@ export type EslintRules = {
     }]>,
     "no-floating-decimal": RuleOptions,
     "no-global-assign": RuleOptions<[{
-        exceptions?: string[],
+        exceptions?: Array<string>,
     }]>,
     "no-implicit-coercion": RuleOptions<[{
         boolean?: boolean,
         number?: boolean,
         string?: boolean,
         disallowTemplateShorthand?: boolean,
-        allow?: string[],
+        allow?: Array<string>,
     }]>,
     "no-implicit-globals": RuleOptions<[{
         lexicalBindings?: boolean,
@@ -167,7 +166,7 @@ export type EslintRules = {
     "no-lone-blocks": RuleOptions,
     "no-loop-func": RuleOptions,
     "no-magic-numbers": RuleOptions<[{
-        ignore?: (string | number)[],
+        ignore?: Array<number | string>,
         ignoreArrayIndexes?: boolean,
         ignoreDefaultValues?: boolean,
         enforceConst?: boolean,
@@ -185,8 +184,8 @@ export type EslintRules = {
     "no-octal-escape": RuleOptions,
     "no-param-reassign": RuleOptions<[{
         props?: boolean,
-        ignorePropertyModificationsFor?: string[],
-        ignorePropertyModificationsForRegex?: string[],
+        ignorePropertyModificationsFor?: Array<string>,
+        ignorePropertyModificationsForRegex?: Array<string>,
     }]>,
     "no-proto": RuleOptions,
     "no-redeclare": RuleOptions<[{
@@ -194,7 +193,7 @@ export type EslintRules = {
     }]>,
     "no-restricted-properties": RuleOptions,
     "no-return-assign": RuleOptions<[
-        "except-parens" | "always",
+        "always" | "except-parens",
     ]>,
     "no-return-await": RuleOptions,
     "no-script-url": RuleOptions,
@@ -223,8 +222,8 @@ export type EslintRules = {
         allowAsStatement?: boolean,
     }]>,
     "no-warning-comments": RuleOptions<[{
-        terms?: string[],
-        location?: "start" | "anywhere",
+        terms?: Array<string>,
+        location?: "anywhere" | "start",
     }]>,
     "no-with": RuleOptions,
     "prefer-named-capture-group": RuleOptions,
@@ -241,16 +240,16 @@ export type EslintRules = {
     "require-unicode-regexp": RuleOptions,
     "vars-on-top": RuleOptions,
     "wrap-iife": RuleOptions<[
-        "outside" | "inside" | "any",
+        "any" | "inside" | "outside",
         { functionPrototypeMethods?: boolean },
     ]>,
     "yoda": RuleOptions<[
-        "never" | "always",
+        "always" | "never",
         { exceptRange?: boolean, onlyEquality?: boolean },
     ]>,
 
     "strict": RuleOptions<[
-        "safe" | "global" | "function" | "never",
+        "function" | "global" | "never" | "safe",
     ]>,
 
     "init-declarations": RuleOptions<[
@@ -259,11 +258,11 @@ export type EslintRules = {
     ]>,
     "no-delete-var": RuleOptions,
     "no-label-var": RuleOptions,
-    "no-restricted-globals": RuleOptions<string[]>,
+    "no-restricted-globals": RuleOptions<Array<string>>,
     "no-shadow": RuleOptions<[{
         builtinGlobals?: boolean,
-        hoist?: "functions" | "all" | "never",
-        allow?: string[],
+        hoist?: "all" | "functions" | "never",
+        allow?: Array<string>,
     }]>,
     "no-shadow-restricted-names": RuleOptions,
     "no-undef": RuleOptions<[{
@@ -277,7 +276,7 @@ export type EslintRules = {
         args?: "after-used" | "all" | "none",
         ignoreRestSiblings?: boolean,
         argsIgnorePattern?: string,
-        caughtErrors?: "none" | "all",
+        caughtErrors?: "all" | "none",
         caughtErrorsIgnorePattern?: string,
     }]>,
     "no-use-before-define": RuleOptions<[{
@@ -287,27 +286,27 @@ export type EslintRules = {
     }]>,
 
     "array-bracket-newline": RuleOptions<[
-        "always" | "never" | "consistent" | {
+        "always" | "consistent" | "never" | {
             multiline?: boolean,
-            minItems?: null | number,
+            minItems?: number | null,
         },
     ]>,
-    "array-bracket-spacing": RuleOptions<["never" | "always", {
+    "array-bracket-spacing": RuleOptions<["always" | "never", {
         singleValue?: boolean,
         objectsInArrays?: boolean,
         arraysInArrays?: boolean,
     }]>,
     "array-element-newline": RuleOptions<[
-        "always" | "never" | "consistent" | {
+        "always" | "consistent" | "never" | {
             multiline?: boolean,
-            minItems?: null | number,
+            minItems?: number | null,
         },
     ]>,
     "block-spacing": RuleOptions<[
-        "always" | "never"
+        "always" | "never",
     ]>,
     "brace-style": RuleOptions<[
-        "1tbs" | "stroustrup" | "allman",
+        "1tbs" | "allman" | "stroustrup",
         { allowSingleLine?: boolean },
     ]>,
     "camelcase": RuleOptions<[
@@ -315,7 +314,7 @@ export type EslintRules = {
         ignoreDestructuring?: boolean,
         ignoreImports?: boolean,
         ignoreGlobals?: boolean,
-        allow?: string[],
+        allow?: Array<string>,
     ]>,
     "capitalized-comments": RuleOptions<[
         ignorePattern?: string,
@@ -323,26 +322,26 @@ export type EslintRules = {
         ignoreConsecutiveComments?: boolean,
     ]>,
     "comma-dangle": RuleOptions<[{
-        arrays?: "never" | "always" | "always-multiline" | "only-multiline",
-        objects?: "never" | "always" | "always-multiline" | "only-multiline",
-        imports?: "never" | "always" | "always-multiline" | "only-multiline",
-        exports?: "never" | "always" | "always-multiline" | "only-multiline",
-        functions?: "never" | "always" | "always-multiline" | "only-multiline",
+        arrays?: "always-multiline" | "always" | "never" | "only-multiline",
+        objects?: "always-multiline" | "always" | "never" | "only-multiline",
+        imports?: "always-multiline" | "always" | "never" | "only-multiline",
+        exports?: "always-multiline" | "always" | "never" | "only-multiline",
+        functions?: "always-multiline" | "always" | "never" | "only-multiline",
     }]>,
     "comma-spacing": RuleOptions<[{
         before?: boolean,
         after?: boolean,
     }]>,
     "comma-style": RuleOptions<[
-        "last" | "first",
+        "first" | "last",
     ]>,
     "computed-property-spacing": RuleOptions<[
         "always" | "never",
-        { enforceForClassMembers?: boolean }
+        { enforceForClassMembers?: boolean },
     ]>,
     "consistent-this": RuleOptions,
     "eol-last": RuleOptions<["always" | "never"]>,
-    "func-call-spacing": RuleOptions<["never" | "always"]>,
+    "func-call-spacing": RuleOptions<["always" | "never"]>,
     "func-name-matching": RuleOptions<[{
         considerPropertyDescriptor?: boolean,
         includeCommonJSModuleExports?: boolean,
@@ -351,14 +350,14 @@ export type EslintRules = {
         generators?: "always" | "as-needed" | "never",
     }]>,
     "func-style": RuleOptions<[
-        "expression" | "declaration",
+        "declaration" | "expression",
         { allowArrowFunctions?: boolean },
     ]>,
     "function-call-argument-newline": RuleOptions<[
-        "always" | "never" | "consistent",
+        "always" | "consistent" | "never",
     ]>,
     "function-paren-newline": RuleOptions<[
-        "always" | "never" | "multiline" | "multiline-arguments" | "consistent",
+        "always" | "consistent" | "multiline-arguments" | "multiline" | "never",
     ]>,
     // TODO
     "id-denylist": RuleOptions,
@@ -367,12 +366,12 @@ export type EslintRules = {
     // TODO
     "id-match": RuleOptions,
     "implicit-arrow-linebreak": RuleOptions<[
-        "beside" | "below",
+        "below" | "beside",
     ]>,
     "indent": RuleOptions<[
         number | "tab",
         {
-            ignoredNodes?: string[],
+            ignoredNodes?: Array<string>,
             SwitchCase?: number,
             VariableDeclarator?: number | "first",
             outerIIFEBody?: number | "off",
@@ -397,18 +396,18 @@ export type EslintRules = {
         },
     ]>,
     "jsx-quotes": RuleOptions<[
-        "prefer-single" | "prefer-double",
+        "prefer-double" | "prefer-single",
     ]>,
     "key-spacing": RuleOptions<[{
         beforeColon?: boolean,
         afterColon?: boolean,
-        mode?: "strict" | "minimum",
-        align?: "value" | "colon",
+        mode?: "minimum" | "strict",
+        align?: "colon" | "value",
     }]>,
     "keyword-spacing": RuleOptions<[{
         before?: boolean,
         after?: boolean,
-        overrides?: string[],
+        overrides?: Array<string>,
     }]>,
     "line-comment-position": RuleOptions<[
         "above" | "beside",
@@ -466,17 +465,17 @@ export type EslintRules = {
         max?: number,
     }]>,
     "multiline-comment-style": RuleOptions<[
-        "starred-block" | "bare-block" | "separate-lines",
+        "bare-block" | "separate-lines" | "starred-block",
     ]>,
     "multiline-ternary": RuleOptions<[
-        "always" | "always-multiline" | "never",
+        "always-multiline" | "always" | "never",
     ]>,
     "new-cap": RuleOptions<[{
         newIsCap?: boolean,
         capIsNew?: boolean,
-        newIsCapExceptions?: string[],
+        newIsCapExceptions?: Array<string>,
         newIsCapExceptionPattern?: string,
-        capIsNewExceptions?: string[],
+        capIsNewExceptions?: Array<string>,
         capIsNewExceptionPattern?: string,
         properties?: boolean,
     }]>,
@@ -486,7 +485,7 @@ export type EslintRules = {
     }]>,
     "no-array-constructor": RuleOptions,
     "no-bitwise": RuleOptions<[{
-        allow?: string[],
+        allow?: Array<string>,
         int32Hint?: boolean,
     }]>,
     "no-continue": RuleOptions,
@@ -494,7 +493,7 @@ export type EslintRules = {
     "no-lonely-if": RuleOptions,
     // TODO
     "no-mixed-operators": RuleOptions,
-    "no-mixed-spaces-and-tabs": RuleOptions<[] | ["smart-tabs"]>,
+    "no-mixed-spaces-and-tabs": RuleOptions<["smart-tabs"] | []>,
     "no-multi-assign": RuleOptions<[{
         ignoreNonDeclaration?: boolean,
     }]>,
@@ -532,7 +531,7 @@ export type EslintRules = {
     }]>,
     "no-whitespace-before-property": RuleOptions,
     "nonblock-statement-body-position": RuleOptions<[
-        "beside" | "below" | "any",
+        "any" | "below" | "beside",
     ]>,
     "object-curly-newline": RuleOptions<[
         "always" | "never" | {
@@ -542,7 +541,7 @@ export type EslintRules = {
         },
     ]>,
     "object-curly-spacing": RuleOptions<[
-        "never" | "always",
+        "always" | "never",
         {
             arraysInObjects?: boolean,
             objectsInObjects?: boolean,
@@ -552,19 +551,19 @@ export type EslintRules = {
         allowAllPropertiesOnSameLine?: boolean,
     }]>,
     "one-var": RuleOptions<[
-        "always" | "never" | "consistent" | {
-            initialized?: "always" | "never" | "consecutive",
-            uninitialized?: "always" | "never" | "consecutive",
+        "always" | "consistent" | "never" | {
+            initialized?: "always" | "consecutive" | "never",
+            uninitialized?: "always" | "consecutive" | "never",
         },
     ]>,
     "one-var-declaration-per-line": RuleOptions<[
-        "initializations" | "always",
+        "always" | "initializations",
     ]>,
     "operator-assignment": RuleOptions<[
         "always" | "never",
     ]>,
     "operator-linebreak": RuleOptions<[
-        "before" | "after" | "none",
+        "after" | "before" | "none",
     ]>,
     "padded-blocks": RuleOptions<[
         "always" | "never",
@@ -575,7 +574,7 @@ export type EslintRules = {
     "prefer-exponentiation-operator": RuleOptions,
     "prefer-object-spread": RuleOptions,
     "quote-props": RuleOptions<[
-        "always" | "as-needed" | "consistent" | "consistent-as-needed",
+        "always" | "as-needed" | "consistent-as-needed" | "consistent",
         {
             keywords?: boolean,
             unnecessary?: boolean,
@@ -583,7 +582,7 @@ export type EslintRules = {
         },
     ]>,
     "quotes": RuleOptions<[
-        "single" | "double",
+        "double" | "single",
         {
             avoidEscape?: boolean,
             allowTemplateLiterals?: boolean,
@@ -597,7 +596,7 @@ export type EslintRules = {
         after?: boolean,
     }]>,
     "semi-style": RuleOptions<[
-        "last" | "first",
+        "first" | "last",
     ]>,
     "sort-keys": RuleOptions<[
         "asc" | "desc",
@@ -616,9 +615,9 @@ export type EslintRules = {
         classes?: "always" | "never" | "off",
     }]>,
     "space-before-function-paren": RuleOptions<[{
-        anonymous?: "always" | "never" | "ignore",
-        named?: "always" | "never" | "ignore",
-        asyncArrow?: "always" | "never" | "ignore",
+        anonymous?: "always" | "ignore" | "never",
+        named?: "always" | "ignore" | "never",
+        asyncArrow?: "always" | "ignore" | "never",
     }]>,
     "space-in-parens": RuleOptions<[
         "always" | "never",
@@ -636,10 +635,10 @@ export type EslintRules = {
         after?: boolean,
     }]>,
     "template-tag-spacing": RuleOptions<[
-        "never" | "always",
+        "always" | "never",
     ]>,
     "unicode-bom": RuleOptions<[
-        "never" | "always",
+        "always" | "never",
     ]>,
     "wrap-regex": RuleOptions,
 
@@ -648,8 +647,8 @@ export type EslintRules = {
         { requireReturnForObjectLiteral?: boolean },
     ]>,
     "arrow-parens": RuleOptions<
-        ["always"]
-        | ["as-needed", { requireForBlockBody?: boolean }]
+    ["always"]
+    | ["as-needed", { requireForBlockBody?: boolean }]
     >,
     "arrow-spacing": RuleOptions<[
         { before?: boolean, after?: boolean },
@@ -684,7 +683,7 @@ export type EslintRules = {
     // TODO
     "no-restricted-exports": RuleOptions,
     "no-restricted-imports": RuleOptions<[{
-        paths?: { name: string, message?: string }[],
+        paths?: Array<{ name: string, message?: string }>,
     }]>,
     "no-this-before-super": RuleOptions,
     "no-useless-computed-key": RuleOptions<[{
@@ -698,7 +697,7 @@ export type EslintRules = {
     }]>,
     "no-var": RuleOptions,
     "object-shorthand": RuleOptions<[
-        "always" | "methods" | "properties" | "never" | "consistent" | "consistent-as-needed",
+        "always" | "consistent-as-needed" | "consistent" | "methods" | "never" | "properties",
         {
             avoidQuotes?: boolean,
             ignoreConstructors?: boolean,
@@ -710,7 +709,7 @@ export type EslintRules = {
         allowUnboundThis?: boolean,
     }]>,
     "prefer-const": RuleOptions<[{
-        destructuring?: "any" | "all",
+        destructuring?: "all" | "any",
         ignoreReadBeforeAssign?: boolean,
     }]>,
     "prefer-destructuring": RuleOptions<[{
@@ -725,7 +724,7 @@ export type EslintRules = {
     "prefer-template": RuleOptions,
     "require-yield": RuleOptions,
     "rest-spread-spacing": RuleOptions<[
-        "never" | "always",
+        "always" | "never",
     ]>,
     "sort-imports": RuleOptions<[{
         ignoreCase?: boolean,
@@ -736,7 +735,7 @@ export type EslintRules = {
     }]>,
     "symbol-description": RuleOptions,
     "template-curly-spacing": RuleOptions<[
-        "never" | "always",
+        "always" | "never",
     ]>,
     "yield-star-spacing": RuleOptions<[{
         before?: boolean,
@@ -788,7 +787,7 @@ export type EslintRules = {
     "import/no-unused-modules": RuleOptions<[{
         missingExports?: boolean,
         unusedExports?: boolean,
-        src?: string[],
+        src?: Array<string>,
         ignoreExports?: boolean,
     }]>,
     "import/unambiguous": RuleOptions,
@@ -799,7 +798,7 @@ export type EslintRules = {
     }]>,
     "import/no-amd": RuleOptions,
     "import/no-nodejs-modules": RuleOptions<[{
-        allow?: string[],
+        allow?: Array<string>,
     }]>,
 
     // TODO
@@ -810,17 +809,14 @@ export type EslintRules = {
     }]>,
     "import/no-namespace": RuleOptions,
     "import/extensions": RuleOptions<[
-        "never" | "always" | "ignorePackages",
+        "always" | "ignorePackages" | "never",
     ]>,
     "import/order": RuleOptions<[{
-        groups?: (string | string[])[],
-        pathGroups?: { pattern: string, group: string }[],
+        groups?: Array<Array<string> | string>,
+        pathGroups?: Array<{ pattern: string, group: string }>,
         pathGroupsExcludedImportTypes?: string,
         "newlines-between"?:
-        | "ignore"
-        | "always"
-        | "always-and-inside-groups"
-        | "never",
+        "always-and-inside-groups" | "always" | "ignore" | "never",
         alphabetize?: {
             order: "asc" | "desc" | "ignore",
             caseInsensitive?: boolean,
@@ -833,7 +829,7 @@ export type EslintRules = {
     // TODO
     "import/max-dependencies": RuleOptions,
     "import/no-unassigned-import": RuleOptions<[{
-        allow?: string[],
+        allow?: Array<string>,
     }]>,
     "import/no-named-default": RuleOptions,
     "import/no-default-export": RuleOptions,
@@ -853,8 +849,8 @@ export type EslintRules = {
 
     "@typescript-eslint/adjacent-overload-signatures": RuleOptions,
     "@typescript-eslint/array-type": RuleOptions<[{
-        default?: "array" | "generic" | "array-simple",
-        readonly?: "array" | "generic" | "array-simple",
+        default?: "array-simple" | "array" | "generic",
+        readonly?: "array-simple" | "array" | "generic",
     }]>,
     "@typescript-eslint/await-thenable": RuleOptions,
     "@typescript-eslint/ban-ts-comment": RuleOptions<[{
@@ -866,36 +862,36 @@ export type EslintRules = {
     }]>,
     "@typescript-eslint/ban-tslint-comment": RuleOptions,
     "@typescript-eslint/ban-types": RuleOptions<[{
-        types?: Record<string, false | string | { message: string, fixWith?: string }>,
+        types?: Record<string, string | false | { message: string, fixWith?: string }>,
         extendDefaults?: boolean,
     }]>,
     "@typescript-eslint/class-literal-property-style": RuleOptions<[
         "fields" | "getters",
     ]>,
     "@typescript-eslint/consistent-indexed-object-style": RuleOptions<[
-        "record" | "index-signature",
+        "index-signature" | "record",
     ]>,
     "@typescript-eslint/consistent-type-assertions": RuleOptions<[{
-        assertionStyle?: "as" | "angle-bracket",
-        objectLiteralTypeAssertions?: "allow" | "allow-as-parameter" | "never",
+        assertionStyle?: "angle-bracket" | "as",
+        objectLiteralTypeAssertions?: "allow-as-parameter" | "allow" | "never",
     }]>,
     "@typescript-eslint/consistent-type-definitions": RuleOptions<[
         "interface" | "type",
     ]>,
     "@typescript-eslint/consistent-type-imports": RuleOptions<[{
-        prefer?: "type-imports" | "no-type-imports",
+        prefer?: "no-type-imports" | "type-imports",
         disallowTypeAnnotations?: boolean,
     }]>,
     "@typescript-eslint/explicit-function-return-type": RuleOptions<[{
-        allowExpressions?: boolean;
-        allowTypedFunctionExpressions?: boolean;
-        allowHigherOrderFunctions?: boolean;
-        allowDirectConstAssertionInArrowFunctions?: boolean;
-        allowConciseArrowFunctionExpressionsStartingWithVoid?: boolean;
+        allowExpressions?: boolean,
+        allowTypedFunctionExpressions?: boolean,
+        allowHigherOrderFunctions?: boolean,
+        allowDirectConstAssertionInArrowFunctions?: boolean,
+        allowConciseArrowFunctionExpressionsStartingWithVoid?: boolean,
     }]>,
     "@typescript-eslint/explicit-member-accessibility": RuleOptions<[{
         accessibility?: AccessibilityLevel,
-        ignoredMethodNames?: string[],
+        ignoredMethodNames?: Array<string>,
         overrides?: {
             accessors?: AccessibilityLevel,
             constructors?: AccessibilityLevel,
@@ -907,42 +903,42 @@ export type EslintRules = {
     "@typescript-eslint/explicit-module-boundary-types": RuleOptions<[{
         allowArgumentsExplicitlyTypedAsAny?: boolean,
         allowDirectConstAssertionInArrowFunctions?: boolean,
-        allowedNames?: string[],
+        allowedNames?: Array<string>,
         allowHigherOrderFunctions?: boolean,
         allowTypedFunctionExpressions?: boolean,
     }]>,
     "@typescript-eslint/member-delimiter-style": RuleOptions<[{
         multiline?: {
-            delimiter?: 'none' | 'semi' | 'comma';
-            requireLast?: boolean;
-        };
+            delimiter?: "comma" | "none" | "semi",
+            requireLast?: boolean,
+        },
         singleline?: {
-            delimiter?: 'semi' | 'comma';
-            requireLast?: boolean;
+            delimiter?: "comma" | "semi",
+            requireLast?: boolean,
         },
         overrides?: {
             interface?: {
                 multiline?: {
-                    delimiter?: 'none' | 'semi' | 'comma';
-                    requireLast?: boolean;
-                };
+                    delimiter?: "comma" | "none" | "semi",
+                    requireLast?: boolean,
+                },
                 singleline?: {
-                    delimiter?: 'semi' | 'comma';
-                    requireLast?: boolean;
+                    delimiter?: "comma" | "semi",
+                    requireLast?: boolean,
                 },
             },
             typeLiteral?: {
                 multiline?: {
-                    delimiter?: 'none' | 'semi' | 'comma';
-                    requireLast?: boolean;
-                };
+                    delimiter?: "comma" | "none" | "semi",
+                    requireLast?: boolean,
+                },
                 singleline?: {
-                    delimiter?: 'semi' | 'comma';
-                    requireLast?: boolean;
+                    delimiter?: "comma" | "semi",
+                    requireLast?: boolean,
                 },
             },
         },
-        multilineDetection?: 'brackets' | 'last-member',
+        multilineDetection?: "brackets" | "last-member",
     }]>,
     // TODO
     "@typescript-eslint/member-ordering": RuleOptions,
@@ -952,51 +948,34 @@ export type EslintRules = {
     "@typescript-eslint/naming-convention": RuleOptions<Array<{
         // format options
         format:
-        | (
-            | 'camelCase'
-            | 'strictCamelCase'
-            | 'PascalCase'
-            | 'StrictPascalCase'
-            | 'snake_case'
-            | 'UPPER_CASE'
-        )[]
-        | null;
+        | Array< "camelCase" | "PascalCase" | "snake_case" | "strictCamelCase" | "StrictPascalCase" | "UPPER_CASE">
+        | null,
         custom?: {
-            regex: string;
-            match: boolean;
-        };
+            regex: string,
+            match: boolean,
+        },
         leadingUnderscore?:
-        | 'forbid'
-        | 'require'
-        | 'requireDouble'
-        | 'allow'
-        | 'allowDouble'
-        | 'allowSingleOrDouble';
+        "allow" | "allowDouble" | "allowSingleOrDouble" | "forbid" | "require" | "requireDouble",
 
         trailingUnderscore?:
-        | 'forbid'
-        | 'require'
-        | 'requireDouble'
-        | 'allow'
-        | 'allowDouble'
-        | 'allowSingleOrDouble';
-        prefix?: string[];
-        suffix?: string[];
+        "allow" | "allowDouble" | "allowSingleOrDouble" | "forbid" | "require" | "requireDouble",
+        prefix?: Array<string>,
+        suffix?: Array<string>,
 
         // selector options
-        selector: string | string[];
+        selector: Array<string> | string,
         filter?:
         | string
         | {
-            regex: string;
-            match: boolean;
-        };
+            regex: string,
+            match: boolean,
+        },
         // the allowed values for these are dependent on the selector - see below
-        modifiers?: string[];
-        types?: string[];
+        modifiers?: Array<string>,
+        types?: Array<string>,
     }>>,
     "@typescript-eslint/no-base-to-string": RuleOptions<[{
-        ignoredTypeNames?: string[],
+        ignoredTypeNames?: Array<string>,
     }]>,
     "@typescript-eslint/no-confusing-non-null-assertion": RuleOptions,
     "@typescript-eslint/no-confusing-void-expression": RuleOptions<[{
@@ -1054,16 +1033,16 @@ export type EslintRules = {
     "@typescript-eslint/no-require-imports": RuleOptions,
     "@typescript-eslint/no-this-alias": RuleOptions<[{
         allowDestructuring?: boolean,
-        allowedNames?: string[],
+        allowedNames?: Array<string>,
     }]>,
     "@typescript-eslint/no-type-alias": RuleOptions<[{
-        allowAliases?: "always" | "never" | "in-unions" | "in-intersections" | "in-unions-and-intersections",
+        allowAliases?: "always" | "in-intersections" | "in-unions-and-intersections" | "in-unions" | "never",
         allowCallbacks?: "always" | "never",
         allowConditionalTypes?: "always" | "never",
         allowConstructors?: "always" | "never",
-        allowLiterals?: "always" | "never" | "in-unions" | "in-intersections" | "in-unions-and-intersections",
-        allowMappedTypes?: "always" | "never" | "in-unions" | "in-intersections" | "in-unions-and-intersections",
-        allowTupleTypes?: "always" | "never" | "in-unions" | "in-intersections" | "in-unions-and-intersections",
+        allowLiterals?: "always" | "in-intersections" | "in-unions-and-intersections" | "in-unions" | "never",
+        allowMappedTypes?: "always" | "in-intersections" | "in-unions-and-intersections" | "in-unions" | "never",
+        allowTupleTypes?: "always" | "in-intersections" | "in-unions-and-intersections" | "in-unions" | "never",
         allowGenerics?: "always" | "never",
     }]>,
     "@typescript-eslint/no-unnecessary-boolean-literal-compare": RuleOptions<[{
@@ -1077,7 +1056,7 @@ export type EslintRules = {
     "@typescript-eslint/no-unnecessary-qualifier": RuleOptions,
     "@typescript-eslint/no-unnecessary-type-arguments": RuleOptions,
     "@typescript-eslint/no-unnecessary-type-assertion": RuleOptions<[{
-        typesToIgnore: string[],
+        typesToIgnore: Array<string>,
     }]>,
     "@typescript-eslint/no-unnecessary-type-constraint": RuleOptions,
     "@typescript-eslint/no-unsafe-argument": RuleOptions,
@@ -1116,7 +1095,7 @@ export type EslintRules = {
     "@typescript-eslint/prefer-ts-expect-error": RuleOptions,
     "@typescript-eslint/promise-function-async": RuleOptions<[{
         allowAny?: boolean,
-        allowedPromiseNames?: string[],
+        allowedPromiseNames?: Array<string>,
         checkArrowFunctions?: boolean,
         checkFunctionDeclarations?: boolean,
         checkFunctionExpressions?: boolean,
@@ -1136,22 +1115,9 @@ export type EslintRules = {
         allowRegExp?: boolean,
     }]>,
     "@typescript-eslint/sort-type-union-intersection-members": RuleOptions<[{
-        checkIntersections?: boolean;
-        checkUnions?: boolean;
-        groupOrder?: (
-            | 'conditional'
-            | 'function'
-            | 'import'
-            | 'intersection'
-            | 'keyword'
-            | 'literal'
-            | 'named'
-            | 'object'
-            | 'operator'
-            | 'tuple'
-            | 'union'
-            | 'nullish'
-        )[];
+        checkIntersections?: boolean,
+        checkUnions?: boolean,
+        groupOrder?: Array< "conditional" | "function" | "import" | "intersection" | "keyword" | "literal" | "named" | "nullish" | "object" | "operator" | "tuple" | "union">,
     }]>,
     "@typescript-eslint/strict-boolean-expressions": RuleOptions<[{
         allowString?: boolean,
@@ -1181,28 +1147,28 @@ export type EslintRules = {
                 before?: boolean,
                 after?: boolean,
             },
-        }
+        },
     }]>,
-    // Not Recommended
     "@typescript-eslint/typedef": RuleOptions,
     "@typescript-eslint/unbound-method": RuleOptions<[{
         ignoreStatic?: boolean,
     }]>,
     "@typescript-eslint/unified-signatures": RuleOptions,
+    "@typescript-eslint/consistent-type-exports": RuleOptions,
 
     "@typescript-eslint/brace-style": RuleOptions<[
-        "1tbs" | "stroustrup" | "allman",
+        "1tbs" | "allman" | "stroustrup",
         { allowSingleLine?: boolean },
     ]>,
     "@typescript-eslint/comma-dangle": RuleOptions<[{
-        arrays?: "never" | "always" | "always-multiline" | "only-multiline",
-        objects?: "never" | "always" | "always-multiline" | "only-multiline",
-        imports?: "never" | "always" | "always-multiline" | "only-multiline",
-        exports?: "never" | "always" | "always-multiline" | "only-multiline",
-        functions?: "never" | "always" | "always-multiline" | "only-multiline",
-        enums?: "never" | "always" | "always-multiline" | "only-multiline",
-        generics?: "never" | "always" | "always-multiline" | "only-multiline",
-        tuples?: "never" | "always" | "always-multiline" | "only-multiline",
+        arrays?: "always-multiline" | "always" | "never" | "only-multiline",
+        objects?: "always-multiline" | "always" | "never" | "only-multiline",
+        imports?: "always-multiline" | "always" | "never" | "only-multiline",
+        exports?: "always-multiline" | "always" | "never" | "only-multiline",
+        functions?: "always-multiline" | "always" | "never" | "only-multiline",
+        enums?: "always-multiline" | "always" | "never" | "only-multiline",
+        generics?: "always-multiline" | "always" | "never" | "only-multiline",
+        tuples?: "always-multiline" | "always" | "never" | "only-multiline",
     }]>,
     "@typescript-eslint/comma-spacing": RuleOptions<[{
         before?: boolean,
@@ -1216,11 +1182,11 @@ export type EslintRules = {
         allowProtectedClassPropertyAccess?: boolean,
         allowIndexSignaturePropertyAccess?: boolean,
     }]>,
-    "@typescript-eslint/func-call-spacing": RuleOptions<["never" | "always"]>,
+    "@typescript-eslint/func-call-spacing": RuleOptions<["always" | "never"]>,
     "@typescript-eslint/indent": RuleOptions<[
         number | "tab",
         {
-            ignoredNodes?: string[],
+            ignoredNodes?: Array<string>,
             SwitchCase?: number,
             VariableDeclarator?: number | "first",
             outerIIFEBody?: number | "off",
@@ -1251,11 +1217,11 @@ export type EslintRules = {
     "@typescript-eslint/keyword-spacing": RuleOptions<[{
         before?: boolean,
         after?: boolean,
-        overrides?: string[],
+        overrides?: Array<string>,
     }]>,
     "@typescript-eslint/lines-between-class-members": RuleOptions<[
         "always" | "never",
-        { 
+        {
             exceptAfterSingleLine?: boolean,
             exceptAfterOverload?: boolean,
         },
@@ -1266,7 +1232,7 @@ export type EslintRules = {
         includeExports?: boolean,
     }]>,
     "@typescript-eslint/no-empty-function": RuleOptions<[{
-        allow?: string[],
+        allow?: Array<string>,
     }]>,
     "@typescript-eslint/no-extra-parens": RuleOptions<["all" | "functions", {
         conditionalAssign?: boolean,
@@ -1286,7 +1252,7 @@ export type EslintRules = {
     "@typescript-eslint/no-loop-func": RuleOptions,
     "@typescript-eslint/no-loss-of-precision": RuleOptions,
     "@typescript-eslint/no-magic-numbers": RuleOptions<[{
-        ignore?: (string | number)[],
+        ignore?: Array<number | string>,
         ignoreArrayIndexes?: boolean,
         ignoreDefaultValues?: boolean,
         enforceConst?: boolean,
@@ -1300,12 +1266,12 @@ export type EslintRules = {
         ignoreDeclarationMerge?: boolean,
     }]>,
     "@typescript-eslint/no-restricted-imports": RuleOptions<[{
-        paths?: { name: string, message?: string }[],
+        paths?: Array<{ name: string, message?: string }>,
     }]>,
     "@typescript-eslint/no-shadow": RuleOptions<[{
         builtinGlobals?: boolean,
-        hoist?: "functions" | "all" | "never",
-        allow?: string[],
+        hoist?: "all" | "functions" | "never",
+        allow?: Array<string>,
         ignoreTypeValueShadow?: boolean,
         ignoreFunctionTypeParameterNameValueShadow?: boolean,
     }]>,
@@ -1322,7 +1288,7 @@ export type EslintRules = {
         args?: "after-used" | "all" | "none",
         ignoreRestSiblings?: boolean,
         argsIgnorePattern?: string,
-        caughtErrors?: "none" | "all",
+        caughtErrors?: "all" | "none",
         caughtErrorsIgnorePattern?: string,
     }]>,
     "@typescript-eslint/no-use-before-define": RuleOptions<[{
@@ -1335,7 +1301,7 @@ export type EslintRules = {
     }]>,
     "@typescript-eslint/no-useless-constructor": RuleOptions,
     "@typescript-eslint/object-curly-spacing": RuleOptions<[
-        "never" | "always",
+        "always" | "never",
         {
             arraysInObjects?: boolean,
             objectsInObjects?: boolean,
@@ -1344,7 +1310,7 @@ export type EslintRules = {
     // TODO
     "@typescript-eslint/padding-line-between-statements": RuleOptions,
     "@typescript-eslint/quotes": RuleOptions<[
-        "single" | "double",
+        "double" | "single",
         {
             avoidEscape?: boolean,
             allowTemplateLiterals?: boolean,
@@ -1352,17 +1318,17 @@ export type EslintRules = {
     ]>,
     "@typescript-eslint/require-await": RuleOptions,
     "@typescript-eslint/return-await": RuleOptions<[
-        "in-try-catch" | "always" | "never",
+        "always" | "in-try-catch" | "never",
     ]>,
     "@typescript-eslint/semi": RuleOptions<[
         "always" | "never",
     ]>,
     "@typescript-eslint/space-before-function-paren": RuleOptions<[{
-        anonymous?: "always" | "never" | "ignore",
-        named?: "always" | "never" | "ignore",
-        asyncArrow?: "always" | "never" | "ignore",
+        anonymous?: "always" | "ignore" | "never",
+        named?: "always" | "ignore" | "never",
+        asyncArrow?: "always" | "ignore" | "never",
     }]>,
     "@typescript-eslint/space-infix-ops": RuleOptions<[{
         int32Hint?: boolean,
     }]>,
-}
+};
