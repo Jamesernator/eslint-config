@@ -11,6 +11,7 @@ type EslintConfig = {
     parser?: string,
     parserOptions?: {
         project?: string,
+        extraFileExtensions?: Array<string>,
     },
     rules?: Partial<EslintRules>,
     plugins?: Array<string>,
@@ -44,6 +45,7 @@ export = function createEslintConfig({
         parser: "@typescript-eslint/parser",
         parserOptions: {
             project,
+            extraFileExtensions: [".mts", ".cts"],
         },
         rules,
         plugins: [
