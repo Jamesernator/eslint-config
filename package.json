@@ -9,17 +9,15 @@
         "./*": "./*"
     },
     "peerDependencies": {
-        "typescript": ">=4.4.0"
+        "typescript": ">=4.4.0",
+        "@typescript-eslint/eslint-plugin": ">=5.2.0",
+        "@typescript-eslint/parser": ">=5.2.0",
+        "eslint": ">=8.1.0",
+        "eslint-plugin-import": ">=2.25.2"
     },
     "scripts": {
         "build": "tsc --build",
         "lint": "eslint '**/*.cts'",
         "lint:fix": "eslint --fix '**/*.cts'"
-    },
-    "dependencies": {
-        "@typescript-eslint/eslint-plugin": "^5.2.0",
-        "@typescript-eslint/parser": "^5.2.0",
-        "eslint": "^8.1.0",
-        "eslint-plugin-import": "^2.25.2"
     }
 }
