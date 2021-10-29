@@ -587,7 +587,6 @@ const rules: EslintRules = {
             allowArrowFunctions: true,
         },
     ],
-    "function-call-argument-newline": ["error", "consistent"],
     "function-paren-newline": ["error", "multiline"],
     "implicit-arrow-linebreak": ["error", "beside"],
     "@typescript-eslint/indent": [
@@ -1086,6 +1085,7 @@ const rules: EslintRules = {
     "space-infix-ops": "off",
 
     // Disabled
+    "function-call-argument-newline": "off",
     "no-await-in-loop": "off",
     "no-inner-declarations": "off",
     "no-template-curly-in-string": "off",
