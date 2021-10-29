@@ -17,7 +17,7 @@
     },
     "scripts": {
         "build": "tsc --build",
-        "lint": "eslint '**/*.cts'",
-        "lint:fix": "eslint --fix '**/*.cts'"
+        "lint": "eslint '**/*.ts'",
+        "lint:fix": "eslint --fix '**/*.ts'"
     }
 }
