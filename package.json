@@ -3,7 +3,7 @@
     "type": "commonjs",
     "author": "James \"The Jamesernator\" Browning <contact@jamesernator.io>",
     "license": "ISC",
-    "version": "7.5.0",
+    "version": "7.6.0",
     "exports": {
         ".": "./createEslintConfig.js",
         "./*": "./*"
