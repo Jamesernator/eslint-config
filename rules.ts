@@ -127,7 +127,6 @@ const rules: EslintRules = {
         },
     ],
     "@typescript-eslint/no-implied-eval": "error",
-    "@typescript-eslint/no-loop-func": "error",
     "no-multi-str": "error",
     "no-new": "error",
     "no-nonoctal-decimal-escape": "error",
@@ -1086,6 +1085,7 @@ const rules: EslintRules = {
     "space-infix-ops": "off",
 
     // Disabled
+    "@typescript-eslint/no-loop-func": "off",
     "no-await-in-loop": "off",
     "no-inner-declarations": "off",
     "no-template-curly-in-string": "off",
