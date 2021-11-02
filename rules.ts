@@ -428,14 +428,6 @@ const rules: EslintRules = {
     ],
     "@typescript-eslint/prefer-optional-chain": "error",
     "@typescript-eslint/prefer-readonly": "error",
-    "@typescript-eslint/prefer-readonly-parameter-types": [
-        "error",
-        {
-            checkParameterProperties: true,
-            ignoreInferredTypes: true,
-            treatMethodsAsReadonly: true,
-        },
-    ],
     "@typescript-eslint/prefer-reduce-type-parameter": "error",
     "@typescript-eslint/prefer-return-this-type": "error",
     "@typescript-eslint/prefer-string-starts-ends-with": "error",
@@ -1191,6 +1183,16 @@ const rules: EslintRules = {
     "wrap-iife": "off",
     strict: "off",
     "no-shadow-restricted-names": "off",
+
+    // Consider in future
+    "@typescript-eslint/prefer-readonly-parameter-types": [
+        "off",
+        {
+            checkParameterProperties: true,
+            ignoreInferredTypes: true,
+            treatMethodsAsReadonly: true,
+        },
+    ],
 };
 
 export = rules;
