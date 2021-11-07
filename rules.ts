@@ -765,13 +765,6 @@ const rules: EslintRules = {
     ],
     "template-tag-spacing": ["error", "never"],
     "unicode-bom": ["error", "never"],
-    "arrow-body-style": [
-        "error",
-        "as-needed",
-        {
-            requireReturnForObjectLiteral: true,
-        },
-    ],
     "arrow-parens": ["error", "always"],
     "arrow-spacing": [
         "error",
@@ -1077,6 +1070,7 @@ const rules: EslintRules = {
     "space-infix-ops": "off",
 
     // Disabled
+    "arrow-body-style": "off",
     "@typescript-eslint/no-loop-func": "off",
     "no-await-in-loop": "off",
     "no-inner-declarations": "off",
