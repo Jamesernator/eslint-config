@@ -405,12 +405,6 @@ const rules: EslintRules = {
             allowComparingNullableBooleansToTrue: true,
         },
     ],
-    "@typescript-eslint/no-unnecessary-condition": [
-        "error",
-        {
-            allowConstantLoopConditions: true,
-        },
-    ],
     "@typescript-eslint/no-unnecessary-type-arguments": "error",
     "@typescript-eslint/no-unnecessary-type-assertion": "error",
     "@typescript-eslint/no-unnecessary-type-constraint": "error",
@@ -1070,6 +1064,7 @@ const rules: EslintRules = {
     "space-infix-ops": "off",
 
     // Disabled
+    "@typescript-eslint/no-unnecessary-condition": "off",
     "arrow-body-style": "off",
     "@typescript-eslint/no-loop-func": "off",
     "no-await-in-loop": "off",
