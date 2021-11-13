@@ -231,8 +231,8 @@ const rules: EslintRules = {
     "@typescript-eslint/strict-boolean-expressions": [
         "error",
         {
-            allowAny: false,
-            allowNullableBoolean: false,
+            allowAny: true,
+            allowNullableBoolean: true,
             allowNullableNumber: false,
             allowNullableObject: true,
             allowNullableString: false,
