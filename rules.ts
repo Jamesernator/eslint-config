@@ -191,12 +191,6 @@ const rules: EslintRules = {
             ignoreVoid: true,
         },
     ],
-    "@typescript-eslint/no-meaningless-void-operator": [
-        "error",
-        {
-            checkNever: true,
-        },
-    ],
     "@typescript-eslint/no-misused-promises": [
         "error",
         {
@@ -1064,6 +1058,7 @@ const rules: EslintRules = {
     "space-infix-ops": "off",
 
     // Disabled
+    "@typescript-eslint/no-meaningless-void-operator": "off",
     "@typescript-eslint/no-unnecessary-condition": "off",
     "arrow-body-style": "off",
     "@typescript-eslint/no-loop-func": "off",
