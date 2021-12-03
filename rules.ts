@@ -376,7 +376,6 @@ const rules: EslintRules = {
             allowTypedFunctionExpressions: true,
         },
     ],
-    "@typescript-eslint/method-signature-style": ["error", "property"],
     "@typescript-eslint/no-extra-non-null-assertion": "error",
     "@typescript-eslint/no-implicit-any-catch": [
         "error",
@@ -1059,6 +1058,7 @@ const rules: EslintRules = {
 
     // Disabled
     "@typescript-eslint/no-meaningless-void-operator": "off",
+    "@typescript-eslint/method-signature-style": ["off", "property"],
     "@typescript-eslint/no-unnecessary-condition": "off",
     "arrow-body-style": "off",
     "@typescript-eslint/no-loop-func": "off",
