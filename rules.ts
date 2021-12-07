@@ -634,7 +634,6 @@ const rules: EslintRules = {
             ignoreUrls: true,
         },
     ],
-    "multiline-comment-style": ["error", "starred-block"],
     "new-parens": ["error", "always"],
     "newline-per-chained-call": [
         "error",
@@ -1057,6 +1056,7 @@ const rules: EslintRules = {
     "space-infix-ops": "off",
 
     // Disabled
+    "multiline-comment-style": ["off", "starred-block"],
     "@typescript-eslint/no-meaningless-void-operator": "off",
     "@typescript-eslint/method-signature-style": ["off", "property"],
     "@typescript-eslint/no-unnecessary-condition": "off",
