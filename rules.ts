@@ -47,6 +47,7 @@ const builtinModules = [
     "punycode",
     "querystring",
     "readline",
+    "readline/promises",
     "repl",
     "stream",
     "stream/consumers",
