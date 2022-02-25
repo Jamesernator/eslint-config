@@ -402,7 +402,6 @@ const rules: EslintRules = {
     "@typescript-eslint/no-unnecessary-type-arguments": "error",
     "@typescript-eslint/no-unnecessary-type-assertion": "error",
     "@typescript-eslint/no-unnecessary-type-constraint": "error",
-    "@typescript-eslint/no-unsafe-return": "error",
     "@typescript-eslint/no-var-requires": "error",
     "@typescript-eslint/prefer-enum-initializers": "error",
     "@typescript-eslint/prefer-for-of": "error",
@@ -1057,6 +1056,7 @@ const rules: EslintRules = {
     "space-infix-ops": "off",
 
     // Disabled
+    "@typescript-eslint/no-unsafe-return": "off",
     "multiline-comment-style": ["off", "starred-block"],
     "@typescript-eslint/no-meaningless-void-operator": "off",
     "@typescript-eslint/method-signature-style": ["off", "property"],
