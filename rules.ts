@@ -526,9 +526,7 @@ const rules: EslintRules = {
     "array-bracket-spacing": ["error", "never", {}],
     "array-element-newline": [
         "error",
-        {
-            multiline: true,
-        },
+        "consistent",
     ],
     "block-spacing": ["error", "always"],
     "@typescript-eslint/brace-style": [
