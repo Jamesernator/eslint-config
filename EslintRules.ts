@@ -1331,4 +1331,11 @@ export type EslintRules = {
     "@typescript-eslint/space-infix-ops": RuleOptions<[{
         int32Hint?: boolean,
     }]>,
+    "@typescript-eslint/no-redundant-type-constituents": RuleOptions,
+    "@typescript-eslint/no-useless-empty-export": RuleOptions,
+    "@typescript-eslint/space-before-blocks": RuleOptions<[{
+        functions?: "always" | "never" | "off",
+        keywords?: "always" | "never" | "off",
+        classes?: "always" | "never" | "off",
+    }]>,
 };

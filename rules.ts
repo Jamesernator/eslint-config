@@ -249,6 +249,7 @@ const rules: EslintRules = {
         },
     ],
     "@typescript-eslint/consistent-type-exports": "error",
+    "@typescript-eslint/no-redundant-type-constituents": "error",
 
     // Code Health
     "@typescript-eslint/no-require-imports": "error",
@@ -445,6 +446,15 @@ const rules: EslintRules = {
     ],
 
     // Code Style
+    "@typescript-eslint/no-useless-empty-export": "error",
+    "@typescript-eslint/space-before-blocks": [
+        "error",
+        {
+            classes: "always",
+            functions: "always",
+            keywords: "off",
+        },
+    ],
     "function-call-argument-newline": ["error", "consistent"],
     "no-empty": [
         "error",
@@ -511,14 +521,14 @@ const rules: EslintRules = {
     ],
     "array-bracket-newline": [
         "error",
-        {
-            multiline: true,
-        },
+        "consistent",
     ],
     "array-bracket-spacing": ["error", "never", {}],
     "array-element-newline": [
         "error",
-        "consistent",
+        {
+            multiline: true,
+        },
     ],
     "block-spacing": ["error", "always"],
     "@typescript-eslint/brace-style": [
@@ -716,14 +726,6 @@ const rules: EslintRules = {
         },
     ],
     "semi-style": ["error", "last"],
-    "space-before-blocks": [
-        "error",
-        {
-            classes: "always",
-            functions: "always",
-            keywords: "off",
-        },
-    ],
     "@typescript-eslint/space-before-function-paren": [
         "error",
         {
@@ -1159,6 +1161,7 @@ const rules: EslintRules = {
     "@typescript-eslint/prefer-regexp-exec": "off",
     "@typescript-eslint/promise-function-async": "off",
     "@typescript-eslint/typedef": "off",
+    "space-before-blocks": "off",
 
     // Not Applicable
     "block-scoped-var": "off",
