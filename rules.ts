@@ -681,10 +681,7 @@ const rules: EslintRules = {
     ],
     "one-var": [
         "error",
-        {
-            initialized: "never",
-            uninitialized: "consecutive",
-        },
+        "never",
     ],
     "one-var-declaration-per-line": ["error", "initializations"],
     "operator-assignment": ["error", "always"],
