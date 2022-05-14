@@ -250,6 +250,7 @@ const rules: EslintRules = {
     ],
     "@typescript-eslint/consistent-type-exports": "error",
     "@typescript-eslint/no-redundant-type-constituents": "error",
+    "@typescript-eslint/no-duplicate-enum-values": "error",
 
     // Code Health
     "@typescript-eslint/no-require-imports": "error",
@@ -428,7 +429,9 @@ const rules: EslintRules = {
             types: "never",
         },
     ],
-    "@typescript-eslint/unified-signatures": "error",
+    "@typescript-eslint/unified-signatures": ["error", {
+        ignoreDifferentlyNamedParameters: true,
+    }],
     "@typescript-eslint/return-await": ["error", "always"],
     "@typescript-eslint/ban-types": [
         "error",
@@ -950,7 +953,9 @@ const rules: EslintRules = {
         },
     ],
     "@typescript-eslint/no-for-in-array": "error",
-    "@typescript-eslint/no-parameter-properties": "error",
+    "@typescript-eslint/parameter-properties": ["error", {
+        prefer: "class-property",
+    }],
     "@typescript-eslint/prefer-function-type": "error",
     "@typescript-eslint/prefer-includes": "error",
     "@typescript-eslint/sort-type-union-intersection-members": [
@@ -1053,6 +1058,7 @@ const rules: EslintRules = {
     "space-infix-ops": "off",
 
     // Disabled
+    "no-constant-binary-expression": "off",
     "@typescript-eslint/no-unsafe-return": "off",
     "multiline-comment-style": ["off", "starred-block"],
     "@typescript-eslint/no-meaningless-void-operator": "off",

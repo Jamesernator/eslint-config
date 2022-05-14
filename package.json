@@ -10,9 +10,9 @@
     },
     "peerDependencies": {
         "typescript": ">=4.6.0",
-        "@typescript-eslint/eslint-plugin": ">=5.13.0",
-        "@typescript-eslint/parser": ">=5.13.0",
-        "eslint": ">=8.6.0",
+        "@typescript-eslint/eslint-plugin": ">=5.23.0",
+        "@typescript-eslint/parser": ">=5.23.0",
+        "eslint": ">=8.15.0",
         "eslint-plugin-import": ">=2.25.3"
     },
     "scripts": {

@@ -17,6 +17,7 @@ export type EslintRules = {
     "no-compare-neg-zero": RuleOptions,
     "no-cond-assign": RuleOptions<["always" | "except-parens"]>,
     "no-console": RuleOptions<[{ allow?: Array<string> }]>,
+    "no-constant-binary-expression": RuleOptions,
     "no-constant-condition": RuleOptions<[{ checkLoops?: boolean }]>,
     "no-control-regex": RuleOptions,
     "no-debugger": RuleOptions,
@@ -263,6 +264,7 @@ export type EslintRules = {
         builtinGlobals?: boolean,
         hoist?: "all" | "functions" | "never",
         allow?: Array<string>,
+        ignoreOnInitialization?: boolean,
     }]>,
     "no-shadow-restricted-names": RuleOptions,
     "no-undef": RuleOptions<[{
@@ -278,6 +280,7 @@ export type EslintRules = {
         argsIgnorePattern?: string,
         caughtErrors?: "all" | "none",
         caughtErrorsIgnorePattern?: string,
+        destructuredArrayIgnorePattern?: string,
     }]>,
     "no-use-before-define": RuleOptions<[{
         functions?: boolean,
@@ -525,6 +528,7 @@ export type EslintRules = {
         allowAfterThisConstructor?: boolean,
         enforceInMethodNames?: boolean,
         allowFunctionParams?: boolean,
+        enforceInClassFields?: boolean,
     }]>,
     "no-unneeded-ternary": RuleOptions<[{
         defaultAssignment?: boolean,
@@ -673,6 +677,7 @@ export type EslintRules = {
     "no-class-assign": RuleOptions,
     "no-confusing-arrow": RuleOptions<[{
         allowParens?: boolean,
+        onlyOneSimpleParam?: boolean,
     }]>,
     "no-const-assign": RuleOptions,
     "no-dupe-class-members": RuleOptions,
@@ -1019,7 +1024,13 @@ export type EslintRules = {
     "@typescript-eslint/no-misused-new": RuleOptions,
     "@typescript-eslint/no-misused-promises": RuleOptions<[{
         checksConditionals?: boolean,
-        checksVoidReturn?: boolean,
+        checksVoidReturn?: boolean | {
+            arguments?: boolean,
+            attributes?: boolean,
+            properties?: boolean,
+            returns?: boolean,
+            variables?: boolean,
+        },
     }]>,
     "@typescript-eslint/no-namespace": RuleOptions<[{
         allowDeclarations?: boolean,
@@ -1028,8 +1039,18 @@ export type EslintRules = {
     "@typescript-eslint/no-non-null-asserted-nullish-coalescing": RuleOptions,
     "@typescript-eslint/no-non-null-asserted-optional-chain": RuleOptions,
     "@typescript-eslint/no-non-null-assertion": RuleOptions,
-    // TODO
-    "@typescript-eslint/no-parameter-properties": RuleOptions,
+    "@typescript-eslint/parameter-properties": RuleOptions<[{
+        allow?: Array<
+        | "private readonly"
+        | "private"
+        | "protected readonly "
+        | "protected"
+        | "public readonly"
+        | "public"
+        | "readonly"
+        >,
+        prefer?: "class-property" | "parameter-property",
+    }]>,
     "@typescript-eslint/no-require-imports": RuleOptions,
     "@typescript-eslint/no-this-alias": RuleOptions<[{
         allowDestructuring?: boolean,
@@ -1153,7 +1174,9 @@ export type EslintRules = {
     "@typescript-eslint/unbound-method": RuleOptions<[{
         ignoreStatic?: boolean,
     }]>,
-    "@typescript-eslint/unified-signatures": RuleOptions,
+    "@typescript-eslint/unified-signatures": RuleOptions<[{
+        ignoreDifferentlyNamedParameters?: boolean,
+    }]>,
     "@typescript-eslint/consistent-type-exports": RuleOptions,
 
     "@typescript-eslint/brace-style": RuleOptions<[
@@ -1228,6 +1251,7 @@ export type EslintRules = {
     ]>,
     "@typescript-eslint/no-array-constructor": RuleOptions,
     "@typescript-eslint/no-dupe-class-members": RuleOptions,
+    "@typescript-eslint/no-duplicate-enum-values": RuleOptions,
     "@typescript-eslint/no-duplicate-imports": RuleOptions<[{
         includeExports?: boolean,
     }]>,
@@ -1260,6 +1284,7 @@ export type EslintRules = {
         ignoreEnums?: boolean,
         ignoreNumericLiteralTypes?: boolean,
         ignoreReadonlyClassProperties?: boolean,
+        ignoreTypeIndexes?: boolean,
     }]>,
     "@typescript-eslint/no-redeclare": RuleOptions<[{
         builtinGlobals?: boolean,
@@ -1274,6 +1299,7 @@ export type EslintRules = {
         allow?: Array<string>,
         ignoreTypeValueShadow?: boolean,
         ignoreFunctionTypeParameterNameValueShadow?: boolean,
+        ignoreOnInitialization?: boolean,
     }]>,
     "@typescript-eslint/no-throw-literal": RuleOptions,
     "@typescript-eslint/no-unused-expressions": RuleOptions<[{
@@ -1290,6 +1316,7 @@ export type EslintRules = {
         argsIgnorePattern?: string,
         caughtErrors?: "all" | "none",
         caughtErrorsIgnorePattern?: string,
+        destructuredArrayIgnorePattern?: string,
     }]>,
     "@typescript-eslint/no-use-before-define": RuleOptions<[{
         functions?: boolean,
