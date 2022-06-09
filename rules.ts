@@ -242,12 +242,6 @@ const rules: EslintRules = {
             ignoreStatic: true,
         },
     ],
-    "@typescript-eslint/no-duplicate-imports": [
-        "error",
-        {
-            includeExports: true,
-        },
-    ],
     "@typescript-eslint/consistent-type-exports": "error",
     "@typescript-eslint/no-redundant-type-constituents": "error",
     "@typescript-eslint/no-duplicate-enum-values": "error",
@@ -1058,6 +1052,7 @@ const rules: EslintRules = {
     "space-infix-ops": "off",
 
     // Disabled
+    "@typescript-eslint/no-duplicate-imports": "off",
     "no-constant-binary-expression": "off",
     "@typescript-eslint/no-unsafe-return": "off",
     "multiline-comment-style": ["off", "starred-block"],
