@@ -903,47 +903,45 @@ const rules: EslintRules = {
         "error",
         {
             selector: "default",
-            format: ["camelCase"],
-        },
-        {
-            selector: "enumMember",
-            format: ["UPPER_CASE"],
-        },
-        {
-            selector: ["variable", "parameter"],
-            types: ["function"],
-            format: ["camelCase", "PascalCase"],
-            trailingUnderscore: "allow",
-        },
-        {
-            selector: ["variable", "parameter"],
-            modifiers: ["unused"],
-            format: ["camelCase", "PascalCase"],
-            leadingUnderscore: "require",
-        },
-        {
-            selector: "variable",
-            modifiers: ["const", "unused"],
             format: ["camelCase", "PascalCase", "UPPER_CASE"],
-            leadingUnderscore: "require",
+        },
+        {
+            selector: "variableLike",
+            format: ["camelCase"],
         },
         {
             selector: "variable",
             modifiers: ["const"],
-            format: ["camelCase", "PascalCase", "UPPER_CASE"],
+            format: ["camelCase", "UPPER_CASE"],
+        },
+        {
+            selector: "enumMember",
+            format: ["camelCase"],
+        },
+        {
+            selector: "function",
+            format: ["camelCase"],
+        },
+        {
+            selector: "parameter",
+            format: ["camelCase"],
+        },
+        {
+            selector: "parameter",
+            types: ["function"],
+            format: ["camelCase", "PascalCase"],
+        },
+        {
+            selector: ["classProperty", "classMethod", "parameterProperty"],
+            format: ["camelCase"],
+        },
+        {
+            selector: ["objectLiteralProperty", "objectLiteralMethod", "typeProperty", "typeMethod"],
+            format: null,
         },
         {
             selector: "typeLike",
             format: ["PascalCase"],
-        },
-        {
-            selector: "property",
-            modifiers: ["readonly", "static"],
-            format: ["camelCase", "PascalCase", "UPPER_CASE"],
-        },
-        {
-            selector: ["typeProperty", "objectLiteralProperty"],
-            format: null,
         },
     ],
     "@typescript-eslint/no-for-in-array": "error",
