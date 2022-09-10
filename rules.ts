@@ -170,7 +170,7 @@ const rules: EslintRules = {
             varsIgnorePattern: "^_",
             caughtErrors: "all",
             ignoreRestSiblings: true,
-            argsIgnorePattern: "^_",
+            argsIgnorePattern: "^",
         },
     ],
     "@typescript-eslint/no-array-constructor": "error",

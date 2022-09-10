@@ -20,5 +20,8 @@
         "lint": "eslint '**/*.ts'",
         "lint:fix": "eslint --fix '**/*.ts'",
         "publishMinor": "npm run build && git add . && git commit -m '.' ; npm version minor && npm publish && git push"
+    },
+    "dependencies": {
+        "@jamesernator/eslint-config": "^7.34.0"
     }
 }
