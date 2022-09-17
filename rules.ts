@@ -735,7 +735,14 @@ const rules: EslintRules = {
             nonwords: false,
         },
     ],
-    "spaced-comment": ["error", "always"],
+    "spaced-comment": ["error", "always", {
+        block: {
+            balanced: true,
+        },
+        line: {
+            markers: ["/"],
+        },
+    }],
     "switch-colon-spacing": [
         "error",
         {

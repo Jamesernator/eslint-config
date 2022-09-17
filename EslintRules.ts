@@ -633,7 +633,19 @@ export type EslintRules = {
         words?: boolean,
         nonwords?: boolean,
     }]>,
-    "spaced-comment": RuleOptions<["always" | "never"]>,
+    "spaced-comment": RuleOptions<["always" | "never", {
+        markers?: string[],
+        exceptions?: string[],
+        line?: {
+            markers?: string[],
+            exceptions?: string[],
+        },
+        block?: {
+            markers?: string[],
+            exceptions?: string[],
+            balanced?: boolean,
+        },
+    }]>,
     "switch-colon-spacing": RuleOptions<[{
         before?: boolean,
         after?: boolean,
