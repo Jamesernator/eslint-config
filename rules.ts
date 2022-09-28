@@ -870,7 +870,7 @@ const rules: EslintRules = {
         "error",
         {
             prefer: "type-imports",
-            disallowTypeAnnotations: true,
+            disallowTypeAnnotations: false,
         },
     ],
     "@typescript-eslint/member-delimiter-style": [
