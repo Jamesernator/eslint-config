@@ -69,7 +69,6 @@ const builtinModules = [
     "worker_threads",
     "zlib",
 ];
-
 const rules: EslintRules = {
     // Error Detection
     "for-direction": "error",
@@ -133,12 +132,6 @@ const rules: EslintRules = {
     "no-nonoctal-decimal-escape": "error",
     "no-octal": "error",
     "no-octal-escape": "error",
-    "@typescript-eslint/no-redeclare": [
-        "error",
-        {
-            ignoreDeclarationMerge: true,
-        },
-    ],
     "no-return-assign": "error",
     "no-self-assign": [
         "error",
@@ -273,7 +266,7 @@ const rules: EslintRules = {
     "no-warning-comments": [
         "error",
         {
-            terms: ["TODO", "FIXME"],
+            terms: ["CRITICAL"],
         },
     ],
     "no-with": "error",
@@ -423,9 +416,12 @@ const rules: EslintRules = {
             types: "never",
         },
     ],
-    "@typescript-eslint/unified-signatures": ["error", {
-        ignoreDifferentlyNamedParameters: true,
-    }],
+    "@typescript-eslint/unified-signatures": [
+        "error",
+        {
+            ignoreDifferentlyNamedParameters: true,
+        },
+    ],
     "@typescript-eslint/return-await": ["error", "always"],
     "@typescript-eslint/ban-types": [
         "error",
@@ -443,6 +439,8 @@ const rules: EslintRules = {
     ],
 
     // Code Style
+    "@typescript-eslint/consistent-generic-constructors": ["error", "constructor"],
+    "logical-assignment-operators": ["error", "always", { enforceForIfStatements: true }],
     "@typescript-eslint/no-useless-empty-export": "error",
     "@typescript-eslint/space-before-blocks": [
         "error",
@@ -516,15 +514,9 @@ const rules: EslintRules = {
             onlyEquality: true,
         },
     ],
-    "array-bracket-newline": [
-        "error",
-        "consistent",
-    ],
+    "array-bracket-newline": ["error", "consistent"],
     "array-bracket-spacing": ["error", "never", {}],
-    "array-element-newline": [
-        "error",
-        "consistent",
-    ],
+    "array-element-newline": ["error", "consistent"],
     "block-spacing": ["error", "always"],
     "@typescript-eslint/brace-style": [
         "error",
@@ -573,18 +565,6 @@ const rules: EslintRules = {
     ],
     "function-paren-newline": ["error", "multiline-arguments"],
     "implicit-arrow-linebreak": ["error", "beside"],
-    "@typescript-eslint/indent": [
-        "error",
-        4,
-        {
-            SwitchCase: 1,
-            FunctionExpression: {
-                parameters: 1,
-            },
-            ignoredNodes: ["ConditionalExpression"],
-            flatTernaryExpressions: true,
-        },
-    ],
     "jsx-quotes": ["error", "prefer-double"],
     "key-spacing": [
         "error",
@@ -676,10 +656,7 @@ const rules: EslintRules = {
             allowAllPropertiesOnSameLine: true,
         },
     ],
-    "one-var": [
-        "error",
-        "never",
-    ],
+    "one-var": ["error", "never"],
     "one-var-declaration-per-line": ["error", "initializations"],
     "operator-assignment": ["error", "always"],
     "operator-linebreak": ["error", "before"],
@@ -735,14 +712,18 @@ const rules: EslintRules = {
             nonwords: false,
         },
     ],
-    "spaced-comment": ["error", "always", {
-        block: {
-            balanced: true,
+    "spaced-comment": [
+        "error",
+        "always",
+        {
+            block: {
+                balanced: true,
+            },
+            line: {
+                markers: ["/"],
+            },
         },
-        line: {
-            markers: ["/"],
-        },
-    }],
+    ],
     "switch-colon-spacing": [
         "error",
         {
@@ -859,7 +840,8 @@ const rules: EslintRules = {
     "import/no-named-default": "error",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": [
-        "error", {
+        "error",
+        {
             default: "generic",
             readonly: "generic",
         },
@@ -943,7 +925,12 @@ const rules: EslintRules = {
             format: ["camelCase"],
         },
         {
-            selector: ["objectLiteralProperty", "objectLiteralMethod", "typeProperty", "typeMethod"],
+            selector: [
+                "objectLiteralProperty",
+                "objectLiteralMethod",
+                "typeProperty",
+                "typeMethod",
+            ],
             format: null,
         },
         {
@@ -952,9 +939,12 @@ const rules: EslintRules = {
         },
     ],
     "@typescript-eslint/no-for-in-array": "error",
-    "@typescript-eslint/parameter-properties": ["error", {
-        prefer: "class-property",
-    }],
+    "@typescript-eslint/parameter-properties": [
+        "error",
+        {
+            prefer: "class-property",
+        },
+    ],
     "@typescript-eslint/prefer-function-type": "error",
     "@typescript-eslint/prefer-includes": "error",
     "@typescript-eslint/sort-type-union-intersection-members": [
@@ -982,11 +972,10 @@ const rules: EslintRules = {
     "@typescript-eslint/no-restricted-imports": [
         "error",
         {
-            paths: builtinModules
-                .map((modName) => {
-                    const message = `Use node:${ modName } instead`;
-                    return { name: modName, message };
-                }),
+            paths: builtinModules.map((modName) => {
+                const message = `Use node:${ modName } instead`;
+                return { name: modName, message };
+            }),
         },
     ],
 
@@ -1057,6 +1046,7 @@ const rules: EslintRules = {
     "space-infix-ops": "off",
 
     // Disabled
+    "@typescript-eslint/no-redeclare": "off",
     "@typescript-eslint/no-duplicate-imports": "off",
     "no-constant-binary-expression": "off",
     "@typescript-eslint/no-unsafe-return": "off",
@@ -1180,6 +1170,19 @@ const rules: EslintRules = {
             checkParameterProperties: true,
             ignoreInferredTypes: true,
             treatMethodsAsReadonly: true,
+        },
+    ],
+    // If fixed this will be re-enabled
+    "@typescript-eslint/indent": [
+        "off",
+        4,
+        {
+            SwitchCase: 1,
+            FunctionExpression: {
+                parameters: 1,
+            },
+            ignoredNodes: ["ConditionalExpression"],
+            flatTernaryExpressions: true,
         },
     ],
 };

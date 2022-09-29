@@ -3,25 +3,22 @@
     "type": "commonjs",
     "author": "James \"The Jamesernator\" Browning <contact@jamesernator.io>",
     "license": "ISC",
-    "version": "7.37.0",
+    "version": "8.0.0",
     "exports": {
         ".": "./createEslintConfig.js",
         "./*": "./*"
     },
     "peerDependencies": {
-        "@typescript-eslint/eslint-plugin": ">=5.27.0",
-        "@typescript-eslint/parser": ">=5.27.0",
-        "eslint": ">=8.15.0",
+        "@typescript-eslint/eslint-plugin": ">=5.38.1",
+        "@typescript-eslint/parser": ">=5.38.1",
+        "eslint": ">=8.24.0",
         "eslint-plugin-import": ">=2.26.0",
-        "typescript": ">=4.7.3"
+        "typescript": ">=4.8.4"
     },
     "scripts": {
         "build": "tsc --build",
         "lint": "eslint '**/*.ts'",
         "lint:fix": "eslint --fix '**/*.ts'",
         "publishMinor": "npm run build && git add . && git commit -m '.' ; npm version minor && npm publish && git push"
-    },
-    "dependencies": {
-        "@jamesernator/eslint-config": "^7.34.0"
     }
 }

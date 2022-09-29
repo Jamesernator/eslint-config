@@ -2,7 +2,7 @@
     "include": [
         "./**/*.ts",
         "./**/*.mts",
-        "./**/*.cts"
+        "./**/*.cts",
     ],
     "exclude": [
         "./**/*.d.ts",
@@ -15,7 +15,7 @@
         "declarationMap": true,
         "downlevelIteration": true,
         "isolatedModules": true,
-        "module": "commonjs",
+        "module": "NodeNext",
         "rootDir": "./",
         "sourceMap": true,
         "target": "esnext",
@@ -27,7 +27,9 @@
         "noImplicitOverride": true,
         "noUncheckedIndexedAccess": true,
         "importsNotUsedAsValues": "error",
-        "forceConsistentCasingInFileNames": true,
-        "allowSyntheticDefaultImports": true
+        "forceConsistentCasingInFileNames": true
+    },
+    "ts-node": {
+        "transpileOnly": true
     }
 }

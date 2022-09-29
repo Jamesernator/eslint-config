@@ -19,6 +19,34 @@ type EslintConfig = {
     overrides?: ReadonlyArray<EslintConfig & { files: Array<string> }>,
 };
 
+/**
+ * @todo Flat eslint config
+ */
+// type EslintConfigEntry = {
+//     files?: ReadonlyArray<string>,
+//     ignores?: ReadonlyArray<string>,
+//     languageOptions?: {
+//         ecmaVersion?: number | "latest",
+//         sourceType?: "commonjs" | "module" | "script",
+//         globals?: Record<string, "mutable" | "readonly">,
+//         parser?: any,
+//         parserOptions?: any,
+//     },
+//     linterOptions?: {
+//         noInlineConfig?: boolean,
+//         reportUnusedDisableDirectives?: boolean,
+//     },
+//     processor?:
+//     | string
+//     | {
+//         preprocess(...args: Array<any>): any,
+//         postprocess(...args: Array<any>): any,
+//     },
+//     plugins?: Record<string, any>,
+//     rules?: EslintRules,
+//     settings?: Record<string, any>,
+// };
+
 export = function createEslintConfig({
     project,
     type = "module",
@@ -53,10 +81,7 @@ export = function createEslintConfig({
             ...baseRules,
             ...extraRules,
         },
-        plugins: [
-            "eslint-plugin-import",
-            "@typescript-eslint/eslint-plugin",
-        ],
+        plugins: ["eslint-plugin-import", "@typescript-eslint/eslint-plugin"],
         overrides,
     };
 };
