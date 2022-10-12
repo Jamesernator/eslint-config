@@ -416,12 +416,6 @@ const rules: EslintRules = {
             types: "never",
         },
     ],
-    "@typescript-eslint/unified-signatures": [
-        "error",
-        {
-            ignoreDifferentlyNamedParameters: true,
-        },
-    ],
     "@typescript-eslint/return-await": ["error", "always"],
     "@typescript-eslint/ban-types": [
         "error",
@@ -1046,6 +1040,12 @@ const rules: EslintRules = {
     "space-infix-ops": "off",
 
     // Disabled
+    "@typescript-eslint/unified-signatures": [
+        "off",
+        {
+            ignoreDifferentlyNamedParameters: true,
+        },
+    ],
     "@typescript-eslint/no-redeclare": "off",
     "@typescript-eslint/no-duplicate-imports": "off",
     "no-constant-binary-expression": "off",
