@@ -528,7 +528,7 @@ const consistency = {
         "error",
         {
             paths: builtinModules.map((modName) => {
-                const message = `Use node:${ modName } instead`;
+                const message = `Use node:${modName} instead`;
                 return {
                     name: modName,
                     message,
@@ -563,7 +563,7 @@ const consistency = {
         },
     ],
     "grouped-accessor-pairs": ["error", "getBeforeSet"],
-    "import/consistent-type-specifier-style": ["error", "prefer-inline"],
+    "import/consistent-type-specifier-style": ["error", "prefer-top-level"],
     "import/first": "error",
     "import/newline-after-import": [
         "error",
