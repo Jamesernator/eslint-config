@@ -6,7 +6,7 @@ export type RuleOptions<Options extends Array<any> | [any] = []> =
 
 type AccessibilityLevel = "explicit" | "no-public" | "off";
 
-/* @todo eslint "@typescript-eslint/member-ordering": ["error", { "default": { "memberTypes": "never", "order": "alphabetically" } }] */
+/* todo eslint "@typescript-eslint/member-ordering": ["error", { "default": { "memberTypes": "never", "order": "alphabetically" } }] */
 
 type BaseEslintRules = {
     "accessor-pairs": RuleOptions<
@@ -191,6 +191,7 @@ type BaseEslintRules = {
         ]
     >,
     "no-empty-pattern": RuleOptions,
+    "no-empty-static-block": RuleOptions,
     "no-eq-null": RuleOptions,
     "no-eval": RuleOptions<
         [
@@ -222,6 +223,7 @@ type BaseEslintRules = {
                 ignoreJSX?: boolean,
                 nestedBinaryExpressions?: boolean,
                 returnAssign?: boolean,
+                allowParensAfterCommentPattern?: boolean,
             }>,
         ]
     >,
@@ -302,6 +304,7 @@ type BaseEslintRules = {
                 ignore?: Array<number | string>,
                 ignoreArrayIndexes?: boolean,
                 ignoreDefaultValues?: boolean,
+                ignoreClassFieldInitialValues?: boolean,
             },
         ]
     >,
@@ -315,6 +318,7 @@ type BaseEslintRules = {
     >,
     "no-multi-str": RuleOptions,
     "no-new": RuleOptions,
+    "no-new-native-nonconstructor": RuleOptions,
     "no-new-func": RuleOptions,
     "no-new-wrappers": RuleOptions,
     "no-nonoctal-decimal-escape": RuleOptions,
@@ -743,6 +747,8 @@ type BaseEslintRules = {
                 enforceInMethodNames?: boolean,
                 allowFunctionParams?: boolean,
                 enforceInClassFields?: boolean,
+                allowInArrayDestructuring?: boolean,
+                allowInObjectDestructuring?: boolean,
             },
         ]
     >,
@@ -957,7 +963,20 @@ type BaseEslintRules = {
     >,
     "no-new-symbol": RuleOptions,
     // TODO
-    "no-restricted-exports": RuleOptions,
+    "no-restricted-exports": RuleOptions<
+        [
+            {
+                restrictedNamedExports?: boolean,
+                restrictDefaultExports?: {
+                    direct?: boolean,
+                    named?: boolean,
+                    defaultFrom?: boolean,
+                    namedFrom?: boolean,
+                    namespaceFrom?: boolean,
+                },
+            },
+        ]
+    >,
     "no-restricted-imports": RuleOptions<
         [
             {
@@ -1061,6 +1080,7 @@ type ImportPluginEslintRules = {
     "import/namespace": RuleOptions,
     // TODO
     "import/no-restricted-paths": RuleOptions,
+    "import/no-empty-named-blocks": RuleOptions,
     "import/no-absolute-path": RuleOptions<
         [
             {
@@ -1080,6 +1100,7 @@ type ImportPluginEslintRules = {
             {
                 maxDepth?: number,
                 ignoreExternal?: boolean,
+                allowUnsafeDynamicCyclicDependency?: boolean,
             },
         ]
     >,
@@ -1093,7 +1114,7 @@ type ImportPluginEslintRules = {
     >,
     "import/no-relative-parent-imports": RuleOptions,
     "import/no-relative-packages": RuleOptions,
-
+    "import/consistent-type-specifier-style": RuleOptions<["prefer-inline" | "prefer-top-level"]>,
     "import/export": RuleOptions,
     "import/no-named-as-default": RuleOptions,
     "import/no-named-as-default-member": RuleOptions,
@@ -1105,6 +1126,8 @@ type ImportPluginEslintRules = {
                 optionalDependencies?: boolean,
                 peerDependencies?: boolean,
                 bundledDependencies?: boolean,
+                includeInternal?: boolean,
+                includeTypes?: boolean,
             },
         ]
     >,
@@ -1145,6 +1168,7 @@ type ImportPluginEslintRules = {
         [
             {
                 considerQueryString?: boolean,
+                "prefer-inline"?: boolean,
             },
         ]
     >,
@@ -1158,9 +1182,11 @@ type ImportPluginEslintRules = {
                 pathGroupsExcludedImportTypes?: string,
                 "newlines-between"?: "always-and-inside-groups" | "always" | "ignore" | "never",
                 alphabetize?: {
-                    order: "asc" | "desc" | "ignore",
+                    order?: "asc" | "desc" | "ignore",
+                    orderImportKind?: "asc" | "desc" | "ignore",
                     caseInsensitive?: boolean,
                 },
+                distinctGroup?: boolean,
             },
         ]
     >,
@@ -1168,6 +1194,7 @@ type ImportPluginEslintRules = {
         [
             {
                 count?: number,
+                considerComments?: boolean,
             },
         ]
     >,
@@ -1194,6 +1221,7 @@ type ImportPluginEslintRules = {
                 allowCallExpression?: boolean,
                 allowLiteral?: boolean,
                 allowObject?: boolean,
+                allowNew?: boolean,
             },
         ]
     >,
@@ -1659,7 +1687,7 @@ type TypescriptEslintPluginRules = {
             },
         ]
     >,
-    "@typescript-eslint/sort-type-union-intersection-members": RuleOptions<
+    "@typescript-eslint/sort-type-constituents": RuleOptions<
         [
             {
                 checkIntersections?: boolean,
@@ -1857,6 +1885,7 @@ type TypescriptEslintPluginRules = {
                 enforceForSequenceExpressions?: boolean,
                 enforceForNewInMemberExpressions?: boolean,
                 enforceForFunctionPrototypeMethods?: boolean,
+                allowParensAfterCommentPattern?: boolean,
             },
         ]
     >,
