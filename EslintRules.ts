@@ -1464,6 +1464,7 @@ type TypescriptEslintPluginRules = {
             },
         ]
     >,
+    "@typescript-eslint/no-import-type-side-effects": RuleOptions,
     "@typescript-eslint/no-inferrable-types": RuleOptions<
         [
             {
@@ -1504,6 +1505,7 @@ type TypescriptEslintPluginRules = {
             },
         ]
     >,
+    "@typescript-eslint/no-mixed-enums": RuleOptions,
     "@typescript-eslint/no-namespace": RuleOptions<
         [
             {

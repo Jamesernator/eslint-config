@@ -104,6 +104,7 @@ const errorDetection = {
             checksVoidReturn: true,
         },
     ],
+    "@typescript-eslint/no-mixed-enums": "error",
     "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error",
     "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
     "@typescript-eslint/no-redundant-type-constituents": "error",
@@ -174,7 +175,6 @@ const errorDetection = {
             null: "ignore",
         },
     ],
-    // Error Detection
     "for-direction": "error",
     "no-case-declarations": "error",
     "no-compare-neg-zero": "error",
@@ -309,6 +309,7 @@ const codeHealth = {
             allowExplicitAny: true,
         },
     ],
+    "@typescript-eslint/no-import-type-side-effects": "error",
     "@typescript-eslint/no-invalid-void-type": [
         "error",
         {
