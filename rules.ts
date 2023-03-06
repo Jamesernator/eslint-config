@@ -457,7 +457,6 @@ const consistency = {
             readonly: "generic",
         },
     ],
-    "@typescript-eslint/class-literal-property-style": ["error", "fields"],
     "@typescript-eslint/consistent-generic-constructors": ["error", "constructor"],
     "@typescript-eslint/consistent-indexed-object-style": ["error", "record"],
     "@typescript-eslint/consistent-type-imports": [
@@ -1098,6 +1097,7 @@ const coveredByOtherPlugins = {
 } satisfies Partial<EslintRules>;
 
 const disabled = {
+    "@typescript-eslint/class-literal-property-style": ["off", "fields"],
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/member-ordering": "off",
