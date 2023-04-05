@@ -36,6 +36,7 @@ const builtinModules = [
     "http2",
     "https",
     "inspector",
+    "inspector/promises",
     "module",
     "net",
     "os",
@@ -65,7 +66,6 @@ const builtinModules = [
     "util/types",
     "v8",
     "vm",
-    "wasi",
     "worker_threads",
     "zlib",
 ];
