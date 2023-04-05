@@ -463,8 +463,9 @@ const consistency = {
     "@typescript-eslint/consistent-type-imports": [
         "error",
         {
-            disallowTypeAnnotations: false,
+            disallowTypeAnnotations: true,
             prefer: "type-imports",
+            fixStyle: "separate-type-imports",
         },
     ],
     "@typescript-eslint/dot-notation": [
@@ -523,6 +524,7 @@ const consistency = {
             selector: "typeLike",
         },
     ],
+    "@typescript-eslint/no-duplicate-type-constituents": "error",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-restricted-imports": [
         "error",

@@ -1279,6 +1279,7 @@ type TypescriptEslintPluginRules = {
             {
                 prefer?: "no-type-imports" | "type-imports",
                 disallowTypeAnnotations?: boolean,
+                fixStyle?: "inline-type-imports" | "separate-type-imports",
             },
         ]
     >,
@@ -1418,6 +1419,14 @@ type TypescriptEslintPluginRules = {
             {
                 ignoreArrowShorthand?: boolean,
                 ignoreVoidOperator?: boolean,
+            },
+        ]
+    >,
+    "@typescript-eslint/no-duplicate-type-constituents": RuleOptions<
+        [
+            {
+                ignoreIntersections?: boolean,
+                ignoreUnions?: boolean,
             },
         ]
     >,
