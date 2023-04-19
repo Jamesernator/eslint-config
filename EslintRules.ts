@@ -1614,6 +1614,7 @@ type TypescriptEslintPluginRules = {
     "@typescript-eslint/no-unsafe-argument": RuleOptions,
     "@typescript-eslint/no-unsafe-assignment": RuleOptions,
     "@typescript-eslint/no-unsafe-call": RuleOptions,
+    "@typescript-eslint/no-unsafe-enum-comparison": RuleOptions,
     "@typescript-eslint/no-unsafe-member-access": RuleOptions,
     "@typescript-eslint/no-unsafe-return": RuleOptions,
     "@typescript-eslint/no-var-requires": RuleOptions,

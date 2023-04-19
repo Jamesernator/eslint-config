@@ -329,6 +329,7 @@ const codeHealth = {
     "@typescript-eslint/no-unnecessary-type-arguments": "error",
     "@typescript-eslint/no-unnecessary-type-assertion": "error",
     "@typescript-eslint/no-unnecessary-type-constraint": "error",
+    "@typescript-eslint/no-unsafe-enum-comparison": "error",
     "@typescript-eslint/no-var-requires": "error",
     "@typescript-eslint/prefer-enum-initializers": "error",
     "@typescript-eslint/prefer-for-of": "error",
