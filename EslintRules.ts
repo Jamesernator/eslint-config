@@ -224,6 +224,7 @@ type BaseEslintRules = {
                 nestedBinaryExpressions?: boolean,
                 returnAssign?: boolean,
                 allowParensAfterCommentPattern?: boolean,
+                ternaryOperandBinaryExpressions?: boolean,
             }>,
         ]
     >,
@@ -1466,13 +1467,6 @@ type TypescriptEslintPluginRules = {
         ]
     >,
     "@typescript-eslint/no-for-in-array": RuleOptions,
-    "@typescript-eslint/no-implicit-any-catch": RuleOptions<
-        [
-            {
-                allowExplicitAny?: boolean,
-            },
-        ]
-    >,
     "@typescript-eslint/no-import-type-side-effects": RuleOptions,
     "@typescript-eslint/no-inferrable-types": RuleOptions<
         [
@@ -1635,8 +1629,15 @@ type TypescriptEslintPluginRules = {
     "@typescript-eslint/prefer-nullish-coalescing": RuleOptions<
         [
             {
+                ignoreTernaryTests?: boolean,
                 ignoreConditionalTests?: boolean,
                 ignoreMixedLogicalExpressions?: boolean,
+                ignorePrimitives?: {
+                    bigint?: boolean,
+                    boolean?: boolean,
+                    number?: boolean,
+                    string?: boolean,
+                },
             },
         ]
     >,
@@ -1651,10 +1652,22 @@ type TypescriptEslintPluginRules = {
     "@typescript-eslint/prefer-readonly-parameter-types": RuleOptions<
         [
             {
-                checkParameterProperties?: boolean,
-                ignoreInferredTypes?: boolean,
-                treatMethodsAsReadonly?: boolean,
-            },
+                allow?: Array<string | {
+                        from: 'file',
+                        name: string | [string, ...Array<string>],
+                        path?: string,
+                    } | {
+                        from: 'lib',
+                        name: string | [string, ...Array<string>],
+                    } | {
+                        from: 'package',
+                        name: string | [string, ...Array<string>],
+                        package: string,
+                    }>,
+              checkParameterProperties?: boolean,
+              ignoreInferredTypes?: boolean,
+              treatMethodsAsReadonly?: boolean,
+            }
         ]
     >,
     "@typescript-eslint/prefer-reduce-type-parameter": RuleOptions,
@@ -1684,7 +1697,12 @@ type TypescriptEslintPluginRules = {
     "@typescript-eslint/restrict-plus-operands": RuleOptions<
         [
             {
-                checkCompoundAssignments?: boolean,
+                allowAny?: boolean,
+                allowBoolean?: boolean,
+                allowNullish?: boolean,
+                allowNumberAndString?: boolean,
+                allowRegExp?: boolean,
+                skipCompoundAssignments?: boolean,
             },
         ]
     >,
@@ -1871,13 +1889,6 @@ type TypescriptEslintPluginRules = {
     "@typescript-eslint/no-array-constructor": RuleOptions,
     "@typescript-eslint/no-dupe-class-members": RuleOptions,
     "@typescript-eslint/no-duplicate-enum-values": RuleOptions,
-    "@typescript-eslint/no-duplicate-imports": RuleOptions<
-        [
-            {
-                includeExports?: boolean,
-            },
-        ]
-    >,
     "@typescript-eslint/no-empty-function": RuleOptions<
         [
             {
@@ -1898,6 +1909,7 @@ type TypescriptEslintPluginRules = {
                 enforceForNewInMemberExpressions?: boolean,
                 enforceForFunctionPrototypeMethods?: boolean,
                 allowParensAfterCommentPattern?: boolean,
+                ternaryOperandBinaryExpressions?: boolean,
             },
         ]
     >,

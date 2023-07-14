@@ -26,7 +26,8 @@
         "noImplicitOverride": true,
         "noUncheckedIndexedAccess": true,
         "forceConsistentCasingInFileNames": true,
-        "verbatimModuleSyntax": true
+        "verbatimModuleSyntax": true,
+        "useUnknownInCatchVariables": true
     },
     "ts-node": {
         "transpileOnly": true

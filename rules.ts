@@ -131,12 +131,7 @@ const errorDetection = {
             ignoreStringArrays: true,
         },
     ],
-    "@typescript-eslint/restrict-plus-operands": [
-        "error",
-        {
-            checkCompoundAssignments: true,
-        },
-    ],
+    "@typescript-eslint/restrict-plus-operands": "error",
     "@typescript-eslint/restrict-template-expressions": [
         "error",
         {
@@ -303,12 +298,6 @@ const codeHealth = {
     ],
     "@typescript-eslint/no-dupe-class-members": "error",
     "@typescript-eslint/no-extra-non-null-assertion": "error",
-    "@typescript-eslint/no-implicit-any-catch": [
-        "error",
-        {
-            allowExplicitAny: true,
-        },
-    ],
     "@typescript-eslint/no-import-type-side-effects": "error",
     "@typescript-eslint/no-invalid-void-type": [
         "error",
@@ -1106,7 +1095,6 @@ const disabled = {
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/member-ordering": "off",
     "@typescript-eslint/method-signature-style": ["off", "property"],
-    "@typescript-eslint/no-duplicate-imports": "off",
     "@typescript-eslint/no-dynamic-delete": "off",
     "@typescript-eslint/no-empty-interface": "off",
     "@typescript-eslint/no-explicit-any": "off",
