@@ -1263,6 +1263,13 @@ type TypescriptEslintPluginRules = {
         ]
     >,
     "@typescript-eslint/class-literal-property-style": RuleOptions<["fields" | "getters"]>,
+    "@typescript-eslint/class-methods-use-this": RuleOptions<
+        [
+            {
+                exceptMethods?: Array<string>,
+            },
+        ]
+    >,
     "@typescript-eslint/consistent-indexed-object-style": RuleOptions<
         ["index-signature" | "record"]
     >,
@@ -1632,12 +1639,14 @@ type TypescriptEslintPluginRules = {
                 ignoreTernaryTests?: boolean,
                 ignoreConditionalTests?: boolean,
                 ignoreMixedLogicalExpressions?: boolean,
-                ignorePrimitives?: {
-                    bigint?: boolean,
-                    boolean?: boolean,
-                    number?: boolean,
-                    string?: boolean,
-                },
+                ignorePrimitives?:
+                    | true
+                    | {
+                          bigint?: boolean,
+                          boolean?: boolean,
+                          number?: boolean,
+                          string?: boolean,
+                      },
             },
         ]
     >,
@@ -1652,22 +1661,27 @@ type TypescriptEslintPluginRules = {
     "@typescript-eslint/prefer-readonly-parameter-types": RuleOptions<
         [
             {
-                allow?: Array<string | {
-                        from: 'file',
-                        name: string | [string, ...Array<string>],
-                        path?: string,
-                    } | {
-                        from: 'lib',
-                        name: string | [string, ...Array<string>],
-                    } | {
-                        from: 'package',
-                        name: string | [string, ...Array<string>],
-                        package: string,
-                    }>,
-              checkParameterProperties?: boolean,
-              ignoreInferredTypes?: boolean,
-              treatMethodsAsReadonly?: boolean,
-            }
+                allow?: Array<
+                    | string
+                    | {
+                          from: "file",
+                          name: string | [string, ...Array<string>],
+                          path?: string,
+                      }
+                    | {
+                          from: "lib",
+                          name: string | [string, ...Array<string>],
+                      }
+                    | {
+                          from: "package",
+                          name: string | [string, ...Array<string>],
+                          package: string,
+                      }
+                >,
+                checkParameterProperties?: boolean,
+                ignoreInferredTypes?: boolean,
+                treatMethodsAsReadonly?: boolean,
+            },
         ]
     >,
     "@typescript-eslint/prefer-reduce-type-parameter": RuleOptions,

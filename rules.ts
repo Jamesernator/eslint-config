@@ -467,51 +467,56 @@ const consistency = {
     "@typescript-eslint/naming-convention": [
         "error",
         {
-            format: ["camelCase", "PascalCase", "UPPER_CASE"],
             selector: "default",
+            format: ["camelCase", "PascalCase", "UPPER_CASE"],
         },
         {
-            format: ["camelCase"],
             selector: "variableLike",
-        },
-        {
-            format: ["camelCase", "UPPER_CASE"],
-            modifiers: ["const"],
-            selector: "variable",
-        },
-        {
-            format: ["camelCase"],
-            selector: "enumMember",
-        },
-        {
-            format: ["camelCase"],
-            selector: "function",
-        },
-        {
-            format: ["camelCase"],
-            selector: "parameter",
-        },
-        {
             format: ["camelCase", "PascalCase"],
-            selector: "parameter",
-            types: ["function"],
         },
         {
+            selector: "variable",
+            modifiers: ["const"],
+            format: ["camelCase", "PascalCase", "UPPER_CASE"],
+        },
+        {
+            selector: "enumMember",
+            format: ["camelCase", "UPPER_CASE"],
+        },
+        {
+            selector: "function",
             format: ["camelCase"],
-            selector: ["classProperty", "classMethod", "parameterProperty"],
         },
         {
-            format: null,
+            selector: "parameter",
+            format: ["camelCase", "PascalCase"],
+        },
+        {
+            selector: "property",
+            format: ["camelCase", "PascalCase"],
+        },
+        {
+            selector: "property",
+            modifiers: ["readonly"],
+            format: ["camelCase", "PascalCase", "UPPER_CASE"],
+        },
+        {
             selector: [
                 "objectLiteralProperty",
                 "objectLiteralMethod",
                 "typeProperty",
                 "typeMethod",
             ],
+            format: null,
         },
         {
-            format: ["PascalCase"],
             selector: "typeLike",
+            format: ["PascalCase"],
+        },
+        {
+            selector: "variable",
+            modifiers: ["destructured"],
+            format: null,
         },
     ],
     "@typescript-eslint/no-duplicate-type-constituents": "error",
@@ -1091,6 +1096,7 @@ const coveredByOtherPlugins = {
 
 const disabled = {
     "@typescript-eslint/class-literal-property-style": ["off", "fields"],
+    "@typescript-eslint/class-methods-use-this": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/member-ordering": "off",
