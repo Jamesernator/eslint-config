@@ -572,7 +572,7 @@ const consistency = {
         "error",
         {
             considerQueryString: false,
-            "prefer-inline": true,
+            "prefer-inline": false,
         },
     ],
     "import/no-empty-named-blocks": "error",
