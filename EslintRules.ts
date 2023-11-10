@@ -2071,6 +2071,17 @@ type TypescriptEslintPluginRules = {
     "@typescript-eslint/consistent-generic-constructors": RuleOptions<
         ["constructor" | "type-annotation"]
     >,
+    "@typescript-eslint/prefer-destructuring": RuleOptions<
+        [
+            {
+                array?: boolean,
+                object?: boolean,
+            },
+            {
+                enforceForRenamedProperties?: boolean,
+            },
+        ]
+    >,
 };
 
 export type EslintRules = BaseEslintRules & ImportPluginEslintRules & TypescriptEslintPluginRules;

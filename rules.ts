@@ -66,6 +66,7 @@ const builtinModules = [
     "util/types",
     "v8",
     "vm",
+    "wasi",
     "worker_threads",
     "zlib",
 ];
@@ -541,6 +542,16 @@ const consistency = {
             prefer: "class-property",
         },
     ],
+    "@typescript-eslint/prefer-destructuring": [
+        "error",
+        {
+            array: true,
+            object: true,
+        },
+        {
+            enforceForRenamedProperties: false,
+        },
+    ],
     "@typescript-eslint/prefer-function-type": "error",
     "@typescript-eslint/prefer-includes": "error",
     "@typescript-eslint/sort-type-constituents": [
@@ -663,16 +674,6 @@ const consistency = {
         "error",
         {
             destructuring: "any",
-        },
-    ],
-    "prefer-destructuring": [
-        "error",
-        {
-            array: true,
-            object: true,
-        },
-        {
-            enforceForRenamedProperties: false,
         },
     ],
     "prefer-exponentiation-operator": "error",
@@ -1221,6 +1222,16 @@ const disabled = {
         "never",
         {
             onlyEquality: true,
+        },
+    ],
+    "prefer-destructuring": [
+        "off",
+        {
+            array: true,
+            object: true,
+        },
+        {
+            enforceForRenamedProperties: false,
         },
     ],
 } satisfies Partial<EslintRules>;
