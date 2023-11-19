@@ -976,16 +976,9 @@ const formatting = {
             before: false,
         },
     ],
-} satisfies Partial<EslintRules>;
-
-/**
- * These are exceptions to disabling all formatting rules as prettier's behaviour
- * is kind've confusing in some cases
- */
-const formattingExceptions = {
     // This makes typescript object types more consistent with JS objects
     "@typescript-eslint/member-delimiter-style": [
-        "error",
+        "off",
         {
             multiline: {
                 requireLast: true,
@@ -1017,7 +1010,7 @@ const formattingExceptions = {
             },
         },
     ],
-    "operator-linebreak": ["error", "before"],
+    "operator-linebreak": ["off", "before"],
 } satisfies Partial<EslintRules>;
 
 /**
@@ -1253,7 +1246,6 @@ const rules: EslintRules = {
     ...codeHealth,
     ...consistency,
     ...formatting,
-    ...formattingExceptions,
     ...coveredByTypescript,
     ...coveredByOtherPlugins,
     ...considerInFuture,
