@@ -1,6 +1,6 @@
 {
     "name": "@jamesernator/eslint-config",
-    "type": "commonjs",
+    "type": "module",
     "author": "James \"The Jamesernator\" Browning <contact@jamesernator.io>",
     "license": "ISC",
     "version": "9.15.0",
@@ -23,6 +23,6 @@
         "publishMinor": "npm run build && git add . && git commit -m '.' ; npm version minor && npm publish && git push"
     },
     "devDependencies": {
-        "prettier": "^2.8.4"
+        "prettier": "^3.2.1"
     }
 }

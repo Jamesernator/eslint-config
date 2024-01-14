@@ -20,16 +20,13 @@
         "target": "esnext",
         "newLine": "lf",
         "useDefineForClassFields": true,
+        "verbatimModuleSyntax": true,
+        "useUnknownInCatchVariables": true,
         "strict": true,
         "alwaysStrict": true,
         "exactOptionalPropertyTypes": true,
         "noImplicitOverride": true,
         "noUncheckedIndexedAccess": true,
-        "forceConsistentCasingInFileNames": true,
-        "verbatimModuleSyntax": true,
-        "useUnknownInCatchVariables": true
-    },
-    "ts-node": {
-        "transpileOnly": true
+        "forceConsistentCasingInFileNames": true
     }
 }

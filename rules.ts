@@ -1252,4 +1252,4 @@ const rules: EslintRules = {
     ...disabled,
 };
 
-export = rules;
+export default rules;
