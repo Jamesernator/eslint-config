@@ -12,55 +12,55 @@ type BaseEslintRules = {
     "accessor-pairs": RuleOptions<
         [
             {
-                enforceForClassMembers?: boolean,
-                getWithoutSet?: boolean,
-                setWithoutGet?: boolean,
+                enforceForClassMembers?: boolean;
+                getWithoutSet?: boolean;
+                setWithoutGet?: boolean;
             },
         ]
-    >,
+    >;
     "array-bracket-newline": RuleOptions<
         [
             | "always"
             | "consistent"
             | "never"
             | {
-                  multiline?: boolean,
-                  minItems?: number | null,
+                  multiline?: boolean;
+                  minItems?: number | null;
               },
         ]
-    >,
+    >;
     "array-bracket-spacing": RuleOptions<
         [
             "always" | "never",
             {
-                singleValue?: boolean,
-                objectsInArrays?: boolean,
-                arraysInArrays?: boolean,
+                singleValue?: boolean;
+                objectsInArrays?: boolean;
+                arraysInArrays?: boolean;
             },
         ]
-    >,
+    >;
     "array-callback-return": RuleOptions<
         [
             Readonly<{
-                allowImplicit?: boolean,
-                checkForEach?: boolean,
+                allowImplicit?: boolean;
+                checkForEach?: boolean;
             }>,
         ]
-    >,
+    >;
     "array-element-newline": RuleOptions<
         [
             | "always"
             | "consistent"
             | "never"
             | {
-                  multiline?: boolean,
-                  minItems?: number | null,
+                  multiline?: boolean;
+                  minItems?: number | null;
               },
         ]
-    >,
-    "block-scoped-var": RuleOptions,
-    "block-spacing": RuleOptions<["always" | "never"]>,
-    "brace-style": RuleOptions<["1tbs" | "allman" | "stroustrup", { allowSingleLine?: boolean }]>,
+    >;
+    "block-scoped-var": RuleOptions;
+    "block-spacing": RuleOptions<["always" | "never"]>;
+    "brace-style": RuleOptions<["1tbs" | "allman" | "stroustrup", { allowSingleLine?: boolean }]>;
 
     camelcase: RuleOptions<
         [
@@ -70,330 +70,330 @@ type BaseEslintRules = {
             ignoreGlobals?: boolean,
             allow?: Array<string>,
         ]
-    >,
+    >;
     "capitalized-comments": RuleOptions<
         [
             ignorePattern?: string,
             ignoreInlineComments?: boolean,
             ignoreConsecutiveComments?: boolean,
         ]
-    >,
+    >;
     "class-methods-use-this": RuleOptions<
         [
             {
-                exceptMethods?: Array<string>,
+                exceptMethods?: Array<string>;
             },
         ]
-    >,
+    >;
     "comma-dangle": RuleOptions<
         [
             {
-                arrays?: "always-multiline" | "always" | "never" | "only-multiline",
-                objects?: "always-multiline" | "always" | "never" | "only-multiline",
+                arrays?: "always-multiline" | "always" | "never" | "only-multiline";
+                objects?: "always-multiline" | "always" | "never" | "only-multiline";
 
-                imports?: "always-multiline" | "always" | "never" | "only-multiline",
+                imports?: "always-multiline" | "always" | "never" | "only-multiline";
 
-                exports?: "always-multiline" | "always" | "never" | "only-multiline",
-                functions?: "always-multiline" | "always" | "never" | "only-multiline",
+                exports?: "always-multiline" | "always" | "never" | "only-multiline";
+                functions?: "always-multiline" | "always" | "never" | "only-multiline";
             },
         ]
-    >,
+    >;
     "comma-spacing": RuleOptions<
         [
             {
-                before?: boolean,
+                before?: boolean;
 
-                after?: boolean,
+                after?: boolean;
             },
         ]
-    >,
-    "comma-style": RuleOptions<["first" | "last"]>,
-    complexity: RuleOptions<[{ max?: number }]>,
+    >;
+    "comma-style": RuleOptions<["first" | "last"]>;
+    complexity: RuleOptions<[{ max?: number }]>;
     "computed-property-spacing": RuleOptions<
         ["always" | "never", { enforceForClassMembers?: boolean }]
-    >,
+    >;
     "consistent-return": RuleOptions<
         [
             {
-                treatUndefinedAsUnspecified?: boolean,
+                treatUndefinedAsUnspecified?: boolean;
             },
         ]
-    >,
-    "consistent-this": RuleOptions,
-    curly: RuleOptions<["all" | "consistent" | "multi-line" | "multi-or-nest" | "multi"]>,
+    >;
+    "consistent-this": RuleOptions;
+    curly: RuleOptions<["all" | "consistent" | "multi-line" | "multi-or-nest" | "multi"]>;
     "default-case": RuleOptions<
         [
             {
-                commentPattern?: string,
+                commentPattern?: string;
             },
         ]
-    >,
-    "default-case-last": RuleOptions,
-    "default-param-last": RuleOptions,
-    "dot-location": RuleOptions<["object" | "property"]>,
+    >;
+    "default-case-last": RuleOptions;
+    "default-param-last": RuleOptions;
+    "dot-location": RuleOptions<["object" | "property"]>;
     "dot-notation": RuleOptions<
         [
             {
-                allowKeywords?: boolean,
-                allowPattern?: boolean,
+                allowKeywords?: boolean;
+                allowPattern?: boolean;
             },
         ]
-    >,
-    "eol-last": RuleOptions<["always" | "never"]>,
-    eqeqeq: RuleOptions<["always" | "smart", { null?: "always" | "ignore" | "never" }]>,
-    "for-direction": RuleOptions,
-    "getter-return": RuleOptions<[Readonly<{ allowImplicit?: boolean }>]>,
-    "grouped-accessor-pairs": RuleOptions<["getBeforeSet" | "setBeforeGet"]>,
-    "guard-for-in": RuleOptions,
-    "init-declarations": RuleOptions<["always" | "never", { ignoreForLoopInit?: boolean }]>,
+    >;
+    "eol-last": RuleOptions<["always" | "never"]>;
+    eqeqeq: RuleOptions<["always" | "smart", { null?: "always" | "ignore" | "never" }]>;
+    "for-direction": RuleOptions;
+    "getter-return": RuleOptions<[Readonly<{ allowImplicit?: boolean }>]>;
+    "grouped-accessor-pairs": RuleOptions<["getBeforeSet" | "setBeforeGet"]>;
+    "guard-for-in": RuleOptions;
+    "init-declarations": RuleOptions<["always" | "never", { ignoreForLoopInit?: boolean }]>;
     "logical-assignment-operators": RuleOptions<
         [
             "always" | "never",
             Readonly<{
-                enforceForIfStatements?: boolean,
+                enforceForIfStatements?: boolean;
             }>,
         ]
-    >,
-    "max-classes-per-file": RuleOptions<[number]>,
-    "no-alert": RuleOptions,
-    "no-async-promise-executor": RuleOptions,
-    "no-await-in-loop": RuleOptions,
-    "no-caller": RuleOptions,
-    "no-case-declarations": RuleOptions,
-    "no-compare-neg-zero": RuleOptions,
-    "no-cond-assign": RuleOptions<["always" | "except-parens"]>,
-    "no-console": RuleOptions<[Readonly<{ allow?: Array<string> }>]>,
-    "no-constant-binary-expression": RuleOptions,
-    "no-constant-condition": RuleOptions<[{ checkLoops?: boolean }]>,
-    "no-constructor-return": RuleOptions,
-    "no-control-regex": RuleOptions,
-    "no-debugger": RuleOptions,
-    "no-delete-var": RuleOptions,
-    "no-div-regex": RuleOptions,
-    "no-dupe-args": RuleOptions,
-    "no-dupe-else-if": RuleOptions,
-    "no-dupe-keys": RuleOptions,
-    "no-duplicate-case": RuleOptions,
+    >;
+    "max-classes-per-file": RuleOptions<[number]>;
+    "no-alert": RuleOptions;
+    "no-async-promise-executor": RuleOptions;
+    "no-await-in-loop": RuleOptions;
+    "no-caller": RuleOptions;
+    "no-case-declarations": RuleOptions;
+    "no-compare-neg-zero": RuleOptions;
+    "no-cond-assign": RuleOptions<["always" | "except-parens"]>;
+    "no-console": RuleOptions<[Readonly<{ allow?: Array<string> }>]>;
+    "no-constant-binary-expression": RuleOptions;
+    "no-constant-condition": RuleOptions<[{ checkLoops?: boolean }]>;
+    "no-constructor-return": RuleOptions;
+    "no-control-regex": RuleOptions;
+    "no-debugger": RuleOptions;
+    "no-delete-var": RuleOptions;
+    "no-div-regex": RuleOptions;
+    "no-dupe-args": RuleOptions;
+    "no-dupe-else-if": RuleOptions;
+    "no-dupe-keys": RuleOptions;
+    "no-duplicate-case": RuleOptions;
     "no-else-return": RuleOptions<
         [
             {
-                allowElseIf?: boolean,
+                allowElseIf?: boolean;
             },
         ]
-    >,
-    "no-empty": RuleOptions<[Readonly<{ allowEmptyCatch?: boolean }>]>,
-    "no-empty-character-class": RuleOptions,
+    >;
+    "no-empty": RuleOptions<[Readonly<{ allowEmptyCatch?: boolean }>]>;
+    "no-empty-character-class": RuleOptions;
     "no-empty-function": RuleOptions<
         [
             {
-                allow?: Array<string>,
+                allow?: Array<string>;
             },
         ]
-    >,
-    "no-empty-pattern": RuleOptions,
-    "no-empty-static-block": RuleOptions,
-    "no-eq-null": RuleOptions,
+    >;
+    "no-empty-pattern": RuleOptions;
+    "no-empty-static-block": RuleOptions;
+    "no-eq-null": RuleOptions;
     "no-eval": RuleOptions<
         [
             {
-                allowIndirect?: boolean,
+                allowIndirect?: boolean;
             },
         ]
-    >,
-    "no-ex-assign": RuleOptions,
-    "no-extend-native": RuleOptions,
-    "no-extra-bind": RuleOptions,
+    >;
+    "no-ex-assign": RuleOptions;
+    "no-extend-native": RuleOptions;
+    "no-extra-bind": RuleOptions;
     "no-extra-boolean-cast": RuleOptions<
         [
             Readonly<{
-                enforceForLogicalOperands?: boolean,
+                enforceForLogicalOperands?: boolean;
             }>,
         ]
-    >,
-    "no-extra-label": RuleOptions,
+    >;
+    "no-extra-label": RuleOptions;
     "no-extra-parens": RuleOptions<
         [
             "all" | "functions",
             Readonly<{
-                conditionalAssign?: boolean,
-                enforceForArrowConditionals?: boolean,
-                enforceForFunctionPrototypeMethods?: boolean,
-                enforceForNewInMemberExpressions?: boolean,
-                enforceForSequenceExpressions?: boolean,
-                ignoreJSX?: boolean,
-                nestedBinaryExpressions?: boolean,
-                returnAssign?: boolean,
-                allowParensAfterCommentPattern?: boolean,
-                ternaryOperandBinaryExpressions?: boolean,
+                conditionalAssign?: boolean;
+                enforceForArrowConditionals?: boolean;
+                enforceForFunctionPrototypeMethods?: boolean;
+                enforceForNewInMemberExpressions?: boolean;
+                enforceForSequenceExpressions?: boolean;
+                ignoreJSX?: boolean;
+                nestedBinaryExpressions?: boolean;
+                returnAssign?: boolean;
+                allowParensAfterCommentPattern?: boolean;
+                ternaryOperandBinaryExpressions?: boolean;
             }>,
         ]
-    >,
-    "no-extra-semi": RuleOptions,
+    >;
+    "no-extra-semi": RuleOptions;
     "no-fallthrough": RuleOptions<
         [
             {
-                commentPattern?: string,
+                commentPattern?: string;
             },
         ]
-    >,
-    "no-floating-decimal": RuleOptions,
-    "no-func-assign": RuleOptions,
+    >;
+    "no-floating-decimal": RuleOptions;
+    "no-func-assign": RuleOptions;
     "no-global-assign": RuleOptions<
         [
             {
-                exceptions?: Array<string>,
+                exceptions?: Array<string>;
             },
         ]
-    >,
+    >;
     "no-implicit-coercion": RuleOptions<
         [
             {
-                allow?: Array<string>,
-                boolean?: boolean,
-                disallowTemplateShorthand?: boolean,
-                number?: boolean,
-                string?: boolean,
+                allow?: Array<string>;
+                boolean?: boolean;
+                disallowTemplateShorthand?: boolean;
+                number?: boolean;
+                string?: boolean;
             },
         ]
-    >,
+    >;
     "no-implicit-globals": RuleOptions<
         [
             {
-                lexicalBindings?: boolean,
+                lexicalBindings?: boolean;
             },
         ]
-    >,
-    "no-implied-eval": RuleOptions,
-    "no-import-assign": RuleOptions,
-    "no-inner-declarations": RuleOptions<["both" | "functions"]>,
-    "no-invalid-regexp": RuleOptions,
+    >;
+    "no-implied-eval": RuleOptions;
+    "no-import-assign": RuleOptions;
+    "no-inner-declarations": RuleOptions<["both" | "functions"]>;
+    "no-invalid-regexp": RuleOptions;
     "no-invalid-this": RuleOptions<
         [
             {
-                capIsConstructor?: boolean,
+                capIsConstructor?: boolean;
             },
         ]
-    >,
+    >;
     "no-irregular-whitespace": RuleOptions<
         [
             {
-                skipComments?: boolean,
-                skipRegExps?: boolean,
-                skipStrings?: boolean,
-                skipTemplates?: boolean,
+                skipComments?: boolean;
+                skipRegExps?: boolean;
+                skipStrings?: boolean;
+                skipTemplates?: boolean;
             },
         ]
-    >,
-    "no-iterator": RuleOptions,
-    "no-label-var": RuleOptions,
+    >;
+    "no-iterator": RuleOptions;
+    "no-label-var": RuleOptions;
     "no-labels": RuleOptions<
         [
             {
-                allowLoop?: boolean,
-                allowSwitch?: boolean,
+                allowLoop?: boolean;
+                allowSwitch?: boolean;
             },
         ]
-    >,
-    "no-lone-blocks": RuleOptions,
-    "no-loop-func": RuleOptions,
-    "no-loss-of-precision": RuleOptions,
+    >;
+    "no-lone-blocks": RuleOptions;
+    "no-loop-func": RuleOptions;
+    "no-loss-of-precision": RuleOptions;
     "no-magic-numbers": RuleOptions<
         [
             {
-                detectObjects?: boolean,
-                enforceConst?: boolean,
-                ignore?: Array<number | string>,
-                ignoreArrayIndexes?: boolean,
-                ignoreDefaultValues?: boolean,
-                ignoreClassFieldInitialValues?: boolean,
+                detectObjects?: boolean;
+                enforceConst?: boolean;
+                ignore?: Array<number | string>;
+                ignoreArrayIndexes?: boolean;
+                ignoreDefaultValues?: boolean;
+                ignoreClassFieldInitialValues?: boolean;
             },
         ]
-    >,
-    "no-misleading-character-class": RuleOptions,
+    >;
+    "no-misleading-character-class": RuleOptions;
     "no-multi-spaces": RuleOptions<
         [
             {
-                ignoreEOLComments?: boolean,
+                ignoreEOLComments?: boolean;
             },
         ]
-    >,
-    "no-multi-str": RuleOptions,
-    "no-new": RuleOptions,
-    "no-new-native-nonconstructor": RuleOptions,
-    "no-new-func": RuleOptions,
-    "no-new-wrappers": RuleOptions,
-    "no-nonoctal-decimal-escape": RuleOptions,
-    "no-obj-calls": RuleOptions,
-    "no-octal": RuleOptions,
-    "no-octal-escape": RuleOptions,
+    >;
+    "no-multi-str": RuleOptions;
+    "no-new": RuleOptions;
+    "no-new-native-nonconstructor": RuleOptions;
+    "no-new-func": RuleOptions;
+    "no-new-wrappers": RuleOptions;
+    "no-nonoctal-decimal-escape": RuleOptions;
+    "no-obj-calls": RuleOptions;
+    "no-octal": RuleOptions;
+    "no-octal-escape": RuleOptions;
     "no-param-reassign": RuleOptions<
         [
             {
-                ignorePropertyModificationsFor?: Array<string>,
-                ignorePropertyModificationsForRegex?: Array<string>,
-                props?: boolean,
+                ignorePropertyModificationsFor?: Array<string>;
+                ignorePropertyModificationsForRegex?: Array<string>;
+                props?: boolean;
             },
         ]
-    >,
-    "no-promise-executor-return": RuleOptions,
-    "no-proto": RuleOptions,
-    "no-prototype-builtins": RuleOptions,
+    >;
+    "no-promise-executor-return": RuleOptions;
+    "no-proto": RuleOptions;
+    "no-prototype-builtins": RuleOptions;
     "no-redeclare": RuleOptions<
         [
             {
-                builtinGlobals?: boolean,
+                builtinGlobals?: boolean;
             },
         ]
-    >,
-    "no-regex-spaces": RuleOptions,
-    "no-restricted-globals": RuleOptions<Array<string>>,
-    "no-restricted-properties": RuleOptions,
-    "no-return-assign": RuleOptions<["always" | "except-parens"]>,
-    "no-return-await": RuleOptions,
-    "no-script-url": RuleOptions,
+    >;
+    "no-regex-spaces": RuleOptions;
+    "no-restricted-globals": RuleOptions<Array<string>>;
+    "no-restricted-properties": RuleOptions;
+    "no-return-assign": RuleOptions<["always" | "except-parens"]>;
+    "no-return-await": RuleOptions;
+    "no-script-url": RuleOptions;
     "no-self-assign": RuleOptions<
         [
             Readonly<{
-                props?: boolean,
+                props?: boolean;
             }>,
         ]
-    >,
-    "no-self-compare": RuleOptions,
+    >;
+    "no-self-compare": RuleOptions;
     "no-sequences": RuleOptions<
         [
             Readonly<{
-                allowInParentheses?: boolean,
+                allowInParentheses?: boolean;
             }>,
         ]
-    >,
-    "no-setter-return": RuleOptions,
+    >;
+    "no-setter-return": RuleOptions;
     "no-shadow": RuleOptions<
         [
             {
-                builtinGlobals?: boolean,
-                hoist?: "all" | "functions" | "never",
+                builtinGlobals?: boolean;
+                hoist?: "all" | "functions" | "never";
 
-                allow?: Array<string>,
-                ignoreOnInitialization?: boolean,
+                allow?: Array<string>;
+                ignoreOnInitialization?: boolean;
             },
         ]
-    >,
-    "no-shadow-restricted-names": RuleOptions,
-    "no-sparse-arrays": RuleOptions,
-    "no-template-curly-in-string": RuleOptions,
-    "no-throw-literal": RuleOptions,
+    >;
+    "no-shadow-restricted-names": RuleOptions;
+    "no-sparse-arrays": RuleOptions;
+    "no-template-curly-in-string": RuleOptions;
+    "no-throw-literal": RuleOptions;
     "no-undef": RuleOptions<
         [
             {
-                typeof?: boolean,
+                typeof?: boolean;
             },
         ]
-    >,
-    "no-undef-init": RuleOptions,
-    "no-undefined": RuleOptions,
-    "no-unexpected-multiline": RuleOptions,
-    "no-unmodified-loop-condition": RuleOptions,
-    "no-unreachable": RuleOptions,
+    >;
+    "no-undef-init": RuleOptions;
+    "no-undefined": RuleOptions;
+    "no-unexpected-multiline": RuleOptions;
+    "no-unmodified-loop-condition": RuleOptions;
+    "no-unreachable": RuleOptions;
     "no-unreachable-loop": RuleOptions<
         [
             Readonly<{
@@ -403,971 +403,971 @@ type BaseEslintRules = {
                     | "ForOfStatement"
                     | "ForStatement"
                     | "WhileStatement"
-                >,
+                >;
             }>,
         ]
-    >,
-    "no-unsafe-finally": RuleOptions,
+    >;
+    "no-unsafe-finally": RuleOptions;
     "no-unsafe-negation": RuleOptions<
         [
             {
-                enforceForOrderingRelations?: boolean,
+                enforceForOrderingRelations?: boolean;
             },
         ]
-    >,
+    >;
     "no-unsafe-optional-chaining": RuleOptions<
         [
             {
-                disallowArithmeticOperators?: boolean,
+                disallowArithmeticOperators?: boolean;
             },
         ]
-    >,
+    >;
     "no-unused-expressions": RuleOptions<
         [
             {
-                allowShortCircuit?: boolean,
-                allowTaggedTemplates?: boolean,
-                allowTernary?: boolean,
-                enforceForJSX?: boolean,
+                allowShortCircuit?: boolean;
+                allowTaggedTemplates?: boolean;
+                allowTernary?: boolean;
+                enforceForJSX?: boolean;
             },
         ]
-    >,
-    "no-unused-labels": RuleOptions,
+    >;
+    "no-unused-labels": RuleOptions;
     "no-unused-vars": RuleOptions<
         [
             {
-                vars?: "all" | "local",
-                varsIgnorePattern?: string,
+                vars?: "all" | "local";
+                varsIgnorePattern?: string;
 
-                args?: "after-used" | "all" | "none",
-                ignoreRestSiblings?: boolean,
+                args?: "after-used" | "all" | "none";
+                ignoreRestSiblings?: boolean;
 
-                argsIgnorePattern?: string,
-                caughtErrors?: "all" | "none",
-                caughtErrorsIgnorePattern?: string,
-                destructuredArrayIgnorePattern?: string,
+                argsIgnorePattern?: string;
+                caughtErrors?: "all" | "none";
+                caughtErrorsIgnorePattern?: string;
+                destructuredArrayIgnorePattern?: string;
             },
         ]
-    >,
+    >;
     "no-use-before-define": RuleOptions<
         [
             Readonly<{
-                classes?: boolean,
-                functions?: boolean,
-                variables?: boolean,
+                classes?: boolean;
+                functions?: boolean;
+                variables?: boolean;
             }>,
         ]
-    >,
-    "no-useless-backreference": RuleOptions,
-    "no-useless-call": RuleOptions,
-    "no-useless-catch": RuleOptions,
-    "no-useless-concat": RuleOptions,
-    "no-useless-escape": RuleOptions,
-    "no-useless-return": RuleOptions,
+    >;
+    "no-useless-backreference": RuleOptions;
+    "no-useless-call": RuleOptions;
+    "no-useless-catch": RuleOptions;
+    "no-useless-concat": RuleOptions;
+    "no-useless-escape": RuleOptions;
+    "no-useless-return": RuleOptions;
     "no-void": RuleOptions<
         [
             Readonly<{
-                allowAsStatement?: boolean,
+                allowAsStatement?: boolean;
             }>,
         ]
-    >,
+    >;
     "no-warning-comments": RuleOptions<
         [
             Readonly<{
-                location?: "anywhere" | "start",
-                terms?: Array<string>,
+                location?: "anywhere" | "start";
+                terms?: Array<string>;
             }>,
         ]
-    >,
-    "no-with": RuleOptions,
-    "prefer-named-capture-group": RuleOptions,
+    >;
+    "no-with": RuleOptions;
+    "prefer-named-capture-group": RuleOptions;
     "prefer-promise-reject-errors": RuleOptions<
         [
             {
-                allowEmptyReject?: boolean,
+                allowEmptyReject?: boolean;
             },
         ]
-    >,
+    >;
     "prefer-regex-literals": RuleOptions<
         [
             {
-                disallowRedundantWrapping?: boolean,
+                disallowRedundantWrapping?: boolean;
             },
         ]
-    >,
-    radix: RuleOptions<["always" | "as-needed"]>,
-    "require-atomic-updates": RuleOptions,
-    "require-await": RuleOptions,
-    "require-unicode-regexp": RuleOptions,
-    strict: RuleOptions<["function" | "global" | "never" | "safe"]>,
-    "use-isnan": RuleOptions,
-    "valid-typeof": RuleOptions,
-    "vars-on-top": RuleOptions,
+    >;
+    radix: RuleOptions<["always" | "as-needed"]>;
+    "require-atomic-updates": RuleOptions;
+    "require-await": RuleOptions;
+    "require-unicode-regexp": RuleOptions;
+    strict: RuleOptions<["function" | "global" | "never" | "safe"]>;
+    "use-isnan": RuleOptions;
+    "valid-typeof": RuleOptions;
+    "vars-on-top": RuleOptions;
     "wrap-iife": RuleOptions<
         ["any" | "inside" | "outside", { functionPrototypeMethods?: boolean }]
-    >,
-    yoda: RuleOptions<["always" | "never", { exceptRange?: boolean, onlyEquality?: boolean }]>,
+    >;
+    yoda: RuleOptions<["always" | "never", { exceptRange?: boolean; onlyEquality?: boolean }]>;
 
-    "func-call-spacing": RuleOptions<["always" | "never"]>,
+    "func-call-spacing": RuleOptions<["always" | "never"]>;
     "func-name-matching": RuleOptions<
         [
             {
-                considerPropertyDescriptor?: boolean,
-                includeCommonJSModuleExports?: boolean,
+                considerPropertyDescriptor?: boolean;
+                includeCommonJSModuleExports?: boolean;
             },
         ]
-    >,
+    >;
     "func-names": RuleOptions<
         [
             "always" | "as-needed" | "never",
             {
-                generators?: "always" | "as-needed" | "never",
+                generators?: "always" | "as-needed" | "never";
             },
         ]
-    >,
-    "func-style": RuleOptions<["declaration" | "expression", { allowArrowFunctions?: boolean }]>,
-    "function-call-argument-newline": RuleOptions<["always" | "consistent" | "never"]>,
+    >;
+    "func-style": RuleOptions<["declaration" | "expression", { allowArrowFunctions?: boolean }]>;
+    "function-call-argument-newline": RuleOptions<["always" | "consistent" | "never"]>;
     "function-paren-newline": RuleOptions<
         ["always" | "consistent" | "multiline-arguments" | "multiline" | "never"]
-    >,
+    >;
     // TODO
-    "id-denylist": RuleOptions,
+    "id-denylist": RuleOptions;
     // TODO
-    "id-length": RuleOptions,
+    "id-length": RuleOptions;
     // TODO
-    "id-match": RuleOptions,
-    "implicit-arrow-linebreak": RuleOptions<["below" | "beside"]>,
+    "id-match": RuleOptions;
+    "implicit-arrow-linebreak": RuleOptions<["below" | "beside"]>;
     indent: RuleOptions<
         [
             number | "tab",
             {
-                ignoredNodes?: Array<string>,
-                SwitchCase?: number,
-                VariableDeclarator?: number | "first",
-                outerIIFEBody?: number | "off",
-                MemberExpression?: number | "off",
+                ignoredNodes?: Array<string>;
+                SwitchCase?: number;
+                VariableDeclarator?: number | "first";
+                outerIIFEBody?: number | "off";
+                MemberExpression?: number | "off";
                 FunctionDeclaration?: {
-                    parameters?: number | "off",
-                    body?: number,
-                },
+                    parameters?: number | "off";
+                    body?: number;
+                };
                 FunctionExpression?: {
-                    parameters?: number | "off",
-                    body?: number,
-                },
+                    parameters?: number | "off";
+                    body?: number;
+                };
                 CallExpression?: {
-                    arguments: number,
-                },
-                ArrayExpression?: number | "first" | "off",
-                ObjectExpression?: number | "first" | "off",
-                ImportDeclaration?: number | "first" | "off",
-                flatTernaryExpressions?: boolean,
-                offsetTernaryExpressions?: boolean,
-                ignoreComments?: boolean,
+                    arguments: number;
+                };
+                ArrayExpression?: number | "first" | "off";
+                ObjectExpression?: number | "first" | "off";
+                ImportDeclaration?: number | "first" | "off";
+                flatTernaryExpressions?: boolean;
+                offsetTernaryExpressions?: boolean;
+                ignoreComments?: boolean;
             },
         ]
-    >,
-    "jsx-quotes": RuleOptions<["prefer-double" | "prefer-single"]>,
+    >;
+    "jsx-quotes": RuleOptions<["prefer-double" | "prefer-single"]>;
     "key-spacing": RuleOptions<
         [
             {
-                beforeColon?: boolean,
-                afterColon?: boolean,
-                mode?: "minimum" | "strict",
-                align?: "colon" | "value",
+                beforeColon?: boolean;
+                afterColon?: boolean;
+                mode?: "minimum" | "strict";
+                align?: "colon" | "value";
             },
         ]
-    >,
+    >;
     "keyword-spacing": RuleOptions<
         [
             {
-                before?: boolean,
-                after?: boolean,
-                overrides?: Array<string>,
+                before?: boolean;
+                after?: boolean;
+                overrides?: Array<string>;
             },
         ]
-    >,
-    "line-comment-position": RuleOptions<["above" | "beside"]>,
-    "linebreak-style": RuleOptions<["unix" | "windows"]>,
+    >;
+    "line-comment-position": RuleOptions<["above" | "beside"]>;
+    "linebreak-style": RuleOptions<["unix" | "windows"]>;
     "lines-around-comment": RuleOptions<
         [
             {
-                beforeBlockComment?: boolean,
-                afterBlockComment?: boolean,
-                beforeLineComment?: boolean,
-                afterLineComment?: boolean,
-                allowBlockStart?: boolean,
-                allowBlockEnd?: boolean,
-                allowObjectStart?: boolean,
-                allowObjectEnd?: boolean,
-                allowArrayStart?: boolean,
-                allowArrayEnd?: boolean,
-                allowClassStart?: boolean,
-                allowClassEnd?: boolean,
-                applyDefaultIgnorePatterns?: boolean,
-                ignorePattern?: string,
+                beforeBlockComment?: boolean;
+                afterBlockComment?: boolean;
+                beforeLineComment?: boolean;
+                afterLineComment?: boolean;
+                allowBlockStart?: boolean;
+                allowBlockEnd?: boolean;
+                allowObjectStart?: boolean;
+                allowObjectEnd?: boolean;
+                allowArrayStart?: boolean;
+                allowArrayEnd?: boolean;
+                allowClassStart?: boolean;
+                allowClassEnd?: boolean;
+                applyDefaultIgnorePatterns?: boolean;
+                ignorePattern?: string;
             },
         ]
-    >,
+    >;
     "lines-between-class-members": RuleOptions<
         ["always" | "never", { exceptAfterSingleLine?: boolean }]
-    >,
-    "max-depth": RuleOptions<[{ max?: number }]>,
+    >;
+    "max-depth": RuleOptions<[{ max?: number }]>;
     "max-len": RuleOptions<
         [
             {
-                code?: number,
-                tabWidth?: number,
-                comments?: number,
-                ignorePattern?: string,
-                ignoreComments?: boolean,
-                ignoreTrailingComments?: boolean,
-                ignoreUrls?: boolean,
-                ignoreStrings?: boolean,
-                ignoreTemplateLiterals?: boolean,
-                ignoreRegExpLiterals?: boolean,
+                code?: number;
+                tabWidth?: number;
+                comments?: number;
+                ignorePattern?: string;
+                ignoreComments?: boolean;
+                ignoreTrailingComments?: boolean;
+                ignoreUrls?: boolean;
+                ignoreStrings?: boolean;
+                ignoreTemplateLiterals?: boolean;
+                ignoreRegExpLiterals?: boolean;
             },
         ]
-    >,
+    >;
     "max-lines": RuleOptions<
         [
             {
-                max?: number,
-                skipBlankLines?: boolean,
-                skipComments?: boolean,
+                max?: number;
+                skipBlankLines?: boolean;
+                skipComments?: boolean;
             },
         ]
-    >,
+    >;
     // TODO
-    "max-lines-per-function": RuleOptions,
+    "max-lines-per-function": RuleOptions;
     "max-nested-callbacks": RuleOptions<
         [
             {
-                max?: number,
+                max?: number;
             },
         ]
-    >,
-    "max-params": RuleOptions<[{ max?: number }]>,
+    >;
+    "max-params": RuleOptions<[{ max?: number }]>;
     // TODO
-    "max-statements": RuleOptions,
+    "max-statements": RuleOptions;
     "max-statements-per-line": RuleOptions<
         [
             {
-                max?: number,
+                max?: number;
             },
         ]
-    >,
-    "multiline-comment-style": RuleOptions<["bare-block" | "separate-lines" | "starred-block"]>,
-    "multiline-ternary": RuleOptions<["always-multiline" | "always" | "never"]>,
+    >;
+    "multiline-comment-style": RuleOptions<["bare-block" | "separate-lines" | "starred-block"]>;
+    "multiline-ternary": RuleOptions<["always-multiline" | "always" | "never"]>;
     "new-cap": RuleOptions<
         [
             {
-                newIsCap?: boolean,
-                capIsNew?: boolean,
-                newIsCapExceptions?: Array<string>,
-                newIsCapExceptionPattern?: string,
-                capIsNewExceptions?: Array<string>,
-                capIsNewExceptionPattern?: string,
-                properties?: boolean,
+                newIsCap?: boolean;
+                capIsNew?: boolean;
+                newIsCapExceptions?: Array<string>;
+                newIsCapExceptionPattern?: string;
+                capIsNewExceptions?: Array<string>;
+                capIsNewExceptionPattern?: string;
+                properties?: boolean;
             },
         ]
-    >,
-    "new-parens": RuleOptions<["always" | "never"]>,
+    >;
+    "new-parens": RuleOptions<["always" | "never"]>;
     "newline-per-chained-call": RuleOptions<
         [
             {
-                ignoreChainWithDepth?: number,
+                ignoreChainWithDepth?: number;
             },
         ]
-    >,
-    "no-array-constructor": RuleOptions,
+    >;
+    "no-array-constructor": RuleOptions;
     "no-bitwise": RuleOptions<
         [
             {
-                allow?: Array<string>,
-                int32Hint?: boolean,
+                allow?: Array<string>;
+                int32Hint?: boolean;
             },
         ]
-    >,
-    "no-continue": RuleOptions,
-    "no-inline-comments": RuleOptions,
-    "no-lonely-if": RuleOptions,
+    >;
+    "no-continue": RuleOptions;
+    "no-inline-comments": RuleOptions;
+    "no-lonely-if": RuleOptions;
     // TODO
-    "no-mixed-operators": RuleOptions,
-    "no-mixed-spaces-and-tabs": RuleOptions<["smart-tabs"] | []>,
+    "no-mixed-operators": RuleOptions;
+    "no-mixed-spaces-and-tabs": RuleOptions<["smart-tabs"] | []>;
     "no-multi-assign": RuleOptions<
         [
             {
-                ignoreNonDeclaration?: boolean,
+                ignoreNonDeclaration?: boolean;
             },
         ]
-    >,
+    >;
     "no-multiple-empty-lines": RuleOptions<
         [
             {
-                max?: number,
-                maxEOF?: number,
-                maxBOF?: number,
+                max?: number;
+                maxEOF?: number;
+                maxBOF?: number;
             },
         ]
-    >,
-    "no-negated-condition": RuleOptions,
-    "no-nested-ternary": RuleOptions,
-    "no-new-object": RuleOptions,
+    >;
+    "no-negated-condition": RuleOptions;
+    "no-nested-ternary": RuleOptions;
+    "no-new-object": RuleOptions;
     "no-plusplus": RuleOptions<
         [
             {
-                allowForLoopAfterthoughts?: boolean,
+                allowForLoopAfterthoughts?: boolean;
             },
         ]
-    >,
+    >;
     // TODO
-    "no-restricted-syntax": RuleOptions,
+    "no-restricted-syntax": RuleOptions;
     "no-tabs": RuleOptions<
         [
             {
-                allowIndentationTabs?: boolean,
+                allowIndentationTabs?: boolean;
             },
         ]
-    >,
-    "no-ternary": RuleOptions,
+    >;
+    "no-ternary": RuleOptions;
     "no-trailing-spaces": RuleOptions<
         [
             {
-                skipBlankLines?: boolean,
-                ignoreComments?: boolean,
+                skipBlankLines?: boolean;
+                ignoreComments?: boolean;
             },
         ]
-    >,
+    >;
     "no-underscore-dangle": RuleOptions<
         [
             {
-                allow?: boolean,
-                allowAfterThis?: boolean,
-                allowAfterSuper?: boolean,
-                allowAfterThisConstructor?: boolean,
-                enforceInMethodNames?: boolean,
-                allowFunctionParams?: boolean,
-                enforceInClassFields?: boolean,
-                allowInArrayDestructuring?: boolean,
-                allowInObjectDestructuring?: boolean,
+                allow?: boolean;
+                allowAfterThis?: boolean;
+                allowAfterSuper?: boolean;
+                allowAfterThisConstructor?: boolean;
+                enforceInMethodNames?: boolean;
+                allowFunctionParams?: boolean;
+                enforceInClassFields?: boolean;
+                allowInArrayDestructuring?: boolean;
+                allowInObjectDestructuring?: boolean;
             },
         ]
-    >,
+    >;
     "no-unneeded-ternary": RuleOptions<
         [
             {
-                defaultAssignment?: boolean,
+                defaultAssignment?: boolean;
             },
         ]
-    >,
-    "no-whitespace-before-property": RuleOptions,
-    "nonblock-statement-body-position": RuleOptions<["any" | "below" | "beside"]>,
+    >;
+    "no-whitespace-before-property": RuleOptions;
+    "nonblock-statement-body-position": RuleOptions<["any" | "below" | "beside"]>;
     "object-curly-newline": RuleOptions<
         [
             | "always"
             | "never"
             | {
-                  multiline?: boolean,
-                  minProperties?: number,
-                  consistent?: boolean,
+                  multiline?: boolean;
+                  minProperties?: number;
+                  consistent?: boolean;
               },
         ]
-    >,
+    >;
     "object-curly-spacing": RuleOptions<
         [
             "always" | "never",
             {
-                arraysInObjects?: boolean,
-                objectsInObjects?: boolean,
+                arraysInObjects?: boolean;
+                objectsInObjects?: boolean;
             },
         ]
-    >,
+    >;
     "object-property-newline": RuleOptions<
         [
             {
-                allowAllPropertiesOnSameLine?: boolean,
+                allowAllPropertiesOnSameLine?: boolean;
             },
         ]
-    >,
+    >;
     "one-var": RuleOptions<
         [
             | "always"
             | "consistent"
             | "never"
             | {
-                  initialized?: "always" | "consecutive" | "never",
-                  uninitialized?: "always" | "consecutive" | "never",
+                  initialized?: "always" | "consecutive" | "never";
+                  uninitialized?: "always" | "consecutive" | "never";
               },
         ]
-    >,
-    "one-var-declaration-per-line": RuleOptions<["always" | "initializations"]>,
-    "operator-assignment": RuleOptions<["always" | "never"]>,
-    "operator-linebreak": RuleOptions<["after" | "before" | "none"]>,
-    "padded-blocks": RuleOptions<["always" | "never", { allowSingleLineBlocks?: boolean }]>,
+    >;
+    "one-var-declaration-per-line": RuleOptions<["always" | "initializations"]>;
+    "operator-assignment": RuleOptions<["always" | "never"]>;
+    "operator-linebreak": RuleOptions<["after" | "before" | "none"]>;
+    "padded-blocks": RuleOptions<["always" | "never", { allowSingleLineBlocks?: boolean }]>;
     // TODO
-    "padding-line-between-statements": RuleOptions,
-    "prefer-exponentiation-operator": RuleOptions,
-    "prefer-object-spread": RuleOptions,
+    "padding-line-between-statements": RuleOptions;
+    "prefer-exponentiation-operator": RuleOptions;
+    "prefer-object-spread": RuleOptions;
     "quote-props": RuleOptions<
         [
             "always" | "as-needed" | "consistent-as-needed" | "consistent",
             {
-                keywords?: boolean,
-                unnecessary?: boolean,
-                numbers?: boolean,
+                keywords?: boolean;
+                unnecessary?: boolean;
+                numbers?: boolean;
             },
         ]
-    >,
+    >;
     quotes: RuleOptions<
         [
             "double" | "single",
             {
-                avoidEscape?: boolean,
-                allowTemplateLiterals?: boolean,
+                avoidEscape?: boolean;
+                allowTemplateLiterals?: boolean;
             },
         ]
-    >,
-    semi: RuleOptions<["always" | "never"]>,
+    >;
+    semi: RuleOptions<["always" | "never"]>;
     "semi-spacing": RuleOptions<
         [
             {
-                before?: boolean,
-                after?: boolean,
+                before?: boolean;
+                after?: boolean;
             },
         ]
-    >,
-    "semi-style": RuleOptions<["first" | "last"]>,
+    >;
+    "semi-style": RuleOptions<["first" | "last"]>;
     "sort-keys": RuleOptions<
         [
             "asc" | "desc",
             {
-                caseSensitive?: boolean,
-                minKeys?: boolean,
-                natural?: boolean,
+                caseSensitive?: boolean;
+                minKeys?: boolean;
+                natural?: boolean;
             },
         ]
-    >,
+    >;
     "sort-vars": RuleOptions<
         [
             {
-                ignoreCase?: boolean,
+                ignoreCase?: boolean;
             },
         ]
-    >,
+    >;
     "space-before-blocks": RuleOptions<
         [
             {
-                functions?: "always" | "never" | "off",
-                keywords?: "always" | "never" | "off",
-                classes?: "always" | "never" | "off",
+                functions?: "always" | "never" | "off";
+                keywords?: "always" | "never" | "off";
+                classes?: "always" | "never" | "off";
             },
         ]
-    >,
+    >;
     "space-before-function-paren": RuleOptions<
         [
             {
-                anonymous?: "always" | "ignore" | "never",
-                named?: "always" | "ignore" | "never",
-                asyncArrow?: "always" | "ignore" | "never",
+                anonymous?: "always" | "ignore" | "never";
+                named?: "always" | "ignore" | "never";
+                asyncArrow?: "always" | "ignore" | "never";
             },
         ]
-    >,
-    "space-in-parens": RuleOptions<["always" | "never"]>,
+    >;
+    "space-in-parens": RuleOptions<["always" | "never"]>;
     "space-infix-ops": RuleOptions<
         [
             {
-                int32Hint?: boolean,
+                int32Hint?: boolean;
             },
         ]
-    >,
+    >;
     "space-unary-ops": RuleOptions<
         [
             {
-                words?: boolean,
-                nonwords?: boolean,
+                words?: boolean;
+                nonwords?: boolean;
             },
         ]
-    >,
+    >;
     "spaced-comment": RuleOptions<
         [
             "always" | "never",
             {
-                markers?: Array<string>,
-                exceptions?: Array<string>,
+                markers?: Array<string>;
+                exceptions?: Array<string>;
                 line?: {
-                    markers?: Array<string>,
-                    exceptions?: Array<string>,
-                },
+                    markers?: Array<string>;
+                    exceptions?: Array<string>;
+                };
                 block?: {
-                    markers?: Array<string>,
-                    exceptions?: Array<string>,
-                    balanced?: boolean,
-                },
+                    markers?: Array<string>;
+                    exceptions?: Array<string>;
+                    balanced?: boolean;
+                };
             },
         ]
-    >,
+    >;
     "switch-colon-spacing": RuleOptions<
         [
             {
-                before?: boolean,
-                after?: boolean,
+                before?: boolean;
+                after?: boolean;
             },
         ]
-    >,
-    "template-tag-spacing": RuleOptions<["always" | "never"]>,
-    "unicode-bom": RuleOptions<["always" | "never"]>,
-    "wrap-regex": RuleOptions,
+    >;
+    "template-tag-spacing": RuleOptions<["always" | "never"]>;
+    "unicode-bom": RuleOptions<["always" | "never"]>;
+    "wrap-regex": RuleOptions;
 
     "arrow-body-style": RuleOptions<
         ["always" | "as-needed" | "never", { requireReturnForObjectLiteral?: boolean }]
-    >,
-    "arrow-parens": RuleOptions<["always"] | ["as-needed", { requireForBlockBody?: boolean }]>,
-    "arrow-spacing": RuleOptions<[{ before?: boolean, after?: boolean }]>,
-    "constructor-super": RuleOptions,
+    >;
+    "arrow-parens": RuleOptions<["always"] | ["as-needed", { requireForBlockBody?: boolean }]>;
+    "arrow-spacing": RuleOptions<[{ before?: boolean; after?: boolean }]>;
+    "constructor-super": RuleOptions;
     "generator-star-spacing": RuleOptions<
         [
             {
-                before?: boolean,
-                after?: boolean,
+                before?: boolean;
+                after?: boolean;
                 named?: {
-                    before?: boolean,
-                    after?: boolean,
-                },
+                    before?: boolean;
+                    after?: boolean;
+                };
                 anonymous?: {
-                    before?: boolean,
-                    after?: boolean,
-                },
+                    before?: boolean;
+                    after?: boolean;
+                };
                 method?: {
-                    before?: boolean,
-                    after?: boolean,
-                },
+                    before?: boolean;
+                    after?: boolean;
+                };
             },
         ]
-    >,
-    "no-class-assign": RuleOptions,
+    >;
+    "no-class-assign": RuleOptions;
     "no-confusing-arrow": RuleOptions<
         [
             {
-                allowParens?: boolean,
-                onlyOneSimpleParam?: boolean,
+                allowParens?: boolean;
+                onlyOneSimpleParam?: boolean;
             },
         ]
-    >,
-    "no-const-assign": RuleOptions,
-    "no-dupe-class-members": RuleOptions,
+    >;
+    "no-const-assign": RuleOptions;
+    "no-dupe-class-members": RuleOptions;
     "no-duplicate-imports": RuleOptions<
         [
             {
-                includeExports?: boolean,
+                includeExports?: boolean;
             },
         ]
-    >,
-    "no-new-symbol": RuleOptions,
+    >;
+    "no-new-symbol": RuleOptions;
     // TODO
     "no-restricted-exports": RuleOptions<
         [
             {
-                restrictedNamedExports?: boolean,
+                restrictedNamedExports?: boolean;
                 restrictDefaultExports?: {
-                    direct?: boolean,
-                    named?: boolean,
-                    defaultFrom?: boolean,
-                    namedFrom?: boolean,
-                    namespaceFrom?: boolean,
-                },
+                    direct?: boolean;
+                    named?: boolean;
+                    defaultFrom?: boolean;
+                    namedFrom?: boolean;
+                    namespaceFrom?: boolean;
+                };
             },
         ]
-    >,
+    >;
     "no-restricted-imports": RuleOptions<
         [
             {
-                paths?: Array<{ name: string, message?: string }>,
+                paths?: Array<{ name: string; message?: string }>;
             },
         ]
-    >,
-    "no-this-before-super": RuleOptions,
+    >;
+    "no-this-before-super": RuleOptions;
     "no-useless-computed-key": RuleOptions<
         [
             {
-                enforceForClassMembers?: boolean,
+                enforceForClassMembers?: boolean;
             },
         ]
-    >,
-    "no-useless-constructor": RuleOptions,
+    >;
+    "no-useless-constructor": RuleOptions;
     "no-useless-rename": RuleOptions<
         [
             {
-                ignoreImport?: boolean,
-                ignoreExport?: boolean,
-                ignoreDestructuring?: boolean,
+                ignoreImport?: boolean;
+                ignoreExport?: boolean;
+                ignoreDestructuring?: boolean;
             },
         ]
-    >,
-    "no-var": RuleOptions,
+    >;
+    "no-var": RuleOptions;
     "object-shorthand": RuleOptions<
         [
             "always" | "consistent-as-needed" | "consistent" | "methods" | "never" | "properties",
             {
-                avoidQuotes?: boolean,
-                ignoreConstructors?: boolean,
-                avoidExplicitReturnArrows?: boolean,
+                avoidQuotes?: boolean;
+                ignoreConstructors?: boolean;
+                avoidExplicitReturnArrows?: boolean;
             },
         ]
-    >,
+    >;
     "prefer-arrow-callback": RuleOptions<
         [
             {
-                allowNamedFunctions?: boolean,
-                allowUnboundThis?: boolean,
+                allowNamedFunctions?: boolean;
+                allowUnboundThis?: boolean;
             },
         ]
-    >,
+    >;
     "prefer-const": RuleOptions<
         [
             {
-                destructuring?: "all" | "any",
-                ignoreReadBeforeAssign?: boolean,
+                destructuring?: "all" | "any";
+                ignoreReadBeforeAssign?: boolean;
             },
         ]
-    >,
+    >;
     "prefer-destructuring": RuleOptions<
         [
             {
-                array?: boolean,
-                object?: boolean,
+                array?: boolean;
+                object?: boolean;
             },
             {
-                enforceForRenamedProperties?: boolean,
+                enforceForRenamedProperties?: boolean;
             },
         ]
-    >,
-    "prefer-numeric-literals": RuleOptions,
-    "prefer-rest-params": RuleOptions,
-    "prefer-spread": RuleOptions,
-    "prefer-template": RuleOptions,
-    "require-yield": RuleOptions,
-    "rest-spread-spacing": RuleOptions<["always" | "never"]>,
+    >;
+    "prefer-numeric-literals": RuleOptions;
+    "prefer-rest-params": RuleOptions;
+    "prefer-spread": RuleOptions;
+    "prefer-template": RuleOptions;
+    "require-yield": RuleOptions;
+    "rest-spread-spacing": RuleOptions<["always" | "never"]>;
     "sort-imports": RuleOptions<
         [
             {
-                ignoreCase?: boolean,
-                ignoreDeclarationSort?: boolean,
-                ignoreMemberSort?: boolean,
-                allowSeparatedGroups?: boolean,
+                ignoreCase?: boolean;
+                ignoreDeclarationSort?: boolean;
+                ignoreMemberSort?: boolean;
+                allowSeparatedGroups?: boolean;
                 // TODO: Member sort order
             },
         ]
-    >,
-    "symbol-description": RuleOptions,
-    "template-curly-spacing": RuleOptions<["always" | "never"]>,
+    >;
+    "symbol-description": RuleOptions;
+    "template-curly-spacing": RuleOptions<["always" | "never"]>;
     "yield-star-spacing": RuleOptions<
         [
             {
-                before?: boolean,
-                after?: boolean,
+                before?: boolean;
+                after?: boolean;
             },
         ]
-    >,
+    >;
 };
 
 type ImportPluginEslintRules = {
     // TODO
-    "import/no-unresolved": RuleOptions,
+    "import/no-unresolved": RuleOptions;
     // TODO
-    "import/named": RuleOptions,
+    "import/named": RuleOptions;
     // TODO
-    "import/default": RuleOptions,
+    "import/default": RuleOptions;
     // TODO
-    "import/namespace": RuleOptions,
+    "import/namespace": RuleOptions;
     // TODO
-    "import/no-restricted-paths": RuleOptions,
-    "import/no-empty-named-blocks": RuleOptions,
+    "import/no-restricted-paths": RuleOptions;
+    "import/no-empty-named-blocks": RuleOptions;
     "import/no-absolute-path": RuleOptions<
         [
             {
-                esmodule?: boolean,
-                commonjs?: boolean,
-                amd?: boolean,
+                esmodule?: boolean;
+                commonjs?: boolean;
+                amd?: boolean;
             },
         ]
-    >,
-    "import/no-dynamic-require": RuleOptions,
+    >;
+    "import/no-dynamic-require": RuleOptions;
     // TODO
-    "import/no-internal-modules": RuleOptions,
-    "import/no-webpack-loader-syntax": RuleOptions,
-    "import/no-self-import": RuleOptions,
+    "import/no-internal-modules": RuleOptions;
+    "import/no-webpack-loader-syntax": RuleOptions;
+    "import/no-self-import": RuleOptions;
     "import/no-cycle": RuleOptions<
         [
             {
-                maxDepth?: number,
-                ignoreExternal?: boolean,
-                allowUnsafeDynamicCyclicDependency?: boolean,
+                maxDepth?: number;
+                ignoreExternal?: boolean;
+                allowUnsafeDynamicCyclicDependency?: boolean;
             },
         ]
-    >,
+    >;
     "import/no-useless-path-segments": RuleOptions<
         [
             {
-                noUselessIndex?: boolean,
-                commonjs?: boolean,
+                noUselessIndex?: boolean;
+                commonjs?: boolean;
             },
         ]
-    >,
-    "import/no-relative-parent-imports": RuleOptions,
-    "import/no-relative-packages": RuleOptions,
-    "import/consistent-type-specifier-style": RuleOptions<["prefer-inline" | "prefer-top-level"]>,
-    "import/export": RuleOptions,
-    "import/no-named-as-default": RuleOptions,
-    "import/no-named-as-default-member": RuleOptions,
-    "import/no-deprecated": RuleOptions,
+    >;
+    "import/no-relative-parent-imports": RuleOptions;
+    "import/no-relative-packages": RuleOptions;
+    "import/consistent-type-specifier-style": RuleOptions<["prefer-inline" | "prefer-top-level"]>;
+    "import/export": RuleOptions;
+    "import/no-named-as-default": RuleOptions;
+    "import/no-named-as-default-member": RuleOptions;
+    "import/no-deprecated": RuleOptions;
     "import/no-extraneous-dependencies": RuleOptions<
         [
             {
-                devDependencies?: boolean,
-                optionalDependencies?: boolean,
-                peerDependencies?: boolean,
-                bundledDependencies?: boolean,
-                includeInternal?: boolean,
-                includeTypes?: boolean,
+                devDependencies?: boolean;
+                optionalDependencies?: boolean;
+                peerDependencies?: boolean;
+                bundledDependencies?: boolean;
+                includeInternal?: boolean;
+                includeTypes?: boolean;
             },
         ]
-    >,
-    "import/no-mutable-exports": RuleOptions,
+    >;
+    "import/no-mutable-exports": RuleOptions;
     "import/no-unused-modules": RuleOptions<
         [
             {
-                missingExports?: boolean,
-                unusedExports?: boolean,
-                src?: Array<string>,
-                ignoreExports?: boolean,
+                missingExports?: boolean;
+                unusedExports?: boolean;
+                src?: Array<string>;
+                ignoreExports?: boolean;
             },
         ]
-    >,
-    "import/unambiguous": RuleOptions,
+    >;
+    "import/unambiguous": RuleOptions;
     "import/no-commonjs": RuleOptions<
         [
             {
-                allowRequire?: boolean,
-                allowConditionalRequire?: boolean,
-                allowPrimitiveModules?: boolean,
+                allowRequire?: boolean;
+                allowConditionalRequire?: boolean;
+                allowPrimitiveModules?: boolean;
             },
         ]
-    >,
-    "import/no-amd": RuleOptions,
+    >;
+    "import/no-amd": RuleOptions;
     "import/no-nodejs-modules": RuleOptions<
         [
             {
-                allow?: Array<string>,
+                allow?: Array<string>;
             },
         ]
-    >,
+    >;
 
     // TODO
-    "import/first": RuleOptions,
-    "import/exports-last": RuleOptions,
+    "import/first": RuleOptions;
+    "import/exports-last": RuleOptions;
     "import/no-duplicates": RuleOptions<
         [
             {
-                considerQueryString?: boolean,
-                "prefer-inline"?: boolean,
+                considerQueryString?: boolean;
+                "prefer-inline"?: boolean;
             },
         ]
-    >,
-    "import/no-namespace": RuleOptions,
-    "import/extensions": RuleOptions<["always" | "ignorePackages" | "never"]>,
+    >;
+    "import/no-namespace": RuleOptions;
+    "import/extensions": RuleOptions<["always" | "ignorePackages" | "never"]>;
     "import/order": RuleOptions<
         [
             {
-                groups?: Array<Array<string> | string>,
-                pathGroups?: Array<{ pattern: string, group: string }>,
-                pathGroupsExcludedImportTypes?: string,
-                "newlines-between"?: "always-and-inside-groups" | "always" | "ignore" | "never",
+                groups?: Array<Array<string> | string>;
+                pathGroups?: Array<{ pattern: string; group: string }>;
+                pathGroupsExcludedImportTypes?: string;
+                "newlines-between"?: "always-and-inside-groups" | "always" | "ignore" | "never";
                 alphabetize?: {
-                    order?: "asc" | "desc" | "ignore",
-                    orderImportKind?: "asc" | "desc" | "ignore",
-                    caseInsensitive?: boolean,
-                },
-                distinctGroup?: boolean,
+                    order?: "asc" | "desc" | "ignore";
+                    orderImportKind?: "asc" | "desc" | "ignore";
+                    caseInsensitive?: boolean;
+                };
+                distinctGroup?: boolean;
             },
         ]
-    >,
+    >;
     "import/newline-after-import": RuleOptions<
         [
             {
-                count?: number,
-                considerComments?: boolean,
+                count?: number;
+                considerComments?: boolean;
             },
         ]
-    >,
-    "import/prefer-default-export": RuleOptions,
+    >;
+    "import/prefer-default-export": RuleOptions;
     // TODO
-    "import/max-dependencies": RuleOptions,
+    "import/max-dependencies": RuleOptions;
     "import/no-unassigned-import": RuleOptions<
         [
             {
-                allow?: Array<string>,
+                allow?: Array<string>;
             },
         ]
-    >,
-    "import/no-named-default": RuleOptions,
-    "import/no-default-export": RuleOptions,
-    "import/no-named-export": RuleOptions,
+    >;
+    "import/no-named-default": RuleOptions;
+    "import/no-default-export": RuleOptions;
+    "import/no-named-export": RuleOptions;
     "import/no-anonymous-default-export": RuleOptions<
         [
             {
-                allowArray?: boolean,
-                allowArrowFunction?: boolean,
-                allowAnonymousClass?: boolean,
-                allowAnonymousFunction?: boolean,
-                allowCallExpression?: boolean,
-                allowLiteral?: boolean,
-                allowObject?: boolean,
-                allowNew?: boolean,
+                allowArray?: boolean;
+                allowArrowFunction?: boolean;
+                allowAnonymousClass?: boolean;
+                allowAnonymousFunction?: boolean;
+                allowCallExpression?: boolean;
+                allowLiteral?: boolean;
+                allowObject?: boolean;
+                allowNew?: boolean;
             },
         ]
-    >,
-    "import/group-exports": RuleOptions,
+    >;
+    "import/group-exports": RuleOptions;
     // TODO
-    "import/no-import-module-exports": RuleOptions,
+    "import/no-import-module-exports": RuleOptions;
 };
 
 type TypescriptEslintPluginRules = {
-    "@typescript-eslint/adjacent-overload-signatures": RuleOptions,
+    "@typescript-eslint/adjacent-overload-signatures": RuleOptions;
     "@typescript-eslint/array-type": RuleOptions<
         [
             {
-                default?: "array-simple" | "array" | "generic",
-                readonly?: "array-simple" | "array" | "generic",
+                default?: "array-simple" | "array" | "generic";
+                readonly?: "array-simple" | "array" | "generic";
             },
         ]
-    >,
-    "@typescript-eslint/await-thenable": RuleOptions,
+    >;
+    "@typescript-eslint/await-thenable": RuleOptions;
     "@typescript-eslint/ban-ts-comment": RuleOptions<
         [
             {
-                "ts-expect-error"?: boolean | "allowed-with-description",
-                "ts-ignore"?: boolean | "allowed-with-description",
-                "ts-nocheck"?: boolean | "allowed-with-description",
-                "ts-check"?: boolean | "allowed-with-description",
-                minimumDescriptionLength?: number,
+                "ts-expect-error"?: boolean | "allowed-with-description";
+                "ts-ignore"?: boolean | "allowed-with-description";
+                "ts-nocheck"?: boolean | "allowed-with-description";
+                "ts-check"?: boolean | "allowed-with-description";
+                minimumDescriptionLength?: number;
             },
         ]
-    >,
-    "@typescript-eslint/ban-tslint-comment": RuleOptions,
+    >;
+    "@typescript-eslint/ban-tslint-comment": RuleOptions;
     "@typescript-eslint/ban-types": RuleOptions<
         [
             {
-                types?: Record<string, string | false | { message: string, fixWith?: string }>,
-                extendDefaults?: boolean,
+                types?: Record<string, string | false | { message: string; fixWith?: string }>;
+                extendDefaults?: boolean;
             },
         ]
-    >,
-    "@typescript-eslint/class-literal-property-style": RuleOptions<["fields" | "getters"]>,
+    >;
+    "@typescript-eslint/class-literal-property-style": RuleOptions<["fields" | "getters"]>;
     "@typescript-eslint/class-methods-use-this": RuleOptions<
         [
             {
-                exceptMethods?: Array<string>,
+                exceptMethods?: Array<string>;
             },
         ]
-    >,
+    >;
     "@typescript-eslint/consistent-indexed-object-style": RuleOptions<
         ["index-signature" | "record"]
-    >,
+    >;
     "@typescript-eslint/consistent-type-assertions": RuleOptions<
         [
             {
-                assertionStyle?: "angle-bracket" | "as",
-                objectLiteralTypeAssertions?: "allow-as-parameter" | "allow" | "never",
+                assertionStyle?: "angle-bracket" | "as";
+                objectLiteralTypeAssertions?: "allow-as-parameter" | "allow" | "never";
             },
         ]
-    >,
-    "@typescript-eslint/consistent-type-definitions": RuleOptions<["interface" | "type"]>,
+    >;
+    "@typescript-eslint/consistent-type-definitions": RuleOptions<["interface" | "type"]>;
     "@typescript-eslint/consistent-type-imports": RuleOptions<
         [
             {
-                prefer?: "no-type-imports" | "type-imports",
-                disallowTypeAnnotations?: boolean,
-                fixStyle?: "inline-type-imports" | "separate-type-imports",
+                prefer?: "no-type-imports" | "type-imports";
+                disallowTypeAnnotations?: boolean;
+                fixStyle?: "inline-type-imports" | "separate-type-imports";
             },
         ]
-    >,
+    >;
     "@typescript-eslint/explicit-function-return-type": RuleOptions<
         [
             {
-                allowExpressions?: boolean,
-                allowTypedFunctionExpressions?: boolean,
-                allowHigherOrderFunctions?: boolean,
-                allowDirectConstAssertionInArrowFunctions?: boolean,
-                allowConciseArrowFunctionExpressionsStartingWithVoid?: boolean,
+                allowExpressions?: boolean;
+                allowTypedFunctionExpressions?: boolean;
+                allowHigherOrderFunctions?: boolean;
+                allowDirectConstAssertionInArrowFunctions?: boolean;
+                allowConciseArrowFunctionExpressionsStartingWithVoid?: boolean;
             },
         ]
-    >,
+    >;
     "@typescript-eslint/explicit-member-accessibility": RuleOptions<
         [
             {
-                accessibility?: AccessibilityLevel,
-                ignoredMethodNames?: Array<string>,
+                accessibility?: AccessibilityLevel;
+                ignoredMethodNames?: Array<string>;
                 overrides?: {
-                    accessors?: AccessibilityLevel,
-                    constructors?: AccessibilityLevel,
-                    methods?: AccessibilityLevel,
-                    properties?: AccessibilityLevel,
-                    parameterProperties?: AccessibilityLevel,
-                },
+                    accessors?: AccessibilityLevel;
+                    constructors?: AccessibilityLevel;
+                    methods?: AccessibilityLevel;
+                    properties?: AccessibilityLevel;
+                    parameterProperties?: AccessibilityLevel;
+                };
             },
         ]
-    >,
+    >;
     "@typescript-eslint/explicit-module-boundary-types": RuleOptions<
         [
             {
-                allowArgumentsExplicitlyTypedAsAny?: boolean,
-                allowDirectConstAssertionInArrowFunctions?: boolean,
-                allowedNames?: Array<string>,
-                allowHigherOrderFunctions?: boolean,
-                allowTypedFunctionExpressions?: boolean,
+                allowArgumentsExplicitlyTypedAsAny?: boolean;
+                allowDirectConstAssertionInArrowFunctions?: boolean;
+                allowedNames?: Array<string>;
+                allowHigherOrderFunctions?: boolean;
+                allowTypedFunctionExpressions?: boolean;
             },
         ]
-    >,
+    >;
     "@typescript-eslint/member-delimiter-style": RuleOptions<
         [
             {
                 multiline?: {
-                    delimiter?: "comma" | "none" | "semi",
-                    requireLast?: boolean,
-                },
+                    delimiter?: "comma" | "none" | "semi";
+                    requireLast?: boolean;
+                };
                 singleline?: {
-                    delimiter?: "comma" | "semi",
-                    requireLast?: boolean,
-                },
+                    delimiter?: "comma" | "semi";
+                    requireLast?: boolean;
+                };
                 overrides?: {
                     interface?: {
                         multiline?: {
-                            delimiter?: "comma" | "none" | "semi",
-                            requireLast?: boolean,
-                        },
+                            delimiter?: "comma" | "none" | "semi";
+                            requireLast?: boolean;
+                        };
                         singleline?: {
-                            delimiter?: "comma" | "semi",
-                            requireLast?: boolean,
-                        },
-                    },
+                            delimiter?: "comma" | "semi";
+                            requireLast?: boolean;
+                        };
+                    };
                     typeLiteral?: {
                         multiline?: {
-                            delimiter?: "comma" | "none" | "semi",
-                            requireLast?: boolean,
-                        },
+                            delimiter?: "comma" | "none" | "semi";
+                            requireLast?: boolean;
+                        };
                         singleline?: {
-                            delimiter?: "comma" | "semi",
-                            requireLast?: boolean,
-                        },
-                    },
-                },
-                multilineDetection?: "brackets" | "last-member",
+                            delimiter?: "comma" | "semi";
+                            requireLast?: boolean;
+                        };
+                    };
+                };
+                multilineDetection?: "brackets" | "last-member";
             },
         ]
-    >,
-    // TODO
-    "@typescript-eslint/member-ordering": RuleOptions,
-    "@typescript-eslint/method-signature-style": RuleOptions<["method" | "property"]>,
+    >;
+    // TODO: member-ordering
+    "@typescript-eslint/member-ordering": RuleOptions;
+    "@typescript-eslint/method-signature-style": RuleOptions<["method" | "property"]>;
     "@typescript-eslint/naming-convention": RuleOptions<
         Array<{
             // format options
@@ -1378,18 +1378,18 @@ type TypescriptEslintPluginRules = {
                 | "strictCamelCase"
                 | "StrictPascalCase"
                 | "UPPER_CASE"
-            > | null,
+            > | null;
             custom?: Readonly<{
-                regex: string,
-                match: boolean,
-            }>,
+                regex: string;
+                match: boolean;
+            }>;
             leadingUnderscore?:
                 | "allow"
                 | "allowDouble"
                 | "allowSingleOrDouble"
                 | "forbid"
                 | "require"
-                | "requireDouble",
+                | "requireDouble";
 
             trailingUnderscore?:
                 | "allow"
@@ -1397,136 +1397,137 @@ type TypescriptEslintPluginRules = {
                 | "allowSingleOrDouble"
                 | "forbid"
                 | "require"
-                | "requireDouble",
-            prefix?: Array<string>,
-            suffix?: Array<string>,
+                | "requireDouble";
+            prefix?: Array<string>;
+            suffix?: Array<string>;
 
             // selector options
-            selector: Array<string> | string,
+            selector: Array<string> | string;
             filter?:
                 | string
                 | {
-                      regex: string,
-                      match: boolean,
-                  },
+                      regex: string;
+                      match: boolean;
+                  };
             // the allowed values for these are dependent on the selector - see below
-            modifiers?: Array<string>,
-            types?: Array<string>,
+            modifiers?: Array<string>;
+            types?: Array<string>;
         }>
-    >,
+    >;
+    "@typescript-eslint/no-array-delete": RuleOptions;
     "@typescript-eslint/no-base-to-string": RuleOptions<
         [
             {
-                ignoredTypeNames?: Array<string>,
+                ignoredTypeNames?: Array<string>;
             },
         ]
-    >,
-    "@typescript-eslint/no-confusing-non-null-assertion": RuleOptions,
+    >;
+    "@typescript-eslint/no-confusing-non-null-assertion": RuleOptions;
     "@typescript-eslint/no-confusing-void-expression": RuleOptions<
         [
             {
-                ignoreArrowShorthand?: boolean,
-                ignoreVoidOperator?: boolean,
+                ignoreArrowShorthand?: boolean;
+                ignoreVoidOperator?: boolean;
             },
         ]
-    >,
+    >;
     "@typescript-eslint/no-duplicate-type-constituents": RuleOptions<
         [
             {
-                ignoreIntersections?: boolean,
-                ignoreUnions?: boolean,
+                ignoreIntersections?: boolean;
+                ignoreUnions?: boolean;
             },
         ]
-    >,
-    "@typescript-eslint/no-dynamic-delete": RuleOptions,
+    >;
+    "@typescript-eslint/no-dynamic-delete": RuleOptions;
     "@typescript-eslint/no-empty-interface": RuleOptions<
         [
             {
-                allowSingleExtends?: boolean,
+                allowSingleExtends?: boolean;
             },
         ]
-    >,
+    >;
     "@typescript-eslint/no-explicit-any": RuleOptions<
         [
             {
-                fixToUnknown?: boolean,
-                ignoreRestArgs?: boolean,
+                fixToUnknown?: boolean;
+                ignoreRestArgs?: boolean;
             },
         ]
-    >,
-    "@typescript-eslint/no-extra-non-null-assertion": RuleOptions,
+    >;
+    "@typescript-eslint/no-extra-non-null-assertion": RuleOptions;
     "@typescript-eslint/no-extraneous-class": RuleOptions<
         [
             {
-                allowConstructorOnly?: boolean,
-                allowEmpty?: boolean,
-                allowStaticOnly?: boolean,
-                allowWithDecorator?: boolean,
+                allowConstructorOnly?: boolean;
+                allowEmpty?: boolean;
+                allowStaticOnly?: boolean;
+                allowWithDecorator?: boolean;
             },
         ]
-    >,
+    >;
     "@typescript-eslint/no-floating-promises": RuleOptions<
         [
             {
-                ignoreVoid?: boolean,
-                ignoreIIFE?: boolean,
+                ignoreVoid?: boolean;
+                ignoreIIFE?: boolean;
             },
         ]
-    >,
-    "@typescript-eslint/no-for-in-array": RuleOptions,
-    "@typescript-eslint/no-import-type-side-effects": RuleOptions,
+    >;
+    "@typescript-eslint/no-for-in-array": RuleOptions;
+    "@typescript-eslint/no-import-type-side-effects": RuleOptions;
     "@typescript-eslint/no-inferrable-types": RuleOptions<
         [
             {
-                ignoreParameters?: boolean,
-                ignoreProperties?: boolean,
+                ignoreParameters?: boolean;
+                ignoreProperties?: boolean;
             },
         ]
-    >,
+    >;
     "@typescript-eslint/no-invalid-void-type": RuleOptions<
         [
             {
-                allowInGenericTypeArguments?: boolean,
-                allowAsThisParameter?: boolean,
+                allowInGenericTypeArguments?: boolean;
+                allowAsThisParameter?: boolean;
             },
         ]
-    >,
+    >;
     "@typescript-eslint/no-meaningless-void-operator": RuleOptions<
         [
             {
-                checkNever?: boolean,
+                checkNever?: boolean;
             },
         ]
-    >,
-    "@typescript-eslint/no-misused-new": RuleOptions,
+    >;
+    "@typescript-eslint/no-misused-new": RuleOptions;
     "@typescript-eslint/no-misused-promises": RuleOptions<
         [
             {
-                checksConditionals?: boolean,
+                checksConditionals?: boolean;
                 checksVoidReturn?:
                     | boolean
                     | {
-                          arguments?: boolean,
-                          attributes?: boolean,
-                          properties?: boolean,
-                          returns?: boolean,
-                          variables?: boolean,
-                      },
+                          arguments?: boolean;
+                          attributes?: boolean;
+                          properties?: boolean;
+                          returns?: boolean;
+                          variables?: boolean;
+                      };
             },
         ]
-    >,
-    "@typescript-eslint/no-mixed-enums": RuleOptions,
+    >;
+    "@typescript-eslint/no-mixed-enums": RuleOptions;
     "@typescript-eslint/no-namespace": RuleOptions<
         [
             {
-                allowDeclarations?: boolean,
-                allowDefinitionFiles?: boolean,
+                allowDeclarations?: boolean;
+                allowDefinitionFiles?: boolean;
             },
         ]
-    >,
-    "@typescript-eslint/no-non-null-asserted-nullish-coalescing": RuleOptions,
-    "@typescript-eslint/no-non-null-asserted-optional-chain": RuleOptions,
-    "@typescript-eslint/no-non-null-assertion": RuleOptions,
+    >;
+    "@typescript-eslint/no-non-null-asserted-nullish-coalescing": RuleOptions;
+    "@typescript-eslint/no-non-null-asserted-optional-chain": RuleOptions;
+    "@typescript-eslint/no-non-null-assertion": RuleOptions;
     "@typescript-eslint/parameter-properties": RuleOptions<
         [
             {
@@ -1538,20 +1539,26 @@ type TypescriptEslintPluginRules = {
                     | "public readonly"
                     | "public"
                     | "readonly"
-                >,
-                prefer?: "class-property" | "parameter-property",
+                >;
+                prefer?: "class-property" | "parameter-property";
             },
         ]
-    >,
-    "@typescript-eslint/no-require-imports": RuleOptions,
+    >;
+    "@typescript-eslint/no-require-imports": RuleOptions<
+        [
+            {
+                allow?: ReadonlyArray<string>;
+            },
+        ]
+    >;
     "@typescript-eslint/no-this-alias": RuleOptions<
         [
             {
-                allowDestructuring?: boolean,
-                allowedNames?: Array<string>,
+                allowDestructuring?: boolean;
+                allowedNames?: Array<string>;
             },
         ]
-    >,
+    >;
     "@typescript-eslint/no-type-alias": RuleOptions<
         [
             {
@@ -1560,182 +1567,197 @@ type TypescriptEslintPluginRules = {
                     | "in-intersections"
                     | "in-unions-and-intersections"
                     | "in-unions"
-                    | "never",
-                allowCallbacks?: "always" | "never",
-                allowConditionalTypes?: "always" | "never",
-                allowConstructors?: "always" | "never",
+                    | "never";
+                allowCallbacks?: "always" | "never";
+                allowConditionalTypes?: "always" | "never";
+                allowConstructors?: "always" | "never";
                 allowLiterals?:
                     | "always"
                     | "in-intersections"
                     | "in-unions-and-intersections"
                     | "in-unions"
-                    | "never",
+                    | "never";
                 allowMappedTypes?:
                     | "always"
                     | "in-intersections"
                     | "in-unions-and-intersections"
                     | "in-unions"
-                    | "never",
+                    | "never";
                 allowTupleTypes?:
                     | "always"
                     | "in-intersections"
                     | "in-unions-and-intersections"
                     | "in-unions"
-                    | "never",
-                allowGenerics?: "always" | "never",
+                    | "never";
+                allowGenerics?: "always" | "never";
             },
         ]
-    >,
+    >;
     "@typescript-eslint/no-unnecessary-boolean-literal-compare": RuleOptions<
         [
             {
-                allowComparingNullableBooleansToTrue?: boolean,
-                allowComparingNullableBooleansToFalse?: boolean,
+                allowComparingNullableBooleansToTrue?: boolean;
+                allowComparingNullableBooleansToFalse?: boolean;
             },
         ]
-    >,
+    >;
     "@typescript-eslint/no-unnecessary-condition": RuleOptions<
         [
             {
-                allowConstantLoopConditions?: boolean,
-                allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing?: boolean,
+                allowConstantLoopConditions?: boolean;
+                allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing?: boolean;
             },
         ]
-    >,
-    "@typescript-eslint/no-unnecessary-qualifier": RuleOptions,
-    "@typescript-eslint/no-unnecessary-type-arguments": RuleOptions,
+    >;
+    "@typescript-eslint/no-unnecessary-qualifier": RuleOptions;
+    "@typescript-eslint/no-unnecessary-type-arguments": RuleOptions;
     "@typescript-eslint/no-unnecessary-type-assertion": RuleOptions<
         [
             {
-                typesToIgnore: Array<string>,
+                typesToIgnore: Array<string>;
             },
         ]
-    >,
-    "@typescript-eslint/no-unnecessary-type-constraint": RuleOptions,
-    "@typescript-eslint/no-unsafe-argument": RuleOptions,
-    "@typescript-eslint/no-unsafe-assignment": RuleOptions,
-    "@typescript-eslint/no-unsafe-call": RuleOptions,
-    "@typescript-eslint/no-unsafe-enum-comparison": RuleOptions,
-    "@typescript-eslint/no-unsafe-member-access": RuleOptions,
-    "@typescript-eslint/no-unsafe-return": RuleOptions,
-    "@typescript-eslint/no-var-requires": RuleOptions,
-    "@typescript-eslint/non-nullable-type-assertion-style": RuleOptions,
-    "@typescript-eslint/prefer-as-const": RuleOptions,
-    "@typescript-eslint/prefer-enum-initializers": RuleOptions,
-    "@typescript-eslint/prefer-for-of": RuleOptions,
-    "@typescript-eslint/prefer-function-type": RuleOptions,
-    "@typescript-eslint/prefer-includes": RuleOptions,
+    >;
+    "@typescript-eslint/no-unnecessary-type-constraint": RuleOptions;
+    "@typescript-eslint/no-unsafe-argument": RuleOptions;
+    "@typescript-eslint/no-unsafe-assignment": RuleOptions;
+    "@typescript-eslint/no-unsafe-call": RuleOptions;
+    "@typescript-eslint/no-unsafe-enum-comparison": RuleOptions;
+    "@typescript-eslint/no-unsafe-member-access": RuleOptions;
+    "@typescript-eslint/no-unsafe-return": RuleOptions;
+    "@typescript-eslint/no-unsafe-unary-minus": RuleOptions;
+    "@typescript-eslint/no-useless-template-literals": RuleOptions;
+    "@typescript-eslint/no-var-requires": RuleOptions<
+        [
+            {
+                allow?: ReadonlyArray<string>;
+            },
+        ]
+    >;
+    "@typescript-eslint/non-nullable-type-assertion-style": RuleOptions;
+    "@typescript-eslint/prefer-as-const": RuleOptions;
+    "@typescript-eslint/prefer-enum-initializers": RuleOptions;
+    "@typescript-eslint/prefer-for-of": RuleOptions;
+    "@typescript-eslint/prefer-function-type": RuleOptions;
+    "@typescript-eslint/prefer-includes": RuleOptions;
     "@typescript-eslint/prefer-literal-enum-member": RuleOptions<
         [
             {
-                allowBitwiseExpressions?: boolean,
+                allowBitwiseExpressions?: boolean;
             },
         ]
-    >,
-    "@typescript-eslint/prefer-namespace-keyword": RuleOptions,
+    >;
+    "@typescript-eslint/prefer-namespace-keyword": RuleOptions;
     "@typescript-eslint/prefer-nullish-coalescing": RuleOptions<
         [
             {
-                ignoreTernaryTests?: boolean,
-                ignoreConditionalTests?: boolean,
-                ignoreMixedLogicalExpressions?: boolean,
+                ignoreTernaryTests?: boolean;
+                ignoreConditionalTests?: boolean;
+                ignoreMixedLogicalExpressions?: boolean;
                 ignorePrimitives?:
                     | true
                     | {
-                          bigint?: boolean,
-                          boolean?: boolean,
-                          number?: boolean,
-                          string?: boolean,
-                      },
+                          bigint?: boolean;
+                          boolean?: boolean;
+                          number?: boolean;
+                          string?: boolean;
+                      };
             },
         ]
-    >,
-    "@typescript-eslint/prefer-optional-chain": RuleOptions,
+    >;
+    "@typescript-eslint/prefer-optional-chain": RuleOptions;
+    "@typescript-eslint/prefer-promise-reject-errors": RuleOptions<
+        [
+            {
+                allowEmptyReject?: boolean;
+            },
+        ]
+    >;
     "@typescript-eslint/prefer-readonly": RuleOptions<
         [
             {
-                onlyInlineLambdas?: boolean,
+                onlyInlineLambdas?: boolean;
             },
         ]
-    >,
+    >;
     "@typescript-eslint/prefer-readonly-parameter-types": RuleOptions<
         [
             {
                 allow?: Array<
                     | string
                     | {
-                          from: "file",
-                          name: string | [string, ...Array<string>],
-                          path?: string,
+                          from: "file";
+                          name: string | [string, ...Array<string>];
+                          path?: string;
                       }
                     | {
-                          from: "lib",
-                          name: string | [string, ...Array<string>],
+                          from: "lib";
+                          name: string | [string, ...Array<string>];
                       }
                     | {
-                          from: "package",
-                          name: string | [string, ...Array<string>],
-                          package: string,
+                          from: "package";
+                          name: string | [string, ...Array<string>];
+                          package: string;
                       }
-                >,
-                checkParameterProperties?: boolean,
-                ignoreInferredTypes?: boolean,
-                treatMethodsAsReadonly?: boolean,
+                >;
+                checkParameterProperties?: boolean;
+                ignoreInferredTypes?: boolean;
+                treatMethodsAsReadonly?: boolean;
             },
         ]
-    >,
-    "@typescript-eslint/prefer-reduce-type-parameter": RuleOptions,
-    "@typescript-eslint/prefer-regexp-exec": RuleOptions,
-    "@typescript-eslint/prefer-return-this-type": RuleOptions,
-    "@typescript-eslint/prefer-string-starts-ends-with": RuleOptions,
-    "@typescript-eslint/prefer-ts-expect-error": RuleOptions,
+    >;
+    "@typescript-eslint/prefer-reduce-type-parameter": RuleOptions;
+    "@typescript-eslint/prefer-regexp-exec": RuleOptions;
+    "@typescript-eslint/prefer-return-this-type": RuleOptions;
+    "@typescript-eslint/prefer-string-starts-ends-with": RuleOptions;
+    "@typescript-eslint/prefer-ts-expect-error": RuleOptions;
     "@typescript-eslint/promise-function-async": RuleOptions<
         [
             {
-                allowAny?: boolean,
-                allowedPromiseNames?: Array<string>,
-                checkArrowFunctions?: boolean,
-                checkFunctionDeclarations?: boolean,
-                checkFunctionExpressions?: boolean,
-                checkMethodDeclarations?: boolean,
+                allowAny?: boolean;
+                allowedPromiseNames?: Array<string>;
+                checkArrowFunctions?: boolean;
+                checkFunctionDeclarations?: boolean;
+                checkFunctionExpressions?: boolean;
+                checkMethodDeclarations?: boolean;
             },
         ]
-    >,
+    >;
     "@typescript-eslint/require-array-sort-compare": RuleOptions<
         [
             {
-                ignoreStringArrays?: boolean,
+                ignoreStringArrays?: boolean;
             },
         ]
-    >,
+    >;
     "@typescript-eslint/restrict-plus-operands": RuleOptions<
         [
             {
-                allowAny?: boolean,
-                allowBoolean?: boolean,
-                allowNullish?: boolean,
-                allowNumberAndString?: boolean,
-                allowRegExp?: boolean,
-                skipCompoundAssignments?: boolean,
+                allowAny?: boolean;
+                allowBoolean?: boolean;
+                allowNullish?: boolean;
+                allowNumberAndString?: boolean;
+                allowRegExp?: boolean;
+                skipCompoundAssignments?: boolean;
             },
         ]
-    >,
+    >;
     "@typescript-eslint/restrict-template-expressions": RuleOptions<
         [
             {
-                allowNumber?: boolean,
-                allowBoolean?: boolean,
-                allowAny?: boolean,
-                allowNullish?: boolean,
-                allowRegExp?: boolean,
+                allowNumber?: boolean;
+                allowBoolean?: boolean;
+                allowAny?: boolean;
+                allowNullish?: boolean;
+                allowRegExp?: boolean;
             },
         ]
-    >,
+    >;
     "@typescript-eslint/sort-type-constituents": RuleOptions<
         [
             {
-                checkIntersections?: boolean,
-                checkUnions?: boolean,
+                checkIntersections?: boolean;
+                checkUnions?: boolean;
                 groupOrder?: Array<
                     | "conditional"
                     | "function"
@@ -1749,339 +1771,346 @@ type TypescriptEslintPluginRules = {
                     | "operator"
                     | "tuple"
                     | "union"
-                >,
+                >;
             },
         ]
-    >,
+    >;
     "@typescript-eslint/strict-boolean-expressions": RuleOptions<
         [
             {
-                allowString?: boolean,
-                allowNumber?: boolean,
-                allowNullableObject?: boolean,
-                allowNullableBoolean?: boolean,
-                allowNullableString?: boolean,
-                allowNullableNumber?: boolean,
-                allowAny?: boolean,
-                allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing?: boolean,
+                allowString?: boolean;
+                allowNumber?: boolean;
+                allowNullableObject?: boolean;
+                allowNullableBoolean?: boolean;
+                allowNullableString?: boolean;
+                allowNullableNumber?: boolean;
+                allowAny?: boolean;
+                allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing?: boolean;
             },
         ]
-    >,
-    "@typescript-eslint/switch-exhaustiveness-check": RuleOptions,
+    >;
+    "@typescript-eslint/switch-exhaustiveness-check": RuleOptions<
+        [
+            {
+                allowDefaultCaseForExhaustiveSwitch?: boolean;
+                requireDefaultForNonUnion?: boolean;
+            },
+        ]
+    >;
     "@typescript-eslint/triple-slash-reference": RuleOptions<
         [
             {
-                path?: "always" | "never",
-                types?: "always" | "never" | "prefer-import",
-                lib?: "always" | "never",
+                path?: "always" | "never";
+                types?: "always" | "never" | "prefer-import";
+                lib?: "always" | "never";
             },
         ]
-    >,
+    >;
     "@typescript-eslint/type-annotation-spacing": RuleOptions<
         [
             {
-                before?: boolean,
-                after?: boolean,
+                before?: boolean;
+                after?: boolean;
                 overrides?: {
                     colon?: {
-                        before?: boolean,
-                        after?: boolean,
-                    },
+                        before?: boolean;
+                        after?: boolean;
+                    };
                     arrow?: {
-                        before?: boolean,
-                        after?: boolean,
-                    },
-                },
+                        before?: boolean;
+                        after?: boolean;
+                    };
+                };
             },
         ]
-    >,
-    "@typescript-eslint/typedef": RuleOptions,
+    >;
+    "@typescript-eslint/typedef": RuleOptions;
     "@typescript-eslint/unbound-method": RuleOptions<
         [
             {
-                ignoreStatic?: boolean,
+                ignoreStatic?: boolean;
             },
         ]
-    >,
+    >;
     "@typescript-eslint/unified-signatures": RuleOptions<
         [
             {
-                ignoreDifferentlyNamedParameters?: boolean,
+                ignoreDifferentlyNamedParameters?: boolean;
             },
         ]
-    >,
-    "@typescript-eslint/consistent-type-exports": RuleOptions,
+    >;
+    "@typescript-eslint/consistent-type-exports": RuleOptions;
 
     "@typescript-eslint/brace-style": RuleOptions<
         ["1tbs" | "allman" | "stroustrup", { allowSingleLine?: boolean }]
-    >,
+    >;
     "@typescript-eslint/comma-dangle": RuleOptions<
         [
             {
-                arrays?: "always-multiline" | "always" | "never" | "only-multiline",
-                objects?: "always-multiline" | "always" | "never" | "only-multiline",
-                imports?: "always-multiline" | "always" | "never" | "only-multiline",
-                exports?: "always-multiline" | "always" | "never" | "only-multiline",
-                functions?: "always-multiline" | "always" | "never" | "only-multiline",
-                enums?: "always-multiline" | "always" | "never" | "only-multiline",
-                generics?: "always-multiline" | "always" | "never" | "only-multiline",
-                tuples?: "always-multiline" | "always" | "never" | "only-multiline",
+                arrays?: "always-multiline" | "always" | "never" | "only-multiline";
+                objects?: "always-multiline" | "always" | "never" | "only-multiline";
+                imports?: "always-multiline" | "always" | "never" | "only-multiline";
+                exports?: "always-multiline" | "always" | "never" | "only-multiline";
+                functions?: "always-multiline" | "always" | "never" | "only-multiline";
+                enums?: "always-multiline" | "always" | "never" | "only-multiline";
+                generics?: "always-multiline" | "always" | "never" | "only-multiline";
+                tuples?: "always-multiline" | "always" | "never" | "only-multiline";
             },
         ]
-    >,
+    >;
     "@typescript-eslint/comma-spacing": RuleOptions<
         [
             {
-                before?: boolean,
-                after?: boolean,
+                before?: boolean;
+                after?: boolean;
             },
         ]
-    >,
-    "@typescript-eslint/default-param-last": RuleOptions,
+    >;
+    "@typescript-eslint/default-param-last": RuleOptions;
     "@typescript-eslint/dot-notation": RuleOptions<
         [
             {
-                allowKeywords?: boolean,
-                allowPattern?: boolean,
-                allowPrivateClassPropertyAccess?: boolean,
-                allowProtectedClassPropertyAccess?: boolean,
-                allowIndexSignaturePropertyAccess?: boolean,
+                allowKeywords?: boolean;
+                allowPattern?: boolean;
+                allowPrivateClassPropertyAccess?: boolean;
+                allowProtectedClassPropertyAccess?: boolean;
+                allowIndexSignaturePropertyAccess?: boolean;
             },
         ]
-    >,
-    "@typescript-eslint/func-call-spacing": RuleOptions<["always" | "never"]>,
+    >;
+    "@typescript-eslint/func-call-spacing": RuleOptions<["always" | "never"]>;
     "@typescript-eslint/indent": RuleOptions<
         [
             number | "tab",
             {
-                ignoredNodes?: Array<string>,
-                SwitchCase?: number,
-                VariableDeclarator?: number | "first",
-                outerIIFEBody?: number | "off",
-                MemberExpression?: number | "off",
+                ignoredNodes?: Array<string>;
+                SwitchCase?: number;
+                VariableDeclarator?: number | "first";
+                outerIIFEBody?: number | "off";
+                MemberExpression?: number | "off";
                 FunctionDeclaration?: {
-                    parameters?: number | "off",
-                    body?: number,
-                },
+                    parameters?: number | "off";
+                    body?: number;
+                };
                 FunctionExpression?: {
-                    parameters?: number | "off",
-                    body?: number,
-                },
+                    parameters?: number | "off";
+                    body?: number;
+                };
                 CallExpression?: {
-                    arguments: number,
-                },
-                ArrayExpression?: number | "first" | "off",
-                ObjectExpression?: number | "first" | "off",
-                ImportDeclaration?: number | "first" | "off",
-                flatTernaryExpressions?: boolean,
-                offsetTernaryExpressions?: boolean,
-                ignoreComments?: boolean,
+                    arguments: number;
+                };
+                ArrayExpression?: number | "first" | "off";
+                ObjectExpression?: number | "first" | "off";
+                ImportDeclaration?: number | "first" | "off";
+                flatTernaryExpressions?: boolean;
+                offsetTernaryExpressions?: boolean;
+                ignoreComments?: boolean;
             },
         ]
-    >,
+    >;
     "@typescript-eslint/init-declarations": RuleOptions<
         ["always" | "never", { ignoreForLoopInit?: boolean }]
-    >,
+    >;
     "@typescript-eslint/keyword-spacing": RuleOptions<
         [
             {
-                before?: boolean,
-                after?: boolean,
-                overrides?: Array<string>,
+                before?: boolean;
+                after?: boolean;
+                overrides?: Array<string>;
             },
         ]
-    >,
+    >;
     "@typescript-eslint/lines-between-class-members": RuleOptions<
         [
             "always" | "never",
             {
-                exceptAfterSingleLine?: boolean,
-                exceptAfterOverload?: boolean,
+                exceptAfterSingleLine?: boolean;
+                exceptAfterOverload?: boolean;
             },
         ]
-    >,
-    "@typescript-eslint/no-array-constructor": RuleOptions,
-    "@typescript-eslint/no-dupe-class-members": RuleOptions,
-    "@typescript-eslint/no-duplicate-enum-values": RuleOptions,
+    >;
+    "@typescript-eslint/no-array-constructor": RuleOptions;
+    "@typescript-eslint/no-dupe-class-members": RuleOptions;
+    "@typescript-eslint/no-duplicate-enum-values": RuleOptions;
     "@typescript-eslint/no-empty-function": RuleOptions<
         [
             {
-                allow?: Array<string>,
+                allow?: Array<string>;
             },
         ]
-    >,
+    >;
     "@typescript-eslint/no-extra-parens": RuleOptions<
         [
             "all" | "functions",
             {
-                conditionalAssign?: boolean,
-                returnAssign?: boolean,
-                nestedBinaryExpressions?: boolean,
-                ignoreJSX?: boolean,
-                enforceForArrowConditionals?: boolean,
-                enforceForSequenceExpressions?: boolean,
-                enforceForNewInMemberExpressions?: boolean,
-                enforceForFunctionPrototypeMethods?: boolean,
-                allowParensAfterCommentPattern?: boolean,
-                ternaryOperandBinaryExpressions?: boolean,
+                conditionalAssign?: boolean;
+                returnAssign?: boolean;
+                nestedBinaryExpressions?: boolean;
+                ignoreJSX?: boolean;
+                enforceForArrowConditionals?: boolean;
+                enforceForSequenceExpressions?: boolean;
+                enforceForNewInMemberExpressions?: boolean;
+                enforceForFunctionPrototypeMethods?: boolean;
+                allowParensAfterCommentPattern?: boolean;
+                ternaryOperandBinaryExpressions?: boolean;
             },
         ]
-    >,
-    "@typescript-eslint/no-extra-semi": RuleOptions,
-    "@typescript-eslint/no-implied-eval": RuleOptions,
+    >;
+    "@typescript-eslint/no-extra-semi": RuleOptions;
+    "@typescript-eslint/no-implied-eval": RuleOptions;
     "@typescript-eslint/no-invalid-this": RuleOptions<
         [
             {
-                capIsConstructor?: boolean,
+                capIsConstructor?: boolean;
             },
         ]
-    >,
-    "@typescript-eslint/no-loop-func": RuleOptions,
-    "@typescript-eslint/no-loss-of-precision": RuleOptions,
+    >;
+    "@typescript-eslint/no-loop-func": RuleOptions;
+    "@typescript-eslint/no-loss-of-precision": RuleOptions;
     "@typescript-eslint/no-magic-numbers": RuleOptions<
         [
             {
-                ignore?: Array<number | string>,
-                ignoreArrayIndexes?: boolean,
-                ignoreDefaultValues?: boolean,
-                enforceConst?: boolean,
-                detectObjects?: boolean,
-                ignoreEnums?: boolean,
-                ignoreNumericLiteralTypes?: boolean,
-                ignoreReadonlyClassProperties?: boolean,
-                ignoreTypeIndexes?: boolean,
+                ignore?: Array<number | string>;
+                ignoreArrayIndexes?: boolean;
+                ignoreDefaultValues?: boolean;
+                enforceConst?: boolean;
+                detectObjects?: boolean;
+                ignoreEnums?: boolean;
+                ignoreNumericLiteralTypes?: boolean;
+                ignoreReadonlyClassProperties?: boolean;
+                ignoreTypeIndexes?: boolean;
             },
         ]
-    >,
+    >;
     "@typescript-eslint/no-redeclare": RuleOptions<
         [
             {
-                builtinGlobals?: boolean,
-                ignoreDeclarationMerge?: boolean,
+                builtinGlobals?: boolean;
+                ignoreDeclarationMerge?: boolean;
             },
         ]
-    >,
+    >;
     "@typescript-eslint/no-restricted-imports": RuleOptions<
         [
             {
-                paths?: Array<{ name: string, message?: string }>,
+                paths?: Array<{ name: string; message?: string }>;
             },
         ]
-    >,
+    >;
     "@typescript-eslint/no-shadow": RuleOptions<
         [
             {
-                builtinGlobals?: boolean,
-                hoist?: "all" | "functions" | "never",
-                allow?: Array<string>,
-                ignoreTypeValueShadow?: boolean,
-                ignoreFunctionTypeParameterNameValueShadow?: boolean,
-                ignoreOnInitialization?: boolean,
+                builtinGlobals?: boolean;
+                hoist?: "all" | "functions" | "never";
+                allow?: Array<string>;
+                ignoreTypeValueShadow?: boolean;
+                ignoreFunctionTypeParameterNameValueShadow?: boolean;
+                ignoreOnInitialization?: boolean;
             },
         ]
-    >,
-    "@typescript-eslint/no-throw-literal": RuleOptions,
+    >;
+    "@typescript-eslint/no-throw-literal": RuleOptions;
     "@typescript-eslint/no-unused-expressions": RuleOptions<
         [
             {
-                allowShortCircuit?: boolean,
-                allowTernary?: boolean,
-                allowTaggedTemplates?: boolean,
-                enforceForJSX?: boolean,
+                allowShortCircuit?: boolean;
+                allowTernary?: boolean;
+                allowTaggedTemplates?: boolean;
+                enforceForJSX?: boolean;
             },
         ]
-    >,
+    >;
     "@typescript-eslint/no-unused-vars": RuleOptions<
         [
             {
-                vars?: "all" | "local",
-                varsIgnorePattern?: string,
-                args?: "after-used" | "all" | "none",
-                ignoreRestSiblings?: boolean,
-                argsIgnorePattern?: string,
-                caughtErrors?: "all" | "none",
-                caughtErrorsIgnorePattern?: string,
-                destructuredArrayIgnorePattern?: string,
+                vars?: "all" | "local";
+                varsIgnorePattern?: string;
+                args?: "after-used" | "all" | "none";
+                ignoreRestSiblings?: boolean;
+                argsIgnorePattern?: string;
+                caughtErrors?: "all" | "none";
+                caughtErrorsIgnorePattern?: string;
+                destructuredArrayIgnorePattern?: string;
             },
         ]
-    >,
+    >;
     "@typescript-eslint/no-use-before-define": RuleOptions<
         [
             {
-                functions?: boolean,
-                classes?: boolean,
-                variables?: boolean,
-                enums?: boolean,
-                typedefs?: boolean,
-                ignoreTypeReferences?: true,
+                functions?: boolean;
+                classes?: boolean;
+                variables?: boolean;
+                enums?: boolean;
+                typedefs?: boolean;
+                ignoreTypeReferences?: true;
             },
         ]
-    >,
-    "@typescript-eslint/no-useless-constructor": RuleOptions,
+    >;
+    "@typescript-eslint/no-useless-constructor": RuleOptions;
     "@typescript-eslint/object-curly-spacing": RuleOptions<
         [
             "always" | "never",
             {
-                arraysInObjects?: boolean,
-                objectsInObjects?: boolean,
+                arraysInObjects?: boolean;
+                objectsInObjects?: boolean;
             },
         ]
-    >,
+    >;
     // TODO
-    "@typescript-eslint/padding-line-between-statements": RuleOptions,
+    "@typescript-eslint/padding-line-between-statements": RuleOptions;
     "@typescript-eslint/quotes": RuleOptions<
         [
             "double" | "single",
             {
-                avoidEscape?: boolean,
-                allowTemplateLiterals?: boolean,
+                avoidEscape?: boolean;
+                allowTemplateLiterals?: boolean;
             },
         ]
-    >,
-    "@typescript-eslint/require-await": RuleOptions,
-    "@typescript-eslint/return-await": RuleOptions<["always" | "in-try-catch" | "never"]>,
-    "@typescript-eslint/semi": RuleOptions<["always" | "never"]>,
+    >;
+    "@typescript-eslint/require-await": RuleOptions;
+    "@typescript-eslint/return-await": RuleOptions<["always" | "in-try-catch" | "never"]>;
+    "@typescript-eslint/semi": RuleOptions<["always" | "never"]>;
     "@typescript-eslint/space-before-function-paren": RuleOptions<
         [
             {
-                anonymous?: "always" | "ignore" | "never",
-                named?: "always" | "ignore" | "never",
-                asyncArrow?: "always" | "ignore" | "never",
+                anonymous?: "always" | "ignore" | "never";
+                named?: "always" | "ignore" | "never";
+                asyncArrow?: "always" | "ignore" | "never";
             },
         ]
-    >,
+    >;
     "@typescript-eslint/space-infix-ops": RuleOptions<
         [
             {
-                int32Hint?: boolean,
+                int32Hint?: boolean;
             },
         ]
-    >,
-    "@typescript-eslint/no-redundant-type-constituents": RuleOptions,
-    "@typescript-eslint/no-useless-empty-export": RuleOptions,
+    >;
+    "@typescript-eslint/no-redundant-type-constituents": RuleOptions;
+    "@typescript-eslint/no-useless-empty-export": RuleOptions;
     "@typescript-eslint/space-before-blocks": RuleOptions<
         [
             {
-                functions?: "always" | "never" | "off",
-                keywords?: "always" | "never" | "off",
-                classes?: "always" | "never" | "off",
+                functions?: "always" | "never" | "off";
+                keywords?: "always" | "never" | "off";
+                classes?: "always" | "never" | "off";
             },
         ]
-    >,
+    >;
     "@typescript-eslint/consistent-generic-constructors": RuleOptions<
         ["constructor" | "type-annotation"]
-    >,
+    >;
     "@typescript-eslint/prefer-destructuring": RuleOptions<
         [
             {
-                array?: boolean,
-                object?: boolean,
+                array?: boolean;
+                object?: boolean;
             },
             {
-                enforceForRenamedProperties?: boolean,
+                enforceForRenamedProperties?: boolean;
             },
         ]
-    >,
+    >;
 };
 
 export type EslintRules = BaseEslintRules & ImportPluginEslintRules & TypescriptEslintPluginRules;
