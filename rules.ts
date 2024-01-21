@@ -691,7 +691,6 @@ const consistency = {
             ignoreMemberSort: false,
         },
     ],
-    "symbol-description": "error",
 } satisfies Partial<EslintRules>;
 
 /**
@@ -1231,6 +1230,7 @@ const disabled = {
             enforceForRenamedProperties: false,
         },
     ],
+    "symbol-description": "error",
 } satisfies Partial<EslintRules>;
 
 const considerInFuture = {
