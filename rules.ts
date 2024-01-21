@@ -1230,7 +1230,7 @@ const disabled = {
             enforceForRenamedProperties: false,
         },
     ],
-    "symbol-description": "error",
+    "symbol-description": "off",
 } satisfies Partial<EslintRules>;
 
 const considerInFuture = {
