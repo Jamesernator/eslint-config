@@ -978,6 +978,7 @@ type BaseEslintRules = {
             },
         ]
     >;
+    // TODO: Better types
     "no-restricted-imports": RuleOptions<
         [
             {
