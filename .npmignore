@@ -1,4 +1,4 @@
-/.eslintrc.cjs
+/eslint.config.*
 /.eslintignore
 /.git/
 /.vscode/

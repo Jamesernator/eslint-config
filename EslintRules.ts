@@ -1071,166 +1071,166 @@ type BaseEslintRules = {
     >;
 };
 
-type ImportPluginEslintRules = {
-    // TODO
-    "import/no-unresolved": RuleOptions;
-    // TODO
-    "import/named": RuleOptions;
-    // TODO
-    "import/default": RuleOptions;
-    // TODO
-    "import/namespace": RuleOptions;
-    // TODO
-    "import/no-restricted-paths": RuleOptions;
-    "import/no-empty-named-blocks": RuleOptions;
-    "import/no-absolute-path": RuleOptions<
-        [
-            {
-                esmodule?: boolean;
-                commonjs?: boolean;
-                amd?: boolean;
-            },
-        ]
-    >;
-    "import/no-dynamic-require": RuleOptions;
-    // TODO
-    "import/no-internal-modules": RuleOptions;
-    "import/no-webpack-loader-syntax": RuleOptions;
-    "import/no-self-import": RuleOptions;
-    "import/no-cycle": RuleOptions<
-        [
-            {
-                maxDepth?: number;
-                ignoreExternal?: boolean;
-                allowUnsafeDynamicCyclicDependency?: boolean;
-            },
-        ]
-    >;
-    "import/no-useless-path-segments": RuleOptions<
-        [
-            {
-                noUselessIndex?: boolean;
-                commonjs?: boolean;
-            },
-        ]
-    >;
-    "import/no-relative-parent-imports": RuleOptions;
-    "import/no-relative-packages": RuleOptions;
-    "import/consistent-type-specifier-style": RuleOptions<["prefer-inline" | "prefer-top-level"]>;
-    "import/export": RuleOptions;
-    "import/no-named-as-default": RuleOptions;
-    "import/no-named-as-default-member": RuleOptions;
-    "import/no-deprecated": RuleOptions;
-    "import/no-extraneous-dependencies": RuleOptions<
-        [
-            {
-                devDependencies?: boolean;
-                optionalDependencies?: boolean;
-                peerDependencies?: boolean;
-                bundledDependencies?: boolean;
-                includeInternal?: boolean;
-                includeTypes?: boolean;
-            },
-        ]
-    >;
-    "import/no-mutable-exports": RuleOptions;
-    "import/no-unused-modules": RuleOptions<
-        [
-            {
-                missingExports?: boolean;
-                unusedExports?: boolean;
-                src?: ReadonlyArray<string>;
-                ignoreExports?: boolean;
-            },
-        ]
-    >;
-    "import/unambiguous": RuleOptions;
-    "import/no-commonjs": RuleOptions<
-        [
-            {
-                allowRequire?: boolean;
-                allowConditionalRequire?: boolean;
-                allowPrimitiveModules?: boolean;
-            },
-        ]
-    >;
-    "import/no-amd": RuleOptions;
-    "import/no-nodejs-modules": RuleOptions<
-        [
-            {
-                allow?: ReadonlyArray<string>;
-            },
-        ]
-    >;
+// type ImportPluginEslintRules = {
+//     // TODO
+//     "import/no-unresolved": RuleOptions;
+//     // TODO
+//     "import/named": RuleOptions;
+//     // TODO
+//     "import/default": RuleOptions;
+//     // TODO
+//     "import/namespace": RuleOptions;
+//     // TODO
+//     "import/no-restricted-paths": RuleOptions;
+//     "import/no-empty-named-blocks": RuleOptions;
+//     "import/no-absolute-path": RuleOptions<
+//         [
+//             {
+//                 esmodule?: boolean;
+//                 commonjs?: boolean;
+//                 amd?: boolean;
+//             },
+//         ]
+//     >;
+//     "import/no-dynamic-require": RuleOptions;
+//     // TODO
+//     "import/no-internal-modules": RuleOptions;
+//     "import/no-webpack-loader-syntax": RuleOptions;
+//     "import/no-self-import": RuleOptions;
+//     "import/no-cycle": RuleOptions<
+//         [
+//             {
+//                 maxDepth?: number;
+//                 ignoreExternal?: boolean;
+//                 allowUnsafeDynamicCyclicDependency?: boolean;
+//             },
+//         ]
+//     >;
+//     "import/no-useless-path-segments": RuleOptions<
+//         [
+//             {
+//                 noUselessIndex?: boolean;
+//                 commonjs?: boolean;
+//             },
+//         ]
+//     >;
+//     "import/no-relative-parent-imports": RuleOptions;
+//     "import/no-relative-packages": RuleOptions;
+//     "import/consistent-type-specifier-style": RuleOptions<["prefer-inline" | "prefer-top-level"]>;
+//     "import/export": RuleOptions;
+//     "import/no-named-as-default": RuleOptions;
+//     "import/no-named-as-default-member": RuleOptions;
+//     "import/no-deprecated": RuleOptions;
+//     "import/no-extraneous-dependencies": RuleOptions<
+//         [
+//             {
+//                 devDependencies?: boolean;
+//                 optionalDependencies?: boolean;
+//                 peerDependencies?: boolean;
+//                 bundledDependencies?: boolean;
+//                 includeInternal?: boolean;
+//                 includeTypes?: boolean;
+//             },
+//         ]
+//     >;
+//     "import/no-mutable-exports": RuleOptions;
+//     "import/no-unused-modules": RuleOptions<
+//         [
+//             {
+//                 missingExports?: boolean;
+//                 unusedExports?: boolean;
+//                 src?: ReadonlyArray<string>;
+//                 ignoreExports?: boolean;
+//             },
+//         ]
+//     >;
+//     "import/unambiguous": RuleOptions;
+//     "import/no-commonjs": RuleOptions<
+//         [
+//             {
+//                 allowRequire?: boolean;
+//                 allowConditionalRequire?: boolean;
+//                 allowPrimitiveModules?: boolean;
+//             },
+//         ]
+//     >;
+//     "import/no-amd": RuleOptions;
+//     "import/no-nodejs-modules": RuleOptions<
+//         [
+//             {
+//                 allow?: ReadonlyArray<string>;
+//             },
+//         ]
+//     >;
 
-    // TODO
-    "import/first": RuleOptions;
-    "import/exports-last": RuleOptions;
-    "import/no-duplicates": RuleOptions<
-        [
-            {
-                considerQueryString?: boolean;
-                "prefer-inline"?: boolean;
-            },
-        ]
-    >;
-    "import/no-namespace": RuleOptions;
-    "import/extensions": RuleOptions<["always" | "ignorePackages" | "never"]>;
-    "import/order": RuleOptions<
-        [
-            {
-                groups?: ReadonlyArray<ReadonlyArray<string> | string>;
-                pathGroups?: ReadonlyArray<{ pattern: string; group: string }>;
-                pathGroupsExcludedImportTypes?: string;
-                "newlines-between"?: "always-and-inside-groups" | "always" | "ignore" | "never";
-                alphabetize?: {
-                    order?: "asc" | "desc" | "ignore";
-                    orderImportKind?: "asc" | "desc" | "ignore";
-                    caseInsensitive?: boolean;
-                };
-                distinctGroup?: boolean;
-            },
-        ]
-    >;
-    "import/newline-after-import": RuleOptions<
-        [
-            {
-                count?: number;
-                considerComments?: boolean;
-            },
-        ]
-    >;
-    "import/prefer-default-export": RuleOptions;
-    // TODO
-    "import/max-dependencies": RuleOptions;
-    "import/no-unassigned-import": RuleOptions<
-        [
-            {
-                allow?: ReadonlyArray<string>;
-            },
-        ]
-    >;
-    "import/no-named-default": RuleOptions;
-    "import/no-default-export": RuleOptions;
-    "import/no-named-export": RuleOptions;
-    "import/no-anonymous-default-export": RuleOptions<
-        [
-            {
-                allowArray?: boolean;
-                allowArrowFunction?: boolean;
-                allowAnonymousClass?: boolean;
-                allowAnonymousFunction?: boolean;
-                allowCallExpression?: boolean;
-                allowLiteral?: boolean;
-                allowObject?: boolean;
-                allowNew?: boolean;
-            },
-        ]
-    >;
-    "import/group-exports": RuleOptions;
-    // TODO
-    "import/no-import-module-exports": RuleOptions;
-};
+//     // TODO
+//     "import/first": RuleOptions;
+//     "import/exports-last": RuleOptions;
+//     "import/no-duplicates": RuleOptions<
+//         [
+//             {
+//                 considerQueryString?: boolean;
+//                 "prefer-inline"?: boolean;
+//             },
+//         ]
+//     >;
+//     "import/no-namespace": RuleOptions;
+//     "import/extensions": RuleOptions<["always" | "ignorePackages" | "never"]>;
+//     "import/order": RuleOptions<
+//         [
+//             {
+//                 groups?: ReadonlyArray<ReadonlyArray<string> | string>;
+//                 pathGroups?: ReadonlyArray<{ pattern: string; group: string }>;
+//                 pathGroupsExcludedImportTypes?: string;
+//                 "newlines-between"?: "always-and-inside-groups" | "always" | "ignore" | "never";
+//                 alphabetize?: {
+//                     order?: "asc" | "desc" | "ignore";
+//                     orderImportKind?: "asc" | "desc" | "ignore";
+//                     caseInsensitive?: boolean;
+//                 };
+//                 distinctGroup?: boolean;
+//             },
+//         ]
+//     >;
+//     "import/newline-after-import": RuleOptions<
+//         [
+//             {
+//                 count?: number;
+//                 considerComments?: boolean;
+//             },
+//         ]
+//     >;
+//     "import/prefer-default-export": RuleOptions;
+//     // TODO
+//     "import/max-dependencies": RuleOptions;
+//     "import/no-unassigned-import": RuleOptions<
+//         [
+//             {
+//                 allow?: ReadonlyArray<string>;
+//             },
+//         ]
+//     >;
+//     "import/no-named-default": RuleOptions;
+//     "import/no-default-export": RuleOptions;
+//     "import/no-named-export": RuleOptions;
+//     "import/no-anonymous-default-export": RuleOptions<
+//         [
+//             {
+//                 allowArray?: boolean;
+//                 allowArrowFunction?: boolean;
+//                 allowAnonymousClass?: boolean;
+//                 allowAnonymousFunction?: boolean;
+//                 allowCallExpression?: boolean;
+//                 allowLiteral?: boolean;
+//                 allowObject?: boolean;
+//                 allowNew?: boolean;
+//             },
+//         ]
+//     >;
+//     "import/group-exports": RuleOptions;
+//     // TODO
+//     "import/no-import-module-exports": RuleOptions;
+// };
 
 type TypescriptEslintPluginRules = {
     "@typescript-eslint/adjacent-overload-signatures": RuleOptions;
@@ -2059,6 +2059,7 @@ type TypescriptEslintPluginRules = {
     >;
     // TODO
     "@typescript-eslint/padding-line-between-statements": RuleOptions;
+    "@typescript-eslint/prefer-find": RuleOptions;
     "@typescript-eslint/quotes": RuleOptions<
         [
             "double" | "single",
@@ -2114,4 +2115,5 @@ type TypescriptEslintPluginRules = {
     >;
 };
 
-export type EslintRules = BaseEslintRules & ImportPluginEslintRules & TypescriptEslintPluginRules;
+// & ImportPluginEslintRules
+export type EslintRules = BaseEslintRules & TypescriptEslintPluginRules;

@@ -1,24 +1,17 @@
-import typescriptEslint from "@typescript-eslint/eslint-plugin";
+import typescriptEslint from "typescript-eslint";
 import eslintPluginImport from "eslint-plugin-import";
 import type { EslintRules } from "./EslintRules.js";
-import rules from "./rules.js";
+import defaultRules from "./defaultRules.js";
 
 export type CreateEslintConfigOptions = Readonly<{
-    project: string;
+    tsconfigRootDir: string;
     type?: "commonjs" | "module";
     rules?: Partial<EslintRules>;
 }>;
-
 export type EslintConfig = Readonly<{
     files?: ReadonlyArray<string>;
     ignores?: ReadonlyArray<string>;
-    languageOptions?: Readonly<{
-        ecmaVersion?: string;
-        sourceType?: "commonjs" | "module" | "script";
-        globals?: Record<string, "off" | "readonly" | "writable">;
-        parser?: Readonly<{ parseForEslint: (...args: any) => any }>;
-        parserOptions?: any;
-    }>;
+    languageOptions?: EslintConfigLanguageOptions;
     linterOptions?: Readonly<{
         noInlineConfig?: boolean;
         reportUnusedDisableDirectives?: boolean;
@@ -30,40 +23,64 @@ export type EslintConfig = Readonly<{
     plugins?: Record<string, any>;
     rules?: EslintRules;
 }>;
+export type EslintConfigLanguageOptions = Readonly<{
+    ecmaVersion?: string;
+    sourceType?: "commonjs" | "module" | "script";
+    globals?: Record<string, "off" | "readonly" | "writable">;
+    parser?: any;
+    parserOptions?: any;
+}>;
 
 export default function createEslintConfig({
     type = "module",
-    project,
-    rules: extraRules = {},
+    tsconfigRootDir,
+    rules = {},
 }: CreateEslintConfigOptions): ReadonlyArray<EslintConfig> {
+    const plugins: Record<string, any> = {
+        import: eslintPluginImport,
+        "@typescript-eslint": typescriptEslint.plugin,
+    };
+    const languageOptions: EslintConfigLanguageOptions = {
+        parser: typescriptEslint.parser,
+        parserOptions: {
+            project: true,
+            tsconfigRootDir,
+        },
+    };
+
     const ctsConfig: EslintConfig = {
-        plugins: [eslintPluginImport, typescriptEslint],
+        plugins,
+        languageOptions,
         rules: {
+            ...defaultRules,
             ...rules,
-            ...extraRules,
             "@typescript-eslint/no-require-imports": "off",
         },
     };
 
     const mtsConfig: EslintConfig = {
-        plugins: [eslintPluginImport, typescriptEslint],
+        plugins,
+        languageOptions,
         rules: {
+            ...defaultRules,
             ...rules,
-            ...extraRules,
         },
     };
 
     return [
         {
             files: ["**/*.cts"],
+            ignores: ["**/*.d.cts"],
             ...ctsConfig,
         },
         {
             files: ["**/*.ts"],
+            ignores: ["**/*.d.ts"],
             ...(type === "module" ? mtsConfig : ctsConfig),
         },
         {
             files: ["**/*.mts"],
+            ignores: ["**/*.d.mts"],
             ...mtsConfig,
         },
     ];
