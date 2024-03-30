@@ -164,7 +164,7 @@ const errorDetection = {
             ignoreStatic: true,
         },
     ],
-    "consistent-return": "error",
+    "@typescript-eslint/use-unknown-in-catch-callback-variable": "error",
     curly: ["error", "multi-line"],
     eqeqeq: [
         "error",
@@ -272,6 +272,7 @@ const codeHealth = {
             },
         },
     ],
+    "@typescript-eslint/consistent-return": "error",
     "@typescript-eslint/consistent-type-assertions": [
         "error",
         {
@@ -1062,6 +1063,7 @@ const coveredByOtherPlugins = {
     camelcase: "off",
     "comma-dangle": "off",
     "comma-spacing": "off",
+    "consistent-return": "off",
     "default-param-last": "off",
     "dot-notation": "off",
     "func-call-spacing": "off",

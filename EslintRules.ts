@@ -1274,6 +1274,7 @@ type TypescriptEslintPluginRules = {
     "@typescript-eslint/consistent-indexed-object-style": RuleOptions<
         ["index-signature" | "record"]
     >;
+    "@typescript-eslint/consistent-return": RuleOptions;
     "@typescript-eslint/consistent-type-assertions": RuleOptions<
         [
             {
@@ -1710,7 +1711,13 @@ type TypescriptEslintPluginRules = {
     "@typescript-eslint/prefer-reduce-type-parameter": RuleOptions;
     "@typescript-eslint/prefer-regexp-exec": RuleOptions;
     "@typescript-eslint/prefer-return-this-type": RuleOptions;
-    "@typescript-eslint/prefer-string-starts-ends-with": RuleOptions;
+    "@typescript-eslint/prefer-string-starts-ends-with": RuleOptions<
+        [
+            {
+                allowSingleElementEquality?: "always" | "never";
+            },
+        ]
+    >;
     "@typescript-eslint/prefer-ts-expect-error": RuleOptions;
     "@typescript-eslint/promise-function-async": RuleOptions<
         [
@@ -1746,6 +1753,7 @@ type TypescriptEslintPluginRules = {
     "@typescript-eslint/restrict-template-expressions": RuleOptions<
         [
             {
+                allowArray?: boolean;
                 allowNumber?: boolean;
                 allowBoolean?: boolean;
                 allowAny?: boolean;
@@ -1841,7 +1849,6 @@ type TypescriptEslintPluginRules = {
         ]
     >;
     "@typescript-eslint/consistent-type-exports": RuleOptions;
-
     "@typescript-eslint/brace-style": RuleOptions<
         ["1tbs" | "allman" | "stroustrup", { allowSingleLine?: boolean }]
     >;
@@ -2113,6 +2120,7 @@ type TypescriptEslintPluginRules = {
             },
         ]
     >;
+    "@typescript-eslint/use-unknown-in-catch-callback-variable": RuleOptions;
 };
 
 // & ImportPluginEslintRules
