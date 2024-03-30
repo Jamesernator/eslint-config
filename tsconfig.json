@@ -2,13 +2,7 @@
     "include": [
         "./**/*.ts",
         "./**/*.mts",
-        "./**/*.cts",
-        "./global.d.ts"
-    ],
-    "exclude": [
-        "./**/*.d.ts",
-        "./**/*.d.mts",
-        "./**/*.d.cts"
+        "./**/*.cts"
     ],
     "compilerOptions": {
         "composite": true,
