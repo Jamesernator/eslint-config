@@ -5,7 +5,8 @@
 *.d.mts
 *.d.cts
 *.map
-!.eslintrc.cjs
+!eslint.config.*
+!/types/*.d.ts
 /node_modules/
 /package-lock.json
 /pnpm-lock.yaml

@@ -1,6 +1,6 @@
 type ErrorLevel = "error" | "off" | "warn";
 
-export type RuleOptions<Options extends Array<any> | [any] = []> =
+export type RuleOptions<Options extends ReadonlyArray<any> | [any] = []> =
     | ErrorLevel
     | [ErrorLevel, ...Options];
 
@@ -68,7 +68,7 @@ type BaseEslintRules = {
             ignoreDestructuring?: boolean,
             ignoreImports?: boolean,
             ignoreGlobals?: boolean,
-            allow?: Array<string>,
+            allow?: ReadonlyArray<string>,
         ]
     >;
     "capitalized-comments": RuleOptions<
@@ -81,7 +81,7 @@ type BaseEslintRules = {
     "class-methods-use-this": RuleOptions<
         [
             {
-                exceptMethods?: Array<string>;
+                exceptMethods?: ReadonlyArray<string>;
             },
         ]
     >;
@@ -162,7 +162,7 @@ type BaseEslintRules = {
     "no-case-declarations": RuleOptions;
     "no-compare-neg-zero": RuleOptions;
     "no-cond-assign": RuleOptions<["always" | "except-parens"]>;
-    "no-console": RuleOptions<[Readonly<{ allow?: Array<string> }>]>;
+    "no-console": RuleOptions<[Readonly<{ allow?: ReadonlyArray<string> }>]>;
     "no-constant-binary-expression": RuleOptions;
     "no-constant-condition": RuleOptions<[{ checkLoops?: boolean }]>;
     "no-constructor-return": RuleOptions;
@@ -186,7 +186,7 @@ type BaseEslintRules = {
     "no-empty-function": RuleOptions<
         [
             {
-                allow?: Array<string>;
+                allow?: ReadonlyArray<string>;
             },
         ]
     >;
@@ -241,14 +241,14 @@ type BaseEslintRules = {
     "no-global-assign": RuleOptions<
         [
             {
-                exceptions?: Array<string>;
+                exceptions?: ReadonlyArray<string>;
             },
         ]
     >;
     "no-implicit-coercion": RuleOptions<
         [
             {
-                allow?: Array<string>;
+                allow?: ReadonlyArray<string>;
                 boolean?: boolean;
                 disallowTemplateShorthand?: boolean;
                 number?: boolean;
@@ -302,7 +302,7 @@ type BaseEslintRules = {
             {
                 detectObjects?: boolean;
                 enforceConst?: boolean;
-                ignore?: Array<number | string>;
+                ignore?: ReadonlyArray<number | string>;
                 ignoreArrayIndexes?: boolean;
                 ignoreDefaultValues?: boolean;
                 ignoreClassFieldInitialValues?: boolean;
@@ -329,8 +329,8 @@ type BaseEslintRules = {
     "no-param-reassign": RuleOptions<
         [
             {
-                ignorePropertyModificationsFor?: Array<string>;
-                ignorePropertyModificationsForRegex?: Array<string>;
+                ignorePropertyModificationsFor?: ReadonlyArray<string>;
+                ignorePropertyModificationsForRegex?: ReadonlyArray<string>;
                 props?: boolean;
             },
         ]
@@ -346,7 +346,7 @@ type BaseEslintRules = {
         ]
     >;
     "no-regex-spaces": RuleOptions;
-    "no-restricted-globals": RuleOptions<Array<string>>;
+    "no-restricted-globals": RuleOptions<ReadonlyArray<string>>;
     "no-restricted-properties": RuleOptions;
     "no-return-assign": RuleOptions<["always" | "except-parens"]>;
     "no-return-await": RuleOptions;
@@ -373,7 +373,7 @@ type BaseEslintRules = {
                 builtinGlobals?: boolean;
                 hoist?: "all" | "functions" | "never";
 
-                allow?: Array<string>;
+                allow?: ReadonlyArray<string>;
                 ignoreOnInitialization?: boolean;
             },
         ]
@@ -397,7 +397,7 @@ type BaseEslintRules = {
     "no-unreachable-loop": RuleOptions<
         [
             Readonly<{
-                ignore?: Array<
+                ignore?: ReadonlyArray<
                     | "DoWhileStatement"
                     | "ForInStatement"
                     | "ForOfStatement"
@@ -475,7 +475,7 @@ type BaseEslintRules = {
         [
             Readonly<{
                 location?: "anywhere" | "start";
-                terms?: Array<string>;
+                terms?: ReadonlyArray<string>;
             }>,
         ]
     >;
@@ -541,7 +541,7 @@ type BaseEslintRules = {
         [
             number | "tab",
             {
-                ignoredNodes?: Array<string>;
+                ignoredNodes?: ReadonlyArray<string>;
                 SwitchCase?: number;
                 VariableDeclarator?: number | "first";
                 outerIIFEBody?: number | "off";
@@ -582,7 +582,7 @@ type BaseEslintRules = {
             {
                 before?: boolean;
                 after?: boolean;
-                overrides?: Array<string>;
+                overrides?: ReadonlyArray<string>;
             },
         ]
     >;
@@ -663,9 +663,9 @@ type BaseEslintRules = {
             {
                 newIsCap?: boolean;
                 capIsNew?: boolean;
-                newIsCapExceptions?: Array<string>;
+                newIsCapExceptions?: ReadonlyArray<string>;
                 newIsCapExceptionPattern?: string;
-                capIsNewExceptions?: Array<string>;
+                capIsNewExceptions?: ReadonlyArray<string>;
                 capIsNewExceptionPattern?: string;
                 properties?: boolean;
             },
@@ -683,7 +683,7 @@ type BaseEslintRules = {
     "no-bitwise": RuleOptions<
         [
             {
-                allow?: Array<string>;
+                allow?: ReadonlyArray<string>;
                 int32Hint?: boolean;
             },
         ]
@@ -892,15 +892,15 @@ type BaseEslintRules = {
         [
             "always" | "never",
             {
-                markers?: Array<string>;
-                exceptions?: Array<string>;
+                markers?: ReadonlyArray<string>;
+                exceptions?: ReadonlyArray<string>;
                 line?: {
-                    markers?: Array<string>;
-                    exceptions?: Array<string>;
+                    markers?: ReadonlyArray<string>;
+                    exceptions?: ReadonlyArray<string>;
                 };
                 block?: {
-                    markers?: Array<string>;
-                    exceptions?: Array<string>;
+                    markers?: ReadonlyArray<string>;
+                    exceptions?: ReadonlyArray<string>;
                     balanced?: boolean;
                 };
             },
@@ -978,10 +978,11 @@ type BaseEslintRules = {
             },
         ]
     >;
+    // TODO: Better types
     "no-restricted-imports": RuleOptions<
         [
             {
-                paths?: Array<{ name: string; message?: string }>;
+                paths?: ReadonlyArray<{ name: string; message?: string }>;
             },
         ]
     >;
@@ -1138,7 +1139,7 @@ type ImportPluginEslintRules = {
             {
                 missingExports?: boolean;
                 unusedExports?: boolean;
-                src?: Array<string>;
+                src?: ReadonlyArray<string>;
                 ignoreExports?: boolean;
             },
         ]
@@ -1157,7 +1158,7 @@ type ImportPluginEslintRules = {
     "import/no-nodejs-modules": RuleOptions<
         [
             {
-                allow?: Array<string>;
+                allow?: ReadonlyArray<string>;
             },
         ]
     >;
@@ -1178,8 +1179,8 @@ type ImportPluginEslintRules = {
     "import/order": RuleOptions<
         [
             {
-                groups?: Array<Array<string> | string>;
-                pathGroups?: Array<{ pattern: string; group: string }>;
+                groups?: ReadonlyArray<ReadonlyArray<string> | string>;
+                pathGroups?: ReadonlyArray<{ pattern: string; group: string }>;
                 pathGroupsExcludedImportTypes?: string;
                 "newlines-between"?: "always-and-inside-groups" | "always" | "ignore" | "never";
                 alphabetize?: {
@@ -1205,7 +1206,7 @@ type ImportPluginEslintRules = {
     "import/no-unassigned-import": RuleOptions<
         [
             {
-                allow?: Array<string>;
+                allow?: ReadonlyArray<string>;
             },
         ]
     >;
@@ -1266,7 +1267,7 @@ type TypescriptEslintPluginRules = {
     "@typescript-eslint/class-methods-use-this": RuleOptions<
         [
             {
-                exceptMethods?: Array<string>;
+                exceptMethods?: ReadonlyArray<string>;
             },
         ]
     >;
@@ -1306,7 +1307,7 @@ type TypescriptEslintPluginRules = {
         [
             {
                 accessibility?: AccessibilityLevel;
-                ignoredMethodNames?: Array<string>;
+                ignoredMethodNames?: ReadonlyArray<string>;
                 overrides?: {
                     accessors?: AccessibilityLevel;
                     constructors?: AccessibilityLevel;
@@ -1322,7 +1323,7 @@ type TypescriptEslintPluginRules = {
             {
                 allowArgumentsExplicitlyTypedAsAny?: boolean;
                 allowDirectConstAssertionInArrowFunctions?: boolean;
-                allowedNames?: Array<string>;
+                allowedNames?: ReadonlyArray<string>;
                 allowHigherOrderFunctions?: boolean;
                 allowTypedFunctionExpressions?: boolean;
             },
@@ -1365,13 +1366,13 @@ type TypescriptEslintPluginRules = {
             },
         ]
     >;
-    // TODO
+    // TODO: member-ordering
     "@typescript-eslint/member-ordering": RuleOptions;
     "@typescript-eslint/method-signature-style": RuleOptions<["method" | "property"]>;
     "@typescript-eslint/naming-convention": RuleOptions<
-        Array<{
+        ReadonlyArray<{
             // format options
-            format: Array<
+            format: ReadonlyArray<
                 | "camelCase"
                 | "PascalCase"
                 | "snake_case"
@@ -1398,11 +1399,11 @@ type TypescriptEslintPluginRules = {
                 | "forbid"
                 | "require"
                 | "requireDouble";
-            prefix?: Array<string>;
-            suffix?: Array<string>;
+            prefix?: ReadonlyArray<string>;
+            suffix?: ReadonlyArray<string>;
 
             // selector options
-            selector: Array<string> | string;
+            selector: ReadonlyArray<string> | string;
             filter?:
                 | string
                 | {
@@ -1410,14 +1411,15 @@ type TypescriptEslintPluginRules = {
                       match: boolean;
                   };
             // the allowed values for these are dependent on the selector - see below
-            modifiers?: Array<string>;
-            types?: Array<string>;
+            modifiers?: ReadonlyArray<string>;
+            types?: ReadonlyArray<string>;
         }>
     >;
+    "@typescript-eslint/no-array-delete": RuleOptions;
     "@typescript-eslint/no-base-to-string": RuleOptions<
         [
             {
-                ignoredTypeNames?: Array<string>;
+                ignoredTypeNames?: ReadonlyArray<string>;
             },
         ]
     >;
@@ -1530,7 +1532,7 @@ type TypescriptEslintPluginRules = {
     "@typescript-eslint/parameter-properties": RuleOptions<
         [
             {
-                allow?: Array<
+                allow?: ReadonlyArray<
                     | "private readonly"
                     | "private"
                     | "protected readonly "
@@ -1546,7 +1548,7 @@ type TypescriptEslintPluginRules = {
     "@typescript-eslint/no-require-imports": RuleOptions<
         [
             {
-                allow?: string[];
+                allow?: ReadonlyArray<string>;
             },
         ]
     >;
@@ -1554,7 +1556,7 @@ type TypescriptEslintPluginRules = {
         [
             {
                 allowDestructuring?: boolean;
-                allowedNames?: Array<string>;
+                allowedNames?: ReadonlyArray<string>;
             },
         ]
     >;
@@ -1613,7 +1615,7 @@ type TypescriptEslintPluginRules = {
     "@typescript-eslint/no-unnecessary-type-assertion": RuleOptions<
         [
             {
-                typesToIgnore: Array<string>;
+                typesToIgnore: ReadonlyArray<string>;
             },
         ]
     >;
@@ -1629,7 +1631,7 @@ type TypescriptEslintPluginRules = {
     "@typescript-eslint/no-var-requires": RuleOptions<
         [
             {
-                allow?: Array<string>;
+                allow?: ReadonlyArray<string>;
             },
         ]
     >;
@@ -1665,6 +1667,13 @@ type TypescriptEslintPluginRules = {
         ]
     >;
     "@typescript-eslint/prefer-optional-chain": RuleOptions;
+    "@typescript-eslint/prefer-promise-reject-errors": RuleOptions<
+        [
+            {
+                allowEmptyReject?: boolean;
+            },
+        ]
+    >;
     "@typescript-eslint/prefer-readonly": RuleOptions<
         [
             {
@@ -1675,20 +1684,20 @@ type TypescriptEslintPluginRules = {
     "@typescript-eslint/prefer-readonly-parameter-types": RuleOptions<
         [
             {
-                allow?: Array<
+                allow?: ReadonlyArray<
                     | string
                     | {
                           from: "file";
-                          name: string | [string, ...Array<string>];
+                          name: string | [string, ...ReadonlyArray<string>];
                           path?: string;
                       }
                     | {
                           from: "lib";
-                          name: string | [string, ...Array<string>];
+                          name: string | [string, ...ReadonlyArray<string>];
                       }
                     | {
                           from: "package";
-                          name: string | [string, ...Array<string>];
+                          name: string | [string, ...ReadonlyArray<string>];
                           package: string;
                       }
                 >;
@@ -1707,7 +1716,7 @@ type TypescriptEslintPluginRules = {
         [
             {
                 allowAny?: boolean;
-                allowedPromiseNames?: Array<string>;
+                allowedPromiseNames?: ReadonlyArray<string>;
                 checkArrowFunctions?: boolean;
                 checkFunctionDeclarations?: boolean;
                 checkFunctionExpressions?: boolean;
@@ -1750,7 +1759,7 @@ type TypescriptEslintPluginRules = {
             {
                 checkIntersections?: boolean;
                 checkUnions?: boolean;
-                groupOrder?: Array<
+                groupOrder?: ReadonlyArray<
                     | "conditional"
                     | "function"
                     | "import"
@@ -1875,7 +1884,7 @@ type TypescriptEslintPluginRules = {
         [
             number | "tab",
             {
-                ignoredNodes?: Array<string>;
+                ignoredNodes?: ReadonlyArray<string>;
                 SwitchCase?: number;
                 VariableDeclarator?: number | "first";
                 outerIIFEBody?: number | "off";
@@ -1908,7 +1917,7 @@ type TypescriptEslintPluginRules = {
             {
                 before?: boolean;
                 after?: boolean;
-                overrides?: Array<string>;
+                overrides?: ReadonlyArray<string>;
             },
         ]
     >;
@@ -1927,7 +1936,7 @@ type TypescriptEslintPluginRules = {
     "@typescript-eslint/no-empty-function": RuleOptions<
         [
             {
-                allow?: Array<string>;
+                allow?: ReadonlyArray<string>;
             },
         ]
     >;
@@ -1962,7 +1971,7 @@ type TypescriptEslintPluginRules = {
     "@typescript-eslint/no-magic-numbers": RuleOptions<
         [
             {
-                ignore?: Array<number | string>;
+                ignore?: ReadonlyArray<number | string>;
                 ignoreArrayIndexes?: boolean;
                 ignoreDefaultValues?: boolean;
                 enforceConst?: boolean;
@@ -1985,7 +1994,7 @@ type TypescriptEslintPluginRules = {
     "@typescript-eslint/no-restricted-imports": RuleOptions<
         [
             {
-                paths?: Array<{ name: string; message?: string }>;
+                paths?: ReadonlyArray<{ name: string; message?: string }>;
             },
         ]
     >;
@@ -1994,7 +2003,7 @@ type TypescriptEslintPluginRules = {
             {
                 builtinGlobals?: boolean;
                 hoist?: "all" | "functions" | "never";
-                allow?: Array<string>;
+                allow?: ReadonlyArray<string>;
                 ignoreTypeValueShadow?: boolean;
                 ignoreFunctionTypeParameterNameValueShadow?: boolean;
                 ignoreOnInitialization?: boolean;

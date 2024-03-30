@@ -77,6 +77,7 @@ const builtinModules = [
 const errorDetection = {
     "@typescript-eslint/await-thenable": "error",
     "@typescript-eslint/consistent-type-exports": "error",
+    "@typescript-eslint/no-array-delete": "error",
     "@typescript-eslint/no-array-constructor": "error",
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
@@ -126,6 +127,7 @@ const errorDetection = {
             varsIgnorePattern: "^_",
         },
     ],
+    "@typescript-eslint/no-unsafe-unary-minus": "error",
     "@typescript-eslint/require-array-sort-compare": [
         "error",
         {
@@ -320,6 +322,7 @@ const codeHealth = {
     "@typescript-eslint/no-unnecessary-type-assertion": "error",
     "@typescript-eslint/no-unnecessary-type-constraint": "error",
     "@typescript-eslint/no-unsafe-enum-comparison": "error",
+    "@typescript-eslint/no-useless-template-literals": "error",
     "@typescript-eslint/no-var-requires": "error",
     "@typescript-eslint/prefer-enum-initializers": "error",
     "@typescript-eslint/prefer-for-of": "error",
@@ -688,7 +691,6 @@ const consistency = {
             ignoreMemberSort: false,
         },
     ],
-    "symbol-description": "error",
 } satisfies Partial<EslintRules>;
 
 /**
@@ -1120,6 +1122,7 @@ const disabled = {
     "@typescript-eslint/padding-line-between-statements": "off",
     "@typescript-eslint/prefer-as-const": "off",
     "@typescript-eslint/prefer-namespace-keyword": "off",
+    "@typescript-eslint/prefer-promise-reject-errors": "off",
     "@typescript-eslint/prefer-regexp-exec": "off",
     "@typescript-eslint/promise-function-async": "off",
     "@typescript-eslint/require-await": "off",
@@ -1227,6 +1230,7 @@ const disabled = {
             enforceForRenamedProperties: false,
         },
     ],
+    "symbol-description": "off",
 } satisfies Partial<EslintRules>;
 
 const considerInFuture = {

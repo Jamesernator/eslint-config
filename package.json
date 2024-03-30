@@ -3,17 +3,17 @@
     "type": "module",
     "author": "James \"The Jamesernator\" Browning <contact@jamesernator.io>",
     "license": "ISC",
-    "version": "9.15.0",
+    "version": "9.19.0",
     "exports": {
         ".": "./createEslintConfig.js",
         "./*": "./*"
     },
     "peerDependencies": {
-        "@typescript-eslint/eslint-plugin": "^6.10.0",
-        "@typescript-eslint/parser": "^6.10.0",
-        "eslint": "^8.53.0",
+        "@typescript-eslint/eslint-plugin": "^6.19.0",
+        "@typescript-eslint/parser": "^6.19.0",
+        "eslint": "^8.57.0",
         "eslint-plugin-import": "^2.27.0",
-        "typescript": ">=5.2.0"
+        "typescript": ">=5.4.0"
     },
     "scripts": {
         "build": "tsc --build",
@@ -23,6 +23,7 @@
         "publishMinor": "npm run build && git add . && git commit -m '.' ; npm version minor && npm publish && git push"
     },
     "devDependencies": {
-        "prettier": "^3.2.1"
+        "@types/node": "^20.12.2",
+        "prettier": "^3.2.4"
     }
 }
