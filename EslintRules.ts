@@ -2017,7 +2017,14 @@ type TypescriptEslintPluginRules = {
             },
         ]
     >;
-    "@typescript-eslint/no-throw-literal": RuleOptions;
+    "@typescript-eslint/only-throw-error": RuleOptions<
+        [
+            {
+                allowThrowingAny?: boolean;
+                allowThrowingUnknown?: boolean;
+            },
+        ]
+    >;
     "@typescript-eslint/no-unused-expressions": RuleOptions<
         [
             {
