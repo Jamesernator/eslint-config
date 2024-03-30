@@ -10,7 +10,6 @@
     },
     "peerDependencies": {
         "eslint": ">=8.57.0",
-        "eslint-plugin-import": ">=2.27.0",
         "typescript": ">=5.4.0",
         "typescript-eslint": ">=7.4.0"
     },

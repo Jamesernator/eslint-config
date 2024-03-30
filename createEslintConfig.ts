@@ -1,5 +1,4 @@
 import typescriptEslint from "typescript-eslint";
-import eslintPluginImport from "eslint-plugin-import";
 import type { EslintRules } from "./EslintRules.js";
 import defaultRules from "./defaultRules.js";
 
@@ -8,6 +7,7 @@ export type CreateEslintConfigOptions = Readonly<{
     type?: "commonjs" | "module";
     rules?: Partial<EslintRules>;
 }>;
+
 export type EslintConfig = Readonly<{
     files?: ReadonlyArray<string>;
     ignores?: ReadonlyArray<string>;
@@ -23,6 +23,7 @@ export type EslintConfig = Readonly<{
     plugins?: Record<string, any>;
     rules?: Partial<EslintRules>;
 }>;
+
 export type EslintConfigLanguageOptions = Readonly<{
     ecmaVersion?: string;
     sourceType?: "commonjs" | "module" | "script";
@@ -37,7 +38,6 @@ export default function createEslintConfig({
     rules = {},
 }: CreateEslintConfigOptions): ReadonlyArray<EslintConfig> {
     const plugins: Record<string, any> = {
-        import: eslintPluginImport,
         "@typescript-eslint": typescriptEslint.plugin,
     };
     const languageOptions: EslintConfigLanguageOptions = {
