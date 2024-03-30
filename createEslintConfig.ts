@@ -1,6 +1,6 @@
-import type { EslintRules } from "./EslintRules.js";
 import typescriptEslint from "@typescript-eslint/eslint-plugin";
 import eslintPluginImport from "eslint-plugin-import";
+import type { EslintRules } from "./EslintRules.js";
 import rules from "./rules.js";
 
 export type CreateEslintConfigOptions = Readonly<{
