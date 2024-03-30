@@ -21,7 +21,7 @@ export type EslintConfig = Readonly<{
         postprocessor: (...args: any) => any;
     };
     plugins?: Record<string, any>;
-    rules?: EslintRules;
+    rules?: Partial<EslintRules>;
 }>;
 export type EslintConfigLanguageOptions = Readonly<{
     ecmaVersion?: string;

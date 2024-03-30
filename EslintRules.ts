@@ -1232,6 +1232,7 @@ type BaseEslintRules = {
 //     "import/no-import-module-exports": RuleOptions;
 // };
 
+// eslint-disable-next-line @typescript-eslint/array-type
 type TypescriptEslintPluginRules = {
     "@typescript-eslint/adjacent-overload-signatures": RuleOptions;
     "@typescript-eslint/array-type": RuleOptions<
