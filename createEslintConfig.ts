@@ -48,40 +48,27 @@ export default function createEslintConfig({
         },
     };
 
-    const ctsConfig: EslintConfig = {
-        plugins,
-        languageOptions,
-        rules: {
-            ...defaultRules,
-            ...rules,
-            "@typescript-eslint/no-require-imports": "off",
-        },
-    };
-
-    const mtsConfig: EslintConfig = {
-        plugins,
-        languageOptions,
-        rules: {
-            ...defaultRules,
-            ...rules,
-        },
-    };
-
     return [
         {
-            files: ["**/*.cts"],
-            ignores: ["**/*.d.cts"],
-            ...ctsConfig,
+            files: ["**/*.ts", "**/*.cts", "**/*.mts"],
+            plugins,
+            languageOptions,
+            linterOptions: {
+                reportUnusedDisableDirectives: true,
+            },
+            rules: {
+                ...defaultRules,
+                ...rules,
+            },
         },
         {
-            files: ["**/*.ts"],
-            ignores: ["**/*.d.ts"],
-            ...(type === "module" ? mtsConfig : ctsConfig),
+            files: ["**/*.cts", ...(type === "module" ? [] : ["**/*.ts"])],
+            rules: {
+                "@typescript-eslint/no-require-imports": "off",
+            },
         },
         {
-            files: ["**/*.mts"],
-            ignores: ["**/*.d.mts"],
-            ...mtsConfig,
+            ignores: ["**/*.d.ts", "**/*.d.cts", "**/*.d.mts"],
         },
     ];
 }
