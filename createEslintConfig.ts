@@ -1,7 +1,7 @@
-import typescriptEslint from "typescript-eslint";
-import defaultRules from "./defaultRules.js";
 import { FlatCompat } from "@eslint/eslintrc";
 import type { Linter } from "eslint";
+import typescriptEslint from "typescript-eslint";
+import defaultRules from "./defaultRules.js";
 
 export type CreateEslintConfigOptions = Readonly<{
     tsconfigRootDir: string;
@@ -13,7 +13,7 @@ export default function createEslintConfig({
     type = "module",
     tsconfigRootDir,
     rules = {},
-}: CreateEslintConfigOptions): readonly Linter.FlatConfig[] {
+}: CreateEslintConfigOptions): ReadonlyArray<Linter.FlatConfig> {
     const flatCompat = new FlatCompat();
     flatCompat.plugins("eslint-plugin-import");
 
