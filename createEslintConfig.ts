@@ -1,58 +1,38 @@
 import typescriptEslint from "typescript-eslint";
-import type { EslintRules } from "./EslintRules.js";
 import defaultRules from "./defaultRules.js";
+import { FlatCompat } from "@eslint/eslintrc";
+import type { Linter } from "eslint";
 
 export type CreateEslintConfigOptions = Readonly<{
     tsconfigRootDir: string;
     type?: "commonjs" | "module";
-    rules?: Partial<EslintRules>;
-}>;
-
-export type EslintConfig = Readonly<{
-    files?: ReadonlyArray<string>;
-    ignores?: ReadonlyArray<string>;
-    languageOptions?: EslintConfigLanguageOptions;
-    linterOptions?: Readonly<{
-        noInlineConfig?: boolean;
-        reportUnusedDisableDirectives?: boolean;
-    }>;
-    processor?: {
-        preprocessor: (...args: any) => any;
-        postprocessor: (...args: any) => any;
-    };
-    plugins?: Record<string, any>;
-    rules?: Partial<EslintRules>;
-}>;
-
-export type EslintConfigLanguageOptions = Readonly<{
-    ecmaVersion?: string;
-    sourceType?: "commonjs" | "module" | "script";
-    globals?: Record<string, "off" | "readonly" | "writable">;
-    parser?: any;
-    parserOptions?: any;
+    rules?: Partial<Linter.RulesRecord>;
 }>;
 
 export default function createEslintConfig({
     type = "module",
     tsconfigRootDir,
     rules = {},
-}: CreateEslintConfigOptions): ReadonlyArray<EslintConfig> {
+}: CreateEslintConfigOptions): readonly Linter.FlatConfig[] {
+    const flatCompat = new FlatCompat();
+    flatCompat.plugins("eslint-plugin-import");
+
     const plugins: Record<string, any> = {
         "@typescript-eslint": typescriptEslint.plugin,
     };
-    const languageOptions: EslintConfigLanguageOptions = {
-        parser: typescriptEslint.parser,
-        parserOptions: {
-            project: true,
-            tsconfigRootDir,
-        },
-    };
 
     return [
+        ...flatCompat.plugins("eslint-plugin-import"),
         {
             files: ["**/*.ts", "**/*.cts", "**/*.mts"],
             plugins,
-            languageOptions,
+            languageOptions: {
+                parser: typescriptEslint.parser as any,
+                parserOptions: {
+                    project: true,
+                    tsconfigRootDir,
+                },
+            },
             linterOptions: {
                 reportUnusedDisableDirectives: true,
             },

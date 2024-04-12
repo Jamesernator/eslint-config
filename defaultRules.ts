@@ -1,4 +1,4 @@
-import type { EslintRules } from "./EslintRules.js";
+import type { Linter } from "eslint";
 
 const builtinModules = [
     "_http_agent",
@@ -242,7 +242,7 @@ const errorDetection = {
     "no-useless-escape": "error",
     radix: ["error", "always"],
     "use-isnan": "error",
-} satisfies Partial<EslintRules>;
+} satisfies Partial<Linter.RulesRecord>;
 
 /**
  * Rules that detect things that are likely to be problematic
@@ -361,25 +361,25 @@ const codeHealth = {
         },
     ],
     "default-case": "error",
-    // "import/no-absolute-path": [
-    //     "error",
-    //     {
-    //         commonjs: true,
-    //         esmodule: true,
-    //     },
-    // ],
-    // "import/no-anonymous-default-export": [
-    //     "error",
-    //     {
-    //         allowAnonymousClass: false,
-    //         allowAnonymousFunction: false,
-    //         allowArray: false,
-    //         allowArrowFunction: false,
-    //         allowCallExpression: false,
-    //         allowLiteral: false,
-    //         allowObject: false,
-    //     },
-    // ],
+    "import/no-absolute-path": [
+        "error",
+        {
+            commonjs: true,
+            esmodule: true,
+        },
+    ],
+    "import/no-anonymous-default-export": [
+        "error",
+        {
+            allowAnonymousClass: false,
+            allowAnonymousFunction: false,
+            allowArray: false,
+            allowArrowFunction: false,
+            allowCallExpression: false,
+            allowLiteral: false,
+            allowObject: false,
+        },
+    ],
     "max-params": [
         "error",
         {
@@ -438,7 +438,7 @@ const codeHealth = {
     ],
     "prefer-rest-params": "error",
     "require-unicode-regexp": "error",
-} satisfies Partial<EslintRules>;
+} satisfies Partial<Linter.RulesRecord>;
 
 /**
  * Rules that enforce certain stylistic consistency even if either form would be otherwise valid
@@ -576,39 +576,39 @@ const consistency = {
         },
     ],
     "grouped-accessor-pairs": ["error", "getBeforeSet"],
-    //"import/consistent-type-specifier-style": ["error", "prefer-top-level"],
-    //"import/first": "error",
-    // "import/newline-after-import": [
-    //     "error",
-    //     {
-    //         count: 1,
-    //     },
-    // ],
-    // "import/no-duplicates": [
-    //     "error",
-    //     {
-    //         considerQueryString: false,
-    //         "prefer-inline": false,
-    //     },
-    // ],
-    // "import/no-empty-named-blocks": "error",
-    // "import/no-named-default": "error",
-    // "import/no-useless-path-segments": [
-    //     "error",
-    //     {
-    //         commonjs: true,
-    //         noUselessIndex: false,
-    //     },
-    // ],
-    // "import/order": [
-    //     "error",
-    //     {
-    //         alphabetize: {
-    //             caseInsensitive: true,
-    //             order: "asc",
-    //         },
-    //     },
-    // ],
+    "import/consistent-type-specifier-style": ["error", "prefer-top-level"],
+    "import/first": "error",
+    "import/newline-after-import": [
+        "error",
+        {
+            count: 1,
+        },
+    ],
+    "import/no-duplicates": [
+        "error",
+        {
+            considerQueryString: false,
+            "prefer-inline": false,
+        },
+    ],
+    "import/no-empty-named-blocks": "error",
+    "import/no-named-default": "error",
+    "import/no-useless-path-segments": [
+        "error",
+        {
+            commonjs: true,
+            noUselessIndex: false,
+        },
+    ],
+    "import/order": [
+        "error",
+        {
+            alphabetize: {
+                caseInsensitive: true,
+                order: "asc",
+            },
+        },
+    ],
     "logical-assignment-operators": [
         "error",
         "always",
@@ -694,7 +694,7 @@ const consistency = {
             ignoreMemberSort: false,
         },
     ],
-} satisfies Partial<EslintRules>;
+} satisfies Partial<Linter.RulesRecord>;
 
 /**
  * Rules concerning formatting
@@ -1015,7 +1015,7 @@ const formatting = {
         },
     ],
     "operator-linebreak": ["off", "before"],
-} satisfies Partial<EslintRules>;
+} satisfies Partial<Linter.RulesRecord>;
 
 /**
  * Rules that TypeScript itself is able to cover
@@ -1026,21 +1026,21 @@ const coveredByTypescript = {
     "@typescript-eslint/no-use-before-define": "off",
     "constructor-super": "off",
     "getter-return": "off",
-    // "import/default": "off",
-    // "import/export": "off",
-    // "import/extensions": "off",
-    // "import/named": "off",
-    // "import/namespace": "off",
-    // "import/no-amd": "off",
-    // "import/no-commonjs": "off",
-    // "import/no-deprecated": "off",
-    // "import/no-extraneous-dependencies": "off",
-    // "import/no-import-module-exports": "off",
-    // "import/no-named-as-default": "off",
-    // "import/no-named-as-default-member": "off",
-    // "import/no-nodejs-modules": "off",
-    // "import/no-unresolved": "off",
-    // "import/unambiguous": "off",
+    "import/default": "off",
+    "import/export": "off",
+    "import/extensions": "off",
+    "import/named": "off",
+    "import/namespace": "off",
+    "import/no-amd": "off",
+    "import/no-commonjs": "off",
+    "import/no-deprecated": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/no-import-module-exports": "off",
+    "import/no-named-as-default": "off",
+    "import/no-named-as-default-member": "off",
+    "import/no-nodejs-modules": "off",
+    "import/no-unresolved": "off",
+    "import/unambiguous": "off",
     "init-declarations": "off",
     "new-cap": "off",
     "no-async-promise-executor": "off",
@@ -1054,7 +1054,7 @@ const coveredByTypescript = {
     "no-undef": "off",
     "no-undefined": "off",
     "no-use-before-define": "off",
-} satisfies Partial<EslintRules>;
+} satisfies Partial<Linter.RulesRecord>;
 
 /**
  * Rules that are covered by a different plugin
@@ -1091,7 +1091,7 @@ const coveredByOtherPlugins = {
     semi: "off",
     "space-before-function-paren": "off",
     "space-infix-ops": "off",
-} satisfies Partial<EslintRules>;
+} satisfies Partial<Linter.RulesRecord>;
 
 const disabled = {
     "@typescript-eslint/class-literal-property-style": ["off", "fields"],
@@ -1148,24 +1148,24 @@ const disabled = {
     "id-denylist": "off",
     "id-length": "off",
     "id-match": "off",
-    // "import/exports-last": "off",
-    // "import/group-exports": "off",
-    // "import/max-dependencies": "off",
-    // "import/no-cycle": "off",
-    // "import/no-default-export": "off",
-    // "import/no-dynamic-require": "off",
-    // "import/no-internal-modules": "off",
-    // "import/no-mutable-exports": "off",
-    // "import/no-named-export": "off",
-    // "import/no-namespace": "off",
-    // "import/no-relative-packages": "off",
-    // "import/no-relative-parent-imports": "off",
-    // "import/no-restricted-paths": "off",
-    // "import/no-self-import": "off",
-    // "import/no-unassigned-import": "off",
-    // "import/no-unused-modules": "off",
-    // "import/no-webpack-loader-syntax": "off",
-    // "import/prefer-default-export": "off",
+    "import/exports-last": "off",
+    "import/group-exports": "off",
+    "import/max-dependencies": "off",
+    "import/no-cycle": "off",
+    "import/no-default-export": "off",
+    "import/no-dynamic-require": "off",
+    "import/no-internal-modules": "off",
+    "import/no-mutable-exports": "off",
+    "import/no-named-export": "off",
+    "import/no-namespace": "off",
+    "import/no-relative-packages": "off",
+    "import/no-relative-parent-imports": "off",
+    "import/no-restricted-paths": "off",
+    "import/no-self-import": "off",
+    "import/no-unassigned-import": "off",
+    "import/no-unused-modules": "off",
+    "import/no-webpack-loader-syntax": "off",
+    "import/prefer-default-export": "off",
     "max-classes-per-file": "off",
     "max-depth": "off",
     "max-lines": "off",
@@ -1234,7 +1234,7 @@ const disabled = {
         },
     ],
     "symbol-description": "off",
-} satisfies Partial<EslintRules>;
+} satisfies Partial<Linter.RulesRecord>;
 
 const considerInFuture = {
     // Consider in future
@@ -1246,9 +1246,11 @@ const considerInFuture = {
             treatMethodsAsReadonly: true,
         },
     ],
-} satisfies Partial<EslintRules>;
+} satisfies Partial<Linter.RulesRecord>;
 
-const defaultRules: EslintRules = {
+const defaultRules: {
+    [K in keyof Linter.RulesRecord]-?: NonNullable<Linter.RulesRecord[K]>;
+} = {
     ...errorDetection,
     ...codeHealth,
     ...consistency,
