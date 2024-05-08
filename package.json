@@ -9,10 +9,10 @@
         "./*": "./*"
     },
     "peerDependencies": {
-        "eslint": ">=9.0.0",
+        "eslint": ">=9.2.0",
         "eslint-plugin-import": ">=2.29.0",
         "typescript": ">=5.4.0",
-        "typescript-eslint": ">=7.4.0"
+        "typescript-eslint": ">=7.8.0"
     },
     "scripts": {
         "build": "tsc --build",
@@ -24,10 +24,13 @@
     "devDependencies": {
         "@types/eslint__eslintrc": "^2.1.1",
         "@types/node": "^20.12.2",
+        "eslint": "^9.2.0",
         "eslint-plugin-import": "^2.29.1",
-        "prettier": "^3.2.4"
+        "prettier": "^3.2.4",
+        "typescript-eslint": "^7.8.0"
     },
     "dependencies": {
         "@eslint/eslintrc": "^3.0.2"
-    }
+    },
+    "packageManager": "pnpm@9.1.0+sha512.67f5879916a9293e5cf059c23853d571beaf4f753c707f40cb22bed5fb1578c6aad3b6c4107ccb3ba0b35be003eb621a16471ac836c87beb53f9d54bb4612724"
 }

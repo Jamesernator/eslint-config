@@ -404,7 +404,6 @@ const codeHealth = {
     "no-lone-blocks": "error",
     "no-new-func": "error",
     "no-new-object": "error",
-    "no-new-symbol": "error",
     "no-new-wrappers": "error",
     "no-plusplus": [
         "error",
@@ -1187,6 +1186,8 @@ const disabled = {
     "no-labels": "off",
     "no-magic-numbers": "off",
     "no-mixed-operators": "off",
+    // Deprecated
+    "no-new-symbol": "off",
     "no-nested-ternary": "off",
     "no-param-reassign": "off",
     "no-restricted-exports": "off",
