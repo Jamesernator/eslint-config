@@ -200,7 +200,7 @@ const errorDetection = {
     "no-func-assign": "error",
     "no-import-assign": "error",
     "no-invalid-regexp": "error",
-    "no-misleading-character-class": "error",
+    "no-misleading-character-class": ["error", { allowEscape: true }],
     "no-multi-assign": "error",
     "no-multi-str": "error",
     "no-new": "error",
@@ -632,7 +632,7 @@ const consistency = {
     "no-extra-boolean-cast": [
         "error",
         {
-            enforceForLogicalOperands: false,
+            enforceForInnerExpressions: false,
         },
     ],
     "no-extra-label": "error",

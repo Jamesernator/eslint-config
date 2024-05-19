@@ -204,7 +204,11 @@ type BaseEslintRules = Partial<{
     "no-extra-boolean-cast": Linter.RuleEntry<
         [
             Readonly<{
+                /**
+                 * @deprecated
+                 */
                 enforceForLogicalOperands?: boolean;
+                enforceForInnerExpressions?: boolean;
             }>,
         ]
     >;
@@ -307,7 +311,13 @@ type BaseEslintRules = Partial<{
             },
         ]
     >;
-    "no-misleading-character-class": Linter.RuleEntry;
+    "no-misleading-character-class": Linter.RuleEntry<
+        [
+            {
+                allowEscape?: boolean;
+            },
+        ]
+    >;
     "no-multi-spaces": Linter.RuleEntry<
         [
             {
@@ -524,7 +534,15 @@ type BaseEslintRules = Partial<{
         ]
     >;
     "func-style": Linter.RuleEntry<
-        ["declaration" | "expression", { allowArrowFunctions?: boolean }]
+        [
+            "declaration" | "expression",
+            {
+                allowArrowFunctions?: boolean;
+                overrides?: {
+                    namedExports?: "declaration" | "expression" | "ignore";
+                };
+            },
+        ]
     >;
     "function-call-argument-newline": Linter.RuleEntry<["always" | "consistent" | "never"]>;
     "function-paren-newline": Linter.RuleEntry<
@@ -969,6 +987,7 @@ type BaseEslintRules = Partial<{
     "no-restricted-exports": Linter.RuleEntry<
         [
             {
+                restrictedNamedExportsPattern?: string;
                 restrictedNamedExports?: boolean;
                 restrictDefaultExports?: {
                     direct?: boolean;
