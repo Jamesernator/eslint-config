@@ -1494,8 +1494,26 @@ type TypescriptEslintPluginRules = Partial<{
     "@typescript-eslint/no-floating-promises": Linter.RuleEntry<
         [
             {
+                checkThenables?: boolean;
                 ignoreVoid?: boolean;
                 ignoreIIFE?: boolean;
+                allowForKnownSafePromises?: ReadonlyArray<
+                    | string
+                    | {
+                          from: "file";
+                          name: string | [string, ...Array<string>];
+                          path?: string;
+                      }
+                    | {
+                          from: "lib";
+                          name: string | [string, ...Array<string>];
+                      }
+                    | {
+                          from: "package";
+                          name: string | [string, ...Array<string>];
+                          package: string;
+                      }
+                >;
             },
         ]
     >;
@@ -1634,7 +1652,9 @@ type TypescriptEslintPluginRules = Partial<{
             },
         ]
     >;
+    "@typescript-eslint/no-unnecessary-parameter-property-assignment": Linter.RuleEntry;
     "@typescript-eslint/no-unnecessary-qualifier": Linter.RuleEntry;
+    "@typescript-eslint/no-unnecessary-template-expression": Linter.RuleEntry;
     "@typescript-eslint/no-unnecessary-type-arguments": Linter.RuleEntry;
     "@typescript-eslint/no-unnecessary-type-assertion": Linter.RuleEntry<
         [
@@ -1651,7 +1671,6 @@ type TypescriptEslintPluginRules = Partial<{
     "@typescript-eslint/no-unsafe-member-access": Linter.RuleEntry;
     "@typescript-eslint/no-unsafe-return": Linter.RuleEntry;
     "@typescript-eslint/no-unsafe-unary-minus": Linter.RuleEntry;
-    "@typescript-eslint/no-useless-template-literals": Linter.RuleEntry;
     "@typescript-eslint/no-var-requires": Linter.RuleEntry<
         [
             {

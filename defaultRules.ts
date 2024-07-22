@@ -323,7 +323,7 @@ const codeHealth = {
     "@typescript-eslint/no-unnecessary-type-assertion": "error",
     "@typescript-eslint/no-unnecessary-type-constraint": "error",
     "@typescript-eslint/no-unsafe-enum-comparison": "error",
-    "@typescript-eslint/no-useless-template-literals": "error",
+    "@typescript-eslint/no-unnecessary-template-expression": "error",
     "@typescript-eslint/no-var-requires": "error",
     "@typescript-eslint/only-throw-error": "error",
     "@typescript-eslint/prefer-enum-initializers": "error",
@@ -1093,6 +1093,7 @@ const coveredByOtherPlugins = {
 } satisfies Partial<Linter.RulesRecord>;
 
 const disabled = {
+    "@typescript-eslint/no-unnecessary-parameter-property-assignment": "error",
     "@typescript-eslint/class-literal-property-style": ["off", "fields"],
     "@typescript-eslint/class-methods-use-this": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
