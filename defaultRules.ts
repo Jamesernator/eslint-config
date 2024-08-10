@@ -757,8 +757,6 @@ const formatting = {
             returnAssign: false,
         },
     ],
-    "@typescript-eslint/no-extra-semi": "error",
-    "@typescript-eslint/object-curly-spacing": ["error", "always", {}],
     "@typescript-eslint/quotes": [
         "off",
         "double",
@@ -1168,6 +1166,7 @@ const disabled = {
     "no-constructor-return": "off",
     "no-continue": "off",
     "no-div-regex": "off",
+    "no-extra-semi": "off",
     "no-implicit-globals": "off",
     "no-inner-declarations": "off",
     "no-iterator": "off",

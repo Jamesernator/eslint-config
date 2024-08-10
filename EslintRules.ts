@@ -1283,16 +1283,16 @@ type TypescriptEslintPluginRules = Partial<{
     "@typescript-eslint/no-restricted-types": Linter.RuleEntry<
         [
             {
-                types?: {
-                    [k: string]:
-                        | {
-                              fixWith?: string;
-                              message?: string;
-                              suggest?: readonly string[];
-                          }
-                        | string
-                        | true;
-                };
+                types?: Record<
+                    string,
+                    | string
+                    | true
+                    | {
+                          fixWith?: string;
+                          message?: string;
+                          suggest?: ReadonlyArray<string>;
+                      }
+                >;
             },
         ]
     >;
@@ -2018,7 +2018,6 @@ type TypescriptEslintPluginRules = Partial<{
             },
         ]
     >;
-    "@typescript-eslint/no-extra-semi": Linter.RuleEntry;
     "@typescript-eslint/no-implied-eval": Linter.RuleEntry;
     "@typescript-eslint/no-invalid-this": Linter.RuleEntry<
         [
@@ -2117,15 +2116,6 @@ type TypescriptEslintPluginRules = Partial<{
         ]
     >;
     "@typescript-eslint/no-useless-constructor": Linter.RuleEntry;
-    "@typescript-eslint/object-curly-spacing": Linter.RuleEntry<
-        [
-            "always" | "never",
-            {
-                arraysInObjects?: boolean;
-                objectsInObjects?: boolean;
-            },
-        ]
-    >;
     // TODO
     "@typescript-eslint/padding-line-between-statements": Linter.RuleEntry;
     "@typescript-eslint/prefer-find": Linter.RuleEntry;
