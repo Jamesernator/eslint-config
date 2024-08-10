@@ -4,7 +4,7 @@
     "packageManager": "pnpm@9.1.0",
     "author": "James \"The Jamesernator\" Browning <contact@jamesernator.io>",
     "license": "ISC",
-    "version": "10.6.0",
+    "version": "10.7.0",
     "exports": {
         ".": "./createEslintConfig.js",
         "./*": "./*"
