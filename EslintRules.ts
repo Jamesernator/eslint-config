@@ -1278,14 +1278,25 @@ type TypescriptEslintPluginRules = Partial<{
         ]
     >;
     "@typescript-eslint/ban-tslint-comment": Linter.RuleEntry;
-    "@typescript-eslint/ban-types": Linter.RuleEntry<
+    "@typescript-eslint/no-unsafe-function-type": Linter.RuleEntry;
+    "@typescript-eslint/no-wrapper-object-types": Linter.RuleEntry;
+    "@typescript-eslint/no-restricted-types": Linter.RuleEntry<
         [
             {
-                types?: Record<string, string | false | { message: string; fixWith?: string }>;
-                extendDefaults?: boolean;
+                types?: {
+                    [k: string]:
+                        | {
+                              fixWith?: string;
+                              message?: string;
+                              suggest?: readonly string[];
+                          }
+                        | string
+                        | true;
+                };
             },
         ]
     >;
+
     "@typescript-eslint/class-literal-property-style": Linter.RuleEntry<["fields" | "getters"]>;
     "@typescript-eslint/class-methods-use-this": Linter.RuleEntry<
         [
@@ -1494,6 +1505,7 @@ type TypescriptEslintPluginRules = Partial<{
     "@typescript-eslint/no-floating-promises": Linter.RuleEntry<
         [
             {
+                allowForKnownSafeCalls?: boolean;
                 checkThenables?: boolean;
                 ignoreVoid?: boolean;
                 ignoreIIFE?: boolean;
@@ -2016,7 +2028,6 @@ type TypescriptEslintPluginRules = Partial<{
         ]
     >;
     "@typescript-eslint/no-loop-func": Linter.RuleEntry;
-    "@typescript-eslint/no-loss-of-precision": Linter.RuleEntry;
     "@typescript-eslint/no-magic-numbers": Linter.RuleEntry<
         [
             {
@@ -2088,6 +2099,8 @@ type TypescriptEslintPluginRules = Partial<{
                 caughtErrors?: "all" | "none";
                 caughtErrorsIgnorePattern?: string;
                 destructuredArrayIgnorePattern?: string;
+                reportUsedIgnorePattern?: boolean;
+                ignoreClassWithStaticInitBlock?: boolean;
             },
         ]
     >;

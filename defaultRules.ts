@@ -98,7 +98,6 @@ const errorDetection = {
     ],
     "@typescript-eslint/no-for-in-array": "error",
     "@typescript-eslint/no-implied-eval": "error",
-    "@typescript-eslint/no-loss-of-precision": "error",
     "@typescript-eslint/no-misused-promises": [
         "error",
         {
@@ -258,20 +257,6 @@ const codeHealth = {
         },
     ],
     "@typescript-eslint/ban-tslint-comment": "error",
-    "@typescript-eslint/ban-types": [
-        "error",
-        {
-            extendDefaults: false,
-            types: {
-                BigInt: "Don't use boxed types, use bigint instead",
-                Boolean: "Don't use boxed types, use boolean instead",
-                Function: "Don't use the plain Function type, use (...args: any[]) => any instead",
-                Number: "Don't use boxed types, use number instead",
-                String: "Don't use boxed types, use string instead",
-                Symbol: "Don't use boxed types, use symbol instead",
-            },
-        },
-    ],
     "@typescript-eslint/consistent-return": "error",
     "@typescript-eslint/consistent-type-assertions": [
         "error",
@@ -323,6 +308,8 @@ const codeHealth = {
     "@typescript-eslint/no-unnecessary-type-assertion": "error",
     "@typescript-eslint/no-unnecessary-type-constraint": "error",
     "@typescript-eslint/no-unsafe-enum-comparison": "error",
+    "@typescript-eslint/no-unsafe-function-type": "error",
+    "@typescript-eslint/no-wrapper-object-types": "error",
     "@typescript-eslint/no-unnecessary-template-expression": "error",
     "@typescript-eslint/no-var-requires": "error",
     "@typescript-eslint/only-throw-error": "error",
@@ -402,6 +389,7 @@ const codeHealth = {
     "no-extend-native": "error",
     "no-label-var": "error",
     "no-lone-blocks": "error",
+    "no-loss-of-precision": "error",
     "no-new-func": "error",
     "no-new-object": "error",
     "no-new-wrappers": "error",
@@ -1079,7 +1067,6 @@ const coveredByOtherPlugins = {
     "no-extra-semi": "off",
     "no-implied-eval": "off",
     "no-loop-func": "off",
-    "no-loss-of-precision": "off",
     "no-redeclare": "off",
     "no-underscore-dangle": "off",
     "no-unused-expressions": "off",
@@ -1236,6 +1223,7 @@ const disabled = {
         },
     ],
     "symbol-description": "off",
+    "@typescript-eslint/no-restricted-types": "off",
 } satisfies Partial<Linter.RulesRecord>;
 
 const considerInFuture = {
