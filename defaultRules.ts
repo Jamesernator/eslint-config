@@ -334,7 +334,7 @@ const codeHealth = {
     "@typescript-eslint/triple-slash-reference": [
         "error",
         {
-            lib: "never",
+            lib: "always",
             path: "never",
             types: "never",
         },
