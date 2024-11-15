@@ -506,7 +506,7 @@ type BaseEslintRules = Partial<{
     radix: Linter.RuleEntry<["always" | "as-needed"]>;
     "require-atomic-updates": Linter.RuleEntry;
     "require-await": Linter.RuleEntry;
-    "require-unicode-regexp": Linter.RuleEntry;
+    "require-unicode-regexp": Linter.RuleEntry<[{ requireFlag?: "u" | "v" }]>;
     strict: Linter.RuleEntry<["function" | "global" | "never" | "safe"]>;
     "use-isnan": Linter.RuleEntry;
     "valid-typeof": Linter.RuleEntry;
@@ -1253,6 +1253,8 @@ type ImportPluginEslintRules = {
     "import/group-exports": Linter.RuleEntry;
     // TODO
     "import/no-import-module-exports": Linter.RuleEntry;
+    // TODO
+    "import/dynamic-import-chunkname": Linter.RuleEntry;
 };
 
 type TypescriptEslintPluginRules = Partial<{
@@ -1707,6 +1709,7 @@ type TypescriptEslintPluginRules = Partial<{
     "@typescript-eslint/prefer-nullish-coalescing": Linter.RuleEntry<
         [
             {
+                ignoreBooleanCoercion?: boolean;
                 ignoreTernaryTests?: boolean;
                 ignoreConditionalTests?: boolean;
                 ignoreMixedLogicalExpressions?: boolean;
@@ -2074,6 +2077,23 @@ type TypescriptEslintPluginRules = Partial<{
             {
                 allowThrowingAny?: boolean;
                 allowThrowingUnknown?: boolean;
+                allow?: Array<
+                    | string
+                    | {
+                          from: "file";
+                          name: string | readonly [string, ...ReadonlyArray<string>];
+                          path?: string;
+                      }
+                    | {
+                          from: "lib";
+                          name: string | readonly [string, ...ReadonlyArray<string>];
+                      }
+                    | {
+                          from: "package";
+                          name: string | readonly [string, ...ReadonlyArray<string>];
+                          package: string;
+                      }
+                >;
             },
         ]
     >;

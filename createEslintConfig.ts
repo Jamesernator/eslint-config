@@ -1,4 +1,3 @@
-import { fixupPluginRules } from "@eslint/compat";
 import type { Linter } from "eslint";
 import eslintImportPlugin from "eslint-plugin-import";
 import typescriptEslint from "typescript-eslint";
@@ -17,7 +16,7 @@ export default function createEslintConfig({
 }: CreateEslintConfigOptions): ReadonlyArray<Linter.FlatConfig> {
     const plugins: Record<string, any> = {
         "@typescript-eslint": typescriptEslint.plugin,
-        import: fixupPluginRules(eslintImportPlugin),
+        import: eslintImportPlugin,
     };
 
     return [

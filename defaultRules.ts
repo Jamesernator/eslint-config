@@ -320,6 +320,7 @@ const codeHealth = {
     "@typescript-eslint/prefer-nullish-coalescing": [
         "error",
         {
+            ignoreBooleanCoercion: true,
             ignoreConditionalTests: true,
             ignoreMixedLogicalExpressions: true,
         },
@@ -424,7 +425,13 @@ const codeHealth = {
         },
     ],
     "prefer-rest-params": "error",
-    "require-unicode-regexp": "error",
+    "require-unicode-regexp": [
+        "error",
+        {
+            // TODO: Update this when TypeScript supports v flag
+            requireFlag: "u",
+        },
+    ],
 } satisfies Partial<Linter.RulesRecord>;
 
 /**
@@ -1133,6 +1140,7 @@ const disabled = {
     "id-denylist": "off",
     "id-length": "off",
     "id-match": "off",
+    "import/dynamic-import-chunkname": "off",
     "import/exports-last": "off",
     "import/group-exports": "off",
     "import/max-dependencies": "off",
