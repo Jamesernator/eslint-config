@@ -2,6 +2,12 @@ import type { Linter } from "eslint";
 
 type AccessibilityLevel = "explicit" | "no-public" | "off";
 
+type FileSpecifier = { from: "file"; name: string[] | string; path?: string };
+type LibSpecifier = { from: "lib"; name: string[] | string };
+type PackageSpecifier = { from: "package"; name: string[] | string; package: string };
+
+type TypeOrValueSpecifier = FileSpecifier | LibSpecifier | PackageSpecifier;
+
 /* todo eslint "@typescript-eslint/member-ordering": ["error", { "default": { "memberTypes": "never", "order": "alphabetically" } }] */
 
 type BaseEslintRules = Partial<{
@@ -864,6 +870,7 @@ type BaseEslintRules = Partial<{
                 caseSensitive?: boolean;
                 minKeys?: boolean;
                 natural?: boolean;
+                ignoreComputedKeys?: boolean;
             },
         ]
     >;
@@ -1280,7 +1287,15 @@ type TypescriptEslintPluginRules = Partial<{
         ]
     >;
     "@typescript-eslint/ban-tslint-comment": Linter.RuleEntry;
+    "@typescript-eslint/no-misused-spread": Linter.RuleEntry<
+        [
+            {
+                allow?: ReadonlyArray<TypeOrValueSpecifier>;
+            },
+        ]
+    >;
     "@typescript-eslint/no-unsafe-function-type": Linter.RuleEntry;
+    "@typescript-eslint/no-unsafe-type-assertion": Linter.RuleEntry;
     "@typescript-eslint/no-wrapper-object-types": Linter.RuleEntry;
     "@typescript-eslint/no-restricted-types": Linter.RuleEntry<
         [
@@ -1362,6 +1377,7 @@ type TypescriptEslintPluginRules = Partial<{
                 allowDirectConstAssertionInArrowFunctions?: boolean;
                 allowedNames?: ReadonlyArray<string>;
                 allowHigherOrderFunctions?: boolean;
+                allowOverloadFunctions?: boolean;
                 allowTypedFunctionExpressions?: boolean;
             },
         ]
@@ -1788,6 +1804,7 @@ type TypescriptEslintPluginRules = Partial<{
             },
         ]
     >;
+    "@typescript-eslint/related-getter-setter-pairs": Linter.RuleEntry;
     "@typescript-eslint/require-array-sort-compare": Linter.RuleEntry<
         [
             {

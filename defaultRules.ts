@@ -295,6 +295,7 @@ const codeHealth = {
             allowInGenericTypeArguments: true,
         },
     ],
+    "@typescript-eslint/no-misused-spread": "error",
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-require-imports": "error",
     "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
@@ -309,6 +310,7 @@ const codeHealth = {
     "@typescript-eslint/no-unnecessary-type-constraint": "error",
     "@typescript-eslint/no-unsafe-enum-comparison": "error",
     "@typescript-eslint/no-unsafe-function-type": "error",
+    "@typescript-eslint/no-unsafe-type-assertion": "error",
     "@typescript-eslint/no-wrapper-object-types": "error",
     "@typescript-eslint/no-unnecessary-template-expression": "error",
     "@typescript-eslint/no-var-requires": "error",
@@ -1128,6 +1130,7 @@ const disabled = {
             ignoreDifferentlyNamedParameters: true,
         },
     ],
+    "@typescript-eslint/related-getter-setter-pairs": "off",
     "array-callback-return": "off",
     "arrow-body-style": "off",
     "block-scoped-var": "off",

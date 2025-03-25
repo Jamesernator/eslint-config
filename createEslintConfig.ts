@@ -13,7 +13,7 @@ export default function createEslintConfig({
     type = "module",
     tsconfigRootDir,
     rules = {},
-}: CreateEslintConfigOptions): ReadonlyArray<Linter.FlatConfig> {
+}: CreateEslintConfigOptions): ReadonlyArray<Linter.Config> {
     const plugins: Record<string, any> = {
         "@typescript-eslint": typescriptEslint.plugin,
         import: eslintImportPlugin,
@@ -32,6 +32,7 @@ export default function createEslintConfig({
             },
             linterOptions: {
                 reportUnusedDisableDirectives: true,
+                reportUnusedInlineConfigs: "error",
             },
             rules: {
                 ...defaultRules,
