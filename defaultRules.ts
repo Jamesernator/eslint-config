@@ -313,6 +313,7 @@ const codeHealth = {
     "@typescript-eslint/no-unsafe-type-assertion": "error",
     "@typescript-eslint/no-wrapper-object-types": "error",
     "@typescript-eslint/no-unnecessary-template-expression": "error",
+    "@typescript-eslint/no-unnecessary-type-conversion": "error",
     "@typescript-eslint/no-var-requires": "error",
     "@typescript-eslint/only-throw-error": "error",
     "@typescript-eslint/prefer-enum-initializers": "error",
@@ -1184,6 +1185,7 @@ const disabled = {
     "no-labels": "off",
     "no-magic-numbers": "off",
     "no-mixed-operators": "off",
+    "no-unassigned-vars": "off",
     // Deprecated
     "no-new-symbol": "off",
     "no-nested-ternary": "off",

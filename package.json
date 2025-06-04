@@ -10,15 +10,15 @@
         "./*": "./*"
     },
     "peerDependencies": {
-        "eslint": ">=9.23.0",
+        "eslint": ">=9.28.0",
         "eslint-plugin-import": ">=2.31.0",
         "typescript": ">=5.8.0",
-        "typescript-eslint": ">=8.28.0"
+        "typescript-eslint": ">=8.33.0"
     },
     "scripts": {
         "build": "tsc --build",
-        "lint": "eslint .",
-        "lint:fix": "eslint --fix .",
+        "lint": "eslint --flag unstable_native_nodejs_ts_config --flag unstable_config_lookup_from_file .",
+        "lint:fix": "eslint --flag unstable_native_nodejs_ts_config --flag unstable_config_lookup_from_file --fix .",
         "prepublish": "node --run lint:fix; node --run build",
         "publishMinor": "node --run build && git add . && git commit -m '.' ; npm version minor && npm publish && git push"
     },

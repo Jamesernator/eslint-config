@@ -23,6 +23,8 @@
         "noImplicitOverride": true,
         "noUncheckedIndexedAccess": true,
         "forceConsistentCasingInFileNames": true,
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "allowImportingTsExtensions": true,
+        "rewriteRelativeImportExtensions": true
     }
 }

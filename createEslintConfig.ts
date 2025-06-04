@@ -1,7 +1,7 @@
 import type { Linter } from "eslint";
 import eslintImportPlugin from "eslint-plugin-import";
 import typescriptEslint from "typescript-eslint";
-import defaultRules from "./defaultRules.js";
+import defaultRules from "./defaultRules.ts";
 
 export type CreateEslintConfigOptions = Readonly<{
     tsconfigRootDir: string;

@@ -1,4 +1,4 @@
-import createEslintConfig from "./createEslintConfig.js";
+import createEslintConfig from "./createEslintConfig.ts";
 
 const eslintConfig = createEslintConfig({
     type: "module",

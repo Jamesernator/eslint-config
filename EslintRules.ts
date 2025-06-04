@@ -86,6 +86,8 @@ type BaseEslintRules = Partial<{
         [
             {
                 exceptMethods?: ReadonlyArray<string>;
+                ignoreOverrideMethods?: boolean;
+                ignoreClassesWithImplements?: boolean;
             },
         ]
     >;
@@ -314,6 +316,10 @@ type BaseEslintRules = Partial<{
                 ignoreArrayIndexes?: boolean;
                 ignoreDefaultValues?: boolean;
                 ignoreClassFieldInitialValues?: boolean;
+                ignoreEnums?: boolean;
+                ignoreNumericLiteralTypes?: boolean;
+                ignoreReadonlyClassProperties?: boolean;
+                ignoreTypeIndexes?: boolean;
             },
         ]
     >;
@@ -389,6 +395,9 @@ type BaseEslintRules = Partial<{
 
                 allow?: ReadonlyArray<string>;
                 ignoreOnInitialization?: boolean;
+
+                ignoreTypeValueShadow?: boolean;
+                ignoreFunctionTypeParameterNameValueShadow?: boolean;
             },
         ]
     >;
@@ -396,6 +405,7 @@ type BaseEslintRules = Partial<{
     "no-sparse-arrays": Linter.RuleEntry;
     "no-template-curly-in-string": Linter.RuleEntry;
     "no-throw-literal": Linter.RuleEntry;
+    "no-unassigned-vars": Linter.RuleEntry;
     "no-undef": Linter.RuleEntry<
         [
             {
@@ -469,6 +479,9 @@ type BaseEslintRules = Partial<{
                 classes?: boolean;
                 functions?: boolean;
                 variables?: boolean;
+                enums?: boolean;
+                typedefs?: boolean;
+                ignoreTypeReferences?: boolean;
             }>,
         ]
     >;
@@ -476,7 +489,13 @@ type BaseEslintRules = Partial<{
     "no-useless-call": Linter.RuleEntry;
     "no-useless-catch": Linter.RuleEntry;
     "no-useless-concat": Linter.RuleEntry;
-    "no-useless-escape": Linter.RuleEntry;
+    "no-useless-escape": Linter.RuleEntry<
+        [
+            {
+                allowRegexCharacters?: string;
+            },
+        ]
+    >;
     "no-useless-return": Linter.RuleEntry;
     "no-void": Linter.RuleEntry<
         [
@@ -544,6 +563,7 @@ type BaseEslintRules = Partial<{
             "declaration" | "expression",
             {
                 allowArrowFunctions?: boolean;
+                allowTypeAnnotation?: boolean;
                 overrides?: {
                     namedExports?: "declaration" | "expression" | "ignore";
                 };
@@ -670,7 +690,7 @@ type BaseEslintRules = Partial<{
             },
         ]
     >;
-    "max-params": Linter.RuleEntry<[{ max?: number }]>;
+    "max-params": Linter.RuleEntry<[{ max?: number; countVoidThis?: boolean }]>;
     // TODO
     "max-statements": Linter.RuleEntry;
     "max-statements-per-line": Linter.RuleEntry<
@@ -1737,6 +1757,7 @@ type TypescriptEslintPluginRules = Partial<{
                           number?: boolean;
                           string?: boolean;
                       };
+                ignoreIfStatements?: boolean;
             },
         ]
     >;
@@ -2094,6 +2115,7 @@ type TypescriptEslintPluginRules = Partial<{
             {
                 allowThrowingAny?: boolean;
                 allowThrowingUnknown?: boolean;
+                allowRethrowing?: boolean;
                 allow?: Array<
                     | string
                     | {
@@ -2114,6 +2136,7 @@ type TypescriptEslintPluginRules = Partial<{
             },
         ]
     >;
+    "@typescript-eslint/no-unnecessary-type-conversion": Linter.RuleEntry;
     "@typescript-eslint/no-unused-expressions": Linter.RuleEntry<
         [
             {
