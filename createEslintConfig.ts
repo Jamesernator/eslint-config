@@ -26,7 +26,7 @@ export default function createEslintConfig({
             languageOptions: {
                 parser: typescriptEslint.parser as any,
                 parserOptions: {
-                    project: true,
+                    projectService: true,
                     tsconfigRootDir,
                 },
             },
