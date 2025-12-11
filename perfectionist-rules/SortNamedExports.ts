@@ -32,7 +32,7 @@ export interface CustomGroupAnyOfDefinition {
     }>;
 }
 
-export type PerfectionistSortNamedExportsOptions = CommonOptions &
+export type PerfectionistSortNamedExports = CommonOptions &
     PartitionByComment &
     PartitionByNewline & {
         groups?: Array<string | Array<string>>;
