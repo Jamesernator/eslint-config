@@ -996,6 +996,17 @@ const perfectionistRules = {
         {
             ...commonOptions,
             newlinesBetween: 0,
+            groups: [
+                "side-effect",
+                "builtin",
+                "external",
+                "internal",
+                "subpath",
+                "parent",
+                "sibling",
+                "index",
+                "import",
+            ],
         },
     ],
     "perfectionist/sort-interfaces": [
