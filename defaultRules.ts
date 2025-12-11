@@ -1,4 +1,5 @@
 import type { Linter } from "eslint";
+import type { Rules } from "./Rules.ts";
 
 const builtinModules = [
     "_http_agent",
@@ -76,10 +77,18 @@ const builtinModules = [
  */
 const errorDetection = {
     "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/consistent-type-exports": "error",
+    "@typescript-eslint/consistent-type-exports": [
+        "error",
+        { fixMixedExportsWithInlineTypeSpecifier: true },
+    ],
     "@typescript-eslint/no-array-delete": "error",
     "@typescript-eslint/no-array-constructor": "error",
-    "@typescript-eslint/no-base-to-string": "error",
+    "@typescript-eslint/no-base-to-string": [
+        "error",
+        {
+            checkUnknown: true,
+        },
+    ],
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
     "@typescript-eslint/no-confusing-void-expression": [
         "error",
@@ -89,6 +98,7 @@ const errorDetection = {
         },
     ],
     "@typescript-eslint/no-duplicate-enum-values": "error",
+    "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-floating-promises": [
         "error",
         {
@@ -109,6 +119,13 @@ const errorDetection = {
     "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error",
     "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
     "@typescript-eslint/no-redundant-type-constituents": "error",
+    "@typescript-eslint/no-empty-object-type": [
+        "error",
+        {
+            allowInterfaces: "always",
+            allowObjectTypes: "never",
+        },
+    ],
     "@typescript-eslint/no-unused-expressions": [
         "error",
         {
@@ -127,6 +144,19 @@ const errorDetection = {
         },
     ],
     "@typescript-eslint/no-unsafe-unary-minus": "error",
+    "@typescript-eslint/no-unsafe-argument": "error",
+    "@typescript-eslint/no-unsafe-assignment": "error",
+    "@typescript-eslint/no-unsafe-call": "error",
+    "@typescript-eslint/no-unsafe-declaration-merging": "error",
+    "@typescript-eslint/no-unsafe-member-access": "error",
+    "@typescript-eslint/no-unsafe-return": "error",
+    "@typescript-eslint/no-unnecessary-condition": [
+        "error",
+        {
+            allowConstantLoopConditions: "only-allowed-literals",
+        },
+    ],
+    "@typescript-eslint/prefer-namespace-keyword": "error",
     "@typescript-eslint/require-array-sort-compare": [
         "error",
         {
@@ -160,7 +190,7 @@ const errorDetection = {
     "@typescript-eslint/unbound-method": [
         "error",
         {
-            ignoreStatic: true,
+            ignoreStatic: false,
         },
     ],
     "@typescript-eslint/use-unknown-in-catch-callback-variable": "error",
@@ -182,7 +212,6 @@ const errorDetection = {
             checkLoops: false,
         },
     ],
-    "no-control-regex": "error",
     "no-delete-var": "error",
     "no-dupe-args": "error",
     "no-dupe-else-if": "error",
@@ -241,7 +270,7 @@ const errorDetection = {
     "no-useless-escape": "error",
     radix: ["error", "always"],
     "use-isnan": "error",
-} satisfies Partial<Linter.RulesRecord>;
+} satisfies Partial<Rules>;
 
 /**
  * Rules that detect things that are likely to be problematic
@@ -263,6 +292,7 @@ const codeHealth = {
         {
             assertionStyle: "as",
             objectLiteralTypeAssertions: "never",
+            arrayLiteralTypeAssertions: "never",
         },
     ],
     "@typescript-eslint/default-param-last": "error",
@@ -274,6 +304,7 @@ const codeHealth = {
             allowExpressions: true,
             allowHigherOrderFunctions: true,
             allowTypedFunctionExpressions: true,
+            allowIIFEs: true,
         },
     ],
     "@typescript-eslint/explicit-module-boundary-types": [
@@ -283,8 +314,10 @@ const codeHealth = {
             allowDirectConstAssertionInArrowFunctions: true,
             allowHigherOrderFunctions: true,
             allowTypedFunctionExpressions: true,
+            allowOverloadFunctions: true,
         },
     ],
+    "@typescript-eslint/related-getter-setter-pairs": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
     "@typescript-eslint/no-extra-non-null-assertion": "error",
     "@typescript-eslint/no-import-type-side-effects": "error",
@@ -308,6 +341,7 @@ const codeHealth = {
     "@typescript-eslint/no-unnecessary-type-arguments": "error",
     "@typescript-eslint/no-unnecessary-type-assertion": "error",
     "@typescript-eslint/no-unnecessary-type-constraint": "error",
+    "@typescript-eslint/no-unnecessary-type-parameters": "error",
     "@typescript-eslint/no-unsafe-enum-comparison": "error",
     "@typescript-eslint/no-unsafe-function-type": "error",
     "@typescript-eslint/no-unsafe-type-assertion": "error",
@@ -316,10 +350,12 @@ const codeHealth = {
     "@typescript-eslint/no-unnecessary-type-conversion": "error",
     "@typescript-eslint/no-var-requires": "error",
     "@typescript-eslint/only-throw-error": "error",
+    "@typescript-eslint/prefer-promise-reject-errors": ["error", { allowThrowingUnknown: true }],
     "@typescript-eslint/prefer-enum-initializers": "error",
     "@typescript-eslint/prefer-find": "error",
     "@typescript-eslint/prefer-for-of": "error",
     "@typescript-eslint/prefer-literal-enum-member": "error",
+    "@typescript-eslint/no-unused-private-class-members": "error",
     "@typescript-eslint/prefer-nullish-coalescing": [
         "error",
         {
@@ -369,12 +405,6 @@ const codeHealth = {
             allowCallExpression: false,
             allowLiteral: false,
             allowObject: false,
-        },
-    ],
-    "max-params": [
-        "error",
-        {
-            max: 7,
         },
     ],
     "max-statements-per-line": [
@@ -428,14 +458,16 @@ const codeHealth = {
         },
     ],
     "prefer-rest-params": "error",
+    "prefer-object-has-own": "error",
     "require-unicode-regexp": [
         "error",
         {
             // TODO: Update this when TypeScript supports v flag
-            requireFlag: "u",
+            requireFlag: "v",
         },
     ],
-} satisfies Partial<Linter.RulesRecord>;
+    "no-object-constructor": "error",
+} satisfies Partial<Rules>;
 
 /**
  * Rules that enforce certain stylistic consistency even if either form would be otherwise valid
@@ -443,6 +475,7 @@ const codeHealth = {
  * correspond to different AST's
  */
 const consistency = {
+    "@typescript-eslint/prefer-as-const": "error",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": [
         "error",
@@ -465,61 +498,6 @@ const consistency = {
         "error",
         {
             allowKeywords: true,
-        },
-    ],
-    "@typescript-eslint/naming-convention": [
-        "error",
-        {
-            selector: "default",
-            format: ["camelCase", "PascalCase", "UPPER_CASE"],
-        },
-        {
-            selector: "variableLike",
-            format: ["camelCase", "PascalCase"],
-        },
-        {
-            selector: "variable",
-            modifiers: ["const"],
-            format: ["camelCase", "PascalCase", "UPPER_CASE"],
-        },
-        {
-            selector: "enumMember",
-            format: ["camelCase", "UPPER_CASE"],
-        },
-        {
-            selector: "function",
-            format: ["camelCase"],
-        },
-        {
-            selector: "parameter",
-            format: ["camelCase", "PascalCase"],
-        },
-        {
-            selector: "property",
-            format: ["camelCase", "PascalCase"],
-        },
-        {
-            selector: "property",
-            modifiers: ["readonly"],
-            format: ["camelCase", "PascalCase", "UPPER_CASE"],
-        },
-        {
-            selector: [
-                "objectLiteralProperty",
-                "objectLiteralMethod",
-                "typeProperty",
-                "typeMethod",
-            ],
-            format: null,
-        },
-        {
-            selector: "typeLike",
-            format: ["PascalCase"],
-        },
-        {
-            selector: "variable",
-            modifiers: ["destructured"],
-            format: null,
         },
     ],
     "@typescript-eslint/no-duplicate-type-constituents": "error",
@@ -547,7 +525,7 @@ const consistency = {
     "@typescript-eslint/prefer-destructuring": [
         "error",
         {
-            array: true,
+            array: false,
             object: true,
         },
         {
@@ -556,13 +534,7 @@ const consistency = {
     ],
     "@typescript-eslint/prefer-function-type": "error",
     "@typescript-eslint/prefer-includes": "error",
-    "@typescript-eslint/sort-type-constituents": [
-        "error",
-        {
-            checkIntersections: true,
-            checkUnions: true,
-        },
-    ],
+
     "default-case-last": "error",
     "func-names": ["error", "as-needed", {}],
     "func-style": [
@@ -691,326 +663,97 @@ const consistency = {
             ignoreMemberSort: false,
         },
     ],
-} satisfies Partial<Linter.RulesRecord>;
+} satisfies Partial<Rules>;
 
 /**
- * Rules concerning formatting
+ * Deprecated eslint rules
  * NOTE: As per https://typescript-eslint.io/linting/troubleshooting/formatting all style rules
  * are now off
  */
-const formatting = {
-    "@typescript-eslint/brace-style": [
-        "off",
-        "1tbs",
-        {
-            allowSingleLine: true,
-        },
-    ],
-    "@typescript-eslint/comma-dangle": [
-        "off",
-        {
-            arrays: "always-multiline",
-            enums: "always-multiline",
-            exports: "always-multiline",
-            functions: "always-multiline",
-            generics: "always-multiline",
-            imports: "always-multiline",
-            objects: "always-multiline",
-            tuples: "always-multiline",
-        },
-    ],
-    "@typescript-eslint/comma-spacing": [
-        "off",
-        {
-            after: true,
-            before: false,
-        },
-    ],
-    "@typescript-eslint/func-call-spacing": ["off", "never"],
-    "@typescript-eslint/indent": [
-        "off",
-        4,
-        {
-            flatTernaryExpressions: true,
-            FunctionExpression: {
-                parameters: 1,
-            },
-            ignoredNodes: ["ConditionalExpression"],
-            SwitchCase: 1,
-        },
-    ],
-    "@typescript-eslint/keyword-spacing": [
-        "off",
-        {
-            after: true,
-            before: true,
-        },
-    ],
-    "@typescript-eslint/lines-between-class-members": [
-        "off",
-        "always",
-        {
-            exceptAfterOverload: true,
-            exceptAfterSingleLine: true,
-        },
-    ],
-    "@typescript-eslint/no-extra-parens": [
-        "off",
-        "all",
-        {
-            conditionalAssign: false,
-            enforceForArrowConditionals: true,
-            enforceForFunctionPrototypeMethods: true,
-            enforceForNewInMemberExpressions: true,
-            enforceForSequenceExpressions: false,
-            nestedBinaryExpressions: true,
-            returnAssign: false,
-        },
-    ],
-    "@typescript-eslint/quotes": [
-        "off",
-        "double",
-        {
-            allowTemplateLiterals: true,
-            avoidEscape: false,
-        },
-    ],
-    "@typescript-eslint/semi": ["off", "always"],
-    "@typescript-eslint/space-before-blocks": [
-        "off",
-        {
-            classes: "always",
-            functions: "always",
-            keywords: "off",
-        },
-    ],
-    "@typescript-eslint/space-before-function-paren": [
-        "off",
-        {
-            anonymous: "never",
-            asyncArrow: "always",
-            named: "never",
-        },
-    ],
-    "@typescript-eslint/space-infix-ops": "off",
-    "@typescript-eslint/type-annotation-spacing": [
-        "off",
-        {
-            overrides: {
-                arrow: {
-                    after: true,
-                    before: true,
-                },
-                colon: {
-                    after: true,
-                    before: false,
-                },
-            },
-        },
-    ],
-    "array-bracket-newline": ["off", "consistent"],
-    "array-bracket-spacing": ["off", "never", {}],
-    "array-element-newline": ["off", "consistent"],
-    "arrow-parens": ["off", "always"],
-    "arrow-spacing": [
-        "off",
-        {
-            after: true,
-            before: true,
-        },
-    ],
-    "block-spacing": ["off", "always"],
-    "comma-style": ["off", "last"],
-    "computed-property-spacing": [
-        "off",
-        "never",
-        {
-            enforceForClassMembers: true,
-        },
-    ],
-    "dot-location": ["off", "property"],
-    "eol-last": ["off", "always"],
-    "function-call-argument-newline": ["off", "consistent"],
-    "function-paren-newline": ["off", "multiline-arguments"],
-    "generator-star-spacing": [
-        "off",
-        {
-            after: true,
-            before: false,
-        },
-    ],
-    "implicit-arrow-linebreak": ["off", "beside"],
-    "jsx-quotes": ["off", "prefer-double"],
-    "key-spacing": [
-        "off",
-        {
-            afterColon: true,
-            beforeColon: false,
-        },
-    ],
-    "line-comment-position": ["off", "above"],
-    "linebreak-style": ["off", "unix"],
-    "lines-around-comment": [
-        "off",
-        {
-            afterBlockComment: false,
-            afterLineComment: false,
-            allowArrayEnd: true,
-            allowArrayStart: true,
-            allowBlockEnd: true,
-            allowBlockStart: true,
-            allowClassEnd: true,
-            allowClassStart: true,
-            allowObjectEnd: true,
-            allowObjectStart: true,
-            beforeBlockComment: true,
-            beforeLineComment: false,
-        },
-    ],
-    "max-len": [
-        "off",
-        {
-            code: 100,
-            ignoreComments: true,
-            ignoreRegExpLiterals: true,
-            ignoreStrings: true,
-            ignoreTemplateLiterals: true,
-            ignoreTrailingComments: true,
-            ignoreUrls: true,
-        },
-    ],
-    "newline-per-chained-call": [
-        "off",
-        {
-            ignoreChainWithDepth: 3,
-        },
-    ],
+const deprecated = {
+    "array-bracket-newline": "off",
+    "array-bracket-spacing": "off",
+    "array-element-newline": "off",
+    "arrow-parens": "off",
+    "arrow-spacing": "off",
+    "block-spacing": "off",
+    "callback-return": "off",
+    "comma-style": "off",
+    "computed-property-spacing": "off",
+    "dot-location": "off",
+    "eol-last": "off",
+    "function-call-argument-newline": "off",
+    "function-paren-newline": "off",
+    "generator-star-spacing": "off",
+    "global-require": "off",
+    "handle-callback-err": "off",
+    "id-blacklist": "off",
+    "implicit-arrow-linebreak": "off",
+    "indent-legacy": "off",
+    "jsx-quotes": "off",
+    "key-spacing": "off",
+    "line-comment-position": "off",
+    "linebreak-style": "off",
+    "lines-around-comment": "off",
+    "lines-around-directive": "off",
+    "max-len": "off",
+    "newline-after-var": "off",
+    "newline-before-return": "off",
+    "newline-per-chained-call": "off",
+    "no-buffer-constructor": "off",
+    "no-catch-shadow": "off",
     "no-irregular-whitespace": "off",
+    "no-mixed-requires": "off",
     "no-mixed-spaces-and-tabs": "off",
     "no-multi-spaces": "off",
-    "no-multiple-empty-lines": [
-        "off",
-        {
-            max: 3,
-            maxBOF: 0,
-            maxEOF: 2,
-        },
-    ],
+    "no-multiple-empty-lines": "off",
+    "no-native-reassign": "off",
+    "no-negated-in-lhs": "off",
+    "no-new-require": "off",
+    "no-path-concat": "off",
+    "no-process-env": "off",
+    "no-process-exit": "off",
+    "no-restricted-modules": "off",
+    "no-spaced-func": "off",
+    "no-sync": "off",
     "no-tabs": "off",
     "no-trailing-spaces": "off",
+    "no-unused-private-class-members": "off",
     "no-whitespace-before-property": "off",
-    "nonblock-statement-body-position": ["off", "beside"],
-    "object-curly-newline": [
-        "off",
-        {
-            consistent: true,
-            multiline: true,
-        },
-    ],
-    "object-property-newline": [
-        "off",
-        {
-            allowAllPropertiesOnSameLine: true,
-        },
-    ],
-    "padded-blocks": [
-        "off",
-        "never",
-        {
-            allowSingleLineBlocks: true,
-        },
-    ],
-    "quote-props": [
-        "off",
-        "as-needed",
-        {
-            keywords: false,
-            numbers: true,
-            unnecessary: true,
-        },
-    ],
-    "rest-spread-spacing": ["off", "never"],
-    "semi-spacing": [
-        "off",
-        {
-            after: true,
-            before: false,
-        },
-    ],
-    "semi-style": ["off", "last"],
-    "space-in-parens": ["off", "never"],
-    "space-unary-ops": [
-        "off",
-        {
-            nonwords: false,
-            words: true,
-        },
-    ],
-    "spaced-comment": [
-        "off",
-        "always",
-        {
-            block: {
-                balanced: true,
-            },
-            line: {
-                markers: ["/"],
-            },
-        },
-    ],
-    "switch-colon-spacing": [
-        "off",
-        {
-            after: true,
-            before: false,
-        },
-    ],
-    "template-curly-spacing": ["off", "always"],
-    "template-tag-spacing": ["off", "never"],
-    "unicode-bom": ["off", "never"],
-    "yield-star-spacing": [
-        "off",
-        {
-            after: true,
-            before: false,
-        },
-    ],
-    // This makes typescript object types more consistent with JS objects
-    "@typescript-eslint/member-delimiter-style": [
-        "off",
-        {
-            multiline: {
-                requireLast: true,
-            },
-            overrides: {
-                interface: {
-                    multiline: {
-                        delimiter: "semi",
-                        requireLast: true,
-                    },
-                    singleline: {
-                        delimiter: "semi",
-                        requireLast: false,
-                    },
-                },
-                typeLiteral: {
-                    multiline: {
-                        delimiter: "comma",
-                        requireLast: true,
-                    },
-                    singleline: {
-                        delimiter: "comma",
-                        requireLast: false,
-                    },
-                },
-            },
-            singleline: {
-                requireLast: false,
-            },
-        },
-    ],
-    "operator-linebreak": ["off", "before"],
-} satisfies Partial<Linter.RulesRecord>;
+    "nonblock-statement-body-position": "off",
+    "object-curly-newline": "off",
+    "object-property-newline": "off",
+    "operator-linebreak": "off",
+    "padded-blocks": "off",
+    "prefer-reflect": "off",
+    "quote-props": "off",
+    "rest-spread-spacing": "off",
+    "semi-spacing": "off",
+    "semi-style": "off",
+    "space-in-parens": "off",
+    "space-unary-ops": "off",
+    "spaced-comment": "off",
+    "switch-colon-spacing": "off",
+    "template-curly-spacing": "off",
+    "template-tag-spacing": "off",
+    "unicode-bom": "off",
+    "yield-star-spacing": "off",
+    "@typescript-eslint/member-delimiter-style": "off",
+    "@typescript-eslint/type-annotation-spacing": "off",
+    "@typescript-eslint/brace-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
+    "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/func-call-spacing": "off",
+    "@typescript-eslint/indent": "off",
+    "@typescript-eslint/keyword-spacing": "off",
+    "@typescript-eslint/lines-between-class-members": "off",
+    "@typescript-eslint/no-extra-parens": "off",
+    "@typescript-eslint/quotes": "off",
+    "@typescript-eslint/semi": "off",
+    "@typescript-eslint/space-before-function-paren": "off",
+    "@typescript-eslint/space-infix-ops": "off",
+    "@typescript-eslint/space-before-blocks": "off",
+} satisfies Partial<Rules>;
 
 /**
  * Rules that TypeScript itself is able to cover
@@ -1018,7 +761,6 @@ const formatting = {
 const coveredByTypescript = {
     "@typescript-eslint/init-declarations": "off",
     "@typescript-eslint/no-invalid-this": "off",
-    "@typescript-eslint/no-use-before-define": "off",
     "constructor-super": "off",
     "getter-return": "off",
     "import/default": "off",
@@ -1088,16 +830,15 @@ const coveredByOtherPlugins = {
 } satisfies Partial<Linter.RulesRecord>;
 
 const disabled = {
-    "@typescript-eslint/no-unnecessary-parameter-property-assignment": "error",
-    "@typescript-eslint/class-literal-property-style": ["off", "fields"],
+    "@typescript-eslint/no-unnecessary-parameter-property-assignment": "off",
+    "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/class-methods-use-this": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/member-ordering": "off",
-    "@typescript-eslint/method-signature-style": ["off", "property"],
+    "@typescript-eslint/method-signature-style": "off",
     "@typescript-eslint/no-dynamic-delete": "off",
     "@typescript-eslint/no-empty-interface": "off",
-    "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-extraneous-class": "off",
     "@typescript-eslint/no-inferrable-types": "off",
     "@typescript-eslint/no-loop-func": "off",
@@ -1109,29 +850,14 @@ const disabled = {
     "@typescript-eslint/no-shadow": "off",
     "@typescript-eslint/no-this-alias": "off",
     "@typescript-eslint/no-type-alias": "off",
-    "@typescript-eslint/no-unnecessary-condition": "off",
     "@typescript-eslint/no-unnecessary-qualifier": "off",
-    "@typescript-eslint/no-unsafe-argument": "off",
-    "@typescript-eslint/no-unsafe-assignment": "off",
-    "@typescript-eslint/no-unsafe-call": "off",
-    "@typescript-eslint/no-unsafe-member-access": "off",
-    "@typescript-eslint/no-unsafe-return": "off",
     "@typescript-eslint/non-nullable-type-assertion-style": "off",
     "@typescript-eslint/padding-line-between-statements": "off",
-    "@typescript-eslint/prefer-as-const": "off",
-    "@typescript-eslint/prefer-namespace-keyword": "off",
-    "@typescript-eslint/prefer-promise-reject-errors": "off",
     "@typescript-eslint/prefer-regexp-exec": "off",
     "@typescript-eslint/promise-function-async": "off",
     "@typescript-eslint/require-await": "off",
     "@typescript-eslint/typedef": "off",
-    "@typescript-eslint/unified-signatures": [
-        "off",
-        {
-            ignoreDifferentlyNamedParameters: true,
-        },
-    ],
-    "@typescript-eslint/related-getter-setter-pairs": "off",
+    "@typescript-eslint/unified-signatures": "off",
     "array-callback-return": "off",
     "arrow-body-style": "off",
     "block-scoped-var": "off",
@@ -1186,7 +912,6 @@ const disabled = {
     "no-magic-numbers": "off",
     "no-mixed-operators": "off",
     "no-unassigned-vars": "off",
-    // Deprecated
     "no-new-symbol": "off",
     "no-nested-ternary": "off",
     "no-param-reassign": "off",
@@ -1217,26 +942,16 @@ const disabled = {
     "vars-on-top": "off",
     "wrap-iife": "off",
     "wrap-regex": "off",
-    yoda: [
-        "off",
-        "never",
-        {
-            onlyEquality: true,
-        },
-    ],
-    "prefer-destructuring": [
-        "off",
-        {
-            array: true,
-            object: true,
-        },
-        {
-            enforceForRenamedProperties: false,
-        },
-    ],
+    yoda: "off",
+    "prefer-destructuring": "off",
     "symbol-description": "off",
     "@typescript-eslint/no-restricted-types": "off",
-} satisfies Partial<Linter.RulesRecord>;
+    "no-control-regex": "off",
+    "max-params": "off",
+    "@typescript-eslint/naming-convention": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/sort-type-constituents": "off",
+} satisfies Partial<Rules>;
 
 const considerInFuture = {
     // Consider in future
@@ -1248,15 +963,17 @@ const considerInFuture = {
             treatMethodsAsReadonly: true,
         },
     ],
-} satisfies Partial<Linter.RulesRecord>;
+    "preserve-caught-error": "off",
+    "no-useless-assignment": "off",
+} satisfies Partial<Rules>;
 
 const defaultRules: {
-    [K in keyof Linter.RulesRecord]-?: NonNullable<Linter.RulesRecord[K]>;
+    [K in keyof Rules]-?: NonNullable<Linter.RulesRecord[K]>;
 } = {
     ...errorDetection,
     ...codeHealth,
     ...consistency,
-    ...formatting,
+    ...deprecated,
     ...coveredByTypescript,
     ...coveredByOtherPlugins,
     ...considerInFuture,

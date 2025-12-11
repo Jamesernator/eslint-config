@@ -1,12 +1,15 @@
 import type { Linter } from "eslint";
+import type { ESLintRules } from "eslint/rules";
 import eslintImportPlugin from "eslint-plugin-import";
 import typescriptEslint from "typescript-eslint";
 import defaultRules from "./defaultRules.ts";
 
+export type Rules = ESLintRules;
+
 export type CreateEslintConfigOptions = Readonly<{
     tsconfigRootDir: string;
     type?: "commonjs" | "module";
-    rules?: Partial<Linter.RulesRecord>;
+    rules?: Partial<Rules>;
 }>;
 
 export default function createEslintConfig({

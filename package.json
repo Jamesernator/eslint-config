@@ -1,7 +1,6 @@
 {
     "name": "@jamesernator/eslint-config",
     "type": "module",
-    "packageManager": "pnpm@9.1.0",
     "author": "James \"The Jamesernator\" Browning <contact@jamesernator.io>",
     "license": "ISC",
     "version": "10.12.0",
@@ -9,11 +8,14 @@
         ".": "./createEslintConfig.js",
         "./*": "./*"
     },
+    "dependencies": {
+        "eslint": "^9.39.0",
+        "eslint-plugin-import": "^2.31.0",
+        "eslint-plugin-perfectionist": "^4.15.1",
+        "typescript-eslint": "^8.49.0"
+    },
     "peerDependencies": {
-        "eslint": ">=9.28.0",
-        "eslint-plugin-import": ">=2.31.0",
-        "typescript": ">=5.8.0",
-        "typescript-eslint": ">=8.33.0"
+        "typescript": ">=5.9.0"
     },
     "scripts": {
         "build": "tsc --build",
@@ -23,6 +25,6 @@
         "publishMinor": "node --run build && git add . && git commit -m '.' ; npm version minor && npm publish && git push"
     },
     "devDependencies": {
-        "@types/node": "^22.13.13"
+        "@types/node": "^25.0.0"
     }
 }
