@@ -43,7 +43,7 @@ export interface CustomGroupAnyOfDefinition {
     }>;
 }
 
-export type PerfectionistSortJSXPropsOptions = CommonOptions &
+export type PerfectionistSortJSXProps = CommonOptions &
     PartitionByNewline & {
         useConfigurationIf?: {
             allNamesMatchPattern?:

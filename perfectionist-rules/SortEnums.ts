@@ -30,7 +30,7 @@ export interface CustomGroupAnyOfDefinition {
     }>;
 }
 
-export type PerfectionistSortEnumsOptions = CommonOptions &
+export type PerfectionistSortEnums = CommonOptions &
     PartitionByComment &
     PartitionByNewline & {
         sortByValue?: boolean;

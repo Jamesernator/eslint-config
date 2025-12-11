@@ -46,7 +46,7 @@ export interface CustomGroupAnyOfDefinition {
     }>;
 }
 
-export type PerfectionistSortInterfacesOptions = CommonOptions &
+export type PerfectionistSortInterfaces = CommonOptions &
     PartitionByComment &
     PartitionByNewline & {
         sortBy?: "name" | "value";

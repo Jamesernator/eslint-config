@@ -1,5 +1,6 @@
 import type { CommonOptions } from "./common/CommonOptions.ts";
 import type { PartitionByComment } from "./common/PartitionByComment.ts";
+import type { PartitionByNewline } from "./common/PartitionByNewLine.ts";
 
 export interface CustomGroupDefinition {
     groupName: string;
@@ -31,9 +32,9 @@ export interface CustomGroupAnyOfDefinition {
     }>;
 }
 
-export type PerfectionistSortExports = CommonOptions &
+export type PerfectionistSortNamedImports = CommonOptions &
     PartitionByComment &
-    PartitionByComment & {
-        groups?: Array<string | Array<string>>;
+    PartitionByNewline & {
+        groups?: (string | string[])[];
         customGroups?: Array<CustomGroupDefinition | CustomGroupAnyOfDefinition>;
     };

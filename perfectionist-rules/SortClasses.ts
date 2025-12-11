@@ -54,7 +54,7 @@ export interface CustomGroupAnyOfDefinition {
     }>;
 }
 
-export type PerfectionistSortClassesOptions = CommonOptions &
+export type PerfectionistSortClasses = CommonOptions &
     PartitionByComment &
     PartitionByNewline & {
         ignoreCallbackDependenciesPatterns?:

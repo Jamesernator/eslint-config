@@ -1,7 +1,7 @@
 import type { CommonOptions } from "./common/CommonOptions.ts";
 import type { PartitionByComment } from "./common/PartitionByComment.ts";
 
-export type PerfectionistHeritageClausesOptions = CommonOptions &
+export type PerfectionistHeritageClauses = CommonOptions &
     PartitionByComment & {
         sortOnClasses?: boolean;
         sortOnMethods?: boolean;

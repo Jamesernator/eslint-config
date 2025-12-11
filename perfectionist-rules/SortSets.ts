@@ -1,9 +1,10 @@
 import type { CommonOptions } from "./common/CommonOptions.ts";
 import type { PartitionByComment } from "./common/PartitionByComment.ts";
+import type { PartitionByNewline } from "./common/PartitionByNewLine.ts";
 
 export interface CustomGroupDefinition {
     groupName: string;
-    type?: "alphabetical" | "natural" | "line-length" | "unsorted";
+    type?: "alphabetical" | "natural" | "line-length" | "custom" | "unsorted";
     order?: "asc" | "desc";
     fallbackSort?: { type: string; order?: "asc" | "desc" };
     newlinesInside?: number;
@@ -31,9 +32,16 @@ export interface CustomGroupAnyOfDefinition {
     }>;
 }
 
-export type PerfectionistSortExports = CommonOptions &
+export type PerfectionistSortSets = CommonOptions &
     PartitionByComment &
-    PartitionByComment & {
+    PartitionByNewline & {
+        useConfigurationIf?: {
+            allNamesMatchPattern?:
+                | string
+                | Array<string>
+                | { pattern: string; flags: string }
+                | Array<{ pattern: string; flags: string }>;
+        };
         groups?: Array<string | Array<string>>;
         customGroups?: Array<CustomGroupDefinition | CustomGroupAnyOfDefinition>;
     };

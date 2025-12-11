@@ -32,7 +32,7 @@ export interface CustomGroupAnyOfDefinition {
     }>;
 }
 
-export type PerfectionistSortArrayIncludesOptions = CommonOptions &
+export type PerfectionistSortArrayIncludes = CommonOptions &
     PartitionByComment &
     PartitionByNewline & {
         useConfigurationIf?: {
