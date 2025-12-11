@@ -1,4 +1,5 @@
 import type { Linter } from "eslint";
+import type { CommonOptions } from "./perfectionist-rules/common/CommonOptions.ts";
 import type { Rules } from "./Rules.ts";
 
 const builtinModules = [
@@ -81,8 +82,8 @@ const errorDetection = {
         "error",
         { fixMixedExportsWithInlineTypeSpecifier: true },
     ],
-    "@typescript-eslint/no-array-delete": "error",
     "@typescript-eslint/no-array-constructor": "error",
+    "@typescript-eslint/no-array-delete": "error",
     "@typescript-eslint/no-base-to-string": [
         "error",
         {
@@ -98,6 +99,13 @@ const errorDetection = {
         },
     ],
     "@typescript-eslint/no-duplicate-enum-values": "error",
+    "@typescript-eslint/no-empty-object-type": [
+        "error",
+        {
+            allowInterfaces: "always",
+            allowObjectTypes: "never",
+        },
+    ],
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-floating-promises": [
         "error",
@@ -119,13 +127,19 @@ const errorDetection = {
     "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error",
     "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
     "@typescript-eslint/no-redundant-type-constituents": "error",
-    "@typescript-eslint/no-empty-object-type": [
+    "@typescript-eslint/no-unnecessary-condition": [
         "error",
         {
-            allowInterfaces: "always",
-            allowObjectTypes: "never",
+            allowConstantLoopConditions: "only-allowed-literals",
         },
     ],
+    "@typescript-eslint/no-unsafe-argument": "error",
+    "@typescript-eslint/no-unsafe-assignment": "error",
+    "@typescript-eslint/no-unsafe-call": "error",
+    "@typescript-eslint/no-unsafe-declaration-merging": "error",
+    "@typescript-eslint/no-unsafe-member-access": "error",
+    "@typescript-eslint/no-unsafe-return": "error",
+    "@typescript-eslint/no-unsafe-unary-minus": "error",
     "@typescript-eslint/no-unused-expressions": [
         "error",
         {
@@ -141,19 +155,6 @@ const errorDetection = {
             caughtErrors: "all",
             ignoreRestSiblings: true,
             varsIgnorePattern: "^_",
-        },
-    ],
-    "@typescript-eslint/no-unsafe-unary-minus": "error",
-    "@typescript-eslint/no-unsafe-argument": "error",
-    "@typescript-eslint/no-unsafe-assignment": "error",
-    "@typescript-eslint/no-unsafe-call": "error",
-    "@typescript-eslint/no-unsafe-declaration-merging": "error",
-    "@typescript-eslint/no-unsafe-member-access": "error",
-    "@typescript-eslint/no-unsafe-return": "error",
-    "@typescript-eslint/no-unnecessary-condition": [
-        "error",
-        {
-            allowConstantLoopConditions: "only-allowed-literals",
         },
     ],
     "@typescript-eslint/prefer-namespace-keyword": "error",
@@ -290,9 +291,9 @@ const codeHealth = {
     "@typescript-eslint/consistent-type-assertions": [
         "error",
         {
+            arrayLiteralTypeAssertions: "never",
             assertionStyle: "as",
             objectLiteralTypeAssertions: "never",
-            arrayLiteralTypeAssertions: "never",
         },
     ],
     "@typescript-eslint/default-param-last": "error",
@@ -303,8 +304,8 @@ const codeHealth = {
             allowDirectConstAssertionInArrowFunctions: true,
             allowExpressions: true,
             allowHigherOrderFunctions: true,
-            allowTypedFunctionExpressions: true,
             allowIIFEs: true,
+            allowTypedFunctionExpressions: true,
         },
     ],
     "@typescript-eslint/explicit-module-boundary-types": [
@@ -313,11 +314,10 @@ const codeHealth = {
             allowArgumentsExplicitlyTypedAsAny: true,
             allowDirectConstAssertionInArrowFunctions: true,
             allowHigherOrderFunctions: true,
-            allowTypedFunctionExpressions: true,
             allowOverloadFunctions: true,
+            allowTypedFunctionExpressions: true,
         },
     ],
-    "@typescript-eslint/related-getter-setter-pairs": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
     "@typescript-eslint/no-extra-non-null-assertion": "error",
     "@typescript-eslint/no-import-type-side-effects": "error",
@@ -338,24 +338,23 @@ const codeHealth = {
             allowComparingNullableBooleansToTrue: true,
         },
     ],
+    "@typescript-eslint/no-unnecessary-template-expression": "error",
     "@typescript-eslint/no-unnecessary-type-arguments": "error",
     "@typescript-eslint/no-unnecessary-type-assertion": "error",
     "@typescript-eslint/no-unnecessary-type-constraint": "error",
+    "@typescript-eslint/no-unnecessary-type-conversion": "error",
     "@typescript-eslint/no-unnecessary-type-parameters": "error",
     "@typescript-eslint/no-unsafe-enum-comparison": "error",
     "@typescript-eslint/no-unsafe-function-type": "error",
     "@typescript-eslint/no-unsafe-type-assertion": "error",
-    "@typescript-eslint/no-wrapper-object-types": "error",
-    "@typescript-eslint/no-unnecessary-template-expression": "error",
-    "@typescript-eslint/no-unnecessary-type-conversion": "error",
+    "@typescript-eslint/no-unused-private-class-members": "error",
     "@typescript-eslint/no-var-requires": "error",
+    "@typescript-eslint/no-wrapper-object-types": "error",
     "@typescript-eslint/only-throw-error": "error",
-    "@typescript-eslint/prefer-promise-reject-errors": ["error", { allowThrowingUnknown: true }],
     "@typescript-eslint/prefer-enum-initializers": "error",
     "@typescript-eslint/prefer-find": "error",
     "@typescript-eslint/prefer-for-of": "error",
     "@typescript-eslint/prefer-literal-enum-member": "error",
-    "@typescript-eslint/no-unused-private-class-members": "error",
     "@typescript-eslint/prefer-nullish-coalescing": [
         "error",
         {
@@ -365,11 +364,13 @@ const codeHealth = {
         },
     ],
     "@typescript-eslint/prefer-optional-chain": "error",
+    "@typescript-eslint/prefer-promise-reject-errors": ["error", { allowThrowingUnknown: true }],
     "@typescript-eslint/prefer-readonly": "error",
     "@typescript-eslint/prefer-reduce-type-parameter": "error",
     "@typescript-eslint/prefer-return-this-type": "error",
     "@typescript-eslint/prefer-string-starts-ends-with": "error",
     "@typescript-eslint/prefer-ts-expect-error": "error",
+    "@typescript-eslint/related-getter-setter-pairs": "error",
     "@typescript-eslint/return-await": ["error", "always"],
     "@typescript-eslint/triple-slash-reference": [
         "error",
@@ -427,6 +428,7 @@ const codeHealth = {
     "no-new-func": "error",
     "no-new-object": "error",
     "no-new-wrappers": "error",
+    "no-object-constructor": "error",
     "no-plusplus": [
         "error",
         {
@@ -451,6 +453,7 @@ const codeHealth = {
     "no-with": "error",
     "prefer-named-capture-group": "error",
     "prefer-numeric-literals": "error",
+    "prefer-object-has-own": "error",
     "prefer-regex-literals": [
         "error",
         {
@@ -458,7 +461,6 @@ const codeHealth = {
         },
     ],
     "prefer-rest-params": "error",
-    "prefer-object-has-own": "error",
     "require-unicode-regexp": [
         "error",
         {
@@ -466,7 +468,6 @@ const codeHealth = {
             requireFlag: "v",
         },
     ],
-    "no-object-constructor": "error",
 } satisfies Partial<Rules>;
 
 /**
@@ -475,7 +476,6 @@ const codeHealth = {
  * correspond to different AST's
  */
 const consistency = {
-    "@typescript-eslint/prefer-as-const": "error",
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": [
         "error",
@@ -490,8 +490,8 @@ const consistency = {
         "error",
         {
             disallowTypeAnnotations: true,
-            prefer: "type-imports",
             fixStyle: "separate-type-imports",
+            prefer: "type-imports",
         },
     ],
     "@typescript-eslint/dot-notation": [
@@ -508,8 +508,8 @@ const consistency = {
             paths: builtinModules.map((modName) => {
                 const message = `Use node:${modName} instead`;
                 return {
-                    name: modName,
                     message,
+                    name: modName,
                 };
             }),
         },
@@ -522,6 +522,7 @@ const consistency = {
             prefer: "class-property",
         },
     ],
+    "@typescript-eslint/prefer-as-const": "error",
     "@typescript-eslint/prefer-destructuring": [
         "error",
         {
@@ -567,15 +568,6 @@ const consistency = {
         {
             commonjs: true,
             noUselessIndex: false,
-        },
-    ],
-    "import/order": [
-        "error",
-        {
-            alphabetize: {
-                caseInsensitive: true,
-                order: "asc",
-            },
         },
     ],
     "logical-assignment-operators": [
@@ -654,15 +646,6 @@ const consistency = {
     "prefer-object-spread": "error",
     "prefer-spread": "error",
     "prefer-template": "error",
-    "sort-imports": [
-        "error",
-        {
-            allowSeparatedGroups: true,
-            ignoreCase: true,
-            ignoreDeclarationSort: true,
-            ignoreMemberSort: false,
-        },
-    ],
 } satisfies Partial<Rules>;
 
 /**
@@ -671,6 +654,21 @@ const consistency = {
  * are now off
  */
 const deprecated = {
+    "@typescript-eslint/brace-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
+    "@typescript-eslint/comma-spacing": "off",
+    "@typescript-eslint/func-call-spacing": "off",
+    "@typescript-eslint/indent": "off",
+    "@typescript-eslint/keyword-spacing": "off",
+    "@typescript-eslint/lines-between-class-members": "off",
+    "@typescript-eslint/member-delimiter-style": "off",
+    "@typescript-eslint/no-extra-parens": "off",
+    "@typescript-eslint/quotes": "off",
+    "@typescript-eslint/semi": "off",
+    "@typescript-eslint/space-before-blocks": "off",
+    "@typescript-eslint/space-before-function-paren": "off",
+    "@typescript-eslint/space-infix-ops": "off",
+    "@typescript-eslint/type-annotation-spacing": "off",
     "array-bracket-newline": "off",
     "array-bracket-spacing": "off",
     "array-element-newline": "off",
@@ -738,21 +736,6 @@ const deprecated = {
     "template-tag-spacing": "off",
     "unicode-bom": "off",
     "yield-star-spacing": "off",
-    "@typescript-eslint/member-delimiter-style": "off",
-    "@typescript-eslint/type-annotation-spacing": "off",
-    "@typescript-eslint/brace-style": "off",
-    "@typescript-eslint/comma-dangle": "off",
-    "@typescript-eslint/comma-spacing": "off",
-    "@typescript-eslint/func-call-spacing": "off",
-    "@typescript-eslint/indent": "off",
-    "@typescript-eslint/keyword-spacing": "off",
-    "@typescript-eslint/lines-between-class-members": "off",
-    "@typescript-eslint/no-extra-parens": "off",
-    "@typescript-eslint/quotes": "off",
-    "@typescript-eslint/semi": "off",
-    "@typescript-eslint/space-before-function-paren": "off",
-    "@typescript-eslint/space-infix-ops": "off",
-    "@typescript-eslint/space-before-blocks": "off",
 } satisfies Partial<Rules>;
 
 /**
@@ -805,6 +788,15 @@ const coveredByOtherPlugins = {
     "default-param-last": "off",
     "dot-notation": "off",
     "func-call-spacing": "off",
+    "import/order": [
+        "off",
+        {
+            alphabetize: {
+                caseInsensitive: true,
+                order: "asc",
+            },
+        },
+    ],
     indent: "off",
     "keyword-spacing": "off",
     "lines-between-class-members": "off",
@@ -825,18 +817,27 @@ const coveredByOtherPlugins = {
     "object-curly-spacing": "off",
     quotes: "off",
     semi: "off",
+    "sort-imports": [
+        "off",
+        {
+            allowSeparatedGroups: true,
+            ignoreCase: true,
+            ignoreDeclarationSort: true,
+            ignoreMemberSort: false,
+        },
+    ],
     "space-before-function-paren": "off",
     "space-infix-ops": "off",
 } satisfies Partial<Linter.RulesRecord>;
 
 const disabled = {
-    "@typescript-eslint/no-unnecessary-parameter-property-assignment": "off",
     "@typescript-eslint/class-literal-property-style": "off",
     "@typescript-eslint/class-methods-use-this": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/member-ordering": "off",
     "@typescript-eslint/method-signature-style": "off",
+    "@typescript-eslint/naming-convention": "off",
     "@typescript-eslint/no-dynamic-delete": "off",
     "@typescript-eslint/no-empty-interface": "off",
     "@typescript-eslint/no-extraneous-class": "off",
@@ -847,15 +848,19 @@ const disabled = {
     "@typescript-eslint/no-misused-new": "off",
     "@typescript-eslint/no-namespace": "off",
     "@typescript-eslint/no-redeclare": "off",
+    "@typescript-eslint/no-restricted-types": "off",
     "@typescript-eslint/no-shadow": "off",
     "@typescript-eslint/no-this-alias": "off",
     "@typescript-eslint/no-type-alias": "off",
+    "@typescript-eslint/no-unnecessary-parameter-property-assignment": "off",
     "@typescript-eslint/no-unnecessary-qualifier": "off",
+    "@typescript-eslint/no-use-before-define": "off",
     "@typescript-eslint/non-nullable-type-assertion-style": "off",
     "@typescript-eslint/padding-line-between-statements": "off",
     "@typescript-eslint/prefer-regexp-exec": "off",
     "@typescript-eslint/promise-function-async": "off",
     "@typescript-eslint/require-await": "off",
+    "@typescript-eslint/sort-type-constituents": "off",
     "@typescript-eslint/typedef": "off",
     "@typescript-eslint/unified-signatures": "off",
     "array-callback-return": "off",
@@ -894,6 +899,7 @@ const disabled = {
     "max-lines": "off",
     "max-lines-per-function": "off",
     "max-nested-callbacks": "off",
+    "max-params": "off",
     "max-statements": "off",
     "multiline-comment-style": ["off", "starred-block"],
     "multiline-ternary": "off",
@@ -903,6 +909,7 @@ const disabled = {
     "no-constant-binary-expression": "off",
     "no-constructor-return": "off",
     "no-continue": "off",
+    "no-control-regex": "off",
     "no-div-regex": "off",
     "no-extra-semi": "off",
     "no-implicit-globals": "off",
@@ -911,9 +918,8 @@ const disabled = {
     "no-labels": "off",
     "no-magic-numbers": "off",
     "no-mixed-operators": "off",
-    "no-unassigned-vars": "off",
-    "no-new-symbol": "off",
     "no-nested-ternary": "off",
+    "no-new-symbol": "off",
     "no-param-reassign": "off",
     "no-restricted-exports": "off",
     "no-restricted-globals": "off",
@@ -927,9 +933,11 @@ const disabled = {
     "no-template-curly-in-string": "off",
     "no-ternary": "off",
     "no-throw-literal": "off",
+    "no-unassigned-vars": "off",
     "no-undef-init": "off",
     "no-void": "off",
     "padding-line-between-statements": "off",
+    "prefer-destructuring": "off",
     "prefer-promise-reject-errors": "off",
     "require-atomic-updates": "off",
     "require-await": "off",
@@ -938,19 +946,12 @@ const disabled = {
     "sort-vars": "off",
     "space-before-blocks": "off",
     strict: "off",
+    "symbol-description": "off",
     "valid-typeof": "off",
     "vars-on-top": "off",
     "wrap-iife": "off",
     "wrap-regex": "off",
     yoda: "off",
-    "prefer-destructuring": "off",
-    "symbol-description": "off",
-    "@typescript-eslint/no-restricted-types": "off",
-    "no-control-regex": "off",
-    "max-params": "off",
-    "@typescript-eslint/naming-convention": "off",
-    "@typescript-eslint/no-use-before-define": "off",
-    "@typescript-eslint/sort-type-constituents": "off",
 } satisfies Partial<Rules>;
 
 const considerInFuture = {
@@ -963,8 +964,102 @@ const considerInFuture = {
             treatMethodsAsReadonly: true,
         },
     ],
-    "preserve-caught-error": "off",
     "no-useless-assignment": "off",
+    "preserve-caught-error": "off",
+} satisfies Partial<Rules>;
+
+const commonOptions: CommonOptions = {
+    fallbackSort: { type: "alphabetical" },
+    ignoreCase: true,
+    type: "natural",
+};
+
+const perfectionistRules = {
+    "perfectionist/sort-array-includes": ["error", commonOptions],
+    "perfectionist/sort-classes": [
+        "off",
+        {
+            ...commonOptions,
+            groups: [
+                // todo: figure these groups out
+            ],
+            type: "unsorted",
+        },
+    ],
+    "perfectionist/sort-decorators": "off",
+    "perfectionist/sort-enums": ["error", { ...commonOptions, sortByValue: true }],
+    "perfectionist/sort-exports": ["error", commonOptions],
+    "perfectionist/sort-heritage-clauses": ["error", commonOptions],
+    "perfectionist/sort-imports": [
+        "error",
+        {
+            ...commonOptions,
+            newlinesBetween: 0,
+        },
+    ],
+    "perfectionist/sort-interfaces": [
+        "error",
+        {
+            groups: ["index-signature", "property", "method"],
+            type: "unsorted",
+        },
+    ],
+    "perfectionist/sort-intersection-types": [
+        "error",
+        {
+            ...commonOptions,
+            groups: [
+                "conditional",
+                "function",
+                "import",
+                "intersection",
+                "keyword",
+                "literal",
+                "named",
+                "object",
+                "operator",
+                "tuple",
+                "union",
+                "nullish",
+            ],
+        },
+    ],
+    "perfectionist/sort-jsx-props": ["error", commonOptions],
+    "perfectionist/sort-maps": ["error", commonOptions],
+    "perfectionist/sort-modules": "off",
+    "perfectionist/sort-named-exports": ["error", commonOptions],
+    "perfectionist/sort-named-imports": ["error", commonOptions],
+    "perfectionist/sort-object-types": [
+        "error",
+        {
+            groups: ["index-signature", "property", "method"],
+            type: "unsorted",
+        },
+    ],
+    "perfectionist/sort-objects": ["error", commonOptions],
+    "perfectionist/sort-sets": ["error", commonOptions],
+    "perfectionist/sort-switch-case": ["error", commonOptions],
+    "perfectionist/sort-union-types": [
+        "error",
+        {
+            ...commonOptions,
+            groups: [
+                "conditional",
+                "function",
+                "import",
+                "intersection",
+                "keyword",
+                "literal",
+                "named",
+                "object",
+                "operator",
+                "tuple",
+                "union",
+                "nullish",
+            ],
+        },
+    ],
+    "perfectionist/sort-variable-declarations": ["error", commonOptions],
 } satisfies Partial<Rules>;
 
 const defaultRules: {
@@ -977,6 +1072,7 @@ const defaultRules: {
     ...coveredByTypescript,
     ...coveredByOtherPlugins,
     ...considerInFuture,
+    ...perfectionistRules,
     ...disabled,
 };
 

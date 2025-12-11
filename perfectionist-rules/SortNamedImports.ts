@@ -4,21 +4,21 @@ import type { PartitionByNewline } from "./common/PartitionByNewLine.ts";
 
 export interface CustomGroupDefinition {
     groupName: string;
-    type?: "alphabetical" | "natural" | "line-length" | "unsorted";
+    type?: "alphabetical" | "line-length" | "natural" | "unsorted";
     order?: "asc" | "desc";
     fallbackSort?: { type: string; order?: "asc" | "desc" };
     newlinesInside?: number;
     selector?: string;
     elementNamePattern?:
         | string
-        | string[]
-        | { pattern: string; flags?: string }
-        | { pattern: string; flags?: string }[];
+        | Array<string>
+        | Array<{ pattern: string; flags?: string }>
+        | { pattern: string; flags?: string };
 }
 
 export interface CustomGroupAnyOfDefinition {
     groupName: string;
-    type?: "alphabetical" | "natural" | "line-length" | "unsorted";
+    type?: "alphabetical" | "line-length" | "natural" | "unsorted";
     order?: "asc" | "desc";
     fallbackSort?: { type: string; order?: "asc" | "desc" };
     newlinesInside?: number;
@@ -26,15 +26,15 @@ export interface CustomGroupAnyOfDefinition {
         selector?: string;
         elementNamePattern?:
             | string
-            | string[]
-            | { pattern: string; flags?: string }
-            | { pattern: string; flags?: string }[];
+            | Array<string>
+            | Array<{ pattern: string; flags?: string }>
+            | { pattern: string; flags?: string };
     }>;
 }
 
 export type PerfectionistSortNamedImports = CommonOptions &
     PartitionByComment &
     PartitionByNewline & {
-        groups?: (string | string[])[];
-        customGroups?: Array<CustomGroupDefinition | CustomGroupAnyOfDefinition>;
+        groups?: Array<string | Array<string>>;
+        customGroups?: Array<CustomGroupAnyOfDefinition | CustomGroupDefinition>;
     };

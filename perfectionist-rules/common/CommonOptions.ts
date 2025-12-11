@@ -1,12 +1,12 @@
 export type CommonOptions = {
-    type?: "alphabetical" | "natural" | "line-length" | "custom" | "unsorted";
+    type?: "alphabetical" | "custom" | "line-length" | "natural" | "unsorted";
     order?: "asc" | "desc";
     fallbackSort?: {
-        type: "alphabetical" | "natural" | "line-length" | "custom" | "unsorted";
+        type: "alphabetical" | "custom" | "line-length" | "natural" | "unsorted";
         order?: "asc" | "desc";
     };
     alphabet?: string;
     ignoreCase?: boolean;
-    specialCharacters?: "keep" | "trim" | "remove";
+    specialCharacters?: "keep" | "remove" | "trim";
     locales?: string | Array<string>;
 };

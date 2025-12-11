@@ -1,3 +1,4 @@
+/* eslint-disable no-inline-comments */
 import type { Linter } from "eslint";
 import type { ESLintRules } from "eslint/rules";
 import type { PerfectionistSortArrayIncludes } from "./perfectionist-rules/SortArrayIncludes.ts";
@@ -14,8 +15,8 @@ import type { PerfectionistSortMaps } from "./perfectionist-rules/SortMaps.ts";
 import type { PerfectionistSortModules } from "./perfectionist-rules/SortModules.ts";
 import type { PerfectionistSortNamedExports } from "./perfectionist-rules/SortNamedExports.ts";
 import type { PerfectionistSortNamedImports } from "./perfectionist-rules/SortNamedImports.ts";
-import type { PerfectionistSortObjectTypes } from "./perfectionist-rules/SortObjectTypes.ts";
 import type { PerfectionistSortObjects } from "./perfectionist-rules/SortObjects.ts";
+import type { PerfectionistSortObjectTypes } from "./perfectionist-rules/SortObjectTypes.ts";
 import type { PerfectionistSortSets } from "./perfectionist-rules/SortSets.ts";
 import type { PerfectionistSortSwitchCase } from "./perfectionist-rules/SortSwitchCase.ts";
 import type { PerfectionistSortUnionTypes } from "./perfectionist-rules/SortUnionTypes.ts";
@@ -23,7 +24,7 @@ import type { PerfectionistSortVariableDeclarations } from "./perfectionist-rule
 
 type AccessibilityLevel = "explicit" | "no-public" | "off";
 
-type ArrayOption = "array-simple" | "array" | "generic";
+type ArrayOption = "array" | "array-simple" | "generic";
 
 type DirectiveConfigSchema =
     | boolean
@@ -31,12 +32,6 @@ type DirectiveConfigSchema =
     | {
           descriptionFormat?: string;
       };
-
-type FileSpecifier = { from: "file"; name: Array<string> | string; path?: string };
-type LibSpecifier = { from: "lib"; name: Array<string> | string };
-type PackageSpecifier = { from: "package"; name: Array<string> | string; package: string };
-
-type TypeOrValueSpecifier = FileSpecifier | LibSpecifier | PackageSpecifier;
 
 // eslint "@typescript-eslint/member-ordering": ["error", { "default": { "memberTypes": "never", "order": "alphabetically" } }]
 
@@ -99,16 +94,16 @@ export type ImportPluginRules = {
                     | string
                     | {
                           from: "file";
-                          name: Array<string> | string;
+                          name: string | Array<string>;
                           path?: string;
                       }
                     | {
                           from: "lib";
-                          name: Array<string> | string;
+                          name: string | Array<string>;
                       }
                     | {
                           from: "package";
-                          name: Array<string> | string;
+                          name: string | Array<string>;
                           package: string;
                       }
                 >;
@@ -173,10 +168,10 @@ export type ImportPluginRules = {
     "import/order": Linter.RuleEntry<
         [
             {
-                groups?: ReadonlyArray<ReadonlyArray<string> | string>;
+                groups?: ReadonlyArray<string | ReadonlyArray<string>>;
                 pathGroups?: ReadonlyArray<{ pattern: string; group: string }>;
                 pathGroupsExcludedImportTypes?: string;
-                "newlines-between"?: "always-and-inside-groups" | "always" | "ignore" | "never";
+                "newlines-between"?: "always" | "always-and-inside-groups" | "ignore" | "never";
                 alphabetize?: {
                     order?: "asc" | "desc" | "ignore";
                     orderImportKind?: "asc" | "desc" | "ignore";
@@ -263,6 +258,7 @@ export type TypescriptEslintRules = Partial<{
             {
                 /** An array of type specifiers that are known to be safe to spread. */
                 allow?: Array<
+                    | string
                     | {
                           from: "file";
                           name: string | Array<string>;
@@ -277,7 +273,6 @@ export type TypescriptEslintRules = Partial<{
                           name: string | Array<string>;
                           package: string;
                       }
-                    | string
                 >;
             },
         ]
@@ -333,10 +328,10 @@ export type TypescriptEslintRules = Partial<{
             | {
                   /** Whether to always prefer type declarations for array literals used as variable initializers, rather than type assertions. */
                   arrayLiteralTypeAssertions?:
+                      | "allow"
                       | "allow-as-parameter"
-                      | "never"
                       /** Whether to always prefer type declarations for array literals used as variable initializers, rather than type assertions. */
-                      | "allow";
+                      | "never";
                   /** The expected assertion style to enforce. */
                   assertionStyle?:
                       | "angle-bracket"
@@ -344,10 +339,10 @@ export type TypescriptEslintRules = Partial<{
                       | "as";
                   /** Whether to always prefer type declarations for object literals used as variable initializers, rather than type assertions. */
                   objectLiteralTypeAssertions?:
+                      | "allow"
                       | "allow-as-parameter"
-                      | "never"
                       /** Whether to always prefer type declarations for object literals used as variable initializers, rather than type assertions. */
-                      | "allow";
+                      | "never";
               },
         ]
     >;
@@ -513,7 +508,7 @@ export type TypescriptEslintRules = Partial<{
             suffix?: ReadonlyArray<string>;
 
             // selector options
-            selector: ReadonlyArray<string> | string;
+            selector: string | ReadonlyArray<string>;
             filter?:
                 | string
                 | {
@@ -592,6 +587,7 @@ export type TypescriptEslintRules = Partial<{
             {
                 /** Type specifiers of functions whose calls are safe to float. */
                 allowForKnownSafeCalls?: Array<
+                    | string
                     | {
                           from: "file";
                           name: string | Array<string>;
@@ -606,10 +602,10 @@ export type TypescriptEslintRules = Partial<{
                           name: string | Array<string>;
                           package: string;
                       }
-                    | string
                 >;
                 /** Type specifiers that are known to be safe to float. */
                 allowForKnownSafePromises?: Array<
+                    | string
                     | {
                           from: "file";
                           name: string | Array<string>;
@@ -624,7 +620,6 @@ export type TypescriptEslintRules = Partial<{
                           name: string | Array<string>;
                           package: string;
                       }
-                    | string
                 >;
                 /** Whether to check all "Thenable"s, not just the built-in Promise type. */
                 checkThenables?: boolean;
@@ -718,12 +713,12 @@ export type TypescriptEslintRules = Partial<{
         [
             {
                 allow?: ReadonlyArray<
-                    | "private readonly"
                     | "private"
-                    | "protected readonly "
+                    | "private readonly"
                     | "protected"
-                    | "public readonly"
+                    | "protected readonly "
                     | "public"
+                    | "public readonly"
                     | "readonly"
                 >;
                 prefer?: "class-property" | "parameter-property";
@@ -751,8 +746,8 @@ export type TypescriptEslintRules = Partial<{
                 allowAliases?:
                     | "always"
                     | "in-intersections"
-                    | "in-unions-and-intersections"
                     | "in-unions"
+                    | "in-unions-and-intersections"
                     | "never";
                 allowCallbacks?: "always" | "never";
                 allowConditionalTypes?: "always" | "never";
@@ -760,20 +755,20 @@ export type TypescriptEslintRules = Partial<{
                 allowLiterals?:
                     | "always"
                     | "in-intersections"
-                    | "in-unions-and-intersections"
                     | "in-unions"
+                    | "in-unions-and-intersections"
                     | "never";
                 allowMappedTypes?:
                     | "always"
                     | "in-intersections"
-                    | "in-unions-and-intersections"
                     | "in-unions"
+                    | "in-unions-and-intersections"
                     | "never";
                 allowTupleTypes?:
                     | "always"
                     | "in-intersections"
-                    | "in-unions-and-intersections"
                     | "in-unions"
+                    | "in-unions-and-intersections"
                     | "never";
                 allowGenerics?: "always" | "never";
             },
@@ -792,15 +787,15 @@ export type TypescriptEslintRules = Partial<{
             {
                 /** Whether to ignore constant loop conditions, such as `while (true)`. */
                 allowConstantLoopConditions?:
-                    | "never"
-                    | "only-allowed-literals"
+                    | boolean
+                    | "always"
                     /**
                      * Whether to ignore constant loop conditions, such as `while (true)`.
                      * Always ignore or not ignore the loop conditions
                      */
-                    | boolean
+                    | "never"
                     /** Which situations to ignore constant conditions in. */
-                    | "always";
+                    | "only-allowed-literals";
                 /** Whether to not error when running with a tsconfig that has strictNullChecks turned. */
                 allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing?: boolean;
                 /** Whether to check the asserted argument of a type predicate function for unnecessary conditions */
@@ -873,7 +868,9 @@ export type TypescriptEslintRules = Partial<{
                  * Whether to ignore all (`true`) or some (an object with properties) primitive types.
                  * Which primitives types may be ignored.
                  */
-                | {
+                | true
+                    /** Ignore all primitive types. */
+                    | {
                           /** Ignore bigint primitive types. */
                           bigint?: boolean;
                           /** Ignore boolean primitive types. */
@@ -882,9 +879,7 @@ export type TypescriptEslintRules = Partial<{
                           number?: boolean;
                           /** Ignore string primitive types. */
                           string?: boolean;
-                      }
-                    /** Ignore all primitive types. */
-                    | true;
+                      };
                 /** Whether to ignore any ternary expressions that could be simplified by using the nullish coalescing operator. */
                 ignoreTernaryTests?: boolean;
             },
@@ -1122,14 +1117,14 @@ export type TypescriptEslintRules = Partial<{
     "@typescript-eslint/comma-dangle": Linter.RuleEntry<
         [
             {
-                arrays?: "always-multiline" | "always" | "never" | "only-multiline";
-                objects?: "always-multiline" | "always" | "never" | "only-multiline";
-                imports?: "always-multiline" | "always" | "never" | "only-multiline";
-                exports?: "always-multiline" | "always" | "never" | "only-multiline";
-                functions?: "always-multiline" | "always" | "never" | "only-multiline";
-                enums?: "always-multiline" | "always" | "never" | "only-multiline";
-                generics?: "always-multiline" | "always" | "never" | "only-multiline";
-                tuples?: "always-multiline" | "always" | "never" | "only-multiline";
+                arrays?: "always" | "always-multiline" | "never" | "only-multiline";
+                objects?: "always" | "always-multiline" | "never" | "only-multiline";
+                imports?: "always" | "always-multiline" | "never" | "only-multiline";
+                exports?: "always" | "always-multiline" | "never" | "only-multiline";
+                functions?: "always" | "always-multiline" | "never" | "only-multiline";
+                enums?: "always" | "always-multiline" | "never" | "only-multiline";
+                generics?: "always" | "always-multiline" | "never" | "only-multiline";
+                tuples?: "always" | "always-multiline" | "never" | "only-multiline";
             },
         ]
     >;
@@ -1212,15 +1207,15 @@ export type TypescriptEslintRules = Partial<{
             {
                 /** Whether to allow empty interfaces. */
                 allowInterfaces?:
+                    | "always"
                     | "never"
-                    | "with-single-extends"
                     /** Whether to allow empty interfaces. */
-                    | "always";
+                    | "with-single-extends";
                 /** Whether to allow empty object type literals. */
                 allowObjectTypes?:
-                    | "never"
+                    | "always"
                     /** Whether to allow empty object type literals. */
-                    | "always";
+                    | "never";
                 /** A stringified regular expression to allow interfaces and object type aliases with the configured name. */
                 allowWithName?: string;
             },
@@ -1230,20 +1225,20 @@ export type TypescriptEslintRules = Partial<{
         [
             {
                 allow?: ReadonlyArray<
-                    | "functions"
                     | "arrowFunctions"
-                    | "generatorFunctions"
-                    | "methods"
-                    | "generatorMethods"
-                    | "getters"
-                    | "setters"
-                    | "constructors"
                     | "asyncFunctions"
                     | "asyncMethods"
+                    | "constructors"
+                    | "decoratedFunctions"
+                    | "functions"
+                    | "generatorFunctions"
+                    | "generatorMethods"
+                    | "getters"
+                    | "methods"
+                    | "overrideMethods"
                     | "privateConstructors"
                     | "protectedConstructors"
-                    | "decoratedFunctions"
-                    | "overrideMethods"
+                    | "setters"
                 >;
             },
         ]
@@ -1467,4 +1462,7 @@ export type PerfectionistPluginRules = Partial<{
     >;
 }>;
 
-export type Rules = ESLintRules & ImportPluginRules & TypescriptEslintRules;
+export type Rules = ESLintRules &
+    ImportPluginRules &
+    PerfectionistPluginRules &
+    TypescriptEslintRules;

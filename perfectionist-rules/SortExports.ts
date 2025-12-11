@@ -3,21 +3,21 @@ import type { PartitionByComment } from "./common/PartitionByComment.ts";
 
 export interface CustomGroupDefinition {
     groupName: string;
-    type?: "alphabetical" | "natural" | "line-length" | "unsorted";
+    type?: "alphabetical" | "line-length" | "natural" | "unsorted";
     order?: "asc" | "desc";
     fallbackSort?: { type: string; order?: "asc" | "desc" };
     newlinesInside?: number;
     selector?: string;
     elementNamePattern?:
         | string
-        | string[]
-        | { pattern: string; flags?: string }
-        | { pattern: string; flags?: string }[];
+        | Array<string>
+        | Array<{ pattern: string; flags?: string }>
+        | { pattern: string; flags?: string };
 }
 
 export interface CustomGroupAnyOfDefinition {
     groupName: string;
-    type?: "alphabetical" | "natural" | "line-length" | "unsorted";
+    type?: "alphabetical" | "line-length" | "natural" | "unsorted";
     order?: "asc" | "desc";
     fallbackSort?: { type: string; order?: "asc" | "desc" };
     newlinesInside?: number;
@@ -25,15 +25,15 @@ export interface CustomGroupAnyOfDefinition {
         selector?: string;
         elementNamePattern?:
             | string
-            | string[]
-            | { pattern: string; flags?: string }
-            | { pattern: string; flags?: string }[];
+            | Array<string>
+            | Array<{ pattern: string; flags?: string }>
+            | { pattern: string; flags?: string };
     }>;
 }
 
 export type PerfectionistSortExports = CommonOptions &
-    PartitionByComment &
-    PartitionByComment & {
+    PartitionByComment 
+     & {
         groups?: Array<string | Array<string>>;
-        customGroups?: Array<CustomGroupDefinition | CustomGroupAnyOfDefinition>;
+        customGroups?: Array<CustomGroupAnyOfDefinition | CustomGroupDefinition>;
     };

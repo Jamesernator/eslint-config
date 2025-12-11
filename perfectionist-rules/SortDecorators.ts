@@ -8,6 +8,6 @@ export type PerfectionistSortDecorators = CommonOptions &
         sortOnProperties?: boolean;
         sortOnAccessors?: boolean;
         sortOnParameters?: boolean;
-        groups?: Array<string | string[]>;
-        customGroups?: { [groupName: string]: string | string[] };
+        groups?: Array<string | Array<string>>;
+        customGroups?: Record<string, string | Array<string>>;
     };

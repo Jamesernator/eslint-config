@@ -1,6 +1,7 @@
-import type { Linter } from "eslint";
+import type * as eslint from "eslint";
 import type { ESLintRules } from "eslint/rules";
 import eslintImportPlugin from "eslint-plugin-import";
+import perfectionistPlugin from "eslint-plugin-perfectionist";
 import typescriptEslint from "typescript-eslint";
 import defaultRules from "./defaultRules.ts";
 
@@ -13,21 +14,22 @@ export type CreateEslintConfigOptions = Readonly<{
 }>;
 
 export default function createEslintConfig({
-    type = "module",
-    tsconfigRootDir,
     rules = {},
-}: CreateEslintConfigOptions): ReadonlyArray<Linter.Config> {
-    const plugins: Record<string, any> = {
+    tsconfigRootDir,
+    type = "module",
+}: CreateEslintConfigOptions): ReadonlyArray<eslint.Linter.Config> {
+    const plugins: Record<string, eslint.ESLint.Plugin> = {
         "@typescript-eslint": typescriptEslint.plugin,
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         import: eslintImportPlugin,
+        perfectionist: perfectionistPlugin,
     };
 
     return [
         {
             files: ["**/*.ts", "**/*.cts", "**/*.mts"],
-            plugins,
             languageOptions: {
-                parser: typescriptEslint.parser as any,
+                parser: typescriptEslint.parser,
                 parserOptions: {
                     projectService: true,
                     tsconfigRootDir,
@@ -37,6 +39,7 @@ export default function createEslintConfig({
                 reportUnusedDisableDirectives: true,
                 reportUnusedInlineConfigs: "error",
             },
+            plugins,
             rules: {
                 ...defaultRules,
                 ...rules,

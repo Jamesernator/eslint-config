@@ -3,10 +3,10 @@ import type { RegExpPattern } from "./RegexpPattern.ts";
 export type PartitionByComment = {
     partitionByComment?:
         | boolean
+        | Array<RegExpPattern>
         | RegExpPattern
-        | RegExpPattern[]
         | {
-              block: boolean | RegExpPattern | RegExpPattern[];
-              line: boolean | RegExpPattern | RegExpPattern[];
+              block: boolean | Array<RegExpPattern> | RegExpPattern;
+              line: boolean | Array<RegExpPattern> | RegExpPattern;
           };
 };
