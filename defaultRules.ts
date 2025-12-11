@@ -127,12 +127,6 @@ const errorDetection = {
     "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error",
     "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
     "@typescript-eslint/no-redundant-type-constituents": "error",
-    "@typescript-eslint/no-unnecessary-condition": [
-        "error",
-        {
-            allowConstantLoopConditions: "only-allowed-literals",
-        },
-    ],
     "@typescript-eslint/no-unsafe-argument": "error",
     "@typescript-eslint/no-unsafe-assignment": "error",
     "@typescript-eslint/no-unsafe-call": "error",
@@ -955,6 +949,13 @@ const disabled = {
 } satisfies Partial<Rules>;
 
 const considerInFuture = {
+    // Annoying for exhaustion in if-then chains
+    "@typescript-eslint/no-unnecessary-condition": [
+        "off",
+        {
+            allowConstantLoopConditions: "only-allowed-literals",
+        },
+    ],
     // Consider in future
     "@typescript-eslint/prefer-readonly-parameter-types": [
         "off",
