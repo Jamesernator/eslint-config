@@ -1037,7 +1037,8 @@ const perfectionistRules = {
             type: "unsorted",
         },
     ],
-    "perfectionist/sort-objects": ["error", commonOptions],
+    // todo: enable when causes less churn
+    "perfectionist/sort-objects": ["off", commonOptions],
     "perfectionist/sort-sets": ["error", commonOptions],
     "perfectionist/sort-switch-case": ["error", commonOptions],
     "perfectionist/sort-union-types": [
