@@ -5,6 +5,8 @@
         "./**/*.cts"
     ],
     "compilerOptions": {
+        "noEmit": true,
+        "allowImportingTsExtensions": true,
         "composite": true,
         "declaration": true,
         "declarationMap": true,
@@ -15,16 +17,14 @@
         "target": "esnext",
         "newLine": "lf",
         "useDefineForClassFields": true,
+        "strictBuiltinIteratorReturn": true,
         "verbatimModuleSyntax": true,
         "useUnknownInCatchVariables": true,
         "strict": true,
         "alwaysStrict": true,
-        // "exactOptionalPropertyTypes": true,
+        "exactOptionalPropertyTypes": true,
         "noImplicitOverride": true,
         "noUncheckedIndexedAccess": true,
-        "forceConsistentCasingInFileNames": true,
-        "skipLibCheck": true,
-        "allowImportingTsExtensions": true,
-        "rewriteRelativeImportExtensions": true
+        "forceConsistentCasingInFileNames": true
     }
 }
