@@ -4,6 +4,7 @@
     "author": "James \"The Jamesernator\" Browning <contact@jamesernator.io>",
     "license": "ISC",
     "version": "10.21.0",
+    "private": true,
     "exports": {
         ".": "./createEslintConfig.js",
         "./*": "./*"
