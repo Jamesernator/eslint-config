@@ -988,7 +988,7 @@ const perfectionistRules = {
         },
     ],
     "perfectionist/sort-decorators": "off",
-    "perfectionist/sort-enums": ["error", { ...commonOptions, sortByValue: true }],
+    "perfectionist/sort-enums": ["error", { ...commonOptions, sortByValue: "ifNumericEnum" }],
     "perfectionist/sort-exports": ["error", commonOptions],
     "perfectionist/sort-heritage-clauses": ["error", commonOptions],
     "perfectionist/sort-imports": [

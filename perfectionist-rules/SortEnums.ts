@@ -33,7 +33,7 @@ export interface CustomGroupAnyOfDefinition {
 export type PerfectionistSortEnums = CommonOptions &
     PartitionByComment &
     PartitionByNewline & {
-        sortByValue?: boolean;
+        sortByValue?: "always" | "ifNumericEnum" | "never";
         forceNumericSort?: boolean;
         groups?: Array<string | Array<string>>;
         customGroups?: Array<CustomGroupAnyOfDefinition | CustomGroupDefinition>;
