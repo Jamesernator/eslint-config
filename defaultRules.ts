@@ -383,25 +383,6 @@ const codeHealth = {
         },
     ],
     "default-case": "error",
-    "import/no-absolute-path": [
-        "error",
-        {
-            commonjs: true,
-            esmodule: true,
-        },
-    ],
-    "import/no-anonymous-default-export": [
-        "error",
-        {
-            allowAnonymousClass: false,
-            allowAnonymousFunction: false,
-            allowArray: false,
-            allowArrowFunction: false,
-            allowCallExpression: false,
-            allowLiteral: false,
-            allowObject: false,
-        },
-    ],
     "max-statements-per-line": [
         "error",
         {
@@ -462,6 +443,25 @@ const codeHealth = {
             requireFlag: "v",
         },
     ],
+    // "import/no-absolute-path": [
+    //     "error",
+    //     {
+    //         commonjs: true,
+    //         esmodule: true,
+    //     },
+    // ],
+    // "import/no-anonymous-default-export": [
+    //     "error",
+    //     {
+    //         allowAnonymousClass: false,
+    //         allowAnonymousFunction: false,
+    //         allowArray: false,
+    //         allowArrowFunction: false,
+    //         allowCallExpression: false,
+    //         allowLiteral: false,
+    //         allowObject: false,
+    //     },
+    // ],
 } satisfies Partial<Rules>;
 
 /**
@@ -540,30 +540,6 @@ const consistency = {
         },
     ],
     "grouped-accessor-pairs": ["error", "getBeforeSet"],
-    "import/consistent-type-specifier-style": ["error", "prefer-top-level"],
-    "import/first": "error",
-    "import/newline-after-import": [
-        "error",
-        {
-            count: 1,
-        },
-    ],
-    "import/no-duplicates": [
-        "error",
-        {
-            considerQueryString: false,
-            "prefer-inline": false,
-        },
-    ],
-    "import/no-empty-named-blocks": "error",
-    "import/no-named-default": "error",
-    "import/no-useless-path-segments": [
-        "error",
-        {
-            commonjs: true,
-            noUselessIndex: false,
-        },
-    ],
     "logical-assignment-operators": [
         "error",
         "always",
@@ -640,6 +616,30 @@ const consistency = {
     "prefer-object-spread": "error",
     "prefer-spread": "error",
     "prefer-template": "error",
+    // "import/consistent-type-specifier-style": ["error", "prefer-top-level"],
+    // "import/first": "error",
+    // "import/newline-after-import": [
+    //     "error",
+    //     {
+    //         count: 1,
+    //     },
+    // ],
+    // "import/no-duplicates": [
+    //     "error",
+    //     {
+    //         considerQueryString: false,
+    //         "prefer-inline": false,
+    //     },
+    // ],
+    // "import/no-empty-named-blocks": "error",
+    // "import/no-named-default": "error",
+    // "import/no-useless-path-segments": [
+    //     "error",
+    //     {
+    //         commonjs: true,
+    //         noUselessIndex: false,
+    //     },
+    // ],
 } satisfies Partial<Rules>;
 
 /**
@@ -740,21 +740,6 @@ const coveredByTypescript = {
     "@typescript-eslint/no-invalid-this": "off",
     "constructor-super": "off",
     "getter-return": "off",
-    "import/default": "off",
-    "import/export": "off",
-    "import/extensions": "off",
-    "import/named": "off",
-    "import/namespace": "off",
-    "import/no-amd": "off",
-    "import/no-commonjs": "off",
-    "import/no-deprecated": "off",
-    "import/no-extraneous-dependencies": "off",
-    "import/no-import-module-exports": "off",
-    "import/no-named-as-default": "off",
-    "import/no-named-as-default-member": "off",
-    "import/no-nodejs-modules": "off",
-    "import/no-unresolved": "off",
-    "import/unambiguous": "off",
     "init-declarations": "off",
     "new-cap": "off",
     "no-async-promise-executor": "off",
@@ -768,6 +753,21 @@ const coveredByTypescript = {
     "no-undef": "off",
     "no-undefined": "off",
     "no-use-before-define": "off",
+    // "import/default": "off",
+    // "import/export": "off",
+    // "import/extensions": "off",
+    // "import/named": "off",
+    // "import/namespace": "off",
+    // "import/no-amd": "off",
+    // "import/no-commonjs": "off",
+    // "import/no-deprecated": "off",
+    // "import/no-extraneous-dependencies": "off",
+    // "import/no-import-module-exports": "off",
+    // "import/no-named-as-default": "off",
+    // "import/no-named-as-default-member": "off",
+    // "import/no-nodejs-modules": "off",
+    // "import/no-unresolved": "off",
+    // "import/unambiguous": "off",
 } satisfies Partial<Linter.RulesRecord>;
 
 /**
@@ -782,15 +782,6 @@ const coveredByOtherPlugins = {
     "default-param-last": "off",
     "dot-notation": "off",
     "func-call-spacing": "off",
-    "import/order": [
-        "off",
-        {
-            alphabetize: {
-                caseInsensitive: true,
-                order: "asc",
-            },
-        },
-    ],
     indent: "off",
     "keyword-spacing": "off",
     "lines-between-class-members": "off",
@@ -822,6 +813,15 @@ const coveredByOtherPlugins = {
     ],
     "space-before-function-paren": "off",
     "space-infix-ops": "off",
+    // "import/order": [
+    //     "off",
+    //     {
+    //         alphabetize: {
+    //             caseInsensitive: true,
+    //             order: "asc",
+    //         },
+    //     },
+    // ],
 } satisfies Partial<Linter.RulesRecord>;
 
 const disabled = {
@@ -869,25 +869,6 @@ const disabled = {
     "id-denylist": "off",
     "id-length": "off",
     "id-match": "off",
-    "import/dynamic-import-chunkname": "off",
-    "import/exports-last": "off",
-    "import/group-exports": "off",
-    "import/max-dependencies": "off",
-    "import/no-cycle": "off",
-    "import/no-default-export": "off",
-    "import/no-dynamic-require": "off",
-    "import/no-internal-modules": "off",
-    "import/no-mutable-exports": "off",
-    "import/no-named-export": "off",
-    "import/no-namespace": "off",
-    "import/no-relative-packages": "off",
-    "import/no-relative-parent-imports": "off",
-    "import/no-restricted-paths": "off",
-    "import/no-self-import": "off",
-    "import/no-unassigned-import": "off",
-    "import/no-unused-modules": "off",
-    "import/no-webpack-loader-syntax": "off",
-    "import/prefer-default-export": "off",
     "max-classes-per-file": "off",
     "max-depth": "off",
     "max-lines": "off",
@@ -946,6 +927,25 @@ const disabled = {
     "wrap-iife": "off",
     "wrap-regex": "off",
     yoda: "off",
+    // "import/dynamic-import-chunkname": "off",
+    // "import/exports-last": "off",
+    // "import/group-exports": "off",
+    // "import/max-dependencies": "off",
+    // "import/no-cycle": "off",
+    // "import/no-default-export": "off",
+    // "import/no-dynamic-require": "off",
+    // "import/no-internal-modules": "off",
+    // "import/no-mutable-exports": "off",
+    // "import/no-named-export": "off",
+    // "import/no-namespace": "off",
+    // "import/no-relative-packages": "off",
+    // "import/no-relative-parent-imports": "off",
+    // "import/no-restricted-paths": "off",
+    // "import/no-self-import": "off",
+    // "import/no-unassigned-import": "off",
+    // "import/no-unused-modules": "off",
+    // "import/no-webpack-loader-syntax": "off",
+    // "import/prefer-default-export": "off",
 } satisfies Partial<Rules>;
 
 const considerInFuture = {

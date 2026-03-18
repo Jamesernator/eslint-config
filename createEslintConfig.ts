@@ -1,5 +1,4 @@
 import type * as eslint from "eslint";
-import eslintImportPlugin from "eslint-plugin-import";
 import perfectionistPlugin from "eslint-plugin-perfectionist";
 import type { ESLintRules } from "eslint/rules";
 import typescriptEslint from "typescript-eslint";
@@ -22,8 +21,6 @@ export default function createEslintConfig({
 }: CreateEslintConfigOptions): Config {
     const plugins: Record<string, eslint.ESLint.Plugin> = {
         "@typescript-eslint": typescriptEslint.plugin,
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        import: eslintImportPlugin,
         perfectionist: perfectionistPlugin,
     };
 

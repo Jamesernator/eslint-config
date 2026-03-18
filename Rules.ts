@@ -35,193 +35,193 @@ type DirectiveConfigSchema =
 
 // eslint "@typescript-eslint/member-ordering": ["error", { "default": { "memberTypes": "never", "order": "alphabetically" } }]
 
-export type ImportPluginRules = {
-    // TODO
-    "import/no-unresolved": Linter.RuleEntry;
-    // TODO
-    "import/named": Linter.RuleEntry;
-    // TODO
-    "import/default": Linter.RuleEntry;
-    // TODO
-    "import/namespace": Linter.RuleEntry;
-    // TODO
-    "import/no-restricted-paths": Linter.RuleEntry;
-    "import/no-empty-named-blocks": Linter.RuleEntry;
-    "import/no-absolute-path": Linter.RuleEntry<
-        [
-            {
-                esmodule?: boolean;
-                commonjs?: boolean;
-                amd?: boolean;
-            },
-        ]
-    >;
-    "import/no-dynamic-require": Linter.RuleEntry;
-    // TODO
-    "import/no-internal-modules": Linter.RuleEntry;
-    "import/no-webpack-loader-syntax": Linter.RuleEntry;
-    "import/no-self-import": Linter.RuleEntry;
-    "import/no-cycle": Linter.RuleEntry<
-        [
-            {
-                maxDepth?: number;
-                ignoreExternal?: boolean;
-                allowUnsafeDynamicCyclicDependency?: boolean;
-            },
-        ]
-    >;
-    "import/no-useless-path-segments": Linter.RuleEntry<
-        [
-            {
-                noUselessIndex?: boolean;
-                commonjs?: boolean;
-            },
-        ]
-    >;
-    "import/no-relative-parent-imports": Linter.RuleEntry;
-    "import/no-relative-packages": Linter.RuleEntry;
-    "import/consistent-type-specifier-style": Linter.RuleEntry<
-        ["prefer-inline" | "prefer-top-level"]
-    >;
-    "import/export": Linter.RuleEntry;
-    "import/no-named-as-default": Linter.RuleEntry;
-    "import/no-named-as-default-member": Linter.RuleEntry;
-    "import/no-deprecated": Linter.RuleEntry<
-        [
-            {
-                /** Type specifiers that can be allowed. */
-                allow?: Array<
-                    | string
-                    | {
-                          from: "file";
-                          name: string | Array<string>;
-                          path?: string;
-                      }
-                    | {
-                          from: "lib";
-                          name: string | Array<string>;
-                      }
-                    | {
-                          from: "package";
-                          name: string | Array<string>;
-                          package: string;
-                      }
-                >;
-            },
-        ]
-    >;
-    "import/no-extraneous-dependencies": Linter.RuleEntry<
-        [
-            {
-                devDependencies?: boolean;
-                optionalDependencies?: boolean;
-                peerDependencies?: boolean;
-                bundledDependencies?: boolean;
-                includeInternal?: boolean;
-                includeTypes?: boolean;
-            },
-        ]
-    >;
-    "import/no-mutable-exports": Linter.RuleEntry;
-    "import/no-unused-modules": Linter.RuleEntry<
-        [
-            {
-                missingExports?: boolean;
-                unusedExports?: boolean;
-                src?: ReadonlyArray<string>;
-                ignoreExports?: boolean;
-            },
-        ]
-    >;
-    "import/unambiguous": Linter.RuleEntry;
-    "import/no-commonjs": Linter.RuleEntry<
-        [
-            {
-                allowRequire?: boolean;
-                allowConditionalRequire?: boolean;
-                allowPrimitiveModules?: boolean;
-            },
-        ]
-    >;
-    "import/no-amd": Linter.RuleEntry;
-    "import/no-nodejs-modules": Linter.RuleEntry<
-        [
-            {
-                allow?: ReadonlyArray<string>;
-            },
-        ]
-    >;
+// export type ImportPluginRules = {
+//     // TODO
+//     "import/no-unresolved": Linter.RuleEntry;
+//     // TODO
+//     "import/named": Linter.RuleEntry;
+//     // TODO
+//     "import/default": Linter.RuleEntry;
+//     // TODO
+//     "import/namespace": Linter.RuleEntry;
+//     // TODO
+//     "import/no-restricted-paths": Linter.RuleEntry;
+//     "import/no-empty-named-blocks": Linter.RuleEntry;
+//     "import/no-absolute-path": Linter.RuleEntry<
+//         [
+//             {
+//                 esmodule?: boolean;
+//                 commonjs?: boolean;
+//                 amd?: boolean;
+//             },
+//         ]
+//     >;
+//     "import/no-dynamic-require": Linter.RuleEntry;
+//     // TODO
+//     "import/no-internal-modules": Linter.RuleEntry;
+//     "import/no-webpack-loader-syntax": Linter.RuleEntry;
+//     "import/no-self-import": Linter.RuleEntry;
+//     "import/no-cycle": Linter.RuleEntry<
+//         [
+//             {
+//                 maxDepth?: number;
+//                 ignoreExternal?: boolean;
+//                 allowUnsafeDynamicCyclicDependency?: boolean;
+//             },
+//         ]
+//     >;
+//     "import/no-useless-path-segments": Linter.RuleEntry<
+//         [
+//             {
+//                 noUselessIndex?: boolean;
+//                 commonjs?: boolean;
+//             },
+//         ]
+//     >;
+//     "import/no-relative-parent-imports": Linter.RuleEntry;
+//     "import/no-relative-packages": Linter.RuleEntry;
+//     "import/consistent-type-specifier-style": Linter.RuleEntry<
+//         ["prefer-inline" | "prefer-top-level"]
+//     >;
+//     "import/export": Linter.RuleEntry;
+//     "import/no-named-as-default": Linter.RuleEntry;
+//     "import/no-named-as-default-member": Linter.RuleEntry;
+//     "import/no-deprecated": Linter.RuleEntry<
+//         [
+//             {
+//                 /** Type specifiers that can be allowed. */
+//                 allow?: Array<
+//                     | string
+//                     | {
+//                           from: "file";
+//                           name: string | Array<string>;
+//                           path?: string;
+//                       }
+//                     | {
+//                           from: "lib";
+//                           name: string | Array<string>;
+//                       }
+//                     | {
+//                           from: "package";
+//                           name: string | Array<string>;
+//                           package: string;
+//                       }
+//                 >;
+//             },
+//         ]
+//     >;
+//     "import/no-extraneous-dependencies": Linter.RuleEntry<
+//         [
+//             {
+//                 devDependencies?: boolean;
+//                 optionalDependencies?: boolean;
+//                 peerDependencies?: boolean;
+//                 bundledDependencies?: boolean;
+//                 includeInternal?: boolean;
+//                 includeTypes?: boolean;
+//             },
+//         ]
+//     >;
+//     "import/no-mutable-exports": Linter.RuleEntry;
+//     "import/no-unused-modules": Linter.RuleEntry<
+//         [
+//             {
+//                 missingExports?: boolean;
+//                 unusedExports?: boolean;
+//                 src?: ReadonlyArray<string>;
+//                 ignoreExports?: boolean;
+//             },
+//         ]
+//     >;
+//     "import/unambiguous": Linter.RuleEntry;
+//     "import/no-commonjs": Linter.RuleEntry<
+//         [
+//             {
+//                 allowRequire?: boolean;
+//                 allowConditionalRequire?: boolean;
+//                 allowPrimitiveModules?: boolean;
+//             },
+//         ]
+//     >;
+//     "import/no-amd": Linter.RuleEntry;
+//     "import/no-nodejs-modules": Linter.RuleEntry<
+//         [
+//             {
+//                 allow?: ReadonlyArray<string>;
+//             },
+//         ]
+//     >;
 
-    // TODO
-    "import/first": Linter.RuleEntry;
-    "import/exports-last": Linter.RuleEntry;
-    "import/no-duplicates": Linter.RuleEntry<
-        [
-            {
-                considerQueryString?: boolean;
-                "prefer-inline"?: boolean;
-            },
-        ]
-    >;
-    "import/no-namespace": Linter.RuleEntry;
-    "import/extensions": Linter.RuleEntry<["always" | "ignorePackages" | "never"]>;
-    "import/order": Linter.RuleEntry<
-        [
-            {
-                groups?: ReadonlyArray<string | ReadonlyArray<string>>;
-                pathGroups?: ReadonlyArray<{ pattern: string; group: string }>;
-                pathGroupsExcludedImportTypes?: string;
-                "newlines-between"?: "always" | "always-and-inside-groups" | "ignore" | "never";
-                alphabetize?: {
-                    order?: "asc" | "desc" | "ignore";
-                    orderImportKind?: "asc" | "desc" | "ignore";
-                    caseInsensitive?: boolean;
-                };
-                distinctGroup?: boolean;
-            },
-        ]
-    >;
-    "import/newline-after-import": Linter.RuleEntry<
-        [
-            {
-                count?: number;
-                considerComments?: boolean;
-            },
-        ]
-    >;
-    "import/prefer-default-export": Linter.RuleEntry;
-    // TODO
-    "import/max-dependencies": Linter.RuleEntry;
-    "import/no-unassigned-import": Linter.RuleEntry<
-        [
-            {
-                allow?: ReadonlyArray<string>;
-            },
-        ]
-    >;
-    "import/no-named-default": Linter.RuleEntry;
-    "import/no-default-export": Linter.RuleEntry;
-    "import/no-named-export": Linter.RuleEntry;
-    "import/no-anonymous-default-export": Linter.RuleEntry<
-        [
-            {
-                allowArray?: boolean;
-                allowArrowFunction?: boolean;
-                allowAnonymousClass?: boolean;
-                allowAnonymousFunction?: boolean;
-                allowCallExpression?: boolean;
-                allowLiteral?: boolean;
-                allowObject?: boolean;
-                allowNew?: boolean;
-            },
-        ]
-    >;
-    "import/group-exports": Linter.RuleEntry;
-    // TODO
-    "import/no-import-module-exports": Linter.RuleEntry;
-    // TODO
-    "import/dynamic-import-chunkname": Linter.RuleEntry;
-};
+//     // TODO
+//     "import/first": Linter.RuleEntry;
+//     "import/exports-last": Linter.RuleEntry;
+//     "import/no-duplicates": Linter.RuleEntry<
+//         [
+//             {
+//                 considerQueryString?: boolean;
+//                 "prefer-inline"?: boolean;
+//             },
+//         ]
+//     >;
+//     "import/no-namespace": Linter.RuleEntry;
+//     "import/extensions": Linter.RuleEntry<["always" | "ignorePackages" | "never"]>;
+//     "import/order": Linter.RuleEntry<
+//         [
+//             {
+//                 groups?: ReadonlyArray<string | ReadonlyArray<string>>;
+//                 pathGroups?: ReadonlyArray<{ pattern: string; group: string }>;
+//                 pathGroupsExcludedImportTypes?: string;
+//                 "newlines-between"?: "always" | "always-and-inside-groups" | "ignore" | "never";
+//                 alphabetize?: {
+//                     order?: "asc" | "desc" | "ignore";
+//                     orderImportKind?: "asc" | "desc" | "ignore";
+//                     caseInsensitive?: boolean;
+//                 };
+//                 distinctGroup?: boolean;
+//             },
+//         ]
+//     >;
+//     "import/newline-after-import": Linter.RuleEntry<
+//         [
+//             {
+//                 count?: number;
+//                 considerComments?: boolean;
+//             },
+//         ]
+//     >;
+//     "import/prefer-default-export": Linter.RuleEntry;
+//     // TODO
+//     "import/max-dependencies": Linter.RuleEntry;
+//     "import/no-unassigned-import": Linter.RuleEntry<
+//         [
+//             {
+//                 allow?: ReadonlyArray<string>;
+//             },
+//         ]
+//     >;
+//     "import/no-named-default": Linter.RuleEntry;
+//     "import/no-default-export": Linter.RuleEntry;
+//     "import/no-named-export": Linter.RuleEntry;
+//     "import/no-anonymous-default-export": Linter.RuleEntry<
+//         [
+//             {
+//                 allowArray?: boolean;
+//                 allowArrowFunction?: boolean;
+//                 allowAnonymousClass?: boolean;
+//                 allowAnonymousFunction?: boolean;
+//                 allowCallExpression?: boolean;
+//                 allowLiteral?: boolean;
+//                 allowObject?: boolean;
+//                 allowNew?: boolean;
+//             },
+//         ]
+//     >;
+//     "import/group-exports": Linter.RuleEntry;
+//     // TODO
+//     "import/no-import-module-exports": Linter.RuleEntry;
+//     // TODO
+//     "import/dynamic-import-chunkname": Linter.RuleEntry;
+// };
 
 export type TypescriptEslintRules = Partial<{
     "@typescript-eslint/adjacent-overload-signatures": Linter.RuleEntry;
@@ -647,10 +647,10 @@ export type TypescriptEslintRules = Partial<{
                 allowAsThisParameter?: boolean;
                 /** Whether `void` can be used as a valid value for generic type parameters. */
                 allowInGenericTypeArguments?: /**
-                 * Whether `void` can be used as a valid value for generic type parameters.
-                 * Whether `void` can be used as a valid value for all generic type parameters.
-                 */
-                | boolean
+                     * Whether `void` can be used as a valid value for generic type parameters.
+                     * Whether `void` can be used as a valid value for all generic type parameters.
+                     */
+                    | boolean
                     /** Allowlist of types that may accept `void` as a generic type parameter. */
                     | Array<string>;
             },
@@ -673,10 +673,10 @@ export type TypescriptEslintRules = Partial<{
                 checksSpreads?: boolean;
                 /** Whether to warn when a Promise is returned from a function typed as returning `void`. */
                 checksVoidReturn?: /**
-                 * Whether to warn when a Promise is returned from a function typed as returning `void`.
-                 * Whether to disable checking all asynchronous functions.
-                 */
-                | boolean
+                     * Whether to warn when a Promise is returned from a function typed as returning `void`.
+                     * Whether to disable checking all asynchronous functions.
+                     */
+                    | boolean
                     /** Which forms of functions may have checking disabled. */
                     | {
                           /** Disables checking an asynchronous function passed as argument where the parameter type expects a function that returns `void`. */
@@ -865,10 +865,10 @@ export type TypescriptEslintRules = Partial<{
                 ignoreMixedLogicalExpressions?: boolean;
                 /** Whether to ignore all (`true`) or some (an object with properties) primitive types. */
                 ignorePrimitives?: /**
-                 * Whether to ignore all (`true`) or some (an object with properties) primitive types.
-                 * Which primitives types may be ignored.
-                 */
-                | true
+                     * Whether to ignore all (`true`) or some (an object with properties) primitive types.
+                     * Which primitives types may be ignored.
+                     */
+                    | true
                     /** Ignore all primitive types. */
                     | {
                           /** Ignore bigint primitive types. */
@@ -1462,7 +1462,4 @@ export type PerfectionistPluginRules = Partial<{
     >;
 }>;
 
-export type Rules = ESLintRules &
-    ImportPluginRules &
-    PerfectionistPluginRules &
-    TypescriptEslintRules;
+export type Rules = ESLintRules & PerfectionistPluginRules & TypescriptEslintRules;
