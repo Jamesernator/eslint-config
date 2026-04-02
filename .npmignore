@@ -1,0 +1,6 @@
+/eslint.config.*
+/.eslintignore
+/.git/
+/.vscode/
+/tsconfig.tsbuildinfo
+/pnpm-lock.yaml
