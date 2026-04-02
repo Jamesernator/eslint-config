@@ -5,6 +5,9 @@
         "./**/*.cts"
     ],
     "compilerOptions": {
+        "types": [
+            "node"
+        ],
         "noEmit": true,
         "allowImportingTsExtensions": true,
         "composite": true,
