@@ -474,52 +474,7 @@ export type TypescriptEslintRules = Partial<{
     // TODO: member-ordering
     "@typescript-eslint/member-ordering": Linter.RuleEntry;
     "@typescript-eslint/method-signature-style": Linter.RuleEntry<["method" | "property"]>;
-    "@typescript-eslint/naming-convention": Linter.RuleEntry<
-        Array<{
-            // format options
-            format: ReadonlyArray<
-                | "camelCase"
-                | "PascalCase"
-                | "snake_case"
-                | "strictCamelCase"
-                | "StrictPascalCase"
-                | "UPPER_CASE"
-            > | null;
-            custom?: Readonly<{
-                regex: string;
-                match: boolean;
-            }>;
-            leadingUnderscore?:
-                | "allow"
-                | "allowDouble"
-                | "allowSingleOrDouble"
-                | "forbid"
-                | "require"
-                | "requireDouble";
-
-            trailingUnderscore?:
-                | "allow"
-                | "allowDouble"
-                | "allowSingleOrDouble"
-                | "forbid"
-                | "require"
-                | "requireDouble";
-            prefix?: ReadonlyArray<string>;
-            suffix?: ReadonlyArray<string>;
-
-            // selector options
-            selector: string | ReadonlyArray<string>;
-            filter?:
-                | string
-                | {
-                      regex: string;
-                      match: boolean;
-                  };
-            // the allowed values for these are dependent on the selector - see below
-            modifiers?: ReadonlyArray<string>;
-            types?: ReadonlyArray<string>;
-        }>
-    >;
+    "@typescript-eslint/naming-convention": Linter.RuleEntry;
     "@typescript-eslint/no-array-delete": Linter.RuleEntry;
     "@typescript-eslint/no-base-to-string": Linter.RuleEntry<
         [
