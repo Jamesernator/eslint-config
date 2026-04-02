@@ -1,0 +1,30 @@
+{
+    "include": [
+        "./**/*.ts",
+        "./**/*.mts",
+        "./**/*.cts"
+    ],
+    "compilerOptions": {
+        "noEmit": true,
+        "allowImportingTsExtensions": true,
+        "composite": true,
+        "declaration": true,
+        "declarationMap": true,
+        "downlevelIteration": true,
+        "module": "NodeNext",
+        "rootDir": "./",
+        "sourceMap": true,
+        "target": "esnext",
+        "newLine": "lf",
+        "useDefineForClassFields": true,
+        "strictBuiltinIteratorReturn": true,
+        "verbatimModuleSyntax": true,
+        "useUnknownInCatchVariables": true,
+        "strict": true,
+        "alwaysStrict": true,
+        "exactOptionalPropertyTypes": true,
+        "noImplicitOverride": true,
+        "noUncheckedIndexedAccess": true,
+        "forceConsistentCasingInFileNames": true
+    }
+}
