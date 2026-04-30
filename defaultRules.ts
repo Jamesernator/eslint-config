@@ -1,5 +1,5 @@
 import type { Linter } from "eslint";
-import type { CommonOptions } from "./perfectionist-rules/common/CommonOptions.ts";
+import * as perfectionist from "eslint-plugin-perfectionist";
 import type { Rules } from "./Rules.ts";
 
 /* eslint "perfectionist/sort-objects": ["error", { type: "alphabetical" }] */
@@ -973,11 +973,13 @@ const considerInFuture = {
     "preserve-caught-error": "off",
 } satisfies Partial<Rules>;
 
-const commonOptions: CommonOptions = {
+const commonOptions = {
     fallbackSort: { type: "alphabetical" },
     ignoreCase: true,
     type: "natural",
-};
+} as const;
+
+type Foo = 3 | Uint8Array | string;
 
 const perfectionistRules = {
     "perfectionist/sort-array-includes": ["error", commonOptions],
@@ -1032,9 +1034,9 @@ const perfectionistRules = {
                 "function",
                 "import",
                 "intersection",
-                "keyword",
-                "literal",
                 "named",
+                "literal",
+                "keyword",
                 "object",
                 "operator",
                 "tuple",
@@ -1076,9 +1078,9 @@ const perfectionistRules = {
                 "function",
                 "import",
                 "intersection",
-                "keyword",
-                "literal",
                 "named",
+                "literal",
+                "keyword",
                 "object",
                 "operator",
                 "tuple",
