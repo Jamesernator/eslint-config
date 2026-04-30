@@ -1,5 +1,4 @@
 import type { Linter } from "eslint";
-import * as perfectionist from "eslint-plugin-perfectionist";
 import type { Rules } from "./Rules.ts";
 
 /* eslint "perfectionist/sort-objects": ["error", { type: "alphabetical" }] */
@@ -979,8 +978,6 @@ const commonOptions = {
     type: "natural",
 } as const;
 
-type Foo = 3 | Uint8Array | string;
-
 const perfectionistRules = {
     "perfectionist/sort-array-includes": ["error", commonOptions],
     "perfectionist/sort-arrays": ["off", commonOptions],
@@ -1035,8 +1032,8 @@ const perfectionistRules = {
                 "import",
                 "intersection",
                 "named",
-                "literal",
                 "keyword",
+                "literal",
                 "object",
                 "operator",
                 "tuple",
@@ -1079,8 +1076,8 @@ const perfectionistRules = {
                 "import",
                 "intersection",
                 "named",
-                "literal",
                 "keyword",
+                "literal",
                 "object",
                 "operator",
                 "tuple",
