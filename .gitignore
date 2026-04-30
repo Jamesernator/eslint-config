@@ -7,6 +7,7 @@
 *.map
 !/types/*.d.ts
 /node_modules/
+/deno.lock
 /package-lock.json
 /pnpm-lock.yaml
 /tsconfig.tsbuildinfo
