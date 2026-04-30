@@ -2,7 +2,7 @@ import type { Linter } from "eslint";
 import type { CommonOptions } from "./perfectionist-rules/common/CommonOptions.ts";
 import type { Rules } from "./Rules.ts";
 
-/* __eslint "perfectionist/sort-objects": ["error", { type: "alphabetical" }] */
+/* eslint "perfectionist/sort-objects": ["error", { type: "alphabetical" }] */
 
 const builtinModules = [
     "_http_agent",
