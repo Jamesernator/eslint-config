@@ -2,6 +2,8 @@ import type { Linter } from "eslint";
 import type { CommonOptions } from "./perfectionist-rules/common/CommonOptions.ts";
 import type { Rules } from "./Rules.ts";
 
+/* __eslint "perfectionist/sort-objects": ["error", { type: "alphabetical" }] */
+
 const builtinModules = [
     "_http_agent",
     "_http_client",
@@ -979,6 +981,7 @@ const commonOptions: CommonOptions = {
 
 const perfectionistRules = {
     "perfectionist/sort-array-includes": ["error", commonOptions],
+    "perfectionist/sort-arrays": ["off", commonOptions],
     "perfectionist/sort-classes": [
         "off",
         {
@@ -991,13 +994,14 @@ const perfectionistRules = {
     ],
     "perfectionist/sort-decorators": "off",
     "perfectionist/sort-enums": ["error", { ...commonOptions, sortByValue: "ifNumericEnum" }],
+    "perfectionist/sort-export-attributes": ["off", commonOptions],
     "perfectionist/sort-exports": ["error", commonOptions],
     "perfectionist/sort-heritage-clauses": ["error", commonOptions],
+    "perfectionist/sort-import-attributes": ["off", commonOptions],
     "perfectionist/sort-imports": [
         "error",
         {
             ...commonOptions,
-            newlinesBetween: 0,
             groups: [
                 "side-effect",
                 "builtin",
@@ -1009,6 +1013,7 @@ const perfectionistRules = {
                 "sibling",
                 "import",
             ],
+            newlinesBetween: 0,
         },
     ],
     "perfectionist/sort-interfaces": [
@@ -1051,7 +1056,15 @@ const perfectionistRules = {
         },
     ],
     // todo: enable when causes less churn
-    "perfectionist/sort-objects": ["off", commonOptions],
+    "perfectionist/sort-objects": [
+        "off",
+        {
+            ...commonOptions,
+            useConfigurationIf: {
+                declarationCommentMatchesPattern: "#sort-keys",
+            },
+        },
+    ],
     "perfectionist/sort-sets": ["error", commonOptions],
     "perfectionist/sort-switch-case": ["error", commonOptions],
     "perfectionist/sort-union-types": [

@@ -1,7 +1,7 @@
 /* eslint-disable no-inline-comments */
 import type { Linter } from "eslint";
-import type { ESLintRules } from "eslint/rules";
 import type * as perfectionist from "eslint-plugin-perfectionist";
+import type { ESLintRules } from "eslint/rules";
 /* eslint "perfectionist/sort-object-types": ["error", { type: "alphabetical" }] */
 
 type AccessibilityLevel = "explicit" | "no-public" | "off";
@@ -1375,39 +1375,29 @@ export type TypescriptEslintRules = Partial<{
 }>;
 
 export type PerfectionistPluginRules = Partial<{
-    "perfectionist/sort-array-includes": Linter.RuleEntry<[perfectionist.SortArrayIncludesOptions]>;
-    "perfectionist/sort-arrays": Linter.RuleEntry<[perfectionist.SortArraysOptions]>;
-    "perfectionist/sort-classes": Linter.RuleEntry<[perfectionist.SortClassesOptions]>;
-    "perfectionist/sort-decorators": Linter.RuleEntry<[perfectionist.SortClassesOptions]>;
-    "perfectionist/sort-enums": Linter.RuleEntry<[perfectionist.SortEnumsOptions]>;
-    "perfectionist/sort-export-attributes": Linter.RuleEntry<
-        [perfectionist.SortExportAttributesOptions]
-    >;
-    "perfectionist/sort-exports": Linter.RuleEntry<[perfectionist.SortExportsOptions]>;
-    "perfectionist/sort-heritage-clauses": Linter.RuleEntry<
-        [perfectionist.SortHeritageClausesOptions]
-    >;
-    "perfectionist/sort-import-attributes": Linter.RuleEntry<
-        [perfectionist.SortImportAttributesOptions]
-    >;
-    "perfectionist/sort-imports": Linter.RuleEntry<[perfectionist.SortImportsOptions]>;
-    "perfectionist/sort-interfaces": Linter.RuleEntry<[perfectionist.SortInterfacesOptions]>;
-    "perfectionist/sort-intersection-types": Linter.RuleEntry<
-        [perfectionist.SortIntersectionTypesOptions]
-    >;
-    "perfectionist/sort-jsx-props": Linter.RuleEntry<[perfectionist.SortJsxPropsOptions]>;
-    "perfectionist/sort-maps": Linter.RuleEntry<[perfectionist.SortMapsOptions]>;
-    "perfectionist/sort-modules": Linter.RuleEntry<[perfectionist.SortModulesOptions]>;
-    "perfectionist/sort-named-exports": Linter.RuleEntry<[perfectionist.SortNamedExportsOptions]>;
-    "perfectionist/sort-named-imports": Linter.RuleEntry<[perfectionist.SortNamedImportsOptions]>;
-    "perfectionist/sort-object-types": Linter.RuleEntry<[perfectionist.SortObjectTypesOptions]>;
-    "perfectionist/sort-objects": Linter.RuleEntry<[perfectionist.SortObjectsOptions]>;
-    "perfectionist/sort-sets": Linter.RuleEntry<[perfectionist.SortSetsOptions]>;
-    "perfectionist/sort-switch-case": Linter.RuleEntry<[perfectionist.SortSwitchCaseOptions]>;
-    "perfectionist/sort-union-types": Linter.RuleEntry<[perfectionist.SortUnionTypesOptions]>;
-    "perfectionist/sort-variable-declarations": Linter.RuleEntry<
-        [perfectionist.SortVariableDeclarationsOptions]
-    >;
+    "perfectionist/sort-array-includes": Linter.RuleEntry<perfectionist.SortArrayIncludesOptions>;
+    "perfectionist/sort-arrays": Linter.RuleEntry<perfectionist.SortArraysOptions>;
+    "perfectionist/sort-classes": Linter.RuleEntry<perfectionist.SortClassesOptions>;
+    "perfectionist/sort-decorators": Linter.RuleEntry<perfectionist.SortClassesOptions>;
+    "perfectionist/sort-enums": Linter.RuleEntry<perfectionist.SortEnumsOptions>;
+    "perfectionist/sort-export-attributes": Linter.RuleEntry<perfectionist.SortExportAttributesOptions>;
+    "perfectionist/sort-exports": Linter.RuleEntry<perfectionist.SortExportsOptions>;
+    "perfectionist/sort-heritage-clauses": Linter.RuleEntry<perfectionist.SortHeritageClausesOptions>;
+    "perfectionist/sort-import-attributes": Linter.RuleEntry<perfectionist.SortImportAttributesOptions>;
+    "perfectionist/sort-imports": Linter.RuleEntry<perfectionist.SortImportsOptions>;
+    "perfectionist/sort-interfaces": Linter.RuleEntry<perfectionist.SortInterfacesOptions>;
+    "perfectionist/sort-intersection-types": Linter.RuleEntry<perfectionist.SortIntersectionTypesOptions>;
+    "perfectionist/sort-jsx-props": Linter.RuleEntry<perfectionist.SortJsxPropsOptions>;
+    "perfectionist/sort-maps": Linter.RuleEntry<perfectionist.SortMapsOptions>;
+    "perfectionist/sort-modules": Linter.RuleEntry<perfectionist.SortModulesOptions>;
+    "perfectionist/sort-named-exports": Linter.RuleEntry<perfectionist.SortNamedExportsOptions>;
+    "perfectionist/sort-named-imports": Linter.RuleEntry<perfectionist.SortNamedImportsOptions>;
+    "perfectionist/sort-object-types": Linter.RuleEntry<perfectionist.SortObjectTypesOptions>;
+    "perfectionist/sort-objects": Linter.RuleEntry<perfectionist.SortObjectsOptions>;
+    "perfectionist/sort-sets": Linter.RuleEntry<perfectionist.SortSetsOptions>;
+    "perfectionist/sort-switch-case": Linter.RuleEntry<perfectionist.SortSwitchCaseOptions>;
+    "perfectionist/sort-union-types": Linter.RuleEntry<perfectionist.SortUnionTypesOptions>;
+    "perfectionist/sort-variable-declarations": Linter.RuleEntry<perfectionist.SortVariableDeclarationsOptions>;
 }>;
 
 export type Rules = ESLintRules & PerfectionistPluginRules & TypescriptEslintRules;
